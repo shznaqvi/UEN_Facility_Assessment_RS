@@ -1,0 +1,136 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="form"
+            type="edu.aku.hassannaqvi.databinding.Form"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout android:id="@+id/GrpName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- h04  Title   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVh04"
+                style="@style/cardView"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" > <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/h04" /> </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- h0401  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVh0401"
+                style="@style/cardView"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" ><LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/quesNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/Q_h0401"  />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/h0401" />
+
+                </LinearLayout>
+                    <RadioGroup
+                        android:id="@+id/h0401"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"><RadioButton
+                        android:id="@+id/h0401a"
+                        android:text="@string/h0401a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{form.h0401.equals(`1`)}"
+                        android:onClick="@{()->form.setH0401(`1`)}"
+                        /> <RadioButton
+                        android:id="@+id/h0401b"
+                        android:text="@string/h0401b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{form.h0401.equals(`2`)}"
+                        android:onClick="@{()->form.setH0401(`2`)}"
+                        /> <RadioButton
+                        android:id="@+id/h0401c"
+                        android:text="@string/h0401c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{form.h0401.equals(`3`)}"
+                        android:onClick="@{()->form.setH0401(`3`)}"
+                        /> <RadioButton
+                        android:id="@+id/h0401d"
+                        android:text="@string/h0401d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{form.h0401.equals(`4`)}"
+                        android:onClick="@{()->form.setH0401(`4`)}"
+                        /> <RadioButton
+                        android:id="@+id/h0401xx"
+                        android:text="@string/h0401xx"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{form.h0401.equals(`96`)}"
+                        android:onClick="@{()->form.setH0401(`96`)}"
+                        />
+                        <EditText
+                            android:id="@+id/h0401xxx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/h0401xx"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:tag="h0401xx"
+                            android:text="@={form.h0401xxx}"
+                            android:visibility="@{form.h0401.equals(`96`) ? View.VISIBLE : View.GONE}"
+                            /></RadioGroup> </LinearLayout>
+            </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_End"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:background="@color/red_overlay"
+                    android:textColor="@color/white"
+                    android:text="Cancel" />
+                <Button
+                    android:id="@+id/btn_Continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:background="@color/green_overlay"
+                    android:textColor="@color/white"
+                    android:text="Save" />
+            </LinearLayout></LinearLayout>
+    </ScrollView>
+</layout>
