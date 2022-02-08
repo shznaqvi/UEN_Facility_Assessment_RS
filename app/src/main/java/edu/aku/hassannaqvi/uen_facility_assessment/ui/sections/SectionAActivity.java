@@ -21,6 +21,7 @@ public class SectionAActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a);
+        setSupportActionBar(bi.toolbar);
         //bi.setCallback(this);
         bi.setForm(form);
     }
