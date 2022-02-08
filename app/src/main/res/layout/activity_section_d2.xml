@@ -1,9 +1,13 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.uen_facility_assessment.models.Form"/>
+            type="edu.aku.hassannaqvi.uen_facility_assessment.models.Form" />
     </data>
 
     <LinearLayout
@@ -78,24 +82,32 @@
                         android:text="@string/d0201" />
 
                 </LinearLayout>
+
                     <RadioGroup
                         android:id="@+id/d0201"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"><RadioButton
-                        android:id="@+id/d0201a"
-                        android:text="@string/d0201a"
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:checked="@{form.d0201.equals(`1`)}"
-                        android:onClick="@{()->form.setD0201(`1`)}"
-                        /> <RadioButton
-                        android:id="@+id/d0201b"
-                        android:text="@string/d0201b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checked="@{form.d0201.equals(`2`)}"
-                        android:onClick="@{()->form.setD0201(`2`)}"
-                        /> </RadioGroup> </LinearLayout>
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/d0201a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="@{form.d0201.equals(`1`)}"
+                            android:onClick="@{()->form.setD0201(`1`)}"
+                            android:text="@string/d0201a" />
+
+                        <RadioButton
+                            android:id="@+id/d0201b"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="@{form.d0201.equals(`2`)}"
+                            android:onClick="@{()->form.setD0201(`2`)}"
+                            android:text="@string/d0201b" />
+                    </RadioGroup>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- d0202  Radio   -->
@@ -125,24 +137,32 @@
                         android:text="@string/d0202" />
 
                 </LinearLayout>
+
                     <RadioGroup
                         android:id="@+id/d0202"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"><RadioButton
-                        android:id="@+id/d0202a"
-                        android:text="@string/d0202a"
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:checked="@{form.d0202.equals(`1`)}"
-                        android:onClick="@{()->form.setD0202(`1`)}"
-                        /> <RadioButton
-                        android:id="@+id/d0202b"
-                        android:text="@string/d0202b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checked="@{form.d0202.equals(`2`)}"
-                        android:onClick="@{()->form.setD0202(`2`)}"
-                        /> </RadioGroup> </LinearLayout>
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/d0202a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="@{form.d0202.equals(`1`)}"
+                            android:onClick="@{()->form.setD0202(`1`)}"
+                            android:text="@string/d0202a" />
+
+                        <RadioButton
+                            android:id="@+id/d0202b"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="@{form.d0202.equals(`2`)}"
+                            android:onClick="@{()->form.setD0202(`2`)}"
+                            android:text="@string/d0202b" />
+                    </RadioGroup>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- d0203  Radio   -->
@@ -172,50 +192,67 @@
                         android:text="@string/d0203" />
 
                 </LinearLayout>
+
                     <RadioGroup
                         android:id="@+id/d0203"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"><RadioButton
-                        android:id="@+id/d0203a"
-                        android:text="@string/d0203a"
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:checked="@{form.d0203.equals(`1`)}"
-                        android:onClick="@{()->form.setD0203(`1`)}"
-                        /> <RadioButton
-                        android:id="@+id/d0203b"
-                        android:text="@string/d0203b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checked="@{form.d0203.equals(`2`)}"
-                        android:onClick="@{()->form.setD0203(`2`)}"
-                        /> </RadioGroup> </LinearLayout>
-            </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/d0203a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="@{form.d0203.equals(`1`)}"
+                            android:onClick="@{()->form.setD0203(`1`)}"
+                            android:text="@string/d0203a" />
+
+                        <RadioButton
+                            android:id="@+id/d0203b"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="@{form.d0203.equals(`2`)}"
+                            android:onClick="@{()->form.setD0203(`2`)}"
+                            android:text="@string/d0203b" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="24dp"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/btn_End"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="12dp"
-                    android:onClick="@{() -> callback.BtnEnd()}"
                     android:background="@color/red_overlay"
-                    android:textColor="@color/white"
-                    android:text="Cancel" />
+                    android:elevation="20dp"
+                    android:onClick="btnEnd"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white" />
+
                 <Button
                     android:id="@+id/btn_Continue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="12dp"
-                    android:onClick="@{() -> callback.BtnContinue()}"
                     android:background="@color/green_overlay"
-                    android:textColor="@color/white"
-                    android:text="Save" />
-            </LinearLayout></LinearLayout>
+                    android:elevation="20dp"
+                    android:onClick="btnContinue"
+                    android:text="@string/btnSave"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+            <!--EndButton LinearLayout-->
+        </LinearLayout>
     </ScrollView>
 
     </LinearLayout>
