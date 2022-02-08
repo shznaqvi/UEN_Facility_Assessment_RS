@@ -7,7 +7,6 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.S
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_ENTRYLOGS;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_HH_FORMS;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_LHW;
-import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_LHW_FORMS;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_LHW_HF;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_TEHSIL;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_USERS;
@@ -86,7 +85,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_LHW);
         db.execSQL(SQL_CREATE_LHW_HF);
         db.execSQL(SQL_CREATE_HH_FORMS);
-        db.execSQL(SQL_CREATE_LHW_FORMS);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ENTRYLOGS);
 
@@ -102,7 +100,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //ADDITION in DB
-    public long addForm(Form Form) throws JSONException {
+    /*public long addForm(Form Form) throws JSONException {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
@@ -111,19 +109,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(TableContracts.FormsTable.COLUMN_PROJECT_NAME, Form.getProjectName());
         values.put(TableContracts.FormsTable.COLUMN_UID, Form.getUid());
-        values.put(TableContracts.FormsTable.COLUMN_LHW_CODE, Form.getLhwCode());
+        *//*values.put(TableContracts.FormsTable.COLUMN_LHW_CODE, Form.getLhwCode());
         values.put(TableContracts.FormsTable.COLUMN_KHANDAN_NO, Form.getKhandandNo());
-        values.put(TableContracts.FormsTable.COLUMN_LHW_UID, Form.getLhwuid());
+        values.put(TableContracts.FormsTable.COLUMN_LHW_UID, Form.getLhwuid());*//*
         values.put(TableContracts.FormsTable.COLUMN_USERNAME, Form.getUserName());
         values.put(TableContracts.FormsTable.COLUMN_SYSDATE, Form.getSysDate());
         values.put(FormsTable.COLUMN_SYNCED, Form.getSynced());
         values.put(FormsTable.COLUMN_SYNCED_DATE, Form.getSyncDate());
 
-
-        values.put(TableContracts.FormsTable.COLUMN_SH2, Form.sH2toString());
-     /*   values.put(TableContracts.FormsTable.COLUMN_SH3, form.sH3toString());
-        values.put(TableContracts.FormsTable.COLUMN_SAB, form.sABtoString());
-        values.put(TableContracts.FormsTable.COLUMN_SM, form.sMtoString());*/
+        values.put(FormsTable.COLUMN_SA, Form.sAtoString());
+        values.put(FormsTable.COLUMN_SB, Form.sBtoString());
+        values.put(FormsTable.COLUMN_SC, Form.sCtoString());
+        values.put(FormsTable.COLUMN_SD, Form.sDtoString());
+        values.put(FormsTable.COLUMN_SE, Form.sEtoString());
+        values.put(FormsTable.COLUMN_SF, Form.sFtoString());
+        values.put(FormsTable.COLUMN_SG, Form.sGtoString());
+        values.put(FormsTable.COLUMN_SH, Form.sHtoString());
+        values.put(FormsTable.COLUMN_SI, Form.sItoString());
+        values.put(FormsTable.COLUMN_SJ, Form.sJtoString());
+        values.put(FormsTable.COLUMN_SK, Form.sKtoString());
 
         values.put(TableContracts.FormsTable.COLUMN_ISTATUS, Form.getiStatus());
         values.put(TableContracts.FormsTable.COLUMN_DEVICETAGID, Form.getDeviceTag());
@@ -138,30 +142,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 TableContracts.FormsTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
-    }
+    }*/
 
 
     public long addForm(Form form) throws JSONException {
-
-        // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-
-// Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
+
         values.put(TableContracts.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(TableContracts.FormsTable.COLUMN_UID, form.getUid());
-        values.put(TableContracts.FormsTable.COLUMN_CLUSTER, form.getCluster());
         values.put(TableContracts.FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(TableContracts.FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SYNCED, form.getSynced());
         values.put(FormsTable.COLUMN_SYNCED_DATE, form.getSyncDate());
-        values.put(TableContracts.FormsTable.COLUMN_A101, form.getA101());
-        values.put(TableContracts.FormsTable.COLUMN_A102, form.getA102());
-        values.put(TableContracts.FormsTable.COLUMN_A103, form.getA103());
-        values.put(TableContracts.FormsTable.COLUMN_A104n, form.getA104n());
-        values.put(TableContracts.FormsTable.COLUMN_A104c, form.getA104c());
 
-        values.put(TableContracts.FormsTable.COLUMN_SL1, form.sAtoString());
+        values.put(FormsTable.COLUMN_SA, form.sAtoString());
+        values.put(FormsTable.COLUMN_SB, form.sBtoString());
+        values.put(FormsTable.COLUMN_SC, form.sCtoString());
+        values.put(FormsTable.COLUMN_SD, form.sDtoString());
+        values.put(FormsTable.COLUMN_SE, form.sEtoString());
+        values.put(FormsTable.COLUMN_SF, form.sFtoString());
+        values.put(FormsTable.COLUMN_SG, form.sGtoString());
+        values.put(FormsTable.COLUMN_SH, form.sHtoString());
+        values.put(FormsTable.COLUMN_SI, form.sItoString());
+        values.put(FormsTable.COLUMN_SJ, form.sJtoString());
+        values.put(FormsTable.COLUMN_SK, form.sKtoString());
 
 
         values.put(TableContracts.FormsTable.COLUMN_ISTATUS, form.getiStatus());
@@ -736,8 +741,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             fc.setId(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_SYSDATE)));
-            fc.setLhwCode(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_LHW_CODE)));
-            fc.setKhandandNo(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_KHANDAN_NO)));
             fc.setiStatus(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);
@@ -777,10 +780,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Form fc = new Form();
             fc.setId(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_UID)));
-            fc.setLhwuid(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_LHW_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_SYSDATE)));
-            fc.setLhwCode(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_LHW_CODE)));
-            fc.setKhandandNo(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_KHANDAN_NO)));
             fc.setiStatus(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);
@@ -820,10 +820,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Form fc = new Form();
             fc.setId(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_ID)));
             fc.setUid(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_UID)));
-            fc.setLhwuid(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_LHW_UID)));
             fc.setSysDate(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_SYSDATE)));
-            fc.setLhwCode(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_LHW_CODE)));
-            fc.setKhandandNo(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_KHANDAN_NO)));
             fc.setiStatus(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_ISTATUS)));
             fc.setSynced(c.getString(c.getColumnIndexOrThrow(TableContracts.FormsTable.COLUMN_SYNCED)));
             allFC.add(fc);

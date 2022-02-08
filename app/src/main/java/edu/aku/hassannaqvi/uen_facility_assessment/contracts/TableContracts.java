@@ -16,10 +16,17 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
 
-        public static final String COLUMN_SH2 = "sH2";
-        //  public static final String COLUMN_SH3 = "sH3";
-        public static final String COLUMN_SAB = "sAB";
-        public static final String COLUMN_SM = "sM";
+        public static final String COLUMN_SA = "sA";
+        public static final String COLUMN_SB = "sB";
+        public static final String COLUMN_SC = "sC";
+        public static final String COLUMN_SD = "sD";
+        public static final String COLUMN_SE = "sE";
+        public static final String COLUMN_SF = "sF";
+        public static final String COLUMN_SG = "sG";
+        public static final String COLUMN_SH = "sH";
+        public static final String COLUMN_SI = "sI";
+        public static final String COLUMN_SJ = "sJ";
+        public static final String COLUMN_SK = "sK";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

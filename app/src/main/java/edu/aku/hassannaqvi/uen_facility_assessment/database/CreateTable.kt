@@ -25,14 +25,21 @@ object CreateTable {
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
-            + FormsTable.COLUMN_SH2 + " TEXT,"
-            //     + FormsTable.COLUMN_SH3 + " TEXT,"
-            + FormsTable.COLUMN_SAB + " TEXT,"
-            + FormsTable.COLUMN_SM + " TEXT"
+            + FormsTable.COLUMN_SA + " TEXT,"
+            + FormsTable.COLUMN_SB + " TEXT,"
+            + FormsTable.COLUMN_SC + " TEXT,"
+            + FormsTable.COLUMN_SD + " TEXT,"
+            + FormsTable.COLUMN_SE + " TEXT,"
+            + FormsTable.COLUMN_SF + " TEXT,"
+            + FormsTable.COLUMN_SG + " TEXT,"
+            + FormsTable.COLUMN_SH + " TEXT,"
+            + FormsTable.COLUMN_SI + " TEXT,"
+            + FormsTable.COLUMN_SJ + " TEXT,"
+            + FormsTable.COLUMN_SK + " TEXT"
             + " );"
             )
 
-    const val SQL_CREATE_LHW_FORMS = ("CREATE TABLE "
+    /*const val SQL_CREATE_LHW_FORMS = ("CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
             + FormsTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FormsTable.COLUMN_PROJECT_NAME + " TEXT,"
@@ -56,7 +63,7 @@ object CreateTable {
             + FormsTable.COLUMN_SL3 + " TEXT,"
             + FormsTable.COLUMN_SL4 + " TEXT"
             + " );"
-            )
+            )*/
 
 
     const val SQL_CREATE_USERS = ("CREATE TABLE "
@@ -139,3 +146,4 @@ object CreateTable {
             + VersionTable.COLUMN_PATH_NAME + " TEXT "
             + ");"
             )
+}

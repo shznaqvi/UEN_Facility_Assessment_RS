@@ -148,7 +148,7 @@ public class SyncActivity extends AppCompatActivity {
                 uploadData.clear();
 
 
-                // Forms
+                // Upload Forms
                 uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
                 try {
                     uploadData.add(db.getUnsyncedForms());
