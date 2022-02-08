@@ -24,6 +24,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionH2
 
 
 public class SectionH2Activity extends AppCompatActivity {
+
     private static final String TAG = "SectionH2Activity";
     ActivitySectionH2Binding bi;
     private DatabaseHelper db;

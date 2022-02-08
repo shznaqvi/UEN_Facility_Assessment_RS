@@ -1,0 +1,20 @@
+package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
+import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionD2Binding;
+
+public class SectionD2Activity extends AppCompatActivity {
+
+    private static final String TAG = "SectionD2Activity";
+    ActivitySectionD2Binding bi;
+    private DatabaseHelper db;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+}
