@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.Form" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,9 +35,11 @@
             app:title="@string/moddtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -42,22 +47,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- d06  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVd06"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/d06" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- d0601  Title   -->
                 <androidx.cardview.widget.CardView
@@ -70,11 +60,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/d0601" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d0601a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -125,9 +119,13 @@
                                 android:checked="@{form.d0601a.equals(`2`)}"
                                 android:onClick="@{()->form.setD0601a(`2`)}"
                                 android:text="@string/d0601ab" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d0601b  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -552,10 +550,17 @@
                                 android:checked="@{form.d0605.equals(`9`)}"
                                 android:onClick="@{()->form.setD0605(`9`)}"
                                 android:text="@string/d0605i" />
+
                         </RadioGroup>
+
                     </LinearLayout>
-                </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!--EndButton LinearLayout-->
                 <LinearLayout
+                    android:id="@+id/llbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -564,26 +569,34 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/red_overlay"
-                        android:onClick="@{() -> callback.BtnEnd()}"
-                        android:text="Cancel"
+                        android:elevation="20dp"
+                        android:onClick="btnEnd"
+                        android:text="@string/cancel"
                         android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="12dp"
                         android:background="@color/green_overlay"
-                        android:onClick="@{() -> callback.BtnContinue()}"
-                        android:text="Save"
+                        android:elevation="20dp"
+                        android:onClick="btnContinue"
+                        android:text="@string/btnSave"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>
+
 </layout>

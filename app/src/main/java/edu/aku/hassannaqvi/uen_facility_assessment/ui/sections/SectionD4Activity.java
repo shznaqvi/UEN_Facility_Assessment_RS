@@ -22,7 +22,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionD4Binding;
-import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
 public class SectionD4Activity extends AppCompatActivity {
@@ -67,7 +66,7 @@ public class SectionD4Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionMainActivity.class));
+            startActivity(new Intent(this, SectionD5Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
