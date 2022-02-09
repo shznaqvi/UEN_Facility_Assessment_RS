@@ -27,14 +27,16 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/staffingnumberstheircapacity_mainheading"
+            app:subtitle="@string/c01"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/modctitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -42,22 +44,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- c01  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVc01"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c01" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- c01a  Title   -->
                 <androidx.cardview.widget.CardView
@@ -1280,11 +1267,15 @@
                             app:maxValue="99"
                             app:minValue="0"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
+                    android:id="@+id/llbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -1316,8 +1307,11 @@
                 </LinearLayout>
                 <!--EndButton LinearLayout-->
 
+
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>
+
 </layout>
