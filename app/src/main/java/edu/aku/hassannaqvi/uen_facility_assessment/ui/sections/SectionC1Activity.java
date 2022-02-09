@@ -27,7 +27,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 public class SectionC1Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionBActivity";
+    private static final String TAG = "SectionC1Activity";
     ActivitySectionC1Binding bi;
     private DatabaseHelper db;
 
