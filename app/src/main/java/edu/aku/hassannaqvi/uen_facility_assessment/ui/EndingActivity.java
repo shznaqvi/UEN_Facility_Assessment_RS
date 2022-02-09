@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.sharedPref;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -27,40 +27,35 @@ public class EndingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1
-                : sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeUrdu
-                : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
-
         setSupportActionBar(bi.toolbar);
-        //setTitle(R.string.section1_mainheading);
-
         db = MainApp.appInfo.dbHelper;
         boolean check = getIntent().getBooleanExtra("complete", false);
-        //sectionMainCheck = getIntent().getIntExtra("status", 0);
 
         bi.istatusa.setEnabled(check);
         bi.istatusb.setEnabled(!check);
-        bi.istatusc.setEnabled(!check);
+        /*bi.istatusc.setEnabled(!check);
         bi.istatusd.setEnabled(!check);
         bi.istatuse.setEnabled(!check);
-        bi.istatusf.setEnabled(!check);
+        bi.istatusf.setEnabled(!check);*/
 
     }
 
     private void saveDraft() {
         form.setiStatus(bi.istatusa.isChecked() ? "1"
                 : bi.istatusb.isChecked() ? "2"
-                : bi.istatusc.isChecked() ? "3"
+                /*: bi.istatusc.isChecked() ? "3"
                 : bi.istatusd.isChecked() ? "4"
                 : bi.istatuse.isChecked() ? "5"
-                : bi.istatusf.isChecked() ? "6"
+                : bi.istatusf.isChecked() ? "6"*/
                 : bi.istatus96.isChecked() ? "96"
                 : "-1");
         // form.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
     }
 
     public void BtnEnd(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {

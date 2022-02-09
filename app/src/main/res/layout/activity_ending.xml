@@ -65,12 +65,12 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_istatus" />
+                                android:text="istatus" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/istatus" />
+                                android:text="Status of Questionnaire" />
 
                         </LinearLayout>
 
@@ -83,62 +83,26 @@
                                 android:id="@+id/istatusa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatusa" />
+                                android:text="Complete" />
 
                             <RadioButton
                                 android:id="@+id/istatusb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatusb" />
-
-                            <RadioButton
-                                android:id="@+id/istatusc"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/istatusc" />
-
-                            <RadioButton
-                                android:id="@+id/istatusd"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/istatusd" />
-
-                            <RadioButton
-                                android:id="@+id/istatuse"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/istatuse" />
-
-                            <RadioButton
-                                android:id="@+id/istatusf"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/istatusf" />
-
-                            <RadioButton
-                                android:id="@+id/istatusg"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/istatusg" />
-
-                            <RadioButton
-                                android:id="@+id/istatush"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/istatush" />
+                                android:text="Incomplete" />
 
                             <RadioButton
                                 android:id="@+id/istatus96"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus96" />
+                                android:text="@string/other" />
 
                             <EditText
                                 android:id="@+id/istatus96x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/istatus96"
+                                android:hint="@string/specify"
                                 android:tag="istatus96"
                                 android:text='@{istatus96.checked ? istatus96x.getText().toString() : ""}'
                                 android:visibility='@{istatus96.checked? View.VISIBLE : View.GONE}' />
@@ -152,6 +116,7 @@
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
+                    android:id="@+id/llbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
