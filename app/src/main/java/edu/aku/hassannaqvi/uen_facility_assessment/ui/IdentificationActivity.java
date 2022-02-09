@@ -1,30 +1,16 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.sharedPref;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import org.json.JSONException;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
@@ -39,7 +25,6 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private static final String TAG = "IdentificationActivity";
     ActivityIdentificationBinding bi;
-    List<LHWHouseholds> lhwhhs = new ArrayList<>();
     private DatabaseHelper db;
     private Intent openIntent;
     private ArrayList<String> lhwNames;
@@ -50,12 +35,12 @@ public class IdentificationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1
-                : sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeUrdu
-                : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
-        bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
+        bi.btnContinue.setText(R.string.open_hh_form);
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Form");
+        MainApp.form = new Form();
 
         populateSpinner();
 
@@ -88,7 +73,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private void populateSpinner() {
 
-        Collection<Form> lhw = db.getRegisteredLhws();
+        /*Collection<Form> lhw = db.getRegisteredLhws();
         lhwNames = new ArrayList<>();
         lhwCodes = new ArrayList<>();
 
@@ -135,13 +120,13 @@ public class IdentificationActivity extends AppCompatActivity {
                     }
                 }
 
-    /*            for (LHWHouseholds lhwhh : lhwhhs) {
+    *//*            for (LHWHouseholds lhwhh : lhwhhs) {
                     if (!hhDone(lhwhh.getH102())){
                         khandanNo.add(lhwhh.getH102());} else {
 
                     }
                     // hhheads.add(lhwhh.getH103());
-                }*/
+                }*//*
 
                 // Apply the adapter to the spinner
                 bi.h102.setAdapter(new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, khandanNo));
@@ -175,40 +160,37 @@ public class IdentificationActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
 
-        });
+        });*/
 
     }
 
 
     public void btnContinue(View view) {
-        //      if (!formValidation()) return;
+        //if (!formValidation()) return;
         if (!hhExists())
             saveDraftForm();
         if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
-
             startActivity(new Intent(this, SectionH2Activity.class));
             finish();
         }
     }
 
 
-    private void saveDraftForm() {
+    /*private void saveDraftForm() {
         MainApp.form = new Form();
-
         MainApp.form.setUserName(MainApp.user.getUserName());
         MainApp.form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         MainApp.form.setDeviceId(MainApp.deviceid);
         MainApp.form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.form.setH201(lhwCodes.get(bi.a104.getSelectedItemPosition()));
-        MainApp.form.setH202(khandanNo.get(bi.h102.getSelectedItemPosition()));
+        //MainApp.form.setH201(lhwCodes.get(bi.a104.getSelectedItemPosition()));
+        //MainApp.form.setH202(khandanNo.get(bi.h102.getSelectedItemPosition()));
 
-    }
+    }*/
 
     public void btnEnd(View view) {
-
         startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
         finish();
     }
@@ -220,18 +202,19 @@ public class IdentificationActivity extends AppCompatActivity {
 
 
     private boolean hhExists() {
-        MainApp.form = new Form();
+       /* MainApp.form = new Form();
         try {
             MainApp.form = db.getFormByLHWCode(lhwCodes.get(bi.a104.getSelectedItemPosition()), bi.h102.getSelectedItem().toString());
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        return MainApp.form != null;
+        return MainApp.form != null;*/
+        return true;
     }
 
     private boolean hhDone(String kNo) {
-        Form form = new Form(); // local variable
+        /*Form form = new Form(); // local variable
         try {
             form = db.getFormByLHWCode(lhwCodes.get(bi.a104.getSelectedItemPosition()), kNo);
         } catch (JSONException e) {
@@ -240,11 +223,12 @@ public class IdentificationActivity extends AppCompatActivity {
         }
         if (form != null)
             return form.getiStatus().equals("1");
-        return false;
+        return false;*/
+        return true;
     }
 
     private void saveDraftForm() {
-        MainApp.form = new Form();
+       /* MainApp.form = new Form();
         MainApp.form.setUserName(MainApp.user.getUserName());
         MainApp.form.setLhwuid(MainApp.LHWHouseholds.getUid());
         MainApp.form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
@@ -262,8 +246,8 @@ public class IdentificationActivity extends AppCompatActivity {
         MainApp.form.setH204c(MainApp.LHWHouseholds.getH104c());
         MainApp.form.setH204d(MainApp.LHWHouseholds.getH104d());
         MainApp.form.setH204e(MainApp.LHWHouseholds.getH104e());
-        MainApp.form.setH204f(MainApp.LHWHouseholds.getH104f());
-
-
+        MainApp.form.setH204f(MainApp.LHWHouseholds.getH104f());*/
     }
+
+
 }
