@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,13 +9,16 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.Form" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
+
 
 
         <!-- CUSTOM TOOLBAR -->
@@ -32,9 +36,11 @@
             app:title="@string/modetitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -42,22 +48,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- e02  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVe02"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/e02" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- e0201  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -108,9 +99,13 @@
                                 android:checked="@{form.e0201.equals(`2`)}"
                                 android:onClick="@{()->form.setE0201(`2`)}"
                                 android:text="@string/e0201b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0202  Title   -->
                 <androidx.cardview.widget.CardView
@@ -123,11 +118,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/e0202" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0202a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -178,9 +177,13 @@
                                 android:checked="@{form.e0202a.equals(`2`)}"
                                 android:onClick="@{()->form.setE0202a(`2`)}"
                                 android:text="@string/e0202ab" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0202b  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -231,9 +234,13 @@
                                 android:checked="@{form.e0202b.equals(`2`)}"
                                 android:onClick="@{()->form.setE0202b(`2`)}"
                                 android:text="@string/e0202bb" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0202c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -692,8 +699,11 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/e0204b"
                             android:text="@={form.e0204b}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0204c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -760,9 +770,13 @@
                                 android:checked="@{form.e0204c.equals(`4`)}"
                                 android:onClick="@{()->form.setE0204c(`4`)}"
                                 android:text="@string/e0204cd" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0204d  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -823,8 +837,11 @@
                                 android:tag="e0204dx"
                                 android:text="@={form.e0204dxx}"
                                 android:visibility="@{form.e0204d.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -861,8 +878,12 @@
 
                 </LinearLayout>
                 <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>
+
 </layout>
