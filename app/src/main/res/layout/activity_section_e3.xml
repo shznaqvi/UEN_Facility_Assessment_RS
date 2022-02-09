@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.Form" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,9 +35,11 @@
             app:title="@string/modetitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -42,22 +47,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- e03  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVe03"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/e03" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- e0301  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -108,9 +97,13 @@
                                 android:checked="@{form.e0301.equals(`2`)}"
                                 android:onClick="@{()->form.setE0301(`2`)}"
                                 android:text="@string/e0301b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0302  Title   -->
                 <androidx.cardview.widget.CardView
@@ -123,11 +116,15 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/e0302" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0302a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -178,9 +175,13 @@
                                 android:checked="@{form.e0302a.equals(`2`)}"
                                 android:onClick="@{()->form.setE0302a(`2`)}"
                                 android:text="@string/e0302ab" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- e0302b  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -4565,8 +4566,11 @@
                                 android:checked="@{form.e0308.equals(`2`)}"
                                 android:onClick="@{()->form.setE0308(`2`)}"
                                 android:text="@string/e0308b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -4604,8 +4608,11 @@
                 </LinearLayout>
                 <!--EndButton LinearLayout-->
 
+
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>
+
 </layout>
