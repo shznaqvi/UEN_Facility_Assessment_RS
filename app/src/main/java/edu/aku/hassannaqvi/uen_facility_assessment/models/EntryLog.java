@@ -24,7 +24,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
 public class EntryLog extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "EntryLog";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     private String id = _EMPTY_;
@@ -58,8 +58,8 @@ public class EntryLog extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setSysDate(MainApp.form.getSysDate());
         setEntryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setPsuCode(MainApp.form.getLhwCode());
-        setHhid(MainApp.form.getKhandandNo());
+        setPsuCode(MainApp.form.getA12());
+        setHhid(MainApp.form.getA13());
         setiStatus(MainApp.form.getiStatus());
         setiStatus96x(MainApp.form.getiStatus96x());
         setAppver(MainApp.appInfo.getAppVersion());
@@ -68,7 +68,7 @@ public class EntryLog extends BaseObservable implements Observable {
 
     }
 
-    public void populateMetaForm() {
+    /*public void populateMetaForm() {
 
         setProjectName(PROJECT_NAME);
         setUuid(MainApp.Form.getUid());  // not applicable in Form table
@@ -83,7 +83,7 @@ public class EntryLog extends BaseObservable implements Observable {
         setEntryType("Form");
         setDeviceId(MainApp.deviceid);
 
-    }
+    }*/
 
 
     public String getProjectName() {

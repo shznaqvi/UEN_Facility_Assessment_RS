@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.Form" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,9 +35,11 @@
             app:title="@string/moddtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -42,22 +47,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- d07  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVd07"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/d07" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- d0701  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -134,9 +124,13 @@
                                 android:tag="d0701x"
                                 android:text="@={form.d0701xx}"
                                 android:visibility="@{form.d0701.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d0702  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -229,9 +223,13 @@
                                 android:tag="d0702x"
                                 android:text="@={form.d0702xx}"
                                 android:visibility="@{form.d0702.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- d0703  Radio   -->
                 <androidx.cardview.widget.CardView
