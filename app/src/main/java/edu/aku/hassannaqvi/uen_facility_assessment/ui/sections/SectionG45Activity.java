@@ -21,19 +21,19 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG43Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG45Binding;
 
 
-public class SectionG43Activity extends AppCompatActivity {
+public class SectionG45Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionG43Activity";
-    ActivitySectionG43Binding bi;
+    private static final String TAG = "SectionG45Activity";
+    ActivitySectionG45Binding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g43);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g45);
         //bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
@@ -66,7 +66,7 @@ public class SectionG43Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionG44Activity.class));
+            startActivity(new Intent(this, SectionG46Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

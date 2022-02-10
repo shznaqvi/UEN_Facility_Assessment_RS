@@ -21,12 +21,12 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG4BBinding;
+import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG44Binding;
 
 public class SectionG44Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionG4BActivity";
-    ActivitySectionG4BBinding bi;
+    private static final String TAG = "SectionG44Activity";
+    ActivitySectionG44Binding bi;
     private DatabaseHelper db;
 
     @Override
@@ -65,7 +65,7 @@ public class SectionG44Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionF2Activity.class));
+            startActivity(new Intent(this, SectionG45Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
