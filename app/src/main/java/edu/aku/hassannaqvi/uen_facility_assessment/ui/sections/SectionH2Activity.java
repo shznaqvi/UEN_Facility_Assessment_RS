@@ -5,6 +5,8 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.sharedPre
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -37,87 +39,54 @@ public class SectionH2Activity extends AppCompatActivity {
                 : sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeUrdu
                 : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2);
-        bi.setCallback(this);
+        //bi.setCallback(this);
         bi.setForm(form);
+        db = MainApp.appInfo.dbHelper;
+        setSupportActionBar(bi.toolbar);
+        if (MainApp.superuser) bi.btnContinue.setText("Review Next");
 
-        // Initialize Database
-        db = MainApp.appInfo.getDbHelper();
 
     }
 
 
-    private boolean insertNewRecord() {
-        if (!MainApp.form.getUid().equals("")) return true;
-        long rowId = 0;
-        try {
-            rowId = db.addForm(MainApp.form);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        MainApp.form.setId(String.valueOf(rowId));
-        if (rowId > 0) {
-            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
-            return true;
-        } else {
-            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
 
     private boolean updateDB() {
-        int updcount = 0;
+        if (MainApp.superuser) return true;
+
+        db = MainApp.appInfo.getDbHelper();
+        long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH2, MainApp.form.sH2toString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH, form.sHtoString());
         } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount == 1) {
-            return true;
-        } else {
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
     }
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        // saveDraft();
         if (updateDB()) {
-            Intent i;
-            //      if (bi.h111a.isChecked()) {
-            i = new Intent(this, FamilyMambersListActivity.class).putExtra("complete", true);
-           /* } else {
-                i = new Intent(this, EndingActivity.class).putExtra("complete", false);
-            }*/
-
-            startActivity(i);
             finish();
-        } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
+            startActivity(new Intent(this, SectionF2Activity.class));
+        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
-
-        startActivity(new Intent(this, MainActivity.class));
         finish();
+        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
     }
 
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
-
-    @Override
-    public void onBackPressed() {
-        // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
-    }
-
-
 }
