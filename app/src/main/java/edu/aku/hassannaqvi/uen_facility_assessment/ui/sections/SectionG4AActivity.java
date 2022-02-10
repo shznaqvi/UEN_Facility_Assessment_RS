@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG4ABinding;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG4Binding;
+
 
 public class SectionG4AActivity extends AppCompatActivity {
 
