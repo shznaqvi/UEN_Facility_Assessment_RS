@@ -109,10 +109,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         }
 
-        holder.hhno.setText(fc.get(position).getKhandandNo());
-        holder.cluster.setText(fc.get(position).getLhwCode());
-        holder.cluster.setText(fc.get(position).getLhwCode());
-        holder.cluster.setText(fc.get(position).getLhwCode());
+        holder.hhno.setText(fc.get(position).getA13());
+        holder.cluster.setText(fc.get(position).getA12());
         holder.istatus.setText(iStatus);
         /*holder.fatherName.setText(motherName + " / " + childName);*/
 
@@ -148,7 +146,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     private void editHousehold(int position) {
         MainApp.form = new Form();
         try {
-            MainApp.form = db.getFormByClusterHHNo(fc.get(position).getLhwCode(), fc.get(position).getKhandandNo());
+            MainApp.form = db.getFormByClusterHHNo(fc.get(position).getA12(), fc.get(position).getA13());
         } catch (JSONException e) {
             Log.d(TAG, c.getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(c, c.getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();

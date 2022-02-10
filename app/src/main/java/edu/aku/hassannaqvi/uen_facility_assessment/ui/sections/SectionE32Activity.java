@@ -21,19 +21,19 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionE3Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionE32Binding;
 
 
-public class SectionE3Activity extends AppCompatActivity {
+public class SectionE32Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionE3Activity";
-    ActivitySectionE3Binding bi;
+    private static final String TAG = "SectionE32Activity";
+    ActivitySectionE32Binding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e3);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e32);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
@@ -66,7 +66,7 @@ public class SectionE3Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionE4Activity.class));
+            startActivity(new Intent(this, SectionE33Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

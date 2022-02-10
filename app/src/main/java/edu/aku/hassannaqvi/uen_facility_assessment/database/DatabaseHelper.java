@@ -710,6 +710,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public Form getFormByClusterHHNo(String cluster_no, String hh_no) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = TableContracts.FormsTable.COLUMN_LHW_CODE + "=? AND " +
+                TableContracts.FormsTable.COLUMN_KHANDAN_NO + " =? ";
+
+        String[] whereArgs = {cluster_no, hh_no};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = TableContracts.FormsTable.COLUMN_ID + " ASC";
+
+        Form HHForm = null;
+
+        c = db.query(
+                TableContracts.FormsTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            HHForm = new Form().Hydrate(c);
+        }
+
+        db.close();
+
+        return HHForm;
+    }
+
+
     public Collection<Form> getFormsByCluster(String cluster) {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
