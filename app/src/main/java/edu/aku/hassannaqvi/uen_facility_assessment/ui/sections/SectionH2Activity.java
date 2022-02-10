@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,15 +34,11 @@ public class SectionH2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(sharedPref.getString("lang", "0").equals("0") ? R.style.AppThemeEnglish1
-                : sharedPref.getString("lang", "1").equals("1") ? R.style.AppThemeUrdu
-                : R.style.AppThemeSindhi);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2);
-        //bi.setCallback(this);
-        bi.setForm(form);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
+        bi.setForm(form);
 
 
     }
