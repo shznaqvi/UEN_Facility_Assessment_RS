@@ -21,18 +21,19 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG4ABinding;
+import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG42Binding;
 
-public class SectionG4AActivity extends AppCompatActivity {
 
-    private static final String TAG = "SectionG4AActivity";
-    ActivitySectionG4ABinding bi;
+public class SectionG42Activity extends AppCompatActivity {
+
+    private static final String TAG = "SectionG42Activity";
+    ActivitySectionG42Binding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g4_a);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g42);
         //bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
