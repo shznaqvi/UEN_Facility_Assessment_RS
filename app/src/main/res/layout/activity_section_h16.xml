@@ -8,7 +8,9 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.Form" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +33,7 @@
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/modhtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -398,23 +401,25 @@
                                 android:text="@string/h1605e" />
 
                             <RadioButton
-                                android:id="@+id/h1605xx "
+                                android:id="@+id/h1605xx"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.h1605.equals(`96`)}"
                                 android:onClick="@{()->form.setH1605(`96`)}"
-                                android:text="@string/h1605xx " />
+                                android:text="@string/h1605xx" />
 
                             <EditText
-                                android:id="@+id/h1605xx x"
+                                android:id="@+id/h1605xxx"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/h1605xx "
-                                android:tag="h1605xx "
-                                android:text="@={form.h1605xx x}"
+                                android:hint="@string/h1605xx"
+                                android:tag="h1605xx"
+                                android:text="@={form.h1605xxx}"
                                 android:visibility="@{form.h1605.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
