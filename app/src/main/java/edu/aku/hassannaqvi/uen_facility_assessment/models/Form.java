@@ -3035,6 +3035,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setD0502a0a(String d0502a0a) {
         this.d0502a0a = d0502a0a;
+        setD0502a0ayx(d0502a0a.equals("1") ? this.d0502a0ayx : "");
         notifyPropertyChanged(BR.d0502a0a);
     }
 
@@ -3055,6 +3056,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setD0502a0f(String d0502a0f) {
         this.d0502a0f = d0502a0f;
+        setD0502a0fyx(d0502a0f.equals("1") ? this.d0502a0fyx : "");
         notifyPropertyChanged(BR.d0502a0f);
     }
 
@@ -3075,6 +3077,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setD0502b0a(String d0502b0a) {
         this.d0502b0a = d0502b0a;
+        setD0502b0ayx(d0502b0a.equals("1") ? this.d0502b0ayx : "");
         notifyPropertyChanged(BR.d0502b0a);
     }
 
@@ -3095,6 +3098,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setD0502b0f(String d0502b0f) {
         this.d0502b0f = d0502b0f;
+        setD0502b0fyx(d0502b0f.equals("1") ? this.d0502b0fyx : "");
         notifyPropertyChanged(BR.d0502b0f);
     }
 
@@ -3115,6 +3119,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setD0502c0a(String d0502c0a) {
         this.d0502c0a = d0502c0a;
+        setD0502c0ayx(d0502c0a.equals("1") ? this.d0502c0ayx : "");
         notifyPropertyChanged(BR.d0502c0a);
     }
 
@@ -3135,6 +3140,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setD0502c0f(String d0502c0f) {
         this.d0502c0f = d0502c0f;
+        setD0502c0fyx(d0502c0f.equals("1") ? this.d0502c0fyx : "");
         notifyPropertyChanged(BR.d0502c0f);
     }
 
@@ -3155,6 +3161,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setD0502d0a(String d0502d0a) {
         this.d0502d0a = d0502d0a;
+        setD0502d0ayx(d0502d0a.equals("1") ? this.d0502d0ayx : "");
         notifyPropertyChanged(BR.d0502d0a);
     }
 
@@ -3175,6 +3182,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setD0502d0f(String d0502d0f) {
         this.d0502d0f = d0502d0f;
+        setD0502d0fyx(d0502d0f.equals("1") ? this.d0502d0fyx : "");
         notifyPropertyChanged(BR.d0502d0f);
     }
 
