@@ -7407,11 +7407,11 @@ public class Form extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getf05021qx() {
+    public String getF05021qx() {
         return f05021qx;
     }
 
-    public void setf05021qx(String f05021qx) {
+    public void setF05021qx(String f05021qx) {
         this.f05021qx = f05021qx;
         notifyPropertyChanged(BR.f05021qx);
     }
