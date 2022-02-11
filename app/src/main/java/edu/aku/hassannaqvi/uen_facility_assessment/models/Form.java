@@ -18943,6 +18943,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fa(String j0901fa) {
+        if (this.j0901fa.equals(j0901fa)) return; // for all checkboxes
         this.j0901fa = j0901fa;
         notifyPropertyChanged(BR.j0901fa);
     }
@@ -18953,6 +18954,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fb(String j0901fb) {
+        if (this.j0901fb.equals(j0901fb)) return; // for all checkboxes
         this.j0901fb = j0901fb;
         notifyPropertyChanged(BR.j0901fb);
     }
@@ -18963,6 +18965,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fc(String j0901fc) {
+        if (this.j0901fc.equals(j0901fc)) return; // for all checkboxes
         this.j0901fc = j0901fc;
         notifyPropertyChanged(BR.j0901fc);
     }
@@ -18973,6 +18976,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fd(String j0901fd) {
+        if (this.j0901fd.equals(j0901fd)) return; // for all checkboxes
         this.j0901fd = j0901fd;
         notifyPropertyChanged(BR.j0901fd);
     }
@@ -18983,6 +18987,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fe(String j0901fe) {
+        if (this.j0901fe.equals(j0901fe)) return; // for all checkboxes
         this.j0901fe = j0901fe;
         notifyPropertyChanged(BR.j0901fe);
     }
