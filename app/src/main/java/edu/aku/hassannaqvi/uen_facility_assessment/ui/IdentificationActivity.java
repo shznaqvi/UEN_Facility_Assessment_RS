@@ -49,7 +49,7 @@ public class IdentificationActivity extends AppCompatActivity {
             case 1:
                 bi.btnContinue.setText(R.string.open_hh_form);
                 MainApp.form = new Form();
-                openIntent = new Intent(this, SectionH2Activity.class);
+                openIntent = new Intent(this, SectionMainActivity.class);
                 break;
          /*   case 2:
                 bi.btnContinue.setText(R.string.open_anhtro_form);

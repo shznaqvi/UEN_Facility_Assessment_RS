@@ -40,10 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sectionPress(View view) {
-
-
         switch (view.getId()) {
-
             case R.id.openForm:
             case R.id.seca:
                 MainApp.form = new Form();
