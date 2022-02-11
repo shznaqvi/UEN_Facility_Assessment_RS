@@ -18433,6 +18433,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601ma(String j0601ma) {
+        if (this.j0601ma.equals(j0601ma)) return; // for all checkboxes
         this.j0601ma = j0601ma;
         notifyPropertyChanged(BR.j0601ma);
     }
@@ -18443,6 +18444,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601mb(String j0601mb) {
+        if (this.j0601mb.equals(j0601mb)) return; // for all checkboxes
         this.j0601mb = j0601mb;
         notifyPropertyChanged(BR.j0601mb);
     }
@@ -18453,6 +18455,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601mc(String j0601mc) {
+        if (this.j0601mc.equals(j0601mc)) return; // for all checkboxes
         this.j0601mc = j0601mc;
         notifyPropertyChanged(BR.j0601mc);
     }
@@ -18463,6 +18466,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601md(String j0601md) {
+        if (this.j0601md.equals(j0601md)) return; // for all checkboxes
         this.j0601md = j0601md;
         notifyPropertyChanged(BR.j0601md);
     }
@@ -18473,6 +18477,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601me(String j0601me) {
+        if (this.j0601me.equals(j0601me)) return; // for all checkboxes
         this.j0601me = j0601me;
         notifyPropertyChanged(BR.j0601me);
     }
@@ -18483,6 +18488,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601mf(String j0601mf) {
+        if (this.j0601mf.equals(j0601mf)) return; // for all checkboxes
         this.j0601mf = j0601mf;
         notifyPropertyChanged(BR.j0601mf);
     }
@@ -18493,7 +18499,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601mxx(String j0601mxx) {
+        if (this.j0601mxx.equals(j0601mxx)) return; // for all checkboxes
         this.j0601mxx = j0601mxx;
+        setJ0601mxxx(j0601mxx.equals("96") ? this.j0601mxxx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.j0601mxx);
     }
 
