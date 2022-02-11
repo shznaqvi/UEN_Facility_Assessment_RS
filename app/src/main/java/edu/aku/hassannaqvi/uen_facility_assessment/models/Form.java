@@ -17143,6 +17143,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101ma(String j0101ma) {
+        if (this.j0101ma.equals(j0101ma)) return; // for all checkboxes
         this.j0101ma = j0101ma;
         notifyPropertyChanged(BR.j0101ma);
     }
@@ -17153,6 +17154,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101mb(String j0101mb) {
+        if (this.j0101mb.equals(j0101mb)) return; // for all checkboxes
         this.j0101mb = j0101mb;
         notifyPropertyChanged(BR.j0101mb);
     }
@@ -17163,6 +17165,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101mc(String j0101mc) {
+        if (this.j0101mc.equals(j0101mc)) return; // for all checkboxes
         this.j0101mc = j0101mc;
         notifyPropertyChanged(BR.j0101mc);
     }
@@ -17173,6 +17176,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101md(String j0101md) {
+        if (this.j0101md.equals(j0101md)) return; // for all checkboxes
         this.j0101md = j0101md;
         notifyPropertyChanged(BR.j0101md);
     }
@@ -17183,6 +17187,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101me(String j0101me) {
+        if (this.j0101me.equals(j0101me)) return; // for all checkboxes
         this.j0101me = j0101me;
         notifyPropertyChanged(BR.j0101me);
     }
@@ -17193,6 +17198,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101mf(String j0101mf) {
+        if (this.j0101mf.equals(j0101mf)) return; // for all checkboxes
         this.j0101mf = j0101mf;
         notifyPropertyChanged(BR.j0101mf);
     }
@@ -17203,7 +17209,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101mxx(String j0101mxx) {
+        if (this.j0101mxx.equals(j0101mxx)) return; // for all checkboxes
         this.j0101mxx = j0101mxx;
+        setJ0101mxxx(j0101mxx.equals("96") ? this.j0101mxxx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.j0101mxx);
     }
 
@@ -17323,6 +17331,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201ga(String j0201ga) {
+        if (this.j0201ga.equals(j0201ga)) return; // for all checkboxes
         this.j0201ga = j0201ga;
         notifyPropertyChanged(BR.j0201ga);
     }
@@ -17333,6 +17342,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gb(String j0201gb) {
+        if (this.j0201gb.equals(j0201gb)) return; // for all checkboxes
         this.j0201gb = j0201gb;
         notifyPropertyChanged(BR.j0201gb);
     }
@@ -17343,6 +17353,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gc(String j0201gc) {
+        if (this.j0201gc.equals(j0201gc)) return; // for all checkboxes
         this.j0201gc = j0201gc;
         notifyPropertyChanged(BR.j0201gc);
     }
@@ -17353,6 +17364,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gd(String j0201gd) {
+        if (this.j0201gd.equals(j0201gd)) return; // for all checkboxes
         this.j0201gd = j0201gd;
         notifyPropertyChanged(BR.j0201gd);
     }
@@ -17363,6 +17375,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201ge(String j0201ge) {
+        if (this.j0201ge.equals(j0201ge)) return; // for all checkboxes
         this.j0201ge = j0201ge;
         notifyPropertyChanged(BR.j0201ge);
     }
@@ -17373,6 +17386,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gf(String j0201gf) {
+        if (this.j0201gf.equals(j0201gf)) return; // for all checkboxes
         this.j0201gf = j0201gf;
         notifyPropertyChanged(BR.j0201gf);
     }
@@ -17383,7 +17397,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gxx(String j0201gxx) {
+        if (this.j0201gxx.equals(j0201gxx)) return; // for all checkboxes
         this.j0201gxx = j0201gxx;
+        setJ0201gxxx(j0201gxx.equals("96") ? this.j0201gxxx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.j0201gxx);
     }
 
