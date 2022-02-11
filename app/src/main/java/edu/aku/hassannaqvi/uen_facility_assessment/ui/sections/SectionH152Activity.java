@@ -21,19 +21,19 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionK4Binding;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionK6Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionH152Binding;
 
-public class SectionK6Activity extends AppCompatActivity {
+public class SectionH152Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionK6Activity";
-    ActivitySectionK6Binding bi;
+    private static final String TAG = "SectionH152Activity";
+    ActivitySectionH152Binding bi;
     private DatabaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k6);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h152);
         //bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
@@ -47,7 +47,7 @@ public class SectionK6Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SK, form.sKtoString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH, form.sHtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -66,7 +66,7 @@ public class SectionK6Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionF2Activity.class));
+            startActivity(new Intent(this, SectionH16Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

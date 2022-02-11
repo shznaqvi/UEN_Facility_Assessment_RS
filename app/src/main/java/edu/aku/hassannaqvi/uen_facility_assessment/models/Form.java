@@ -17143,6 +17143,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101ma(String j0101ma) {
+        if (this.j0101ma.equals(j0101ma)) return; // for all checkboxes
         this.j0101ma = j0101ma;
         notifyPropertyChanged(BR.j0101ma);
     }
@@ -17153,6 +17154,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101mb(String j0101mb) {
+        if (this.j0101mb.equals(j0101mb)) return; // for all checkboxes
         this.j0101mb = j0101mb;
         notifyPropertyChanged(BR.j0101mb);
     }
@@ -17163,6 +17165,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101mc(String j0101mc) {
+        if (this.j0101mc.equals(j0101mc)) return; // for all checkboxes
         this.j0101mc = j0101mc;
         notifyPropertyChanged(BR.j0101mc);
     }
@@ -17173,6 +17176,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101md(String j0101md) {
+        if (this.j0101md.equals(j0101md)) return; // for all checkboxes
         this.j0101md = j0101md;
         notifyPropertyChanged(BR.j0101md);
     }
@@ -17183,6 +17187,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101me(String j0101me) {
+        if (this.j0101me.equals(j0101me)) return; // for all checkboxes
         this.j0101me = j0101me;
         notifyPropertyChanged(BR.j0101me);
     }
@@ -17193,6 +17198,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101mf(String j0101mf) {
+        if (this.j0101mf.equals(j0101mf)) return; // for all checkboxes
         this.j0101mf = j0101mf;
         notifyPropertyChanged(BR.j0101mf);
     }
@@ -17203,7 +17209,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0101mxx(String j0101mxx) {
+        if (this.j0101mxx.equals(j0101mxx)) return; // for all checkboxes
         this.j0101mxx = j0101mxx;
+        setJ0101mxxx(j0101mxx.equals("96") ? this.j0101mxxx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.j0101mxx);
     }
 
@@ -17323,6 +17331,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201ga(String j0201ga) {
+        if (this.j0201ga.equals(j0201ga)) return; // for all checkboxes
         this.j0201ga = j0201ga;
         notifyPropertyChanged(BR.j0201ga);
     }
@@ -17333,6 +17342,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gb(String j0201gb) {
+        if (this.j0201gb.equals(j0201gb)) return; // for all checkboxes
         this.j0201gb = j0201gb;
         notifyPropertyChanged(BR.j0201gb);
     }
@@ -17343,6 +17353,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gc(String j0201gc) {
+        if (this.j0201gc.equals(j0201gc)) return; // for all checkboxes
         this.j0201gc = j0201gc;
         notifyPropertyChanged(BR.j0201gc);
     }
@@ -17353,6 +17364,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gd(String j0201gd) {
+        if (this.j0201gd.equals(j0201gd)) return; // for all checkboxes
         this.j0201gd = j0201gd;
         notifyPropertyChanged(BR.j0201gd);
     }
@@ -17363,6 +17375,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201ge(String j0201ge) {
+        if (this.j0201ge.equals(j0201ge)) return; // for all checkboxes
         this.j0201ge = j0201ge;
         notifyPropertyChanged(BR.j0201ge);
     }
@@ -17373,6 +17386,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gf(String j0201gf) {
+        if (this.j0201gf.equals(j0201gf)) return; // for all checkboxes
         this.j0201gf = j0201gf;
         notifyPropertyChanged(BR.j0201gf);
     }
@@ -17383,7 +17397,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0201gxx(String j0201gxx) {
+        if (this.j0201gxx.equals(j0201gxx)) return; // for all checkboxes
         this.j0201gxx = j0201gxx;
+        setJ0201gxxx(j0201gxx.equals("96") ? this.j0201gxxx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.j0201gxx);
     }
 
@@ -19094,6 +19110,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK101b96(String k101b96) {
         this.k101b96 = k101b96;
+        setK101b9603x(k101b96.equals("96") ? this.k101b9603x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k101b96);
     }
 
@@ -19124,6 +19141,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK102(String k102) {
         this.k102 = k102;
+        setK10296x(k102.equals("96") ? this.k10296x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k102);
     }
 
@@ -19264,6 +19282,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK307(String k307) {
         this.k307 = k307;
+        setK30704x(k307.equals("4") ? this.k30704x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k307);
     }
 
@@ -19403,6 +19422,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41101(String k41101) {
+        if (this.k41101.equals(k41101)) return; // for all checkboxes
         this.k41101 = k41101;
         notifyPropertyChanged(BR.k41101);
     }
@@ -19413,6 +19433,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41102(String k41102) {
+        if (this.k41102.equals(k41102)) return; // for all checkboxes
         this.k41102 = k41102;
         notifyPropertyChanged(BR.k41102);
     }
@@ -19423,6 +19444,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41103(String k41103) {
+        if (this.k41103.equals(k41103)) return; // for all checkboxes
         this.k41103 = k41103;
         notifyPropertyChanged(BR.k41103);
     }
@@ -19543,6 +19565,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41401(String k41401) {
+        if (this.k41401.equals(k41401)) return; // for all checkboxes
         this.k41401 = k41401;
         notifyPropertyChanged(BR.k41401);
     }
@@ -19553,6 +19576,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41402(String k41402) {
+        if (this.k41402.equals(k41402)) return; // for all checkboxes
         this.k41402 = k41402;
         notifyPropertyChanged(BR.k41402);
     }
@@ -19563,6 +19587,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41403(String k41403) {
+        if (this.k41403.equals(k41403)) return; // for all checkboxes
         this.k41403 = k41403;
         notifyPropertyChanged(BR.k41403);
     }
@@ -19573,6 +19598,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41404(String k41404) {
+        if (this.k41404.equals(k41404)) return; // for all checkboxes
         this.k41404 = k41404;
         notifyPropertyChanged(BR.k41404);
     }
@@ -19583,6 +19609,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41405(String k41405) {
+        if (this.k41405.equals(k41405)) return; // for all checkboxes
         this.k41405 = k41405;
         notifyPropertyChanged(BR.k41405);
     }
@@ -19593,6 +19620,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41406(String k41406) {
+        if (this.k41406.equals(k41406)) return; // for all checkboxes
         this.k41406 = k41406;
         notifyPropertyChanged(BR.k41406);
     }
@@ -19603,6 +19631,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41407(String k41407) {
+        if (this.k41407.equals(k41407)) return; // for all checkboxes
         this.k41407 = k41407;
         notifyPropertyChanged(BR.k41407);
     }
@@ -19613,6 +19642,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41408(String k41408) {
+        if (this.k41408.equals(k41408)) return; // for all checkboxes
         this.k41408 = k41408;
         notifyPropertyChanged(BR.k41408);
     }
@@ -19623,6 +19653,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41409(String k41409) {
+        if (this.k41409.equals(k41409)) return; // for all checkboxes
         this.k41409 = k41409;
         notifyPropertyChanged(BR.k41409);
     }
@@ -19654,6 +19685,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK417(String k417) {
         this.k417 = k417;
+        setK41796x(k417.equals("96") ? this.k41796x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k417);
     }
 
@@ -19693,6 +19725,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41901(String k41901) {
+        if (this.k41901.equals(k41901)) return; // for all checkboxes
         this.k41901 = k41901;
         notifyPropertyChanged(BR.k41901);
     }
@@ -19703,6 +19736,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41902(String k41902) {
+        if (this.k41902.equals(k41902)) return; // for all checkboxes
         this.k41902 = k41902;
         notifyPropertyChanged(BR.k41902);
     }
@@ -19713,6 +19747,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41903(String k41903) {
+        if (this.k41903.equals(k41903)) return; // for all checkboxes
         this.k41903 = k41903;
         notifyPropertyChanged(BR.k41903);
     }
@@ -19723,6 +19758,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41904(String k41904) {
+        if (this.k41904.equals(k41904)) return; // for all checkboxes
         this.k41904 = k41904;
         notifyPropertyChanged(BR.k41904);
     }
@@ -19733,6 +19769,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41905(String k41905) {
+        if (this.k41905.equals(k41905)) return; // for all checkboxes
         this.k41905 = k41905;
         notifyPropertyChanged(BR.k41905);
     }
@@ -19743,6 +19780,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41906(String k41906) {
+        if (this.k41906.equals(k41906)) return; // for all checkboxes
         this.k41906 = k41906;
         notifyPropertyChanged(BR.k41906);
     }
@@ -19753,6 +19791,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setK41907(String k41907) {
+        if (this.k41907.equals(k41907)) return; // for all checkboxes
         this.k41907 = k41907;
         notifyPropertyChanged(BR.k41907);
     }
@@ -19764,6 +19803,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK601(String k601) {
         this.k601 = k601;
+        setK601dx(k601.equals("4") ? this.k601dx : ""); // for all skips, mention all skipped questions
+        setK601ex(k601.equals("5") ? this.k601ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k601);
     }
 
@@ -19794,6 +19835,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK602(String k602) {
         this.k602 = k602;
+        setK602dx(k602.equals("4") ? this.k602dx : ""); // for all skips, mention all skipped questions
+        setK602ex(k602.equals("5") ? this.k602ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k602);
     }
 
@@ -19824,6 +19867,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK603(String k603) {
         this.k603 = k603;
+        setK603dx(k603.equals("4") ? this.k603dx : ""); // for all skips, mention all skipped questions
+        setK603ex(k603.equals("5") ? this.k603ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k603);
     }
 
@@ -19854,6 +19899,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK604(String k604) {
         this.k604 = k604;
+        setK604dx(k604.equals("4") ? this.k604dx : ""); // for all skips, mention all skipped questions
+        setK604ex(k604.equals("5") ? this.k604ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k604);
     }
 
@@ -19884,6 +19931,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK605(String k605) {
         this.k605 = k605;
+        setK605dx(k605.equals("4") ? this.k605dx : ""); // for all skips, mention all skipped questions
+        setK605ex(k605.equals("5") ? this.k605ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k605);
     }
 
@@ -19914,6 +19963,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK606(String k606) {
         this.k606 = k606;
+        setK606dx(k606.equals("4") ? this.k606dx : ""); // for all skips, mention all skipped questions
+        setK606ex(k606.equals("5") ? this.k606ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k606);
     }
 
@@ -19944,6 +19995,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK607(String k607) {
         this.k607 = k607;
+        setK607dx(k607.equals("4") ? this.k607dx : ""); // for all skips, mention all skipped questions
+        setK607ex(k607.equals("5") ? this.k607ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k607);
     }
 
@@ -19974,6 +20027,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK608(String k608) {
         this.k608 = k608;
+        setK608dx(k608.equals("4") ? this.k608dx : ""); // for all skips, mention all skipped questions
+        setK608ex(k608.equals("5") ? this.k608ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k608);
     }
 
@@ -20004,6 +20059,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK609(String k609) {
         this.k609 = k609;
+        setK609dx(k609.equals("4") ? this.k609dx : ""); // for all skips, mention all skipped questions
+        setK609ex(k609.equals("5") ? this.k609ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k609);
     }
 
@@ -20034,6 +20091,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK610(String k610) {
         this.k610 = k610;
+        setK610dx(k610.equals("4") ? this.k610dx : ""); // for all skips, mention all skipped questions
+        setK610ex(k610.equals("5") ? this.k610ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k610);
     }
 
@@ -20064,6 +20123,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK611(String k611) {
         this.k611 = k611;
+        setK611dx(k611.equals("4") ? this.k611dx : ""); // for all skips, mention all skipped questions
+        setK611ex(k611.equals("5") ? this.k611ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k611);
     }
 
@@ -20094,6 +20155,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK612(String k612) {
         this.k612 = k612;
+        setK612dx(k612.equals("4") ? this.k612dx : ""); // for all skips, mention all skipped questions
+        setK612ex(k612.equals("5") ? this.k612ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k612);
     }
 
@@ -20124,6 +20187,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK613(String k613) {
         this.k613 = k613;
+        setK613dx(k613.equals("4") ? this.k613dx : ""); // for all skips, mention all skipped questions
+        setK613ex(k613.equals("5") ? this.k613ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k613);
     }
 
@@ -20154,6 +20219,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK614(String k614) {
         this.k614 = k614;
+        setK614dx(k614.equals("4") ? this.k614dx : ""); // for all skips, mention all skipped questions
+        setK614ex(k614.equals("5") ? this.k614ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k614);
     }
 
@@ -20184,6 +20251,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK615(String k615) {
         this.k615 = k615;
+        setK615dx(k615.equals("4") ? this.k615dx : ""); // for all skips, mention all skipped questions
+        setK615ex(k615.equals("5") ? this.k615ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k615);
     }
 
@@ -20214,6 +20283,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK616(String k616) {
         this.k616 = k616;
+        setK616dx(k616.equals("4") ? this.k616dx : ""); // for all skips, mention all skipped questions
+        setK616ex(k616.equals("5") ? this.k616ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k616);
     }
 
@@ -20244,6 +20315,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK617(String k617) {
         this.k617 = k617;
+        setK617dx(k617.equals("4") ? this.k617dx : ""); // for all skips, mention all skipped questions
+        setK617ex(k617.equals("5") ? this.k617ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k617);
     }
 
@@ -20274,6 +20347,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK618(String k618) {
         this.k618 = k618;
+        setK618dx(k618.equals("4") ? this.k618dx : ""); // for all skips, mention all skipped questions
+        setK618ex(k618.equals("5") ? this.k618ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k618);
     }
 
@@ -20304,6 +20379,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK619(String k619) {
         this.k619 = k619;
+        setK619dx(k619.equals("4") ? this.k619dx : ""); // for all skips, mention all skipped questions
+        setK619ex(k619.equals("5") ? this.k619ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k619);
     }
 
@@ -20334,6 +20411,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK620(String k620) {
         this.k620 = k620;
+        setK620dx(k620.equals("4") ? this.k620dx : ""); // for all skips, mention all skipped questions
+        setK620ex(k620.equals("5") ? this.k620ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k620);
     }
 
@@ -20364,6 +20443,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK621(String k621) {
         this.k621 = k621;
+        setK621dx(k621.equals("4") ? this.k621dx : ""); // for all skips, mention all skipped questions
+        setK621ex(k621.equals("5") ? this.k621ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k621);
     }
 
@@ -20394,6 +20475,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK622(String k622) {
         this.k622 = k622;
+        setK622dx(k622.equals("4") ? this.k622dx : ""); // for all skips, mention all skipped questions
+        setK622ex(k622.equals("5") ? this.k622ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k622);
     }
 
@@ -20424,6 +20507,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK623(String k623) {
         this.k623 = k623;
+        setK623dx(k623.equals("4") ? this.k623dx : ""); // for all skips, mention all skipped questions
+        setK623ex(k623.equals("5") ? this.k623ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k623);
     }
 
@@ -20454,6 +20539,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK624(String k624) {
         this.k624 = k624;
+        setK624dx(k624.equals("4") ? this.k624dx : ""); // for all skips, mention all skipped questions
+        setK624ex(k624.equals("5") ? this.k624ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k624);
     }
 
@@ -20484,6 +20571,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK625(String k625) {
         this.k625 = k625;
+        setK625dx(k625.equals("4") ? this.k625dx : ""); // for all skips, mention all skipped questions
+        setK625ex(k625.equals("5") ? this.k625ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k625);
     }
 
@@ -20514,6 +20603,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK626(String k626) {
         this.k626 = k626;
+        setK626dx(k626.equals("4") ? this.k626dx : ""); // for all skips, mention all skipped questions
+        setK626ex(k626.equals("5") ? this.k626ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k626);
     }
 
@@ -20544,6 +20635,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK627(String k627) {
         this.k627 = k627;
+        setK627dx(k627.equals("4") ? this.k627dx : ""); // for all skips, mention all skipped questions
+        setK627ex(k627.equals("5") ? this.k627ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k627);
     }
 
@@ -20574,6 +20667,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setK628(String k628) {
         this.k628 = k628;
+        setK628dx(k628.equals("4") ? this.k628dx : ""); // for all skips, mention all skipped questions
+        setK628ex(k628.equals("5") ? this.k628ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k628);
     }
 
