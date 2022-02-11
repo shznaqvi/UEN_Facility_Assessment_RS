@@ -21,20 +21,19 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionK4Binding;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionK6Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionK62Binding;
 
-public class SectionK6Activity extends AppCompatActivity {
 
-    private static final String TAG = "SectionK6Activity";
-    ActivitySectionK6Binding bi;
+public class SectionK62Activity extends AppCompatActivity {
+
+    private static final String TAG = "SectionK62Activity";
+    ActivitySectionK62Binding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k6);
-        //bi.setCallback(this);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k62);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
@@ -66,7 +65,7 @@ public class SectionK6Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionF2Activity.class));
+            startActivity(new Intent(this, SectionK7Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
