@@ -43,23 +43,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- k3title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVk3title"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/k3title" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
                 <!-- k301  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVk301"
@@ -92,11 +75,13 @@
                         <RadioGroup
                             android:id="@+id/k301"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/k30101"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k301.equals(`1`)}"
                                 android:onClick="@{()->form.setK301(`1`)}"
@@ -104,7 +89,8 @@
 
                             <RadioButton
                                 android:id="@+id/k30102"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k301.equals(`2`)}"
                                 android:onClick="@{()->form.setK301(`2`)}"
@@ -112,7 +98,8 @@
 
                             <RadioButton
                                 android:id="@+id/k30103"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k301.equals(`3`)}"
                                 android:onClick="@{()->form.setK301(`3`)}"
@@ -153,11 +140,13 @@
                         <RadioGroup
                             android:id="@+id/k302"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/k30201"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k302.equals(`1`)}"
                                 android:onClick="@{()->form.setK302(`1`)}"
@@ -165,7 +154,8 @@
 
                             <RadioButton
                                 android:id="@+id/k30202"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k302.equals(`2`)}"
                                 android:onClick="@{()->form.setK302(`2`)}"
@@ -173,7 +163,8 @@
 
                             <RadioButton
                                 android:id="@+id/k30203"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k302.equals(`3`)}"
                                 android:onClick="@{()->form.setK302(`3`)}"
@@ -214,11 +205,13 @@
                         <RadioGroup
                             android:id="@+id/k303"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/k30301"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k303.equals(`1`)}"
                                 android:onClick="@{()->form.setK303(`1`)}"
@@ -226,7 +219,8 @@
 
                             <RadioButton
                                 android:id="@+id/k30302"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k303.equals(`2`)}"
                                 android:onClick="@{()->form.setK303(`2`)}"
@@ -267,11 +261,13 @@
                         <RadioGroup
                             android:id="@+id/k304"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/k30401"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k304.equals(`1`)}"
                                 android:onClick="@{()->form.setK304(`1`)}"
@@ -279,7 +275,8 @@
 
                             <RadioButton
                                 android:id="@+id/k30402"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.k304.equals(`2`)}"
                                 android:onClick="@{()->form.setK304(`2`)}"
