@@ -18185,6 +18185,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0501na(String j0501na) {
+        if (this.j0501na.equals(j0501na)) return; // for all checkboxes
         this.j0501na = j0501na;
         notifyPropertyChanged(BR.j0501na);
     }
@@ -18195,6 +18196,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0501nb(String j0501nb) {
+        if (this.j0501nb.equals(j0501nb)) return; // for all checkboxes
         this.j0501nb = j0501nb;
         notifyPropertyChanged(BR.j0501nb);
     }
@@ -18205,6 +18207,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0501nc(String j0501nc) {
+        if (this.j0501nc.equals(j0501nc)) return; // for all checkboxes
         this.j0501nc = j0501nc;
         notifyPropertyChanged(BR.j0501nc);
     }
@@ -18215,6 +18218,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0501nd(String j0501nd) {
+        if (this.j0501nd.equals(j0501nd)) return; // for all checkboxes
         this.j0501nd = j0501nd;
         notifyPropertyChanged(BR.j0501nd);
     }
@@ -18225,6 +18229,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0501ne(String j0501ne) {
+        if (this.j0501ne.equals(j0501ne)) return; // for all checkboxes
         this.j0501ne = j0501ne;
         notifyPropertyChanged(BR.j0501ne);
     }
@@ -18235,6 +18240,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0501nf(String j0501nf) {
+        if (this.j0501nf.equals(j0501nf)) return; // for all checkboxes
         this.j0501nf = j0501nf;
         notifyPropertyChanged(BR.j0501nf);
     }
@@ -18245,7 +18251,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0501nxx(String j0501nxx) {
+        if (this.j0501nxx.equals(j0501nxx)) return; // for all checkboxes
         this.j0501nxx = j0501nxx;
+        setJ0501nxxx(j0501nxx.equals("96") ? this.j0501nxxx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.j0501nxx);
     }
 
@@ -18425,6 +18433,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601ma(String j0601ma) {
+        if (this.j0601ma.equals(j0601ma)) return; // for all checkboxes
         this.j0601ma = j0601ma;
         notifyPropertyChanged(BR.j0601ma);
     }
@@ -18435,6 +18444,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601mb(String j0601mb) {
+        if (this.j0601mb.equals(j0601mb)) return; // for all checkboxes
         this.j0601mb = j0601mb;
         notifyPropertyChanged(BR.j0601mb);
     }
@@ -18445,6 +18455,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601mc(String j0601mc) {
+        if (this.j0601mc.equals(j0601mc)) return; // for all checkboxes
         this.j0601mc = j0601mc;
         notifyPropertyChanged(BR.j0601mc);
     }
@@ -18455,6 +18466,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601md(String j0601md) {
+        if (this.j0601md.equals(j0601md)) return; // for all checkboxes
         this.j0601md = j0601md;
         notifyPropertyChanged(BR.j0601md);
     }
@@ -18465,6 +18477,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601me(String j0601me) {
+        if (this.j0601me.equals(j0601me)) return; // for all checkboxes
         this.j0601me = j0601me;
         notifyPropertyChanged(BR.j0601me);
     }
@@ -18475,6 +18488,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601mf(String j0601mf) {
+        if (this.j0601mf.equals(j0601mf)) return; // for all checkboxes
         this.j0601mf = j0601mf;
         notifyPropertyChanged(BR.j0601mf);
     }
@@ -18485,7 +18499,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0601mxx(String j0601mxx) {
+        if (this.j0601mxx.equals(j0601mxx)) return; // for all checkboxes
         this.j0601mxx = j0601mxx;
+        setJ0601mxxx(j0601mxx.equals("96") ? this.j0601mxxx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.j0601mxx);
     }
 
@@ -18605,6 +18621,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0701ga(String j0701ga) {
+        if (this.j0701ga.equals(j0701ga)) return; // for all checkboxes
         this.j0701ga = j0701ga;
         notifyPropertyChanged(BR.j0701ga);
     }
@@ -18615,6 +18632,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0701gb(String j0701gb) {
+        if (this.j0701gb.equals(j0701gb)) return; // for all checkboxes
         this.j0701gb = j0701gb;
         notifyPropertyChanged(BR.j0701gb);
     }
@@ -18625,6 +18643,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0701gc(String j0701gc) {
+        if (this.j0701gc.equals(j0701gc)) return; // for all checkboxes
         this.j0701gc = j0701gc;
         notifyPropertyChanged(BR.j0701gc);
     }
@@ -18635,6 +18654,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0701gd(String j0701gd) {
+        if (this.j0701gd.equals(j0701gd)) return; // for all checkboxes
         this.j0701gd = j0701gd;
         notifyPropertyChanged(BR.j0701gd);
     }
@@ -18645,6 +18665,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0701ge(String j0701ge) {
+        if (this.j0701ge.equals(j0701ge)) return; // for all checkboxes
         this.j0701ge = j0701ge;
         notifyPropertyChanged(BR.j0701ge);
     }
@@ -18655,6 +18676,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0701gf(String j0701gf) {
+        if (this.j0701gf.equals(j0701gf)) return; // for all checkboxes
         this.j0701gf = j0701gf;
         notifyPropertyChanged(BR.j0701gf);
     }
@@ -18665,7 +18687,9 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0701gxx(String j0701gxx) {
+        if (this.j0701gxx.equals(j0701gxx)) return; // for all checkboxes
         this.j0701gxx = j0701gxx;
+        setJ0701gxxx(j0701gxx.equals("96") ? this.j0701gxxx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.j0701gxx);
     }
 
@@ -18785,6 +18809,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0801ga(String j0801ga) {
+        if (this.j0801ga.equals(j0801ga)) return; // for all checkboxes
         this.j0801ga = j0801ga;
         notifyPropertyChanged(BR.j0801ga);
     }
@@ -18795,6 +18820,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0801gb(String j0801gb) {
+        if (this.j0801gb.equals(j0801gb)) return; // for all checkboxes
         this.j0801gb = j0801gb;
         notifyPropertyChanged(BR.j0801gb);
     }
@@ -18805,6 +18831,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0801gc(String j0801gc) {
+        if (this.j0801gc.equals(j0801gc)) return; // for all checkboxes
         this.j0801gc = j0801gc;
         notifyPropertyChanged(BR.j0801gc);
     }
@@ -18815,6 +18842,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0801gd(String j0801gd) {
+        if (this.j0801gd.equals(j0801gd)) return; // for all checkboxes
         this.j0801gd = j0801gd;
         notifyPropertyChanged(BR.j0801gd);
     }
@@ -18915,6 +18943,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fa(String j0901fa) {
+        if (this.j0901fa.equals(j0901fa)) return; // for all checkboxes
         this.j0901fa = j0901fa;
         notifyPropertyChanged(BR.j0901fa);
     }
@@ -18925,6 +18954,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fb(String j0901fb) {
+        if (this.j0901fb.equals(j0901fb)) return; // for all checkboxes
         this.j0901fb = j0901fb;
         notifyPropertyChanged(BR.j0901fb);
     }
@@ -18935,6 +18965,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fc(String j0901fc) {
+        if (this.j0901fc.equals(j0901fc)) return; // for all checkboxes
         this.j0901fc = j0901fc;
         notifyPropertyChanged(BR.j0901fc);
     }
@@ -18945,6 +18976,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fd(String j0901fd) {
+        if (this.j0901fd.equals(j0901fd)) return; // for all checkboxes
         this.j0901fd = j0901fd;
         notifyPropertyChanged(BR.j0901fd);
     }
@@ -18955,6 +18987,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public void setJ0901fe(String j0901fe) {
+        if (this.j0901fe.equals(j0901fe)) return; // for all checkboxes
         this.j0901fe = j0901fe;
         notifyPropertyChanged(BR.j0901fe);
     }
