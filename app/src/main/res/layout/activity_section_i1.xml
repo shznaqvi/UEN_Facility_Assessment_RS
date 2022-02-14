@@ -44,7 +44,7 @@
                 android:orientation="vertical">
 
                 <!-- modititle  Title   -->
-                <androidx.cardview.widget.CardView
+               <!-- <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmodititle"
                     style="@style/cardView">
 
@@ -60,7 +60,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- i01  Title   -->
+                &lt;!&ndash; i01  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVi01"
                     style="@style/cardView">
@@ -76,7 +76,7 @@
                             android:text="@string/i01" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
+-->
                 <!-- i0101  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVi0101"
@@ -743,14 +743,15 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
-
+<!--
                         <TextView
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_i0109" />
+                            android:text="@string/Q_i0109" />-->
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/i0109" />
@@ -1257,9 +1258,15 @@
                             android:orientation="vertical"
                             android:tag="0">
 
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0110a"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0110a.equals(`1`)}"
                                 android:onClick="@{()->form.setI0110a(form.i0110a.equals(`1`)?``:`1`)}"
@@ -1267,21 +1274,31 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0110ax"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0110a"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0110a"
                                 android:text="@={form.i0110ax}"
-                                android:visibility="@{form.i0110a.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0110a.equals(`1`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
 
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0110b"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0110b.equals(`2`)}"
                                 android:onClick="@{()->form.setI0110b(form.i0110b.equals(`2`)?``:`2`)}"
@@ -1289,21 +1306,31 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0110bx"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0110b"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0110b"
                                 android:text="@={form.i0110bx}"
-                                android:visibility="@{form.i0110b.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0110b.equals(`2`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
 
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0110c"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0110c.equals(`3`)}"
                                 android:onClick="@{()->form.setI0110c(form.i0110c.equals(`3`)?``:`3`)}"
@@ -1311,17 +1338,21 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0110cx"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0110c"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0110c"
                                 android:text="@={form.i0110cx}"
-                                android:visibility="@{form.i0110c.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0110c.equals(`3`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
+
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1362,9 +1393,15 @@
                             android:orientation="vertical"
                             android:tag="0">
 
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0111a"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0111a.equals(`1`)}"
                                 android:onClick="@{()->form.setI0111a(form.i0111a.equals(`1`)?``:`1`)}"
@@ -1372,21 +1409,31 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0111ax"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0111a"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0111a"
                                 android:text="@={form.i0111ax}"
-                                android:visibility="@{form.i0111a.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0111a.equals(`1`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
 
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0111b"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0111b.equals(`2`)}"
                                 android:onClick="@{()->form.setI0111b(form.i0111b.equals(`2`)?``:`2`)}"
@@ -1394,21 +1441,31 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0111bx"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0111b"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0111b"
                                 android:text="@={form.i0111bx}"
-                                android:visibility="@{form.i0111b.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0111b.equals(`2`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
 
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0111c"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0111c.equals(`3`)}"
                                 android:onClick="@{()->form.setI0111c(form.i0111c.equals(`3`)?``:`3`)}"
@@ -1416,17 +1473,21 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0111cx"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0111c"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0111c"
                                 android:text="@={form.i0111cx}"
-                                android:visibility="@{form.i0111c.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0111c.equals(`3`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
+
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1467,9 +1528,15 @@
                             android:orientation="vertical"
                             android:tag="0">
 
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0112a"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0112a.equals(`1`)}"
                                 android:onClick="@{()->form.setI0112a(form.i0112a.equals(`1`)?``:`1`)}"
@@ -1477,21 +1544,31 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0112ax"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0112a"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0112a"
                                 android:text="@={form.i0112ax}"
-                                android:visibility="@{form.i0112a.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0112a.equals(`1`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
 
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0112b"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0112b.equals(`2`)}"
                                 android:onClick="@{()->form.setI0112b(form.i0112b.equals(`2`)?``:`2`)}"
@@ -1499,17 +1576,21 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0112bx"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0112b"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0112b"
                                 android:text="@={form.i0112bx}"
-                                android:visibility="@{form.i0112b.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0112b.equals(`2`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
+
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1659,9 +1740,15 @@
                             android:orientation="vertical"
                             android:tag="0">
 
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0115a"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0115a.equals(`1`)}"
                                 android:onClick="@{()->form.setI0115a(form.i0115a.equals(`1`)?``:`1`)}"
@@ -1669,21 +1756,31 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0115ax"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0115a"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0115a"
                                 android:text="@={form.i0115ax}"
-                                android:visibility="@{form.i0115a.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0115a.equals(`1`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
 
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0115b"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0115b.equals(`2`)}"
                                 android:onClick="@{()->form.setI0115b(form.i0115b.equals(`2`)?``:`2`)}"
@@ -1691,21 +1788,31 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0115bx"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0115b"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0115b"
                                 android:text="@={form.i0115bx}"
-                                android:visibility="@{form.i0115b.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0115b.equals(`2`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
 
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
                             <CheckBox
                                 android:id="@+id/i0115c"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.i0115c.equals(`3`)}"
                                 android:onClick="@{()->form.setI0115c(form.i0115c.equals(`3`)?``:`3`)}"
@@ -1713,17 +1820,21 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/i0115cx"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/i0115c"
+                                android:hint="###"
+                                android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="i0115c"
                                 android:text="@={form.i0115cx}"
-                                android:visibility="@{form.i0115c.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.i0115c.equals(`3`)}"
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
+
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
