@@ -1146,7 +1146,6 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0302aaa0f(String f0302aaa0f) {
         this.f0302aaa0f = f0302aaa0f;
-        setF0302aaa0fqx(f0302aaa0f.equals("3") ? this.f0302aaa0fqx : "");
         notifyPropertyChanged(BR.f0302aaa0f);
     }
 
