@@ -58,7 +58,7 @@ public class ModuleE extends BaseObservable implements Observable {
     private String e0104b = _EMPTY_;
     private String e0104c = _EMPTY_;
     private String e0104d = _EMPTY_;
-    private String e0103e = _EMPTY_;
+    private String e0104e = _EMPTY_;
     private String e0104exx = _EMPTY_;
     private String e0201 = _EMPTY_;
     private String e0202a = _EMPTY_;
@@ -588,14 +588,14 @@ public class ModuleE extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getE0103e() {
-        return e0103e;
+    public String getE0104e() {
+        return e0104e;
     }
 
-    public void setE0103e(String e0103e) {
-        this.e0103e = e0103e;
-        setE0104exx(e0103e.equals("96") ? this.e0104exx : "");
-        notifyPropertyChanged(BR.e0103e);
+    public void setE0104e(String e0104e) {
+        this.e0104e = e0104e;
+        setE0104exx(e0104e.equals("96") ? this.e0104exx : "");
+        notifyPropertyChanged(BR.e0104e);
     }
 
     @Bindable
@@ -3056,7 +3056,7 @@ public class ModuleE extends BaseObservable implements Observable {
             this.e0104b = json.getString("e0104b");
             this.e0104c = json.getString("e0104c");
             this.e0104d = json.getString("e0104d");
-            this.e0103e = json.getString("e0103e");
+            this.e0104e = json.getString("e0104e");
             this.e0104exx = json.getString("e0104exx");
         }
     }
@@ -3413,7 +3413,7 @@ public class ModuleE extends BaseObservable implements Observable {
                 .put("e0104b", e0104b)
                 .put("e0104c", e0104c)
                 .put("e0104d", e0104d)
-                .put("e0103e", e0103e)
+                .put("e0104e", e0104e)
                 .put("e0104exx", e0104exx);
         return json.toString();
     }
