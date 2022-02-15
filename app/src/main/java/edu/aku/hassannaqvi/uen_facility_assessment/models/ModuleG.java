@@ -614,6 +614,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0101(String g0101) {
         this.g0101 = g0101;
+        setG0101xx(g0101.equals("96") ? this.g0101xx : "");
         notifyPropertyChanged(BR.g0101);
     }
 
@@ -634,6 +635,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0102a(String g0102a) {
         this.g0102a = g0102a;
+
         notifyPropertyChanged(BR.g0102a);
     }
 
@@ -654,6 +656,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0103(String g0103) {
         this.g0103 = g0103;
+        setG0103xx(g0103.equals("96") ? this.g0103xx : "");
         notifyPropertyChanged(BR.g0103);
     }
 
@@ -684,6 +687,9 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0105(String g0105) {
         this.g0105 = g0105;
+        setG0105ax(g0105.equals("1") ? this.g0105ax : "");
+        setG0105bx(g0105.equals("2") ? this.g0105bx : "");
+        setG0105cx(g0105.equals("3") ? this.g0105cx : "");
         notifyPropertyChanged(BR.g0105);
     }
 
@@ -724,6 +730,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0106(String g0106) {
         this.g0106 = g0106;
+        setG0106xx(g0106.equals("96") ? this.g0106xx : "");
         notifyPropertyChanged(BR.g0106);
     }
 
@@ -744,6 +751,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0107(String g0107) {
         this.g0107 = g0107;
+        setG0107xx(g0107.equals("96") ? this.g0107xx : "");
         notifyPropertyChanged(BR.g0107);
     }
 
@@ -804,6 +812,9 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0110(String g0110) {
         this.g0110 = g0110;
+        setG0110ax(g0110.equals("1") ? this.g0110ax : "");
+        setG0110bx(g0110.equals("2") ? this.g0110bx : "");
+        setG0110cx(g0110.equals("1") ? this.g0110cx : "");
         notifyPropertyChanged(BR.g0110);
     }
 
@@ -854,6 +865,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG01112(String g01112) {
         this.g01112 = g01112;
+        setG01112xx(g01112.equals("96") ? this.g01112xx : "");
         notifyPropertyChanged(BR.g01112);
     }
 

@@ -240,6 +240,7 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0108a(String i0108a) {
+        if (this.i0108a.equals(i0108a)) return; // for all checkboxes
         this.i0108a = i0108a;
         notifyPropertyChanged(BR.i0108a);
     }
@@ -250,6 +251,7 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0108b(String i0108b) {
+        if (this.i0108b.equals(i0108b)) return; // for all checkboxes
         this.i0108b = i0108b;
         notifyPropertyChanged(BR.i0108b);
     }
@@ -260,6 +262,7 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0108c(String i0108c) {
+        if (this.i0108c.equals(i0108c)) return; // for all checkboxes
         this.i0108c = i0108c;
         notifyPropertyChanged(BR.i0108c);
     }
@@ -270,6 +273,7 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0108d(String i0108d) {
+        if (this.i0108d.equals(i0108d)) return; // for all checkboxes
         this.i0108d = i0108d;
         notifyPropertyChanged(BR.i0108d);
     }
@@ -280,6 +284,7 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0108e(String i0108e) {
+        if (this.i0108e.equals(i0108e)) return; // for all checkboxes
         this.i0108e = i0108e;
         notifyPropertyChanged(BR.i0108e);
     }
@@ -290,6 +295,7 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0108f(String i0108f) {
+        if (this.i0108f.equals(i0108f)) return; // for all checkboxes
         this.i0108f = i0108f;
         notifyPropertyChanged(BR.i0108f);
     }
@@ -300,6 +306,7 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0108g(String i0108g) {
+        if (this.i0108g.equals(i0108g)) return; // for all checkboxes
         this.i0108g = i0108g;
         notifyPropertyChanged(BR.i0108g);
     }
@@ -310,7 +317,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI010896(String i010896) {
+        if (this.i010896.equals(i010896)) return; // for all checkboxes
         this.i010896 = i010896;
+        setI010896x(i010896.equals("96") ? this.i010896x : "");
         notifyPropertyChanged(BR.i010896);
     }
 
@@ -400,7 +409,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0110a(String i0110a) {
+        if (this.i0110a.equals(i0110a)) return; // for all checkboxes
         this.i0110a = i0110a;
+        setI0110ax(i0110a.equals("1") ? this.i0110ax : "");
         notifyPropertyChanged(BR.i0110a);
     }
 
@@ -420,7 +431,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0110b(String i0110b) {
+        if (this.i0110b.equals(i0110b)) return; // for all checkboxes
         this.i0110b = i0110b;
+        setI0110bx(i0110b.equals("2") ? this.i0110bx : "");
         notifyPropertyChanged(BR.i0110b);
     }
 
@@ -440,7 +453,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0110c(String i0110c) {
+        if (this.i0110c.equals(i0110c)) return; // for all checkboxes
         this.i0110c = i0110c;
+        setI0110cx(i0110c.equals("3") ? this.i0110cx : "");
         notifyPropertyChanged(BR.i0110c);
     }
 
@@ -470,7 +485,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0111a(String i0111a) {
+        if (this.i0111a.equals(i0111a)) return; // for all checkboxes
         this.i0111a = i0111a;
+        setI0111ax(i0111a.equals("1") ? this.i0111ax : "");
         notifyPropertyChanged(BR.i0111a);
     }
 
@@ -490,7 +507,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0111b(String i0111b) {
+        if (this.i0111b.equals(i0111b)) return; // for all checkboxes
         this.i0111b = i0111b;
+        setI0111bx(i0111b.equals("2") ? this.i0111bx : "");
         notifyPropertyChanged(BR.i0111b);
     }
 
@@ -510,7 +529,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0111c(String i0111c) {
+        if (this.i0111c.equals(i0111c)) return; // for all checkboxes
         this.i0111c = i0111c;
+        setI0111cx(i0111c.equals("3") ? this.i0111cx : "");
         notifyPropertyChanged(BR.i0111c);
     }
 
@@ -540,7 +561,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0112a(String i0112a) {
+        if (this.i0112a.equals(i0112a)) return; // for all checkboxes
         this.i0112a = i0112a;
+        setI0112ax(i0112a.equals("1") ? this.i0112ax : "");
         notifyPropertyChanged(BR.i0112a);
     }
 
@@ -560,7 +583,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0112b(String i0112b) {
+        if (this.i0112b.equals(i0112b)) return; // for all checkboxes
         this.i0112b = i0112b;
+        setI0112bx(i0112b.equals("2") ? this.i0112bx : "");
         notifyPropertyChanged(BR.i0112b);
     }
 
@@ -610,7 +635,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0115a(String i0115a) {
+        if (this.i0115a.equals(i0115a)) return; // for all checkboxes
         this.i0115a = i0115a;
+        setI0115ax(i0115a.equals("1") ? this.i0115ax : "");
         notifyPropertyChanged(BR.i0115a);
     }
 
@@ -630,7 +657,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0115b(String i0115b) {
+        if (this.i0115b.equals(i0115b)) return; // for all checkboxes
         this.i0115b = i0115b;
+        setI0115bx(i0115b.equals("2") ? this.i0115bx : "");
         notifyPropertyChanged(BR.i0115b);
     }
 
@@ -650,7 +679,9 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0115c(String i0115c) {
+        if (this.i0115c.equals(i0115c)) return; // for all checkboxes
         this.i0115c = i0115c;
+        setI0115cx(i0115c.equals("2") ? this.i0115cx : "");
         notifyPropertyChanged(BR.i0115c);
     }
 
@@ -671,6 +702,7 @@ public class ModuleI extends BaseObservable implements Observable {
 
     public void setI0116(String i0116) {
         this.i0116 = i0116;
+        setI011696x(i0116.equals("96") ? this.i011696x : "");
         notifyPropertyChanged(BR.i0116);
     }
 
