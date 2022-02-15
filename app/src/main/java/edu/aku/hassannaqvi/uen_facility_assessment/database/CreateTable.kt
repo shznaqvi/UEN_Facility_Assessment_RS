@@ -79,6 +79,26 @@ object CreateTable {
             + " );"
             )
 
+    const val SQL_CREATE_MODULE_C = ("CREATE TABLE "
+            + ModuleCTable.TABLE_NAME + "("
+            + ModuleCTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ModuleCTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + ModuleCTable.COLUMN_UID + " TEXT,"
+            + ModuleCTable.COLUMN_LHW_UID + " TEXT,"
+            + ModuleCTable.COLUMN_LHW_CODE + " TEXT,"
+            + ModuleCTable.COLUMN_KHANDAN_NO + " TEXT,"
+            + ModuleCTable.COLUMN_USERNAME + " TEXT,"
+            + ModuleCTable.COLUMN_SYSDATE + " TEXT,"
+            + ModuleCTable.COLUMN_ISTATUS + " TEXT,"
+            + ModuleCTable.COLUMN_DEVICEID + " TEXT,"
+            + ModuleCTable.COLUMN_DEVICETAGID + " TEXT,"
+            + ModuleCTable.COLUMN_SYNCED + " TEXT,"
+            + ModuleCTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + ModuleCTable.COLUMN_APPVERSION + " TEXT,"
+            + ModuleCTable.COLUMN_SC + " TEXT"
+            + " );"
+            )
+
 
     /*const val SQL_CREATE_LHW_FORMS = ("CREATE TABLE "
             + FormsTable.TABLE_NAME + "("

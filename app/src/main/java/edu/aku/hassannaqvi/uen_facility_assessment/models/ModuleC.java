@@ -13,17 +13,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleCTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
 public class ModuleC extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ModuleC";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    private final String wuid = StringUtils.EMPTY;
-    private final String cuid = StringUtils.EMPTY;
-    // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
+
+
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
@@ -39,12 +38,8 @@ public class ModuleC extends BaseObservable implements Observable {
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
 
-    // SECTION VARIABLES
-
-    private String sC = StringUtils.EMPTY;
 
     // FIELD VARIABLES
-
     private String c01aa = StringUtils.EMPTY;
     private String c01ab = StringUtils.EMPTY;
     private String c01ac = StringUtils.EMPTY;
@@ -112,6 +107,126 @@ public class ModuleC extends BaseObservable implements Observable {
     private String c021d = StringUtils.EMPTY;
     private String c021dgx = StringUtils.EMPTY;
     private String c021e = StringUtils.EMPTY;
+
+
+    public ModuleC() {
+    }
+
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+        notifyPropertyChanged(BR.cluster);
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getSysDate() {
+        return sysDate;
+    }
+
+    public void setSysDate(String sysDate) {
+        this.sysDate = sysDate;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDeviceTag() {
+        return deviceTag;
+    }
+
+    public void setDeviceTag(String deviceTag) {
+        this.deviceTag = deviceTag;
+    }
+
+    public String getAppver() {
+        return appver;
+    }
+
+    public void setAppver(String appver) {
+        this.appver = appver;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getSynced() {
+        return synced;
+    }
+
+    public void setSynced(String synced) {
+        this.synced = synced;
+    }
+
+    public String getSyncDate() {
+        return syncDate;
+    }
+
+    public void setSyncDate(String syncDate) {
+        this.syncDate = syncDate;
+    }
 
 
     @Bindable
@@ -789,159 +904,20 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
 
-    public ModuleC() {
-    }
-
-
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
-    }
-
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getSysDate() {
-        return sysDate;
-    }
-
-    public void setSysDate(String sysDate) {
-        this.sysDate = sysDate;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceTag() {
-        return deviceTag;
-    }
-
-    public void setDeviceTag(String deviceTag) {
-        this.deviceTag = deviceTag;
-    }
-
-    public String getAppver() {
-        return appver;
-    }
-
-    public void setAppver(String appver) {
-        this.appver = appver;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
-
-    public String getSynced() {
-        return synced;
-    }
-
-    public void setSynced(String synced) {
-        this.synced = synced;
-    }
-
-    public String getSyncDate() {
-        return syncDate;
-    }
-
-    public void setSyncDate(String syncDate) {
-        this.syncDate = syncDate;
-    }
-
-
-    /*JSON DATABASE VARIABLES*/
-
-
-    public String getsC() {
-        return sC;
-    }
-
-    public void setsC(String sC) {
-        this.sC = sC;
-    }
-
-
-
     public ModuleC Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
-
-        sCHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SC)));
-
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_SYNCED_DATE));
+        sCHydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_SC)));
         return this;
     }
-
 
     public void sCHydrate(String string) throws JSONException {
         Log.d(TAG, "sCHydrate: " + string);
@@ -1020,6 +996,22 @@ public class ModuleC extends BaseObservable implements Observable {
 
 
 
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+
+        json.put(ModuleCTable.COLUMN_ID, this.id);
+        json.put(ModuleCTable.COLUMN_UID, this.uid);
+        json.put(ModuleCTable.COLUMN_USERNAME, this.userName);
+        json.put(ModuleCTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(ModuleCTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(ModuleCTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(ModuleCTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(ModuleCTable.COLUMN_SYNCED, this.synced);
+        json.put(ModuleCTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(ModuleCTable.COLUMN_SC, new JSONObject(sCtoString()));
+        return json;
+    }
+
     public String sCtoString() throws JSONException {
         Log.d(TAG, "sCtoString: ");
         JSONObject json = new JSONObject();
@@ -1091,27 +1083,6 @@ public class ModuleC extends BaseObservable implements Observable {
                 .put("c021dgx", c021dgx)
                 .put("c021e", c021e);
         return json.toString();
-    }
-
-
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-//        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-
-        // Household
-        json.put(FormsTable.COLUMN_SC, new JSONObject(sCtoString()));
-
-        return json;
     }
 
 
