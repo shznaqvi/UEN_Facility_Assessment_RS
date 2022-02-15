@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -8,125 +10,240 @@ import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleDTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
 public class ModuleD extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ModuleD";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    private final String wuid = StringUtils.EMPTY;
-    private final String cuid = StringUtils.EMPTY;
-    // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
+
+
     // APP VARIABLES
-    private String id = StringUtils.EMPTY;
-    private String uid = StringUtils.EMPTY;
-    private String userName = StringUtils.EMPTY;
-    private String sysDate = StringUtils.EMPTY;
-    private String cluster = StringUtils.EMPTY;
-    private String deviceId = StringUtils.EMPTY;
-    private String deviceTag = StringUtils.EMPTY;
-    private String appver = StringUtils.EMPTY;
-    private String endTime = StringUtils.EMPTY;
-    private String iStatus = StringUtils.EMPTY;
-    private String iStatus96x = StringUtils.EMPTY;
-    private String synced = StringUtils.EMPTY;
-    private String syncDate = StringUtils.EMPTY;
+    private String id = _EMPTY_;
+    private String uid = _EMPTY_;
+    private String userName = _EMPTY_;
+    private String sysDate = _EMPTY_;
+    private String cluster = _EMPTY_;
+    private String deviceId = _EMPTY_;
+    private String deviceTag = _EMPTY_;
+    private String appver = _EMPTY_;
+    private String endTime = _EMPTY_;
+    private String iStatus = _EMPTY_;
+    private String iStatus96x = _EMPTY_;
+    private String synced = _EMPTY_;
+    private String syncDate = _EMPTY_;
 
-    // SECTION VARIABLES
-
-    private String sD = StringUtils.EMPTY;
 
     // FIELD VARIABLES
-    private String d0101 = StringUtils.EMPTY;
-    private String d0102 = StringUtils.EMPTY;
-    private String d0201 = StringUtils.EMPTY;
-    private String d0202 = StringUtils.EMPTY;
-    private String d0203 = StringUtils.EMPTY;
-    private String d0301 = StringUtils.EMPTY;
-    private String d0302 = StringUtils.EMPTY;
-    private String d0303 = StringUtils.EMPTY;
-    private String d0304 = StringUtils.EMPTY;
-    private String d0501 = StringUtils.EMPTY;
-    private String d05011 = StringUtils.EMPTY;
-    private String d05012 = StringUtils.EMPTY;
-    private String d0501296x = StringUtils.EMPTY;
-    private String d0502a0a = StringUtils.EMPTY;
-    private String d0502a0ayx = StringUtils.EMPTY;
-    private String d0502a0f = StringUtils.EMPTY;
-    private String d0502a0fyx = StringUtils.EMPTY;
-    private String d0502b0a = StringUtils.EMPTY;
-    private String d0502b0ayx = StringUtils.EMPTY;
-    private String d0502b0f = StringUtils.EMPTY;
-    private String d0502b0fyx = StringUtils.EMPTY;
-    private String d0502c0a = StringUtils.EMPTY;
-    private String d0502c0ayx = StringUtils.EMPTY;
-    private String d0502c0f = StringUtils.EMPTY;
-    private String d0502c0fyx = StringUtils.EMPTY;
-    private String d0502d0a = StringUtils.EMPTY;
-    private String d0502d0ayx = StringUtils.EMPTY;
-    private String d0502d0f = StringUtils.EMPTY;
-    private String d0502d0fyx = StringUtils.EMPTY;
-    private String d0503a = StringUtils.EMPTY;
-    private String d0503b = StringUtils.EMPTY;
-    private String d0503c = StringUtils.EMPTY;
-    private String d0503d = StringUtils.EMPTY;
-    private String d0503e = StringUtils.EMPTY;
-    private String d0503f = StringUtils.EMPTY;
-    private String d0503g = StringUtils.EMPTY;
-    private String d0503h = StringUtils.EMPTY;
-    private String d0601a = StringUtils.EMPTY;
-    private String d0601b = StringUtils.EMPTY;
-    private String d0601c = StringUtils.EMPTY;
-    private String d0601d = StringUtils.EMPTY;
-    private String d0602 = StringUtils.EMPTY;
-    private String d0603 = StringUtils.EMPTY;
-    private String d0604 = StringUtils.EMPTY;
-    private String d0605 = StringUtils.EMPTY;
-    private String d0701 = StringUtils.EMPTY;
-    private String d0701xx = StringUtils.EMPTY;
-    private String d0702 = StringUtils.EMPTY;
-    private String d0702xx = StringUtils.EMPTY;
-    private String d0703 = StringUtils.EMPTY;
-    private String d0704a = StringUtils.EMPTY;
-    private String d0704b = StringUtils.EMPTY;
-    private String d0704c = StringUtils.EMPTY;
-    private String d0704d = StringUtils.EMPTY;
-    private String d0704e = StringUtils.EMPTY;
-    private String d0801a0a = StringUtils.EMPTY;
-    private String d0801a0fq = StringUtils.EMPTY;
-    private String d0801b0a = StringUtils.EMPTY;
-    private String d0801b0fq = StringUtils.EMPTY;
-    private String d0801c0a = StringUtils.EMPTY;
-    private String d0801c0fq = StringUtils.EMPTY;
-    private String d0801d0a = StringUtils.EMPTY;
-    private String d0801d0fq = StringUtils.EMPTY;
-    private String d0801e0a = StringUtils.EMPTY;
-    private String d0801e0fq = StringUtils.EMPTY;
-    private String d0801f0a = StringUtils.EMPTY;
-    private String d0801f0fq = StringUtils.EMPTY;
-    private String d0801g0a = StringUtils.EMPTY;
-    private String d0801g0fq = StringUtils.EMPTY;
-    private String d0801h0a = StringUtils.EMPTY;
-    private String d0801h0fq = StringUtils.EMPTY;
-    private String d0801i0a = StringUtils.EMPTY;
-    private String d0801i0fq = StringUtils.EMPTY;
-    private String d0801j0a = StringUtils.EMPTY;
-    private String d0801j0fq = StringUtils.EMPTY;
-    private String d0401 = StringUtils.EMPTY;
-    private String d0402 = StringUtils.EMPTY;
-    private String d0403 = StringUtils.EMPTY;
-    private String d0404 = StringUtils.EMPTY;
-    private String d0405 = StringUtils.EMPTY;
-    private String d0406 = StringUtils.EMPTY;
-    private String d0507 = StringUtils.EMPTY;
-    private String d0608 = StringUtils.EMPTY;
+    private String d0101 = _EMPTY_;
+    private String d0102 = _EMPTY_;
+    private String d0201 = _EMPTY_;
+    private String d0202 = _EMPTY_;
+    private String d0203 = _EMPTY_;
+    private String d0301 = _EMPTY_;
+    private String d0302 = _EMPTY_;
+    private String d0303 = _EMPTY_;
+    private String d0304 = _EMPTY_;
+    private String d0501 = _EMPTY_;
+    private String d05011 = _EMPTY_;
+    private String d05012 = _EMPTY_;
+    private String d0501296x = _EMPTY_;
+    private String d0502a0a = _EMPTY_;
+    private String d0502a0ayx = _EMPTY_;
+    private String d0502a0f = _EMPTY_;
+    private String d0502a0fyx = _EMPTY_;
+    private String d0502b0a = _EMPTY_;
+    private String d0502b0ayx = _EMPTY_;
+    private String d0502b0f = _EMPTY_;
+    private String d0502b0fyx = _EMPTY_;
+    private String d0502c0a = _EMPTY_;
+    private String d0502c0ayx = _EMPTY_;
+    private String d0502c0f = _EMPTY_;
+    private String d0502c0fyx = _EMPTY_;
+    private String d0502d0a = _EMPTY_;
+    private String d0502d0ayx = _EMPTY_;
+    private String d0502d0f = _EMPTY_;
+    private String d0502d0fyx = _EMPTY_;
+    private String d0503a = _EMPTY_;
+    private String d0503b = _EMPTY_;
+    private String d0503c = _EMPTY_;
+    private String d0503d = _EMPTY_;
+    private String d0503e = _EMPTY_;
+    private String d0503f = _EMPTY_;
+    private String d0503g = _EMPTY_;
+    private String d0503h = _EMPTY_;
+    private String d0601a = _EMPTY_;
+    private String d0601b = _EMPTY_;
+    private String d0601c = _EMPTY_;
+    private String d0601d = _EMPTY_;
+    private String d0602 = _EMPTY_;
+    private String d0603 = _EMPTY_;
+    private String d0604 = _EMPTY_;
+    private String d0605 = _EMPTY_;
+    private String d0701 = _EMPTY_;
+    private String d0701xx = _EMPTY_;
+    private String d0702 = _EMPTY_;
+    private String d0702xx = _EMPTY_;
+    private String d0703 = _EMPTY_;
+    private String d0704a = _EMPTY_;
+    private String d0704b = _EMPTY_;
+    private String d0704c = _EMPTY_;
+    private String d0704d = _EMPTY_;
+    private String d0704e = _EMPTY_;
+    private String d0801a0a = _EMPTY_;
+    private String d0801a0fq = _EMPTY_;
+    private String d0801b0a = _EMPTY_;
+    private String d0801b0fq = _EMPTY_;
+    private String d0801c0a = _EMPTY_;
+    private String d0801c0fq = _EMPTY_;
+    private String d0801d0a = _EMPTY_;
+    private String d0801d0fq = _EMPTY_;
+    private String d0801e0a = _EMPTY_;
+    private String d0801e0fq = _EMPTY_;
+    private String d0801f0a = _EMPTY_;
+    private String d0801f0fq = _EMPTY_;
+    private String d0801g0a = _EMPTY_;
+    private String d0801g0fq = _EMPTY_;
+    private String d0801h0a = _EMPTY_;
+    private String d0801h0fq = _EMPTY_;
+    private String d0801i0a = _EMPTY_;
+    private String d0801i0fq = _EMPTY_;
+    private String d0801j0a = _EMPTY_;
+    private String d0801j0fq = _EMPTY_;
+    private String d0401 = _EMPTY_;
+    private String d0402 = _EMPTY_;
+    private String d0403 = _EMPTY_;
+    private String d0404 = _EMPTY_;
+    private String d0405 = _EMPTY_;
+    private String d0406 = _EMPTY_;
+    private String d0507 = _EMPTY_;
+    private String d0608 = _EMPTY_;
+
+
+    public ModuleD() {
+    }
+
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+        notifyPropertyChanged(BR.cluster);
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getSysDate() {
+        return sysDate;
+    }
+
+    public void setSysDate(String sysDate) {
+        this.sysDate = sysDate;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDeviceTag() {
+        return deviceTag;
+    }
+
+    public void setDeviceTag(String deviceTag) {
+        this.deviceTag = deviceTag;
+    }
+
+    public String getAppver() {
+        return appver;
+    }
+
+    public void setAppver(String appver) {
+        this.appver = appver;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getSynced() {
+        return synced;
+    }
+
+    public void setSynced(String synced) {
+        this.synced = synced;
+    }
+
+    public String getSyncDate() {
+        return syncDate;
+    }
+
+    public void setSyncDate(String syncDate) {
+        this.syncDate = syncDate;
+    }
 
 
     @Bindable
@@ -217,6 +334,86 @@ public class ModuleD extends BaseObservable implements Observable {
     public void setD0304(String d0304) {
         this.d0304 = d0304;
         notifyPropertyChanged(BR.d0304);
+    }
+
+    @Bindable
+    public String getD0401() {
+        return d0401;
+    }
+
+    public void setD0401(String d0401) {
+        this.d0401 = d0401;
+        notifyPropertyChanged(BR.d0401);
+    }
+
+    @Bindable
+    public String getD0402() {
+        return d0402;
+    }
+
+    public void setD0402(String d0402) {
+        this.d0402 = d0402;
+        notifyPropertyChanged(BR.d0402);
+    }
+
+    @Bindable
+    public String getD0403() {
+        return d0403;
+    }
+
+    public void setD0403(String d0403) {
+        this.d0403 = d0403;
+        notifyPropertyChanged(BR.d0403);
+    }
+
+    @Bindable
+    public String getD0404() {
+        return d0404;
+    }
+
+    public void setD0404(String d0404) {
+        this.d0404 = d0404;
+        notifyPropertyChanged(BR.d0404);
+    }
+
+    @Bindable
+    public String getD0405() {
+        return d0405;
+    }
+
+    public void setD0405(String d0405) {
+        this.d0405 = d0405;
+        notifyPropertyChanged(BR.d0405);
+    }
+
+    @Bindable
+    public String getD0406() {
+        return d0406;
+    }
+
+    public void setD0406(String d0406) {
+        this.d0406 = d0406;
+        notifyPropertyChanged(BR.d0406);
+    }
+
+    @Bindable
+    public String getD0507() {
+        return d0507;
+    }
+
+    public void setD0507(String d0507) {
+        this.d0507 = d0507;
+        notifyPropertyChanged(BR.d0507);
+    }
+
+    @Bindable
+    public String getD0608() {
+        return d0608;
+    }
+
+    public void setD0608(String d0608) {
+        this.d0608 = d0608;
+        notifyPropertyChanged(BR.d0608);
     }
 
     @Bindable
@@ -890,252 +1087,83 @@ public class ModuleD extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.d0801j0fq);
     }
 
-    @Bindable
-    public String getD0401() {
-        return d0401;
-    }
-
-    public void setD0401(String d0401) {
-        this.d0401 = d0401;
-        notifyPropertyChanged(BR.d0401);
-    }
-
-    @Bindable
-    public String getD0402() {
-        return d0402;
-    }
-
-    public void setD0402(String d0402) {
-        this.d0402 = d0402;
-        notifyPropertyChanged(BR.d0402);
-    }
-
-    @Bindable
-    public String getD0403() {
-        return d0403;
-    }
-
-    public void setD0403(String d0403) {
-        this.d0403 = d0403;
-        notifyPropertyChanged(BR.d0403);
-    }
-
-    @Bindable
-    public String getD0404() {
-        return d0404;
-    }
-
-    public void setD0404(String d0404) {
-        this.d0404 = d0404;
-        notifyPropertyChanged(BR.d0404);
-    }
-
-    @Bindable
-    public String getD0405() {
-        return d0405;
-    }
-
-    public void setD0405(String d0405) {
-        this.d0405 = d0405;
-        notifyPropertyChanged(BR.d0405);
-    }
-
-    @Bindable
-    public String getD0406() {
-        return d0406;
-    }
-
-    public void setD0406(String d0406) {
-        this.d0406 = d0406;
-        notifyPropertyChanged(BR.d0406);
-    }
-
-    @Bindable
-    public String getD0507() {
-        return d0507;
-    }
-
-    public void setD0507(String d0507) {
-        this.d0507 = d0507;
-        notifyPropertyChanged(BR.d0507);
-    }
-
-    @Bindable
-    public String getD0608() {
-        return d0608;
-    }
-
-    public void setD0608(String d0608) {
-        this.d0608 = d0608;
-        notifyPropertyChanged(BR.d0608);
-    }
-
-    public ModuleD() {
-    }
-
-
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
-    }
-
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getSysDate() {
-        return sysDate;
-    }
-
-    public void setSysDate(String sysDate) {
-        this.sysDate = sysDate;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceTag() {
-        return deviceTag;
-    }
-
-    public void setDeviceTag(String deviceTag) {
-        this.deviceTag = deviceTag;
-    }
-
-    public String getAppver() {
-        return appver;
-    }
-
-    public void setAppver(String appver) {
-        this.appver = appver;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
-
-    public String getSynced() {
-        return synced;
-    }
-
-    public void setSynced(String synced) {
-        this.synced = synced;
-    }
-
-    public String getSyncDate() {
-        return syncDate;
-    }
-
-    public void setSyncDate(String syncDate) {
-        this.syncDate = syncDate;
-    }
-
-
-    /*JSON DATABASE VARIABLES*/
-
-    public String getsD() {
-        return sD;
-    }
-
-    public void setsD(String sD) {
-        this.sD = sD;
-    }
-
-
 
     public ModuleD Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
-        sDHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SD)));
-
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SYNCED_DATE));
+        sD1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SD1)));
+        sD2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SD2)));
+        sD3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SD3)));
+        sD4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SD4)));
+        sD5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SD5)));
+        sD6Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SD6)));
+        sD7Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SD7)));
+        sD8Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SD8)));
         return this;
     }
 
-
-    public void sDHydrate(String string) throws JSONException {
-        Log.d(TAG, "sDHydrate: " + string);
+    public void sD1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
             this.d0101 = json.getString("d0101");
             this.d0102 = json.getString("d0102");
+        }
+    }
+
+    public void sD2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.d0201 = json.getString("d0201");
             this.d0202 = json.getString("d0202");
             this.d0203 = json.getString("d0203");
+        }
+    }
+
+    public void sD3Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD3Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.d0301 = json.getString("d0301");
             this.d0302 = json.getString("d0302");
             this.d0303 = json.getString("d0303");
             this.d0304 = json.getString("d0304");
+        }
+    }
+
+    public void sD4Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD4Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.d0401 = json.getString("d0401");
+            this.d0402 = json.getString("d0402");
+            this.d0403 = json.getString("d0403");
+            this.d0404 = json.getString("d0404");
+            this.d0405 = json.getString("d0405");
+            this.d0406 = json.getString("d0406");
+            this.d0507 = json.getString("d0507");
+            this.d0608 = json.getString("d0608");
+        }
+    }
+
+    public void sD5Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD5Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.d0501 = json.getString("d0501");
             this.d05011 = json.getString("d05011");
             this.d05012 = json.getString("d05012");
@@ -1164,6 +1192,14 @@ public class ModuleD extends BaseObservable implements Observable {
             this.d0503f = json.getString("d0503f");
             this.d0503g = json.getString("d0503g");
             this.d0503h = json.getString("d0503h");
+        }
+    }
+
+    public void sD6Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD6Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.d0601a = json.getString("d0601a");
             this.d0601b = json.getString("d0601b");
             this.d0601c = json.getString("d0601c");
@@ -1172,6 +1208,14 @@ public class ModuleD extends BaseObservable implements Observable {
             this.d0603 = json.getString("d0603");
             this.d0604 = json.getString("d0604");
             this.d0605 = json.getString("d0605");
+        }
+    }
+
+    public void sD7Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD7Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.d0701 = json.getString("d0701");
             this.d0701xx = json.getString("d0701xx");
             this.d0702 = json.getString("d0702");
@@ -1182,6 +1226,14 @@ public class ModuleD extends BaseObservable implements Observable {
             this.d0704c = json.getString("d0704c");
             this.d0704d = json.getString("d0704d");
             this.d0704e = json.getString("d0704e");
+        }
+    }
+
+    public void sD8Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sD8Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.d0801a0a = json.getString("d0801a0a");
             this.d0801a0fq = json.getString("d0801a0fq");
             this.d0801b0a = json.getString("d0801b0a");
@@ -1202,41 +1254,77 @@ public class ModuleD extends BaseObservable implements Observable {
             this.d0801i0fq = json.getString("d0801i0fq");
             this.d0801j0a = json.getString("d0801j0a");
             this.d0801j0fq = json.getString("d0801j0fq");
-            this.d0401 = json.getString("d0401");
-            this.d0402 = json.getString("d0402");
-            this.d0403 = json.getString("d0403");
-            this.d0404 = json.getString("d0404");
-            this.d0405 = json.getString("d0405");
-            this.d0406 = json.getString("d0406");
-            this.d0507 = json.getString("d0507");
-            this.d0608 = json.getString("d0608");
         }
     }
 
 
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put(ModuleDTable.COLUMN_ID, this.id);
+        json.put(ModuleDTable.COLUMN_UID, this.uid);
+        json.put(ModuleDTable.COLUMN_USERNAME, this.userName);
+        json.put(ModuleDTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(ModuleDTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(ModuleDTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(ModuleDTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(ModuleDTable.COLUMN_SYNCED, this.synced);
+        json.put(ModuleDTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(ModuleDTable.COLUMN_SD1, new JSONObject(sD1toString()));
+        json.put(ModuleDTable.COLUMN_SD2, new JSONObject(sD2toString()));
+        json.put(ModuleDTable.COLUMN_SD3, new JSONObject(sD3toString()));
+        json.put(ModuleDTable.COLUMN_SD4, new JSONObject(sD4toString()));
+        json.put(ModuleDTable.COLUMN_SD5, new JSONObject(sD5toString()));
+        json.put(ModuleDTable.COLUMN_SD6, new JSONObject(sD6toString()));
+        json.put(ModuleDTable.COLUMN_SD7, new JSONObject(sD7toString()));
+        json.put(ModuleDTable.COLUMN_SD8, new JSONObject(sD8toString()));
+        return json;
+    }
 
-
-    public String sDtoString() throws JSONException {
-        Log.d(TAG, "sDtoString: ");
+    public String sD1toString() throws JSONException {
+        Log.d(TAG, "sD1toString: ");
         JSONObject json = new JSONObject();
         json.put("d0101", d0101)
-                .put("d0102", d0102)
-                .put("d0201", d0201)
+                .put("d0102", d0102);
+        return json.toString();
+    }
+
+    public String sD2toString() throws JSONException {
+        Log.d(TAG, "sD2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d0201", d0201)
                 .put("d0202", d0202)
-                .put("d0203", d0203)
-                .put("d0301", d0301)
+                .put("d0203", d0203);
+        return json.toString();
+    }
+
+    public String sD3toString() throws JSONException {
+        Log.d(TAG, "sD3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d0301", d0301)
                 .put("d0302", d0302)
                 .put("d0303", d0303)
-                .put("d0304", d0304)
-                .put("d0401", d0401)
+                .put("d0304", d0304);
+        return json.toString();
+    }
+
+    public String sD4toString() throws JSONException {
+        Log.d(TAG, "sD4toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d0401", d0401)
                 .put("d0402", d0402)
                 .put("d0403", d0403)
                 .put("d0404", d0404)
                 .put("d0405", d0405)
                 .put("d0406", d0406)
                 .put("d0507", d0507)
-                .put("d0608", d0608)
-                .put("d0501", d0501)
+                .put("d0608", d0608);
+        return json.toString();
+    }
+
+    public String sD5toString() throws JSONException {
+        Log.d(TAG, "sD5toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d0501", d0501)
                 .put("d05011", d05011)
                 .put("d05012", d05012)
                 .put("d0501296x", d0501296x)
@@ -1263,16 +1351,28 @@ public class ModuleD extends BaseObservable implements Observable {
                 .put("d0503e", d0503e)
                 .put("d0503f", d0503f)
                 .put("d0503g", d0503g)
-                .put("d0503h", d0503h)
-                .put("d0601a", d0601a)
+                .put("d0503h", d0503h);
+        return json.toString();
+    }
+
+    public String sD6toString() throws JSONException {
+        Log.d(TAG, "sD6toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d0601a", d0601a)
                 .put("d0601b", d0601b)
                 .put("d0601c", d0601c)
                 .put("d0601d", d0601d)
                 .put("d0602", d0602)
                 .put("d0603", d0603)
                 .put("d0604", d0604)
-                .put("d0605", d0605)
-                .put("d0701", d0701)
+                .put("d0605", d0605);
+        return json.toString();
+    }
+
+    public String sD7toString() throws JSONException {
+        Log.d(TAG, "sD7toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d0701", d0701)
                 .put("d0701xx", d0701xx)
                 .put("d0702", d0702)
                 .put("d0702xx", d0702xx)
@@ -1281,8 +1381,14 @@ public class ModuleD extends BaseObservable implements Observable {
                 .put("d0704b", d0704b)
                 .put("d0704c", d0704c)
                 .put("d0704d", d0704d)
-                .put("d0704e", d0704e)
-                .put("d0801a0a", d0801a0a)
+                .put("d0704e", d0704e);
+        return json.toString();
+    }
+
+    public String sD8toString() throws JSONException {
+        Log.d(TAG, "sD8toString: ");
+        JSONObject json = new JSONObject();
+        json.put("d0801a0a", d0801a0a)
                 .put("d0801a0fq", d0801a0fq)
                 .put("d0801b0a", d0801b0a)
                 .put("d0801b0fq", d0801b0fq)
@@ -1303,27 +1409,6 @@ public class ModuleD extends BaseObservable implements Observable {
                 .put("d0801j0a", d0801j0a)
                 .put("d0801j0fq", d0801j0fq);
         return json.toString();
-    }
-
-
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-//        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-
-        // Household
-        json.put(FormsTable.COLUMN_SD, new JSONObject(sDtoString()));
-
-        return json;
     }
 
 
