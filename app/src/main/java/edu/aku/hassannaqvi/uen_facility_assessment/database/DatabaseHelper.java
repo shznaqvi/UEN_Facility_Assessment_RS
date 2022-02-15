@@ -49,6 +49,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.EntryLog;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.HealthFacilities;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.LHW;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Tehsil;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.VersionApp;
@@ -99,52 +100,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    //ADDITION in DB
-    /*public long addForm(Form Form) throws JSONException {
 
-        // Gets the data repository in write mode
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-
-// Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put(TableContracts.FormsTable.COLUMN_PROJECT_NAME, Form.getProjectName());
-        values.put(TableContracts.FormsTable.COLUMN_UID, Form.getUid());
-        *//*values.put(TableContracts.FormsTable.COLUMN_LHW_CODE, Form.getLhwCode());
-        values.put(TableContracts.FormsTable.COLUMN_KHANDAN_NO, Form.getKhandandNo());
-        values.put(TableContracts.FormsTable.COLUMN_LHW_UID, Form.getLhwuid());*//*
-        values.put(TableContracts.FormsTable.COLUMN_USERNAME, Form.getUserName());
-        values.put(TableContracts.FormsTable.COLUMN_SYSDATE, Form.getSysDate());
-        values.put(FormsTable.COLUMN_SYNCED, Form.getSynced());
-        values.put(FormsTable.COLUMN_SYNCED_DATE, Form.getSyncDate());
-
-        values.put(FormsTable.COLUMN_SA, Form.sAtoString());
-        values.put(FormsTable.COLUMN_SB, Form.sBtoString());
-        values.put(FormsTable.COLUMN_SC, Form.sCtoString());
-        values.put(FormsTable.COLUMN_SD, Form.sDtoString());
-        values.put(FormsTable.COLUMN_SE, Form.sEtoString());
-        values.put(FormsTable.COLUMN_SF, Form.sFtoString());
-        values.put(FormsTable.COLUMN_SG, Form.sGtoString());
-        values.put(FormsTable.COLUMN_SH, Form.sHtoString());
-        values.put(FormsTable.COLUMN_SI, Form.sItoString());
-        values.put(FormsTable.COLUMN_SJ, Form.sJtoString());
-        values.put(FormsTable.COLUMN_SK, Form.sKtoString());
-
-        values.put(TableContracts.FormsTable.COLUMN_ISTATUS, Form.getiStatus());
-        values.put(TableContracts.FormsTable.COLUMN_DEVICETAGID, Form.getDeviceTag());
-        values.put(TableContracts.FormsTable.COLUMN_DEVICEID, Form.getDeviceId());
-        values.put(TableContracts.FormsTable.COLUMN_APPVERSION, Form.getAppver());
-
-
-        // Insert the new row, returning the primary key value of the new row
-        long newRowId;
-        newRowId = db.insert(
-                TableContracts.FormsTable.TABLE_NAME,
-                TableContracts.FormsTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }*/
-
-
+    //ADDING FORM in DB
     public long addForm(Form form) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
@@ -184,6 +141,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public long addModuleA(ModuleA moda) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+
+        values.put(TableContracts.FormsTable.COLUMN_PROJECT_NAME, moda.getProjectName());
+        values.put(TableContracts.FormsTable.COLUMN_UID, moda.getUid());
+        values.put(TableContracts.FormsTable.COLUMN_USERNAME, moda.getUserName());
+        values.put(TableContracts.FormsTable.COLUMN_SYSDATE, moda.getSysDate());
+        values.put(FormsTable.COLUMN_SYNCED, moda.getSynced());
+        values.put(FormsTable.COLUMN_SYNCED_DATE, moda.getSyncDate());
+
+        values.put(FormsTable.COLUMN_SA, moda.sAtoString());
+
+        values.put(TableContracts.FormsTable.COLUMN_ISTATUS, moda.getiStatus());
+        values.put(TableContracts.FormsTable.COLUMN_DEVICETAGID, moda.getDeviceTag());
+        values.put(TableContracts.FormsTable.COLUMN_DEVICEID, moda.getDeviceId());
+        values.put(TableContracts.FormsTable.COLUMN_APPVERSION, moda.getAppver());
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                TableContracts.FormsTable.TABLE_NAME,
+                TableContracts.FormsTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
+
     //UPDATE in DB
     public int updatesFormColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -195,6 +182,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.form.getId())};
 
         return db.update(TableContracts.FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesModuleAColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = TableContracts.ModuleATable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.moduleA.getId())};
+
+        return db.update(TableContracts.ModuleATable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

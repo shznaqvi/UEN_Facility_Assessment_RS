@@ -49,7 +49,7 @@ public class SectionAActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, form.sAtoString());
+            updcount = db.updatesModuleAColumn(TableContracts.ModuleATable.COLUMN_SA, moduleA.sAtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
