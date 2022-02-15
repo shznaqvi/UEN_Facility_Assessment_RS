@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleG;
 
 import android.content.Intent;
@@ -23,6 +22,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG46Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
 public class SectionG46Activity extends AppCompatActivity {
@@ -48,7 +48,7 @@ public class SectionG46Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SG, form.sGtoString());
+            updcount = db.updatesModuleGColumn(TableContracts.ModuleGTable.COLUMN_SG46, moduleG.sG46toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -67,7 +67,7 @@ public class SectionG46Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionH1Activity.class));
+            startActivity(new Intent(this, SectionMainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

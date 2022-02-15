@@ -197,13 +197,43 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
 
-        public static final String COLUMN_SF1 = "sE1";
-        public static final String COLUMN_SF2 = "sE2";
-        public static final String COLUMN_SF3 = "sE3";
-        public static final String COLUMN_SF4 = "sE4";
-        public static final String COLUMN_SF5 = "sE5";
-        public static final String COLUMN_SF6 = "sE6";
-        public static final String COLUMN_SF7 = "sE7";
+        public static final String COLUMN_SF1 = "sF1";
+        public static final String COLUMN_SF2 = "sF2";
+        public static final String COLUMN_SF3 = "sF3";
+        public static final String COLUMN_SF4 = "sF4";
+        public static final String COLUMN_SF5 = "sF5";
+        public static final String COLUMN_SF6 = "sF6";
+        public static final String COLUMN_SF7 = "sF7";
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
+    public static abstract class ModuleGTable implements BaseColumns {
+        public static final String TABLE_NAME = "ModuleG";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_LHW_UID = "_lhwuid";
+        public static final String COLUMN_LHW_CODE = "lhwcode";
+        public static final String COLUMN_KHANDAN_NO = "kno";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+
+        public static final String COLUMN_SG1 = "sG1";
+        public static final String COLUMN_SG2 = "sG2";
+        public static final String COLUMN_SG3 = "sG3";
+        public static final String COLUMN_SG41 = "sG41";
+        public static final String COLUMN_SG42 = "sG42";
+        public static final String COLUMN_SG43 = "sG43";
+        public static final String COLUMN_SG44 = "sG44";
+        public static final String COLUMN_SG45 = "sG45";
+        public static final String COLUMN_SG46 = "sG46";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

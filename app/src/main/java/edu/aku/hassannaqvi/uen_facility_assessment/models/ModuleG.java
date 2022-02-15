@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -8,605 +10,720 @@ import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleGTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
 public class ModuleG extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ModuleG";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    private final String wuid = StringUtils.EMPTY;
-    private final String cuid = StringUtils.EMPTY;
-    // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
+
+
     // APP VARIABLES
-    private String id = StringUtils.EMPTY;
-    private String uid = StringUtils.EMPTY;
-    private String userName = StringUtils.EMPTY;
-    private String sysDate = StringUtils.EMPTY;
-    private String cluster = StringUtils.EMPTY;
-    private String deviceId = StringUtils.EMPTY;
-    private String deviceTag = StringUtils.EMPTY;
-    private String appver = StringUtils.EMPTY;
-    private String endTime = StringUtils.EMPTY;
-    private String iStatus = StringUtils.EMPTY;
-    private String iStatus96x = StringUtils.EMPTY;
-    private String synced = StringUtils.EMPTY;
-    private String syncDate = StringUtils.EMPTY;
+    private String id = _EMPTY_;
+    private String uid = _EMPTY_;
+    private String userName = _EMPTY_;
+    private String sysDate = _EMPTY_;
+    private String cluster = _EMPTY_;
+    private String deviceId = _EMPTY_;
+    private String deviceTag = _EMPTY_;
+    private String appver = _EMPTY_;
+    private String endTime = _EMPTY_;
+    private String iStatus = _EMPTY_;
+    private String iStatus96x = _EMPTY_;
+    private String synced = _EMPTY_;
+    private String syncDate = _EMPTY_;
 
-    // SECTION VARIABLES
-
-    private String sG = StringUtils.EMPTY;
 
     // FIELD VARIABLES
-    private String g0101 = StringUtils.EMPTY;
-    private String g0101xx = StringUtils.EMPTY;
-    private String g0102a = StringUtils.EMPTY;
-    private String g0102b = StringUtils.EMPTY;
-    private String g0103 = StringUtils.EMPTY;
-    private String g0103xx = StringUtils.EMPTY;
-    private String g0104 = StringUtils.EMPTY;
-    private String g0105 = StringUtils.EMPTY;
-    private String g0105ax = StringUtils.EMPTY;
-    private String g0105bx = StringUtils.EMPTY;
-    private String g0105cx = StringUtils.EMPTY;
-    private String g0106 = StringUtils.EMPTY;
-    private String g0106xx = StringUtils.EMPTY;
-    private String g0107 = StringUtils.EMPTY;
-    private String g0107xx = StringUtils.EMPTY;
-    private String g0108a = StringUtils.EMPTY;
-    private String g0108b = StringUtils.EMPTY;
-    private String g0108c = StringUtils.EMPTY;
-    private String g0109 = StringUtils.EMPTY;
-    private String g0110 = StringUtils.EMPTY;
-    private String g0110ax = StringUtils.EMPTY;
-    private String g0110bx = StringUtils.EMPTY;
-    private String g0110cx = StringUtils.EMPTY;
-    private String g0111 = StringUtils.EMPTY;
-    private String g01112 = StringUtils.EMPTY;
-    private String g01112xx = StringUtils.EMPTY;
-    private String g01113 = StringUtils.EMPTY;
-    private String g01114 = StringUtils.EMPTY;
-    private String g01115 = StringUtils.EMPTY;
-    private String g01116 = StringUtils.EMPTY;
-    private String g01117 = StringUtils.EMPTY;
-    private String g0201 = StringUtils.EMPTY;
-    private String g0202 = StringUtils.EMPTY;
-    private String g0203 = StringUtils.EMPTY;
-    private String g0203x = StringUtils.EMPTY;
-    private String g0204 = StringUtils.EMPTY;
-    private String g0205 = StringUtils.EMPTY;
-    private String g0206 = StringUtils.EMPTY;
-    private String g0207 = StringUtils.EMPTY;
-    private String g0208 = StringUtils.EMPTY;
-    private String g0301aa = StringUtils.EMPTY;
-    private String g0301ab = StringUtils.EMPTY;
-    private String g0301ba = StringUtils.EMPTY;
-    private String g0301bb = StringUtils.EMPTY;
-    private String g0301ca = StringUtils.EMPTY;
-    private String g0301cb = StringUtils.EMPTY;
-    private String g0302a10r = StringUtils.EMPTY;
-    private String g0302a10i = StringUtils.EMPTY;
-    private String g0302a10d = StringUtils.EMPTY;
-    private String g0302a10b = StringUtils.EMPTY;
-    private String g0302a20r = StringUtils.EMPTY;
-    private String g0302a20i = StringUtils.EMPTY;
-    private String g0302a20d = StringUtils.EMPTY;
-    private String g0302a20b = StringUtils.EMPTY;
-    private String g0302a30r = StringUtils.EMPTY;
-    private String g0302a30i = StringUtils.EMPTY;
-    private String g0302a30d = StringUtils.EMPTY;
-    private String g0302a30b = StringUtils.EMPTY;
-    private String g0302a40r = StringUtils.EMPTY;
-    private String g0302a40i = StringUtils.EMPTY;
-    private String g0302a40d = StringUtils.EMPTY;
-    private String g0302a40b = StringUtils.EMPTY;
-    private String g0302a50r = StringUtils.EMPTY;
-    private String g0302a50i = StringUtils.EMPTY;
-    private String g0302a50d = StringUtils.EMPTY;
-    private String g0302a50b = StringUtils.EMPTY;
-    private String g0302a60r = StringUtils.EMPTY;
-    private String g0302a60i = StringUtils.EMPTY;
-    private String g0302a60d = StringUtils.EMPTY;
-    private String g0302a60b = StringUtils.EMPTY;
-    private String g0302a70r = StringUtils.EMPTY;
-    private String g0302a70i = StringUtils.EMPTY;
-    private String g0302a70d = StringUtils.EMPTY;
-    private String g0302a70b = StringUtils.EMPTY;
-    private String g0302b10r = StringUtils.EMPTY;
-    private String g0302b10i = StringUtils.EMPTY;
-    private String g0302b10d = StringUtils.EMPTY;
-    private String g0302b10b = StringUtils.EMPTY;
-    private String g0302b20r = StringUtils.EMPTY;
-    private String g0302b20i = StringUtils.EMPTY;
-    private String g0302b20d = StringUtils.EMPTY;
-    private String g0302b20b = StringUtils.EMPTY;
-    private String g0302b30r = StringUtils.EMPTY;
-    private String g0302b30i = StringUtils.EMPTY;
-    private String g0302b30d = StringUtils.EMPTY;
-    private String g0302b30b = StringUtils.EMPTY;
-    private String g0302b40r = StringUtils.EMPTY;
-    private String g0302b40i = StringUtils.EMPTY;
-    private String g0302b40d = StringUtils.EMPTY;
-    private String g0302b40b = StringUtils.EMPTY;
-    private String g0302b50r = StringUtils.EMPTY;
-    private String g0302b50i = StringUtils.EMPTY;
-    private String g0302b50d = StringUtils.EMPTY;
-    private String g0302b50b = StringUtils.EMPTY;
-    private String g0302b60r = StringUtils.EMPTY;
-    private String g0302b60i = StringUtils.EMPTY;
-    private String g0302b60d = StringUtils.EMPTY;
-    private String g0302b60b = StringUtils.EMPTY;
-    private String g0302b70r = StringUtils.EMPTY;
-    private String g0302b70i = StringUtils.EMPTY;
-    private String g0302b70d = StringUtils.EMPTY;
-    private String g0302b70b = StringUtils.EMPTY;
-    private String g0302c10r = StringUtils.EMPTY;
-    private String g0302c10i = StringUtils.EMPTY;
-    private String g0302c10d = StringUtils.EMPTY;
-    private String g0302c10b = StringUtils.EMPTY;
-    private String g0302c20r = StringUtils.EMPTY;
-    private String g0302c20i = StringUtils.EMPTY;
-    private String g0302c20d = StringUtils.EMPTY;
-    private String g0302c20b = StringUtils.EMPTY;
-    private String g0302c30r = StringUtils.EMPTY;
-    private String g0302c30i = StringUtils.EMPTY;
-    private String g0302c30d = StringUtils.EMPTY;
-    private String g0302c30b = StringUtils.EMPTY;
-    private String g0302c40r = StringUtils.EMPTY;
-    private String g0302c40i = StringUtils.EMPTY;
-    private String g0302c40d = StringUtils.EMPTY;
-    private String g0302c40b = StringUtils.EMPTY;
-    private String g0302c50r = StringUtils.EMPTY;
-    private String g0302c50i = StringUtils.EMPTY;
-    private String g0302c50d = StringUtils.EMPTY;
-    private String g0302c50b = StringUtils.EMPTY;
-    private String g0302c60r = StringUtils.EMPTY;
-    private String g0302c60i = StringUtils.EMPTY;
-    private String g0302c60d = StringUtils.EMPTY;
-    private String g0302c60b = StringUtils.EMPTY;
-    private String g0302c70r = StringUtils.EMPTY;
-    private String g0302c70i = StringUtils.EMPTY;
-    private String g0302c70d = StringUtils.EMPTY;
-    private String g0302c70b = StringUtils.EMPTY;
-    private String g040110a = StringUtils.EMPTY;
-    private String g040110s = StringUtils.EMPTY;
-    private String g040110sd = StringUtils.EMPTY;
-    private String g040110sm = StringUtils.EMPTY;
-    private String g040110p = StringUtils.EMPTY;
-    private String g040120a = StringUtils.EMPTY;
-    private String g040120s = StringUtils.EMPTY;
-    private String g040120sd = StringUtils.EMPTY;
-    private String g040120sm = StringUtils.EMPTY;
-    private String g040120p = StringUtils.EMPTY;
-    private String g04013 = StringUtils.EMPTY;
-    private String g04010a = StringUtils.EMPTY;
-    private String g04010s = StringUtils.EMPTY;
-    private String g04010sd = StringUtils.EMPTY;
-    private String g04010sm = StringUtils.EMPTY;
-    private String g04010p = StringUtils.EMPTY;
-    private String g040150a = StringUtils.EMPTY;
-    private String g040150s = StringUtils.EMPTY;
-    private String g040150sd = StringUtils.EMPTY;
-    private String g040150sm = StringUtils.EMPTY;
-    private String g040150p = StringUtils.EMPTY;
-    private String g040160a = StringUtils.EMPTY;
-    private String g040160s = StringUtils.EMPTY;
-    private String g040160sd = StringUtils.EMPTY;
-    private String g040160sm = StringUtils.EMPTY;
-    private String g040160p = StringUtils.EMPTY;
-    private String g040170a = StringUtils.EMPTY;
-    private String g040170s = StringUtils.EMPTY;
-    private String g040170sd = StringUtils.EMPTY;
-    private String g040170sm = StringUtils.EMPTY;
-    private String g040170p = StringUtils.EMPTY;
-    private String g040180a = StringUtils.EMPTY;
-    private String g040180s = StringUtils.EMPTY;
-    private String g040180sd = StringUtils.EMPTY;
-    private String g040180sm = StringUtils.EMPTY;
-    private String g040180p = StringUtils.EMPTY;
-    private String g040190a = StringUtils.EMPTY;
-    private String g040190s = StringUtils.EMPTY;
-    private String g040190sd = StringUtils.EMPTY;
-    private String g040190sm = StringUtils.EMPTY;
-    private String g040190p = StringUtils.EMPTY;
-    private String g0401100a = StringUtils.EMPTY;
-    private String g0401100s = StringUtils.EMPTY;
-    private String g0401100sd = StringUtils.EMPTY;
-    private String g0401100sm = StringUtils.EMPTY;
-    private String g0401100p = StringUtils.EMPTY;
-    private String g0401110a = StringUtils.EMPTY;
-    private String g0401110s = StringUtils.EMPTY;
-    private String g0401110sd = StringUtils.EMPTY;
-    private String g0401110sm = StringUtils.EMPTY;
-    private String g0401110p = StringUtils.EMPTY;
-    private String g0401120a = StringUtils.EMPTY;
-    private String g0401120s = StringUtils.EMPTY;
-    private String g0401120sd = StringUtils.EMPTY;
-    private String g0401120sm = StringUtils.EMPTY;
-    private String g0401120p = StringUtils.EMPTY;
-    private String g0401130a = StringUtils.EMPTY;
-    private String g0401130s = StringUtils.EMPTY;
-    private String g0401130sd = StringUtils.EMPTY;
-    private String g0401130sm = StringUtils.EMPTY;
-    private String g0401130p = StringUtils.EMPTY;
-    private String g0401140a = StringUtils.EMPTY;
-    private String g0401140s = StringUtils.EMPTY;
-    private String g0401140sd = StringUtils.EMPTY;
-    private String g0401140sm = StringUtils.EMPTY;
-    private String g0401140p = StringUtils.EMPTY;
-    private String g0401150a = StringUtils.EMPTY;
-    private String g0401150s = StringUtils.EMPTY;
-    private String g0401150sd = StringUtils.EMPTY;
-    private String g0401150sm = StringUtils.EMPTY;
-    private String g0401150p = StringUtils.EMPTY;
-    private String g0401160a = StringUtils.EMPTY;
-    private String g0401160s = StringUtils.EMPTY;
-    private String g0401160sd = StringUtils.EMPTY;
-    private String g0401160sm = StringUtils.EMPTY;
-    private String g0401160p = StringUtils.EMPTY;
-    private String g0401170a = StringUtils.EMPTY;
-    private String g0401170s = StringUtils.EMPTY;
-    private String g0401170sd = StringUtils.EMPTY;
-    private String g0401170sm = StringUtils.EMPTY;
-    private String g0401170p = StringUtils.EMPTY;
-    private String g0401180a = StringUtils.EMPTY;
-    private String g0401180s = StringUtils.EMPTY;
-    private String g0401180sd = StringUtils.EMPTY;
-    private String g0401180sm = StringUtils.EMPTY;
-    private String g0401180p = StringUtils.EMPTY;
-    private String g0401190a = StringUtils.EMPTY;
-    private String g0401190s = StringUtils.EMPTY;
-    private String g0401190sd = StringUtils.EMPTY;
-    private String g0401190sm = StringUtils.EMPTY;
-    private String g0401190p = StringUtils.EMPTY;
-    private String g0401200a = StringUtils.EMPTY;
-    private String g0401200s = StringUtils.EMPTY;
-    private String g0401200sd = StringUtils.EMPTY;
-    private String g0401200sm = StringUtils.EMPTY;
-    private String g0401200p = StringUtils.EMPTY;
-    private String g0401210a = StringUtils.EMPTY;
-    private String g0401210s = StringUtils.EMPTY;
-    private String g0401210sd = StringUtils.EMPTY;
-    private String g0401210sm = StringUtils.EMPTY;
-    private String g0401210p = StringUtils.EMPTY;
-    private String g0401220a = StringUtils.EMPTY;
-    private String g0401220s = StringUtils.EMPTY;
-    private String g0401220sd = StringUtils.EMPTY;
-    private String g0401220sm = StringUtils.EMPTY;
-    private String g0401220p = StringUtils.EMPTY;
-    private String g0401230a = StringUtils.EMPTY;
-    private String g0401230s = StringUtils.EMPTY;
-    private String g0401230sd = StringUtils.EMPTY;
-    private String g0401230sm = StringUtils.EMPTY;
-    private String g0401230p = StringUtils.EMPTY;
-    private String g0401240a = StringUtils.EMPTY;
-    private String g0401240s = StringUtils.EMPTY;
-    private String g0401240sd = StringUtils.EMPTY;
-    private String g0401240sm = StringUtils.EMPTY;
-    private String g0401240p = StringUtils.EMPTY;
-    private String g0401250a = StringUtils.EMPTY;
-    private String g0401250s = StringUtils.EMPTY;
-    private String g0401250sd = StringUtils.EMPTY;
-    private String g0401250sm = StringUtils.EMPTY;
-    private String g0401250p = StringUtils.EMPTY;
-    private String g0401260a = StringUtils.EMPTY;
-    private String g0401260s = StringUtils.EMPTY;
-    private String g0401260sd = StringUtils.EMPTY;
-    private String g0401260sm = StringUtils.EMPTY;
-    private String g0401260p = StringUtils.EMPTY;
-    private String g0401270a = StringUtils.EMPTY;
-    private String g0401270s = StringUtils.EMPTY;
-    private String g0401270sd = StringUtils.EMPTY;
-    private String g0401270sm = StringUtils.EMPTY;
-    private String g0401270p = StringUtils.EMPTY;
-    private String g0401280a = StringUtils.EMPTY;
-    private String g0401280s = StringUtils.EMPTY;
-    private String g0401280sd = StringUtils.EMPTY;
-    private String g0401280sm = StringUtils.EMPTY;
-    private String g0401280p = StringUtils.EMPTY;
-    private String g0401290a = StringUtils.EMPTY;
-    private String g0401290s = StringUtils.EMPTY;
-    private String g0401290sd = StringUtils.EMPTY;
-    private String g0401290sm = StringUtils.EMPTY;
-    private String g0401290p = StringUtils.EMPTY;
-    private String g0401300a = StringUtils.EMPTY;
-    private String g0401300s = StringUtils.EMPTY;
-    private String g0401300sd = StringUtils.EMPTY;
-    private String g0401300sm = StringUtils.EMPTY;
-    private String g0401300p = StringUtils.EMPTY;
-    private String g0401310a = StringUtils.EMPTY;
-    private String g0401310s = StringUtils.EMPTY;
-    private String g0401310sd = StringUtils.EMPTY;
-    private String g0401310sm = StringUtils.EMPTY;
-    private String g0401310p = StringUtils.EMPTY;
-    private String g0401320a = StringUtils.EMPTY;
-    private String g0401320s = StringUtils.EMPTY;
-    private String g0401320sd = StringUtils.EMPTY;
-    private String g0401320sm = StringUtils.EMPTY;
-    private String g0401320p = StringUtils.EMPTY;
-    private String g0401330a = StringUtils.EMPTY;
-    private String g0401330s = StringUtils.EMPTY;
-    private String g0401330sd = StringUtils.EMPTY;
-    private String g0401330sm = StringUtils.EMPTY;
-    private String g0401330p = StringUtils.EMPTY;
-    private String g0401340a = StringUtils.EMPTY;
-    private String g0401340s = StringUtils.EMPTY;
-    private String g0401340sd = StringUtils.EMPTY;
-    private String g0401340sm = StringUtils.EMPTY;
-    private String g0401340p = StringUtils.EMPTY;
-    private String g0401350a = StringUtils.EMPTY;
-    private String g0401350s = StringUtils.EMPTY;
-    private String g0401350sd = StringUtils.EMPTY;
-    private String g0401350sm = StringUtils.EMPTY;
-    private String g0401350p = StringUtils.EMPTY;
-    private String g0401360a = StringUtils.EMPTY;
-    private String g0401360s = StringUtils.EMPTY;
-    private String g0401360sd = StringUtils.EMPTY;
-    private String g0401360sm = StringUtils.EMPTY;
-    private String g0401360p = StringUtils.EMPTY;
-    private String g0401370a = StringUtils.EMPTY;
-    private String g0401370s = StringUtils.EMPTY;
-    private String g0401370sd = StringUtils.EMPTY;
-    private String g0401370sm = StringUtils.EMPTY;
-    private String g0401370p = StringUtils.EMPTY;
-    private String g0401380a = StringUtils.EMPTY;
-    private String g0401380s = StringUtils.EMPTY;
-    private String g0401380sd = StringUtils.EMPTY;
-    private String g0401380sm = StringUtils.EMPTY;
-    private String g0401380p = StringUtils.EMPTY;
-    private String g0401390a = StringUtils.EMPTY;
-    private String g0401390s = StringUtils.EMPTY;
-    private String g0401390sd = StringUtils.EMPTY;
-    private String g0401390sm = StringUtils.EMPTY;
-    private String g0401390p = StringUtils.EMPTY;
-    private String g0401400a = StringUtils.EMPTY;
-    private String g0401400s = StringUtils.EMPTY;
-    private String g0401400sd = StringUtils.EMPTY;
-    private String g0401400sm = StringUtils.EMPTY;
-    private String g0401400p = StringUtils.EMPTY;
-    private String g0401410a = StringUtils.EMPTY;
-    private String g0401410s = StringUtils.EMPTY;
-    private String g0401410sd = StringUtils.EMPTY;
-    private String g0401410sm = StringUtils.EMPTY;
-    private String g0401410p = StringUtils.EMPTY;
-    private String g0401420a = StringUtils.EMPTY;
-    private String g0401420s = StringUtils.EMPTY;
-    private String g0401420sd = StringUtils.EMPTY;
-    private String g0401420sm = StringUtils.EMPTY;
-    private String g0401420p = StringUtils.EMPTY;
-    private String g0401430a = StringUtils.EMPTY;
-    private String g0401430s = StringUtils.EMPTY;
-    private String g0401430sd = StringUtils.EMPTY;
-    private String g0401430sm = StringUtils.EMPTY;
-    private String g0401430p = StringUtils.EMPTY;
-    private String g0401440a = StringUtils.EMPTY;
-    private String g0401440s = StringUtils.EMPTY;
-    private String g0401440sd = StringUtils.EMPTY;
-    private String g0401440sm = StringUtils.EMPTY;
-    private String g0401440p = StringUtils.EMPTY;
-    private String g040210a = StringUtils.EMPTY;
-    private String g040210s = StringUtils.EMPTY;
-    private String g040210sd = StringUtils.EMPTY;
-    private String g040210sm = StringUtils.EMPTY;
-    private String g040210p = StringUtils.EMPTY;
-    private String g040220a = StringUtils.EMPTY;
-    private String g040220s = StringUtils.EMPTY;
-    private String g040220sd = StringUtils.EMPTY;
-    private String g040220sm = StringUtils.EMPTY;
-    private String g040220p = StringUtils.EMPTY;
-    private String g040230a = StringUtils.EMPTY;
-    private String g040230s = StringUtils.EMPTY;
-    private String g040230sd = StringUtils.EMPTY;
-    private String g040230sm = StringUtils.EMPTY;
-    private String g040230p = StringUtils.EMPTY;
-    private String g040240a = StringUtils.EMPTY;
-    private String g040240s = StringUtils.EMPTY;
-    private String g040240sd = StringUtils.EMPTY;
-    private String g040240sm = StringUtils.EMPTY;
-    private String g040240p = StringUtils.EMPTY;
-    private String g040250a = StringUtils.EMPTY;
-    private String g040250s = StringUtils.EMPTY;
-    private String g040250sd = StringUtils.EMPTY;
-    private String g040250sm = StringUtils.EMPTY;
-    private String g040250p = StringUtils.EMPTY;
-    private String g040260a = StringUtils.EMPTY;
-    private String g040260s = StringUtils.EMPTY;
-    private String g040260sd = StringUtils.EMPTY;
-    private String g040260sm = StringUtils.EMPTY;
-    private String g040260p = StringUtils.EMPTY;
-    private String g040270a = StringUtils.EMPTY;
-    private String g040270s = StringUtils.EMPTY;
-    private String g040270sd = StringUtils.EMPTY;
-    private String g040270sm = StringUtils.EMPTY;
-    private String g040270p = StringUtils.EMPTY;
-    private String g040280a = StringUtils.EMPTY;
-    private String g040280s = StringUtils.EMPTY;
-    private String g040280sd = StringUtils.EMPTY;
-    private String g040280sm = StringUtils.EMPTY;
-    private String g040280p = StringUtils.EMPTY;
-    private String g040290a = StringUtils.EMPTY;
-    private String g040290s = StringUtils.EMPTY;
-    private String g040290sd = StringUtils.EMPTY;
-    private String g040290sm = StringUtils.EMPTY;
-    private String g040290p = StringUtils.EMPTY;
-    private String g0402100a = StringUtils.EMPTY;
-    private String g0402100s = StringUtils.EMPTY;
-    private String g0402100sd = StringUtils.EMPTY;
-    private String g0402100sm = StringUtils.EMPTY;
-    private String g0402100p = StringUtils.EMPTY;
-    private String g040310a = StringUtils.EMPTY;
-    private String g040310s = StringUtils.EMPTY;
-    private String g040310sd = StringUtils.EMPTY;
-    private String g040310sm = StringUtils.EMPTY;
-    private String g040310p = StringUtils.EMPTY;
-    private String g040320a = StringUtils.EMPTY;
-    private String g040320s = StringUtils.EMPTY;
-    private String g040320sd = StringUtils.EMPTY;
-    private String g040320sm = StringUtils.EMPTY;
-    private String g040320p = StringUtils.EMPTY;
-    private String g040330a = StringUtils.EMPTY;
-    private String g040330s = StringUtils.EMPTY;
-    private String g040330sd = StringUtils.EMPTY;
-    private String g040330sm = StringUtils.EMPTY;
-    private String g040330p = StringUtils.EMPTY;
-    private String g040340a = StringUtils.EMPTY;
-    private String g040340s = StringUtils.EMPTY;
-    private String g040340sd = StringUtils.EMPTY;
-    private String g040340sm = StringUtils.EMPTY;
-    private String g040340p = StringUtils.EMPTY;
-    private String g040350a = StringUtils.EMPTY;
-    private String g040350s = StringUtils.EMPTY;
-    private String g040350sd = StringUtils.EMPTY;
-    private String g040350sm = StringUtils.EMPTY;
-    private String g040350p = StringUtils.EMPTY;
-    private String g040360a = StringUtils.EMPTY;
-    private String g040360s = StringUtils.EMPTY;
-    private String g040360sd = StringUtils.EMPTY;
-    private String g040360sm = StringUtils.EMPTY;
-    private String g040360p = StringUtils.EMPTY;
-    private String g040370a = StringUtils.EMPTY;
-    private String g040370s = StringUtils.EMPTY;
-    private String g040370sd = StringUtils.EMPTY;
-    private String g040370sm = StringUtils.EMPTY;
-    private String g040370p = StringUtils.EMPTY;
-    private String g040380a = StringUtils.EMPTY;
-    private String g040380s = StringUtils.EMPTY;
-    private String g040380sd = StringUtils.EMPTY;
-    private String g040380sm = StringUtils.EMPTY;
-    private String g040380p = StringUtils.EMPTY;
-    private String g040390a = StringUtils.EMPTY;
-    private String g040390s = StringUtils.EMPTY;
-    private String g040390sd = StringUtils.EMPTY;
-    private String g040390sm = StringUtils.EMPTY;
-    private String g040390p = StringUtils.EMPTY;
-    private String g0403100a = StringUtils.EMPTY;
-    private String g0403100s = StringUtils.EMPTY;
-    private String g0403100sd = StringUtils.EMPTY;
-    private String g0403100sm = StringUtils.EMPTY;
-    private String g0403100p = StringUtils.EMPTY;
-    private String g0403110a = StringUtils.EMPTY;
-    private String g0403110s = StringUtils.EMPTY;
-    private String g0403110sd = StringUtils.EMPTY;
-    private String g0403110sm = StringUtils.EMPTY;
-    private String g0403110p = StringUtils.EMPTY;
-    private String g0403120a = StringUtils.EMPTY;
-    private String g0403120s = StringUtils.EMPTY;
-    private String g0403120sd = StringUtils.EMPTY;
-    private String g0403120sm = StringUtils.EMPTY;
-    private String g0403120p = StringUtils.EMPTY;
-    private String g0403130a = StringUtils.EMPTY;
-    private String g0403130s = StringUtils.EMPTY;
-    private String g0403130sd = StringUtils.EMPTY;
-    private String g0403130sm = StringUtils.EMPTY;
-    private String g0403130p = StringUtils.EMPTY;
-    private String g0403140a = StringUtils.EMPTY;
-    private String g0403140s = StringUtils.EMPTY;
-    private String g0403140sd = StringUtils.EMPTY;
-    private String g0403140sm = StringUtils.EMPTY;
-    private String g0403140p = StringUtils.EMPTY;
-    private String g0403150a = StringUtils.EMPTY;
-    private String g0403150s = StringUtils.EMPTY;
-    private String g0403150sd = StringUtils.EMPTY;
-    private String g0403150sm = StringUtils.EMPTY;
-    private String g0403150p = StringUtils.EMPTY;
-    private String g0403160a = StringUtils.EMPTY;
-    private String g0403160s = StringUtils.EMPTY;
-    private String g0403160sd = StringUtils.EMPTY;
-    private String g0403160sm = StringUtils.EMPTY;
-    private String g0403160p = StringUtils.EMPTY;
-    private String g0403170a = StringUtils.EMPTY;
-    private String g0403170s = StringUtils.EMPTY;
-    private String g0403170sd = StringUtils.EMPTY;
-    private String g0403170sm = StringUtils.EMPTY;
-    private String g0403170p = StringUtils.EMPTY;
-    private String g0403180a = StringUtils.EMPTY;
-    private String g0403180s = StringUtils.EMPTY;
-    private String g0403180sd = StringUtils.EMPTY;
-    private String g0403180sm = StringUtils.EMPTY;
-    private String g0403180p = StringUtils.EMPTY;
-    private String g0403190a = StringUtils.EMPTY;
-    private String g0403190s = StringUtils.EMPTY;
-    private String g0403190sd = StringUtils.EMPTY;
-    private String g0403190sm = StringUtils.EMPTY;
-    private String g0403190p = StringUtils.EMPTY;
-    private String g0403200a = StringUtils.EMPTY;
-    private String g0403200s = StringUtils.EMPTY;
-    private String g0403200sd = StringUtils.EMPTY;
-    private String g0403200sm = StringUtils.EMPTY;
-    private String g0403200p = StringUtils.EMPTY;
-    private String g0403210a = StringUtils.EMPTY;
-    private String g0403210s = StringUtils.EMPTY;
-    private String g0403210sd = StringUtils.EMPTY;
-    private String g0403210sm = StringUtils.EMPTY;
-    private String g0403210p = StringUtils.EMPTY;
-    private String g0403220a = StringUtils.EMPTY;
-    private String g0403220s = StringUtils.EMPTY;
-    private String g0403220sd = StringUtils.EMPTY;
-    private String g0403220sm = StringUtils.EMPTY;
-    private String g0403220p = StringUtils.EMPTY;
-    private String g0403230a = StringUtils.EMPTY;
-    private String g0403230s = StringUtils.EMPTY;
-    private String g0403230sd = StringUtils.EMPTY;
-    private String g0403230sm = StringUtils.EMPTY;
-    private String g0403230p = StringUtils.EMPTY;
-    private String g0403240a = StringUtils.EMPTY;
-    private String g0403240s = StringUtils.EMPTY;
-    private String g0403240sd = StringUtils.EMPTY;
-    private String g0403240sm = StringUtils.EMPTY;
-    private String g0403240p = StringUtils.EMPTY;
-    private String g0403250a = StringUtils.EMPTY;
-    private String g0403250s = StringUtils.EMPTY;
-    private String g0403250sd = StringUtils.EMPTY;
-    private String g0403250sm = StringUtils.EMPTY;
-    private String g0403250p = StringUtils.EMPTY;
-    private String g0403260a = StringUtils.EMPTY;
-    private String g0403260s = StringUtils.EMPTY;
-    private String g0403260sd = StringUtils.EMPTY;
-    private String g0403260sm = StringUtils.EMPTY;
-    private String g0403260p = StringUtils.EMPTY;
-    private String g0403270a = StringUtils.EMPTY;
-    private String g0403270s = StringUtils.EMPTY;
-    private String g0403270sd = StringUtils.EMPTY;
-    private String g0403270sm = StringUtils.EMPTY;
-    private String g0403270p = StringUtils.EMPTY;
-    private String g040410a = StringUtils.EMPTY;
-    private String g040410s = StringUtils.EMPTY;
-    private String g040410sd = StringUtils.EMPTY;
-    private String g040410sm = StringUtils.EMPTY;
-    private String g040410p = StringUtils.EMPTY;
-    private String g040420a = StringUtils.EMPTY;
-    private String g040420s = StringUtils.EMPTY;
-    private String g040420sd = StringUtils.EMPTY;
-    private String g040420sm = StringUtils.EMPTY;
-    private String g040420p = StringUtils.EMPTY;
-    private String g040430a = StringUtils.EMPTY;
-    private String g040430s = StringUtils.EMPTY;
-    private String g040430sd = StringUtils.EMPTY;
-    private String g040430sm = StringUtils.EMPTY;
-    private String g040430p = StringUtils.EMPTY;
-    private String g040440a = StringUtils.EMPTY;
-    private String g040440s = StringUtils.EMPTY;
-    private String g040440sd = StringUtils.EMPTY;
-    private String g040440sm = StringUtils.EMPTY;
-    private String g040440p = StringUtils.EMPTY;
-    private String g040450a = StringUtils.EMPTY;
-    private String g040450s = StringUtils.EMPTY;
-    private String g040450sd = StringUtils.EMPTY;
-    private String g040450sm = StringUtils.EMPTY;
-    private String g040450p = StringUtils.EMPTY;
-    private String g040460a = StringUtils.EMPTY;
-    private String g040460s = StringUtils.EMPTY;
-    private String g040460sd = StringUtils.EMPTY;
-    private String g040460sm = StringUtils.EMPTY;
-    private String g040460p = StringUtils.EMPTY;
+    private String g0101 = _EMPTY_;
+    private String g0101xx = _EMPTY_;
+    private String g0102a = _EMPTY_;
+    private String g0102b = _EMPTY_;
+    private String g0103 = _EMPTY_;
+    private String g0103xx = _EMPTY_;
+    private String g0104 = _EMPTY_;
+    private String g0105 = _EMPTY_;
+    private String g0105ax = _EMPTY_;
+    private String g0105bx = _EMPTY_;
+    private String g0105cx = _EMPTY_;
+    private String g0106 = _EMPTY_;
+    private String g0106xx = _EMPTY_;
+    private String g0107 = _EMPTY_;
+    private String g0107xx = _EMPTY_;
+    private String g0108a = _EMPTY_;
+    private String g0108b = _EMPTY_;
+    private String g0108c = _EMPTY_;
+    private String g0109 = _EMPTY_;
+    private String g0110 = _EMPTY_;
+    private String g0110ax = _EMPTY_;
+    private String g0110bx = _EMPTY_;
+    private String g0110cx = _EMPTY_;
+    private String g0111 = _EMPTY_;
+    private String g01112 = _EMPTY_;
+    private String g01112xx = _EMPTY_;
+    private String g01113 = _EMPTY_;
+    private String g01114 = _EMPTY_;
+    private String g01115 = _EMPTY_;
+    private String g01116 = _EMPTY_;
+    private String g01117 = _EMPTY_;
+    private String g0201 = _EMPTY_;
+    private String g0202 = _EMPTY_;
+    private String g0203 = _EMPTY_;
+    private String g0203x = _EMPTY_;
+    private String g0204 = _EMPTY_;
+    private String g0205 = _EMPTY_;
+    private String g0206 = _EMPTY_;
+    private String g0207 = _EMPTY_;
+    private String g0208 = _EMPTY_;
+    private String g0301aa = _EMPTY_;
+    private String g0301ab = _EMPTY_;
+    private String g0301ba = _EMPTY_;
+    private String g0301bb = _EMPTY_;
+    private String g0301ca = _EMPTY_;
+    private String g0301cb = _EMPTY_;
+    private String g0302a10r = _EMPTY_;
+    private String g0302a10i = _EMPTY_;
+    private String g0302a10d = _EMPTY_;
+    private String g0302a10b = _EMPTY_;
+    private String g0302a20r = _EMPTY_;
+    private String g0302a20i = _EMPTY_;
+    private String g0302a20d = _EMPTY_;
+    private String g0302a20b = _EMPTY_;
+    private String g0302a30r = _EMPTY_;
+    private String g0302a30i = _EMPTY_;
+    private String g0302a30d = _EMPTY_;
+    private String g0302a30b = _EMPTY_;
+    private String g0302a40r = _EMPTY_;
+    private String g0302a40i = _EMPTY_;
+    private String g0302a40d = _EMPTY_;
+    private String g0302a40b = _EMPTY_;
+    private String g0302a50r = _EMPTY_;
+    private String g0302a50i = _EMPTY_;
+    private String g0302a50d = _EMPTY_;
+    private String g0302a50b = _EMPTY_;
+    private String g0302a60r = _EMPTY_;
+    private String g0302a60i = _EMPTY_;
+    private String g0302a60d = _EMPTY_;
+    private String g0302a60b = _EMPTY_;
+    private String g0302a70r = _EMPTY_;
+    private String g0302a70i = _EMPTY_;
+    private String g0302a70d = _EMPTY_;
+    private String g0302a70b = _EMPTY_;
+    private String g0302b10r = _EMPTY_;
+    private String g0302b10i = _EMPTY_;
+    private String g0302b10d = _EMPTY_;
+    private String g0302b10b = _EMPTY_;
+    private String g0302b20r = _EMPTY_;
+    private String g0302b20i = _EMPTY_;
+    private String g0302b20d = _EMPTY_;
+    private String g0302b20b = _EMPTY_;
+    private String g0302b30r = _EMPTY_;
+    private String g0302b30i = _EMPTY_;
+    private String g0302b30d = _EMPTY_;
+    private String g0302b30b = _EMPTY_;
+    private String g0302b40r = _EMPTY_;
+    private String g0302b40i = _EMPTY_;
+    private String g0302b40d = _EMPTY_;
+    private String g0302b40b = _EMPTY_;
+    private String g0302b50r = _EMPTY_;
+    private String g0302b50i = _EMPTY_;
+    private String g0302b50d = _EMPTY_;
+    private String g0302b50b = _EMPTY_;
+    private String g0302b60r = _EMPTY_;
+    private String g0302b60i = _EMPTY_;
+    private String g0302b60d = _EMPTY_;
+    private String g0302b60b = _EMPTY_;
+    private String g0302b70r = _EMPTY_;
+    private String g0302b70i = _EMPTY_;
+    private String g0302b70d = _EMPTY_;
+    private String g0302b70b = _EMPTY_;
+    private String g0302c10r = _EMPTY_;
+    private String g0302c10i = _EMPTY_;
+    private String g0302c10d = _EMPTY_;
+    private String g0302c10b = _EMPTY_;
+    private String g0302c20r = _EMPTY_;
+    private String g0302c20i = _EMPTY_;
+    private String g0302c20d = _EMPTY_;
+    private String g0302c20b = _EMPTY_;
+    private String g0302c30r = _EMPTY_;
+    private String g0302c30i = _EMPTY_;
+    private String g0302c30d = _EMPTY_;
+    private String g0302c30b = _EMPTY_;
+    private String g0302c40r = _EMPTY_;
+    private String g0302c40i = _EMPTY_;
+    private String g0302c40d = _EMPTY_;
+    private String g0302c40b = _EMPTY_;
+    private String g0302c50r = _EMPTY_;
+    private String g0302c50i = _EMPTY_;
+    private String g0302c50d = _EMPTY_;
+    private String g0302c50b = _EMPTY_;
+    private String g0302c60r = _EMPTY_;
+    private String g0302c60i = _EMPTY_;
+    private String g0302c60d = _EMPTY_;
+    private String g0302c60b = _EMPTY_;
+    private String g0302c70r = _EMPTY_;
+    private String g0302c70i = _EMPTY_;
+    private String g0302c70d = _EMPTY_;
+    private String g0302c70b = _EMPTY_;
+    private String g040110a = _EMPTY_;
+    private String g040110s = _EMPTY_;
+    private String g040110sd = _EMPTY_;
+    private String g040110sm = _EMPTY_;
+    private String g040110p = _EMPTY_;
+    private String g040120a = _EMPTY_;
+    private String g040120s = _EMPTY_;
+    private String g040120sd = _EMPTY_;
+    private String g040120sm = _EMPTY_;
+    private String g040120p = _EMPTY_;
+    private String g04013 = _EMPTY_;
+    private String g04010a = _EMPTY_;
+    private String g04010s = _EMPTY_;
+    private String g04010sd = _EMPTY_;
+    private String g04010sm = _EMPTY_;
+    private String g04010p = _EMPTY_;
+    private String g040150a = _EMPTY_;
+    private String g040150s = _EMPTY_;
+    private String g040150sd = _EMPTY_;
+    private String g040150sm = _EMPTY_;
+    private String g040150p = _EMPTY_;
+    private String g040160a = _EMPTY_;
+    private String g040160s = _EMPTY_;
+    private String g040160sd = _EMPTY_;
+    private String g040160sm = _EMPTY_;
+    private String g040160p = _EMPTY_;
+    private String g040170a = _EMPTY_;
+    private String g040170s = _EMPTY_;
+    private String g040170sd = _EMPTY_;
+    private String g040170sm = _EMPTY_;
+    private String g040170p = _EMPTY_;
+    private String g040180a = _EMPTY_;
+    private String g040180s = _EMPTY_;
+    private String g040180sd = _EMPTY_;
+    private String g040180sm = _EMPTY_;
+    private String g040180p = _EMPTY_;
+    private String g040190a = _EMPTY_;
+    private String g040190s = _EMPTY_;
+    private String g040190sd = _EMPTY_;
+    private String g040190sm = _EMPTY_;
+    private String g040190p = _EMPTY_;
+    private String g0401100a = _EMPTY_;
+    private String g0401100s = _EMPTY_;
+    private String g0401100sd = _EMPTY_;
+    private String g0401100sm = _EMPTY_;
+    private String g0401100p = _EMPTY_;
+    private String g0401110a = _EMPTY_;
+    private String g0401110s = _EMPTY_;
+    private String g0401110sd = _EMPTY_;
+    private String g0401110sm = _EMPTY_;
+    private String g0401110p = _EMPTY_;
+    private String g0401120a = _EMPTY_;
+    private String g0401120s = _EMPTY_;
+    private String g0401120sd = _EMPTY_;
+    private String g0401120sm = _EMPTY_;
+    private String g0401120p = _EMPTY_;
+    private String g0401130a = _EMPTY_;
+    private String g0401130s = _EMPTY_;
+    private String g0401130sd = _EMPTY_;
+    private String g0401130sm = _EMPTY_;
+    private String g0401130p = _EMPTY_;
+    private String g0401140a = _EMPTY_;
+    private String g0401140s = _EMPTY_;
+    private String g0401140sd = _EMPTY_;
+    private String g0401140sm = _EMPTY_;
+    private String g0401140p = _EMPTY_;
+    private String g0401150a = _EMPTY_;
+    private String g0401150s = _EMPTY_;
+    private String g0401150sd = _EMPTY_;
+    private String g0401150sm = _EMPTY_;
+    private String g0401150p = _EMPTY_;
+    private String g0401160a = _EMPTY_;
+    private String g0401160s = _EMPTY_;
+    private String g0401160sd = _EMPTY_;
+    private String g0401160sm = _EMPTY_;
+    private String g0401160p = _EMPTY_;
+    private String g0401170a = _EMPTY_;
+    private String g0401170s = _EMPTY_;
+    private String g0401170sd = _EMPTY_;
+    private String g0401170sm = _EMPTY_;
+    private String g0401170p = _EMPTY_;
+    private String g0401180a = _EMPTY_;
+    private String g0401180s = _EMPTY_;
+    private String g0401180sd = _EMPTY_;
+    private String g0401180sm = _EMPTY_;
+    private String g0401180p = _EMPTY_;
+    private String g0401190a = _EMPTY_;
+    private String g0401190s = _EMPTY_;
+    private String g0401190sd = _EMPTY_;
+    private String g0401190sm = _EMPTY_;
+    private String g0401190p = _EMPTY_;
+    private String g0401200a = _EMPTY_;
+    private String g0401200s = _EMPTY_;
+    private String g0401200sd = _EMPTY_;
+    private String g0401200sm = _EMPTY_;
+    private String g0401200p = _EMPTY_;
+    private String g0401210a = _EMPTY_;
+    private String g0401210s = _EMPTY_;
+    private String g0401210sd = _EMPTY_;
+    private String g0401210sm = _EMPTY_;
+    private String g0401210p = _EMPTY_;
+    private String g0401220a = _EMPTY_;
+    private String g0401220s = _EMPTY_;
+    private String g0401220sd = _EMPTY_;
+    private String g0401220sm = _EMPTY_;
+    private String g0401220p = _EMPTY_;
+    private String g0401230a = _EMPTY_;
+    private String g0401230s = _EMPTY_;
+    private String g0401230sd = _EMPTY_;
+    private String g0401230sm = _EMPTY_;
+    private String g0401230p = _EMPTY_;
+    private String g0401240a = _EMPTY_;
+    private String g0401240s = _EMPTY_;
+    private String g0401240sd = _EMPTY_;
+    private String g0401240sm = _EMPTY_;
+    private String g0401240p = _EMPTY_;
+    private String g0401250a = _EMPTY_;
+    private String g0401250s = _EMPTY_;
+    private String g0401250sd = _EMPTY_;
+    private String g0401250sm = _EMPTY_;
+    private String g0401250p = _EMPTY_;
+    private String g0401260a = _EMPTY_;
+    private String g0401260s = _EMPTY_;
+    private String g0401260sd = _EMPTY_;
+    private String g0401260sm = _EMPTY_;
+    private String g0401260p = _EMPTY_;
+    private String g0401270a = _EMPTY_;
+    private String g0401270s = _EMPTY_;
+    private String g0401270sd = _EMPTY_;
+    private String g0401270sm = _EMPTY_;
+    private String g0401270p = _EMPTY_;
+    private String g0401280a = _EMPTY_;
+    private String g0401280s = _EMPTY_;
+    private String g0401280sd = _EMPTY_;
+    private String g0401280sm = _EMPTY_;
+    private String g0401280p = _EMPTY_;
+    private String g0401290a = _EMPTY_;
+    private String g0401290s = _EMPTY_;
+    private String g0401290sd = _EMPTY_;
+    private String g0401290sm = _EMPTY_;
+    private String g0401290p = _EMPTY_;
+    private String g0401300a = _EMPTY_;
+    private String g0401300s = _EMPTY_;
+    private String g0401300sd = _EMPTY_;
+    private String g0401300sm = _EMPTY_;
+    private String g0401300p = _EMPTY_;
+    private String g0401310a = _EMPTY_;
+    private String g0401310s = _EMPTY_;
+    private String g0401310sd = _EMPTY_;
+    private String g0401310sm = _EMPTY_;
+    private String g0401310p = _EMPTY_;
+    private String g0401320a = _EMPTY_;
+    private String g0401320s = _EMPTY_;
+    private String g0401320sd = _EMPTY_;
+    private String g0401320sm = _EMPTY_;
+    private String g0401320p = _EMPTY_;
+    private String g0401330a = _EMPTY_;
+    private String g0401330s = _EMPTY_;
+    private String g0401330sd = _EMPTY_;
+    private String g0401330sm = _EMPTY_;
+    private String g0401330p = _EMPTY_;
+    private String g0401340a = _EMPTY_;
+    private String g0401340s = _EMPTY_;
+    private String g0401340sd = _EMPTY_;
+    private String g0401340sm = _EMPTY_;
+    private String g0401340p = _EMPTY_;
+    private String g0401350a = _EMPTY_;
+    private String g0401350s = _EMPTY_;
+    private String g0401350sd = _EMPTY_;
+    private String g0401350sm = _EMPTY_;
+    private String g0401350p = _EMPTY_;
+    private String g0401360a = _EMPTY_;
+    private String g0401360s = _EMPTY_;
+    private String g0401360sd = _EMPTY_;
+    private String g0401360sm = _EMPTY_;
+    private String g0401360p = _EMPTY_;
+    private String g0401370a = _EMPTY_;
+    private String g0401370s = _EMPTY_;
+    private String g0401370sd = _EMPTY_;
+    private String g0401370sm = _EMPTY_;
+    private String g0401370p = _EMPTY_;
+    private String g0401380a = _EMPTY_;
+    private String g0401380s = _EMPTY_;
+    private String g0401380sd = _EMPTY_;
+    private String g0401380sm = _EMPTY_;
+    private String g0401380p = _EMPTY_;
+    private String g0401390a = _EMPTY_;
+    private String g0401390s = _EMPTY_;
+    private String g0401390sd = _EMPTY_;
+    private String g0401390sm = _EMPTY_;
+    private String g0401390p = _EMPTY_;
+    private String g0401400a = _EMPTY_;
+    private String g0401400s = _EMPTY_;
+    private String g0401400sd = _EMPTY_;
+    private String g0401400sm = _EMPTY_;
+    private String g0401400p = _EMPTY_;
+    private String g0401410a = _EMPTY_;
+    private String g0401410s = _EMPTY_;
+    private String g0401410sd = _EMPTY_;
+    private String g0401410sm = _EMPTY_;
+    private String g0401410p = _EMPTY_;
+    private String g0401420a = _EMPTY_;
+    private String g0401420s = _EMPTY_;
+    private String g0401420sd = _EMPTY_;
+    private String g0401420sm = _EMPTY_;
+    private String g0401420p = _EMPTY_;
+    private String g0401430a = _EMPTY_;
+    private String g0401430s = _EMPTY_;
+    private String g0401430sd = _EMPTY_;
+    private String g0401430sm = _EMPTY_;
+    private String g0401430p = _EMPTY_;
+    private String g0401440a = _EMPTY_;
+    private String g0401440s = _EMPTY_;
+    private String g0401440sd = _EMPTY_;
+    private String g0401440sm = _EMPTY_;
+    private String g0401440p = _EMPTY_;
+    private String g040210a = _EMPTY_;
+    private String g040210s = _EMPTY_;
+    private String g040210sd = _EMPTY_;
+    private String g040210sm = _EMPTY_;
+    private String g040210p = _EMPTY_;
+    private String g040220a = _EMPTY_;
+    private String g040220s = _EMPTY_;
+    private String g040220sd = _EMPTY_;
+    private String g040220sm = _EMPTY_;
+    private String g040220p = _EMPTY_;
+    private String g040230a = _EMPTY_;
+    private String g040230s = _EMPTY_;
+    private String g040230sd = _EMPTY_;
+    private String g040230sm = _EMPTY_;
+    private String g040230p = _EMPTY_;
+    private String g040240a = _EMPTY_;
+    private String g040240s = _EMPTY_;
+    private String g040240sd = _EMPTY_;
+    private String g040240sm = _EMPTY_;
+    private String g040240p = _EMPTY_;
+    private String g040250a = _EMPTY_;
+    private String g040250s = _EMPTY_;
+    private String g040250sd = _EMPTY_;
+    private String g040250sm = _EMPTY_;
+    private String g040250p = _EMPTY_;
+    private String g040260a = _EMPTY_;
+    private String g040260s = _EMPTY_;
+    private String g040260sd = _EMPTY_;
+    private String g040260sm = _EMPTY_;
+    private String g040260p = _EMPTY_;
+    private String g040270a = _EMPTY_;
+    private String g040270s = _EMPTY_;
+    private String g040270sd = _EMPTY_;
+    private String g040270sm = _EMPTY_;
+    private String g040270p = _EMPTY_;
+    private String g040280a = _EMPTY_;
+    private String g040280s = _EMPTY_;
+    private String g040280sd = _EMPTY_;
+    private String g040280sm = _EMPTY_;
+    private String g040280p = _EMPTY_;
+    private String g040290a = _EMPTY_;
+    private String g040290s = _EMPTY_;
+    private String g040290sd = _EMPTY_;
+    private String g040290sm = _EMPTY_;
+    private String g040290p = _EMPTY_;
+    private String g0402100a = _EMPTY_;
+    private String g0402100s = _EMPTY_;
+    private String g0402100sd = _EMPTY_;
+    private String g0402100sm = _EMPTY_;
+    private String g0402100p = _EMPTY_;
+    private String g040310a = _EMPTY_;
+    private String g040310s = _EMPTY_;
+    private String g040310sd = _EMPTY_;
+    private String g040310sm = _EMPTY_;
+    private String g040310p = _EMPTY_;
+    private String g040320a = _EMPTY_;
+    private String g040320s = _EMPTY_;
+    private String g040320sd = _EMPTY_;
+    private String g040320sm = _EMPTY_;
+    private String g040320p = _EMPTY_;
+    private String g040330a = _EMPTY_;
+    private String g040330s = _EMPTY_;
+    private String g040330sd = _EMPTY_;
+    private String g040330sm = _EMPTY_;
+    private String g040330p = _EMPTY_;
+    private String g040340a = _EMPTY_;
+    private String g040340s = _EMPTY_;
+    private String g040340sd = _EMPTY_;
+    private String g040340sm = _EMPTY_;
+    private String g040340p = _EMPTY_;
+    private String g040350a = _EMPTY_;
+    private String g040350s = _EMPTY_;
+    private String g040350sd = _EMPTY_;
+    private String g040350sm = _EMPTY_;
+    private String g040350p = _EMPTY_;
+    private String g040360a = _EMPTY_;
+    private String g040360s = _EMPTY_;
+    private String g040360sd = _EMPTY_;
+    private String g040360sm = _EMPTY_;
+    private String g040360p = _EMPTY_;
+    private String g040370a = _EMPTY_;
+    private String g040370s = _EMPTY_;
+    private String g040370sd = _EMPTY_;
+    private String g040370sm = _EMPTY_;
+    private String g040370p = _EMPTY_;
+    private String g040380a = _EMPTY_;
+    private String g040380s = _EMPTY_;
+    private String g040380sd = _EMPTY_;
+    private String g040380sm = _EMPTY_;
+    private String g040380p = _EMPTY_;
+    private String g040390a = _EMPTY_;
+    private String g040390s = _EMPTY_;
+    private String g040390sd = _EMPTY_;
+    private String g040390sm = _EMPTY_;
+    private String g040390p = _EMPTY_;
+    private String g0403100a = _EMPTY_;
+    private String g0403100s = _EMPTY_;
+    private String g0403100sd = _EMPTY_;
+    private String g0403100sm = _EMPTY_;
+    private String g0403100p = _EMPTY_;
+    private String g0403110a = _EMPTY_;
+    private String g0403110s = _EMPTY_;
+    private String g0403110sd = _EMPTY_;
+    private String g0403110sm = _EMPTY_;
+    private String g0403110p = _EMPTY_;
+    private String g0403120a = _EMPTY_;
+    private String g0403120s = _EMPTY_;
+    private String g0403120sd = _EMPTY_;
+    private String g0403120sm = _EMPTY_;
+    private String g0403120p = _EMPTY_;
+    private String g0403130a = _EMPTY_;
+    private String g0403130s = _EMPTY_;
+    private String g0403130sd = _EMPTY_;
+    private String g0403130sm = _EMPTY_;
+    private String g0403130p = _EMPTY_;
+    private String g0403140a = _EMPTY_;
+    private String g0403140s = _EMPTY_;
+    private String g0403140sd = _EMPTY_;
+    private String g0403140sm = _EMPTY_;
+    private String g0403140p = _EMPTY_;
+    private String g0403150a = _EMPTY_;
+    private String g0403150s = _EMPTY_;
+    private String g0403150sd = _EMPTY_;
+    private String g0403150sm = _EMPTY_;
+    private String g0403150p = _EMPTY_;
+    private String g0403160a = _EMPTY_;
+    private String g0403160s = _EMPTY_;
+    private String g0403160sd = _EMPTY_;
+    private String g0403160sm = _EMPTY_;
+    private String g0403160p = _EMPTY_;
+    private String g0403170a = _EMPTY_;
+    private String g0403170s = _EMPTY_;
+    private String g0403170sd = _EMPTY_;
+    private String g0403170sm = _EMPTY_;
+    private String g0403170p = _EMPTY_;
+    private String g0403180a = _EMPTY_;
+    private String g0403180s = _EMPTY_;
+    private String g0403180sd = _EMPTY_;
+    private String g0403180sm = _EMPTY_;
+    private String g0403180p = _EMPTY_;
+    private String g0403190a = _EMPTY_;
+    private String g0403190s = _EMPTY_;
+    private String g0403190sd = _EMPTY_;
+    private String g0403190sm = _EMPTY_;
+    private String g0403190p = _EMPTY_;
+    private String g0403200a = _EMPTY_;
+    private String g0403200s = _EMPTY_;
+    private String g0403200sd = _EMPTY_;
+    private String g0403200sm = _EMPTY_;
+    private String g0403200p = _EMPTY_;
+    private String g0403210a = _EMPTY_;
+    private String g0403210s = _EMPTY_;
+    private String g0403210sd = _EMPTY_;
+    private String g0403210sm = _EMPTY_;
+    private String g0403210p = _EMPTY_;
+    private String g0403220a = _EMPTY_;
+    private String g0403220s = _EMPTY_;
+    private String g0403220sd = _EMPTY_;
+    private String g0403220sm = _EMPTY_;
+    private String g0403220p = _EMPTY_;
+    private String g0403230a = _EMPTY_;
+    private String g0403230s = _EMPTY_;
+    private String g0403230sd = _EMPTY_;
+    private String g0403230sm = _EMPTY_;
+    private String g0403230p = _EMPTY_;
+    private String g0403240a = _EMPTY_;
+    private String g0403240s = _EMPTY_;
+    private String g0403240sd = _EMPTY_;
+    private String g0403240sm = _EMPTY_;
+    private String g0403240p = _EMPTY_;
+    private String g0403250a = _EMPTY_;
+    private String g0403250s = _EMPTY_;
+    private String g0403250sd = _EMPTY_;
+    private String g0403250sm = _EMPTY_;
+    private String g0403250p = _EMPTY_;
+    private String g0403260a = _EMPTY_;
+    private String g0403260s = _EMPTY_;
+    private String g0403260sd = _EMPTY_;
+    private String g0403260sm = _EMPTY_;
+    private String g0403260p = _EMPTY_;
+    private String g0403270a = _EMPTY_;
+    private String g0403270s = _EMPTY_;
+    private String g0403270sd = _EMPTY_;
+    private String g0403270sm = _EMPTY_;
+    private String g0403270p = _EMPTY_;
+    private String g040410a = _EMPTY_;
+    private String g040410s = _EMPTY_;
+    private String g040410sd = _EMPTY_;
+    private String g040410sm = _EMPTY_;
+    private String g040410p = _EMPTY_;
+    private String g040420a = _EMPTY_;
+    private String g040420s = _EMPTY_;
+    private String g040420sd = _EMPTY_;
+    private String g040420sm = _EMPTY_;
+    private String g040420p = _EMPTY_;
+    private String g040430a = _EMPTY_;
+    private String g040430s = _EMPTY_;
+    private String g040430sd = _EMPTY_;
+    private String g040430sm = _EMPTY_;
+    private String g040430p = _EMPTY_;
+    private String g040440a = _EMPTY_;
+    private String g040440s = _EMPTY_;
+    private String g040440sd = _EMPTY_;
+    private String g040440sm = _EMPTY_;
+    private String g040440p = _EMPTY_;
+    private String g040450a = _EMPTY_;
+    private String g040450s = _EMPTY_;
+    private String g040450sd = _EMPTY_;
+    private String g040450sm = _EMPTY_;
+    private String g040450p = _EMPTY_;
+    private String g040460a = _EMPTY_;
+    private String g040460s = _EMPTY_;
+    private String g040460sd = _EMPTY_;
+    private String g040460sm = _EMPTY_;
+    private String g040460p = _EMPTY_;
 
-    
+
+    public ModuleG() {
+    }
+
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+        notifyPropertyChanged(BR.cluster);
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getSysDate() {
+        return sysDate;
+    }
+
+    public void setSysDate(String sysDate) {
+        this.sysDate = sysDate;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDeviceTag() {
+        return deviceTag;
+    }
+
+    public void setDeviceTag(String deviceTag) {
+        this.deviceTag = deviceTag;
+    }
+
+    public String getAppver() {
+        return appver;
+    }
+
+    public void setAppver(String appver) {
+        this.appver = appver;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getSynced() {
+        return synced;
+    }
+
+    public void setSynced(String synced) {
+        this.synced = synced;
+    }
+
+    public String getSyncDate() {
+        return syncDate;
+    }
+
+    public void setSyncDate(String syncDate) {
+        this.syncDate = syncDate;
+    }
+
+
     @Bindable
     public String getG0101() {
         return g0101;
@@ -6230,162 +6347,31 @@ public class ModuleG extends BaseObservable implements Observable {
     }
 
 
-    public ModuleG() {
-    }
-
-
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
-    }
-
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getSysDate() {
-        return sysDate;
-    }
-
-    public void setSysDate(String sysDate) {
-        this.sysDate = sysDate;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceTag() {
-        return deviceTag;
-    }
-
-    public void setDeviceTag(String deviceTag) {
-        this.deviceTag = deviceTag;
-    }
-
-    public String getAppver() {
-        return appver;
-    }
-
-    public void setAppver(String appver) {
-        this.appver = appver;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
-
-    public String getSynced() {
-        return synced;
-    }
-
-    public void setSynced(String synced) {
-        this.synced = synced;
-    }
-
-    public String getSyncDate() {
-        return syncDate;
-    }
-
-    public void setSyncDate(String syncDate) {
-        this.syncDate = syncDate;
-    }
-
-
-    /*JSON DATABASE VARIABLES*/
-
-
-    public String getsG() {
-        return sG;
-    }
-
-    public void setsG(String sG) {
-        this.sG = sG;
-    }
-
-
-
-
     public ModuleG Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
-        sGHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SG)));
-
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SYNCED_DATE));
+        sG1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG1)));
+        sG2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG2)));
+        sG3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG3)));
+        sG41Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG41)));
+        sG42Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG42)));
+        sG43Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG43)));
+        sG44Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG44)));
+        sG45Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG45)));
+        sG46Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleGTable.COLUMN_SG46)));
         return this;
     }
 
-
-    public void sGHydrate(String string) throws JSONException {
-        Log.d(TAG, "sGHydrate: " + string);
+    public void sG1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -6420,6 +6406,14 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g01115 = json.getString("g01115");
             this.g01116 = json.getString("g01116");
             this.g01117 = json.getString("g01117");
+        }
+    }
+
+    public void sG2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.g0201 = json.getString("g0201");
             this.g0202 = json.getString("g0202");
             this.g0203 = json.getString("g0203");
@@ -6429,6 +6423,14 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g0206 = json.getString("g0206");
             this.g0207 = json.getString("g0207");
             this.g0208 = json.getString("g0208");
+        }
+    }
+
+    public void sG3Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG3Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.g0301aa = json.getString("g0301aa");
             this.g0301ab = json.getString("g0301ab");
             this.g0301ba = json.getString("g0301ba");
@@ -6519,6 +6521,14 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g0302c70i = json.getString("g0302c70i");
             this.g0302c70d = json.getString("g0302c70d");
             this.g0302c70b = json.getString("g0302c70b");
+        }
+    }
+
+    public void sG41Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG41Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.g040110a = json.getString("g040110a");
             this.g040110s = json.getString("g040110s");
             this.g040110sd = json.getString("g040110sd");
@@ -6600,6 +6610,14 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g0401170sd = json.getString("g0401170sd");
             this.g0401170sm = json.getString("g0401170sm");
             this.g0401170p = json.getString("g0401170p");
+        }
+    }
+
+    public void sG42Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG42Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.g0401180a = json.getString("g0401180a");
             this.g0401180s = json.getString("g0401180s");
             this.g0401180sd = json.getString("g0401180sd");
@@ -6680,6 +6698,14 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g0401330sd = json.getString("g0401330sd");
             this.g0401330sm = json.getString("g0401330sm");
             this.g0401330p = json.getString("g0401330p");
+        }
+    }
+
+    public void sG43Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG43Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.g0401340a = json.getString("g0401340a");
             this.g0401340s = json.getString("g0401340s");
             this.g0401340sd = json.getString("g0401340sd");
@@ -6735,6 +6761,14 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g0401440sd = json.getString("g0401440sd");
             this.g0401440sm = json.getString("g0401440sm");
             this.g0401440p = json.getString("g0401440p");
+        }
+    }
+
+    public void sG44Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG44Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.g040210a = json.getString("g040210a");
             this.g040210s = json.getString("g040210s");
             this.g040210sd = json.getString("g040210sd");
@@ -6815,6 +6849,14 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g040360sd = json.getString("g040360sd");
             this.g040360sm = json.getString("g040360sm");
             this.g040360p = json.getString("g040360p");
+        }
+    }
+
+    public void sG45Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG45Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.g040370a = json.getString("g040370a");
             this.g040370s = json.getString("g040370s");
             this.g040370sd = json.getString("g040370sd");
@@ -6895,6 +6937,14 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g0403220sd = json.getString("g0403220sd");
             this.g0403220sm = json.getString("g0403220sm");
             this.g0403220p = json.getString("g0403220p");
+        }
+    }
+
+    public void sG46Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sG46Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.g0403230a = json.getString("g0403230a");
             this.g0403230s = json.getString("g0403230s");
             this.g0403230sd = json.getString("g0403230sd");
@@ -6953,8 +7003,32 @@ public class ModuleG extends BaseObservable implements Observable {
         }
     }
 
-    public String sGtoString() throws JSONException {
-        Log.d(TAG, "sGtoString: ");
+
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put(ModuleGTable.COLUMN_ID, this.id);
+        json.put(ModuleGTable.COLUMN_UID, this.uid);
+        json.put(ModuleGTable.COLUMN_USERNAME, this.userName);
+        json.put(ModuleGTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(ModuleGTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(ModuleGTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(ModuleGTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(ModuleGTable.COLUMN_SYNCED, this.synced);
+        json.put(ModuleGTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(ModuleGTable.COLUMN_SG1, new JSONObject(sG1toString()));
+        json.put(ModuleGTable.COLUMN_SG2, new JSONObject(sG2toString()));
+        json.put(ModuleGTable.COLUMN_SG3, new JSONObject(sG3toString()));
+        json.put(ModuleGTable.COLUMN_SG41, new JSONObject(sG41toString()));
+        json.put(ModuleGTable.COLUMN_SG42, new JSONObject(sG42toString()));
+        json.put(ModuleGTable.COLUMN_SG43, new JSONObject(sG43toString()));
+        json.put(ModuleGTable.COLUMN_SG44, new JSONObject(sG44toString()));
+        json.put(ModuleGTable.COLUMN_SG45, new JSONObject(sG45toString()));
+        json.put(ModuleGTable.COLUMN_SG46, new JSONObject(sG46toString()));
+        return json;
+    }
+
+    public String sG1toString() throws JSONException {
+        Log.d(TAG, "sG1toString: ");
         JSONObject json = new JSONObject();
         json.put("g0101", g0101)
                 .put("g0101xx", g0101xx)
@@ -6986,8 +7060,14 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g01114", g01114)
                 .put("g01115", g01115)
                 .put("g01116", g01116)
-                .put("g01117", g01117)
-                .put("g0201", g0201)
+                .put("g01117", g01117);
+        return json.toString();
+    }
+
+    public String sG2toString() throws JSONException {
+        Log.d(TAG, "sG2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("g0201", g0201)
                 .put("g0202", g0202)
                 .put("g0203", g0203)
                 .put("g0203x", g0203x)
@@ -6995,8 +7075,14 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g0205", g0205)
                 .put("g0206", g0206)
                 .put("g0207", g0207)
-                .put("g0208", g0208)
-                .put("g0301aa", g0301aa)
+                .put("g0208", g0208);
+        return json.toString();
+    }
+
+    public String sG3toString() throws JSONException {
+        Log.d(TAG, "sG3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("g0301aa", g0301aa)
                 .put("g0301ab", g0301ab)
                 .put("g0301ba", g0301ba)
                 .put("g0301bb", g0301bb)
@@ -7085,8 +7171,14 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g0302c70r", g0302c70r)
                 .put("g0302c70i", g0302c70i)
                 .put("g0302c70d", g0302c70d)
-                .put("g0302c70b", g0302c70b)
-                .put("g040110a", g040110a)
+                .put("g0302c70b", g0302c70b);
+        return json.toString();
+    }
+
+    public String sG41toString() throws JSONException {
+        Log.d(TAG, "sG41toString: ");
+        JSONObject json = new JSONObject();
+        json.put("g040110a", g040110a)
                 .put("g040110s", g040110s)
                 .put("g040110sd", g040110sd)
                 .put("g040110sm", g040110sm)
@@ -7166,8 +7258,14 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g0401170s", g0401170s)
                 .put("g0401170sd", g0401170sd)
                 .put("g0401170sm", g0401170sm)
-                .put("g0401170p", g0401170p)
-                .put("g0401180a", g0401180a)
+                .put("g0401170p", g0401170p);
+        return json.toString();
+    }
+
+    public String sG42toString() throws JSONException {
+        Log.d(TAG, "sG42toString: ");
+        JSONObject json = new JSONObject();
+        json.put("g0401180a", g0401180a)
                 .put("g0401180s", g0401180s)
                 .put("g0401180sd", g0401180sd)
                 .put("g0401180sm", g0401180sm)
@@ -7246,8 +7344,14 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g0401330s", g0401330s)
                 .put("g0401330sd", g0401330sd)
                 .put("g0401330sm", g0401330sm)
-                .put("g0401330p", g0401330p)
-                .put("g0401340a", g0401340a)
+                .put("g0401330p", g0401330p);
+        return json.toString();
+    }
+
+    public String sG43toString() throws JSONException {
+        Log.d(TAG, "sG43toString: ");
+        JSONObject json = new JSONObject();
+        json.put("g0401340a", g0401340a)
                 .put("g0401340s", g0401340s)
                 .put("g0401340sd", g0401340sd)
                 .put("g0401340sm", g0401340sm)
@@ -7301,8 +7405,14 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g0401440s", g0401440s)
                 .put("g0401440sd", g0401440sd)
                 .put("g0401440sm", g0401440sm)
-                .put("g0401440p", g0401440p)
-                .put("g040210a", g040210a)
+                .put("g0401440p", g0401440p);
+        return json.toString();
+    }
+
+    public String sG44toString() throws JSONException {
+        Log.d(TAG, "sG44toString: ");
+        JSONObject json = new JSONObject();
+        json.put("g040210a", g040210a)
                 .put("g040210s", g040210s)
                 .put("g040210sd", g040210sd)
                 .put("g040210sm", g040210sm)
@@ -7381,8 +7491,14 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g040360s", g040360s)
                 .put("g040360sd", g040360sd)
                 .put("g040360sm", g040360sm)
-                .put("g040360p", g040360p)
-                .put("g040370a", g040370a)
+                .put("g040360p", g040360p);
+        return json.toString();
+    }
+
+    public String sG45toString() throws JSONException {
+        Log.d(TAG, "sG45toString: ");
+        JSONObject json = new JSONObject();
+        json.put("g040370a", g040370a)
                 .put("g040370s", g040370s)
                 .put("g040370sd", g040370sd)
                 .put("g040370sm", g040370sm)
@@ -7461,8 +7577,14 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g0403220s", g0403220s)
                 .put("g0403220sd", g0403220sd)
                 .put("g0403220sm", g0403220sm)
-                .put("g0403220p", g0403220p)
-                .put("g0403230a", g0403230a)
+                .put("g0403220p", g0403220p);
+        return json.toString();
+    }
+
+    public String sG46toString() throws JSONException {
+        Log.d(TAG, "sGtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("g0403230a", g0403230a)
                 .put("g0403230s", g0403230s)
                 .put("g0403230sd", g0403230sd)
                 .put("g0403230sm", g0403230sm)
@@ -7518,27 +7640,6 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g040460sm", g040460sm)
                 .put("g040460p", g040460p);
         return json.toString();
-    }
-
-
-
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-//        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-
-        // Household
-        json.put(FormsTable.COLUMN_SG, new JSONObject(sGtoString()));
-        return json;
     }
 
 

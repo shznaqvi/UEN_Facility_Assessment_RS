@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
@@ -10,9 +11,12 @@ import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleATable;
@@ -23,7 +27,7 @@ public class ModuleA extends BaseObservable implements Observable {
     private final String TAG = "ModuleA";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
-    private String projectName = MainApp.PROJECT_NAME;
+    private String projectName = PROJECT_NAME;
     // APP VARIABLES
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
@@ -62,6 +66,27 @@ public class ModuleA extends BaseObservable implements Observable {
     private String a20 = _EMPTY_;
     private String a21 = _EMPTY_;
     private String a22 = _EMPTY_;
+
+
+    public void populateMeta() {
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setUserName(MainApp.user.getUserName());
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.appInfo.getAppVersion());
+        setProjectName(PROJECT_NAME);
+        setUserName(MainApp.user.getUserName());
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        /*setProvinceCode(selectedProvince);
+        setDistrictCode(selectedDistrict);
+        setTehsilCode(selectedTehsil);
+        setUcCode(selectedUc);
+        setVillageCode(selectedVillage);
+        setPsuCode(selectedPSU);
+        setHhid(selectedHHID);*/
+    }
+
 
     @Bindable
     public String getA01() {

@@ -1,10 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleG;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +8,9 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -22,7 +21,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
-import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionF1Binding;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionG1Binding;
 
 public class SectionG1Activity extends AppCompatActivity {
@@ -35,7 +33,6 @@ public class SectionG1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g1);
-        //bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
@@ -48,7 +45,7 @@ public class SectionG1Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SG, form.sGtoString());
+            updcount = db.updatesModuleGColumn(TableContracts.ModuleGTable.COLUMN_SG1, moduleG.sG1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -67,7 +64,7 @@ public class SectionG1Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionF2Activity.class));
+            startActivity(new Intent(this, SectionG2Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
