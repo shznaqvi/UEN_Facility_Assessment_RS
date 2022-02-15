@@ -35,6 +35,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleI;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleJ;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleK;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 
 
@@ -66,6 +67,7 @@ public class MainApp extends Application {
     public static ModuleA moduleA;
     public static ModuleB moduleB;
     public static ModuleC moduleC;
+    public static Staffing staffing;
     public static ModuleD moduleD;
     public static ModuleE moduleE;
     public static ModuleF moduleF;
