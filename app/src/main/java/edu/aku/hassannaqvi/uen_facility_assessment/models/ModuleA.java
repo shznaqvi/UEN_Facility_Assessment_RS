@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -13,60 +15,53 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleATable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
 public class ModuleA extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ModuleA";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    private final String wuid = StringUtils.EMPTY;
-    private final String cuid = StringUtils.EMPTY;
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
     // APP VARIABLES
-    private String id = StringUtils.EMPTY;
-    private String uid = StringUtils.EMPTY;
-    private String userName = StringUtils.EMPTY;
-    private String sysDate = StringUtils.EMPTY;
-    private String cluster = StringUtils.EMPTY;
-    private String deviceId = StringUtils.EMPTY;
-    private String deviceTag = StringUtils.EMPTY;
-    private String appver = StringUtils.EMPTY;
-    private String endTime = StringUtils.EMPTY;
-    private String iStatus = StringUtils.EMPTY;
-    private String iStatus96x = StringUtils.EMPTY;
-    private String synced = StringUtils.EMPTY;
-    private String syncDate = StringUtils.EMPTY;
-
-    // SECTION VARIABLES
-    private String sA = StringUtils.EMPTY;
+    private String id = _EMPTY_;
+    private String uid = _EMPTY_;
+    private String userName = _EMPTY_;
+    private String sysDate = _EMPTY_;
+    private String cluster = _EMPTY_;
+    private String deviceId = _EMPTY_;
+    private String deviceTag = _EMPTY_;
+    private String appver = _EMPTY_;
+    private String endTime = _EMPTY_;
+    private String iStatus = _EMPTY_;
+    private String iStatus96x = _EMPTY_;
+    private String synced = _EMPTY_;
+    private String syncDate = _EMPTY_;
 
     // FIELD VARIABLES
-    private String a01 = StringUtils.EMPTY;
-    private String a03d = StringUtils.EMPTY;
-    private String a03m = StringUtils.EMPTY;
-    private String a03y = StringUtils.EMPTY;
-    private String gpslat = StringUtils.EMPTY;
-    private String gpslng = StringUtils.EMPTY;
-    private String a07 = StringUtils.EMPTY;
-    private String a08 = StringUtils.EMPTY;
-    private String a09 = StringUtils.EMPTY;
-    private String a10 = StringUtils.EMPTY;
-    private String a11 = StringUtils.EMPTY;
-    private String a12 = StringUtils.EMPTY;
-    private String a13 = StringUtils.EMPTY;
-    private String a14 = StringUtils.EMPTY;
-    private String a15 = StringUtils.EMPTY;
-    private String a16 = StringUtils.EMPTY;
-    private String a17 = StringUtils.EMPTY;
-    private String a18 = StringUtils.EMPTY;
-    private String a18xx = StringUtils.EMPTY;
-    private String a19 = StringUtils.EMPTY;
-    private String a19xx = StringUtils.EMPTY;
-    private String a20 = StringUtils.EMPTY;
-    private String a21 = StringUtils.EMPTY;
-    private String a22 = StringUtils.EMPTY;
+    private String a01 = _EMPTY_;
+    private String a03d = _EMPTY_;
+    private String a03m = _EMPTY_;
+    private String a03y = _EMPTY_;
+    private String a07 = _EMPTY_;
+    private String a08 = _EMPTY_;
+    private String a09 = _EMPTY_;
+    private String a10 = _EMPTY_;
+    private String a11 = _EMPTY_;
+    private String a12 = _EMPTY_;
+    private String a13 = _EMPTY_;
+    private String a14 = _EMPTY_;
+    private String a15 = _EMPTY_;
+    private String a16 = _EMPTY_;
+    private String a17 = _EMPTY_;
+    private String a18 = _EMPTY_;
+    private String a18xx = _EMPTY_;
+    private String a19 = _EMPTY_;
+    private String a19xx = _EMPTY_;
+    private String a20 = _EMPTY_;
+    private String a21 = _EMPTY_;
+    private String a22 = _EMPTY_;
 
     @Bindable
     public String getA01() {
@@ -108,25 +103,6 @@ public class ModuleA extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a03y);
     }
 
-    @Bindable
-    public String getGpslat() {
-        return gpslat;
-    }
-
-    public void setGpslat(String gpslat) {
-        this.gpslat = gpslat;
-        notifyPropertyChanged(BR.gpslat);
-    }
-
-    @Bindable
-    public String getGpslng() {
-        return gpslng;
-    }
-
-    public void setGpslng(String gpslng) {
-        this.gpslng = gpslng;
-        notifyPropertyChanged(BR.gpslng);
-    }
 
     @Bindable
     public String getA07() {
@@ -429,36 +405,22 @@ public class ModuleA extends BaseObservable implements Observable {
     }
 
 
-    /*JSON DATABASE VARIABLES*/
-    public String getsA() {
-        return sA;
-    }
-
-    public void setsA(String sA) {
-        this.sA = sA;
-    }
-
-
 
     public ModuleA Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
-        sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA)));
-
-
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_SYNCED_DATE));
+        sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleATable.COLUMN_SA)));
         return this;
     }
+    
 
     public void sAHydrate(String string) throws JSONException {
         Log.d(TAG, "sAHydrate: " + string);
@@ -470,8 +432,6 @@ public class ModuleA extends BaseObservable implements Observable {
             this.a03d = json.getString("a03d");
             this.a03m = json.getString("a03m");
             this.a03y = json.getString("a03y");
-            this.gpslat = json.getString("gpslat");
-            this.gpslng = json.getString("gpslng");
             this.a07 = json.getString("a07");
             this.a08 = json.getString("a08");
             this.a09 = json.getString("a09");
@@ -492,9 +452,25 @@ public class ModuleA extends BaseObservable implements Observable {
             this.a22 = json.getString("a22");
         }
     }
+    
 
 
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
 
+        json.put(ModuleATable.COLUMN_ID, this.id);
+        json.put(ModuleATable.COLUMN_UID, this.uid);
+        json.put(ModuleATable.COLUMN_USERNAME, this.userName);
+        json.put(ModuleATable.COLUMN_SYSDATE, this.sysDate);
+        json.put(ModuleATable.COLUMN_DEVICEID, this.deviceId);
+        json.put(ModuleATable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(ModuleATable.COLUMN_ISTATUS, this.iStatus);
+        json.put(ModuleATable.COLUMN_SYNCED, this.synced);
+        json.put(ModuleATable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(ModuleATable.COLUMN_SA, new JSONObject(sAtoString()));
+        return json;
+    }
+    
 
     public String sAtoString() throws JSONException {
         Log.d(TAG, "sAtoString: ");
@@ -503,8 +479,6 @@ public class ModuleA extends BaseObservable implements Observable {
                 .put("a03d", a03d)
                 .put("a03m", a03m)
                 .put("a03y", a03y)
-                .put("gpslat", gpslat)
-                .put("gpslng", gpslng)
                 .put("a07", a07)
                 .put("a08", a08)
                 .put("a09", a09)
@@ -524,27 +498,6 @@ public class ModuleA extends BaseObservable implements Observable {
                 .put("a21", a21)
                 .put("a22", a22);
         return json.toString();
-    }
-
-
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-//        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-
-        // Household
-        json.put(FormsTable.COLUMN_SA, new JSONObject(sAtoString()));
-
-        return json;
     }
 
 
