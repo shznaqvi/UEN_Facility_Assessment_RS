@@ -243,6 +243,45 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
+    public static abstract class ModuleHTable implements BaseColumns {
+        public static final String TABLE_NAME = "ModuleH";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_LHW_UID = "_lhwuid";
+        public static final String COLUMN_LHW_CODE = "lhwcode";
+        public static final String COLUMN_KHANDAN_NO = "kno";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+
+        public static final String COLUMN_SH1 = "sH1";
+        public static final String COLUMN_SH2 = "sH2";
+        public static final String COLUMN_SH3 = "sH3";
+        public static final String COLUMN_SH4 = "sH4";
+        public static final String COLUMN_SH5 = "sH5";
+        public static final String COLUMN_SH6 = "sH6";
+        public static final String COLUMN_SH7 = "sH7";
+        public static final String COLUMN_SH8 = "sH8";
+        public static final String COLUMN_SH9 = "sH9";
+        public static final String COLUMN_SH10 = "sH10";
+        public static final String COLUMN_SH11 = "sH11";
+        public static final String COLUMN_SH12 = "sH12";
+        public static final String COLUMN_SH13 = "sH13";
+        public static final String COLUMN_SH14 = "sH14";
+        public static final String COLUMN_SH151 = "sH151";
+        public static final String COLUMN_SH152 = "sH152";
+        public static final String COLUMN_SH16 = "sH16";
+        public static final String COLUMN_SH17 = "sH17";
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
 
     public static abstract class UsersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";

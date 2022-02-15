@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,13 +9,16 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
+
 
 
         <!-- CUSTOM TOOLBAR -->
@@ -32,9 +36,11 @@
             app:title="@string/modhtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -1745,7 +1751,6 @@
                             android:layout_height="match_parent"
                             android:text="@string/Q_h031ae" />
 
-
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -1776,6 +1781,7 @@
                             android:checked="@{form.h0301ae0c.equals(``)}"
                             android:onClick="@{()->form.setH0301ae0c(form.h0301ae0c.equals(``)?``:``)}"
                             android:text="@string/h0301ae0c" />
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -1817,8 +1823,11 @@
 
             </LinearLayout>
 
+
         </ScrollView>
 
+
     </LinearLayout>
+
 
 </layout>
