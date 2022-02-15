@@ -18,6 +18,7 @@ import org.json.JSONException;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleBTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
@@ -39,6 +40,29 @@ public class SectionBActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleB);
+    }
+
+
+    private boolean insertNewRecord() {
+        if (!moduleB.getUid().equals("") || MainApp.superuser) return true;
+        moduleB.populateMeta();
+        long rowId = 0;
+        try {
+            rowId = db.addModuleB(moduleB);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        moduleB.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            moduleB.setUid(moduleB.getDeviceId() + moduleB.getId());
+            db.updatesModuleBColumn(TableContracts.ModuleBTable.COLUMN_UID, moduleB.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
@@ -65,6 +89,7 @@ public class SectionBActivity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));

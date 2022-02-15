@@ -42,6 +42,29 @@ public class SectionC2Activity extends AppCompatActivity {
     }
 
 
+    private boolean insertNewRecord() {
+        if (!staffing.getUid().equals("") || MainApp.superuser) return true;
+        staffing.populateMeta();
+        long rowId = 0;
+        try {
+            rowId = db.addStaff(staffing);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        staffing.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            staffing.setUid(staffing.getDeviceId() + staffing.getId());
+            db.updatesStaffColumn(TableContracts.StaffingTable.COLUMN_UID, staffing.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 
@@ -65,6 +88,7 @@ public class SectionC2Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));

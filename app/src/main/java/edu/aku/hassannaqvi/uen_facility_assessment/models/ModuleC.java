@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
@@ -12,6 +13,10 @@ import androidx.databinding.PropertyChangeRegistry;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleCTable;
@@ -104,6 +109,23 @@ public class ModuleC extends BaseObservable implements Observable {
 
 
     public ModuleC() {
+    }
+
+
+    public void populateMeta() {
+        setProjectName(PROJECT_NAME);
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.appInfo.getAppVersion());
+        setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        setUserName(MainApp.user.getUserName());
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        /*setProvinceCode(selectedProvince);
+        setDistrictCode(selectedDistrict);
+        setTehsilCode(selectedTehsil);
+        setUcCode(selectedUc);
+        setVillageCode(selectedVillage);
+        setPsuCode(selectedPSU);
+        setHhid(selectedHHID);*/
     }
 
 

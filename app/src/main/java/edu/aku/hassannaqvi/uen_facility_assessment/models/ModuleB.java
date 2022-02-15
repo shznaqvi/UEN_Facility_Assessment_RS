@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -10,6 +13,10 @@ import androidx.databinding.PropertyChangeRegistry;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleBTable;
@@ -46,58 +53,24 @@ public class ModuleB extends BaseObservable implements Observable {
     private String b05 = _EMPTY_;
 
 
-    @Bindable
-    public String getB01() {
-        return b01;
-    }
-
-    public void setB01(String b01) {
-        this.b01 = b01;
-        notifyPropertyChanged(BR.b01);
-    }
-
-    @Bindable
-    public String getB02() {
-        return b02;
-    }
-
-    public void setB02(String b02) {
-        this.b02 = b02;
-        notifyPropertyChanged(BR.b02);
-    }
-
-    @Bindable
-    public String getB03() {
-        return b03;
-    }
-
-    public void setB03(String b03) {
-        this.b03 = b03;
-        notifyPropertyChanged(BR.b03);
-    }
-
-    @Bindable
-    public String getB04() {
-        return b04;
-    }
-
-    public void setB04(String b04) {
-        this.b04 = b04;
-        notifyPropertyChanged(BR.b04);
-    }
-
-    @Bindable
-    public String getB05() {
-        return b05;
-    }
-
-    public void setB05(String b05) {
-        this.b05 = b05;
-        notifyPropertyChanged(BR.b05);
-    }
-
-
     public ModuleB() {
+    }
+
+
+    public void populateMeta() {
+        setProjectName(PROJECT_NAME);
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.appInfo.getAppVersion());
+        setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        setUserName(MainApp.user.getUserName());
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        /*setProvinceCode(selectedProvince);
+        setDistrictCode(selectedDistrict);
+        setTehsilCode(selectedTehsil);
+        setUcCode(selectedUc);
+        setVillageCode(selectedVillage);
+        setPsuCode(selectedPSU);
+        setHhid(selectedHHID);*/
     }
 
 
@@ -217,6 +190,57 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
 
+    @Bindable
+    public String getB01() {
+        return b01;
+    }
+
+    public void setB01(String b01) {
+        this.b01 = b01;
+        notifyPropertyChanged(BR.b01);
+    }
+
+    @Bindable
+    public String getB02() {
+        return b02;
+    }
+
+    public void setB02(String b02) {
+        this.b02 = b02;
+        notifyPropertyChanged(BR.b02);
+    }
+
+    @Bindable
+    public String getB03() {
+        return b03;
+    }
+
+    public void setB03(String b03) {
+        this.b03 = b03;
+        notifyPropertyChanged(BR.b03);
+    }
+
+    @Bindable
+    public String getB04() {
+        return b04;
+    }
+
+    public void setB04(String b04) {
+        this.b04 = b04;
+        notifyPropertyChanged(BR.b04);
+    }
+
+    @Bindable
+    public String getB05() {
+        return b05;
+    }
+
+    public void setB05(String b05) {
+        this.b05 = b05;
+        notifyPropertyChanged(BR.b05);
+    }
+
+
     public ModuleB Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_UID));
@@ -231,7 +255,6 @@ public class ModuleB extends BaseObservable implements Observable {
         sBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_SB)));
         return this;
     }
-
 
     public void sBHydrate(String string) throws JSONException {
         Log.d(TAG, "sBHydrate: " + string);

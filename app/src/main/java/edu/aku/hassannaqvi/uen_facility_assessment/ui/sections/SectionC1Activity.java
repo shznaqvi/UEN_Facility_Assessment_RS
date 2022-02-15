@@ -22,7 +22,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionC1Binding;
-import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
 public class SectionC1Activity extends AppCompatActivity {
@@ -39,6 +38,29 @@ public class SectionC1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleC);
+    }
+
+
+    private boolean insertNewRecord() {
+        if (!moduleC.getUid().equals("") || MainApp.superuser) return true;
+        moduleC.populateMeta();
+        long rowId = 0;
+        try {
+            rowId = db.addModuleC(moduleC);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        moduleC.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            moduleC.setUid(moduleC.getDeviceId() + moduleC.getId());
+            db.updatesModuleCColumn(TableContracts.ModuleCTable.COLUMN_UID, moduleC.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
@@ -65,9 +87,10 @@ public class SectionC1Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionMainActivity.class));
+            startActivity(new Intent(this, SectionC2Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

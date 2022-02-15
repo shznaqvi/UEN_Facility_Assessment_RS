@@ -69,15 +69,12 @@ public class ModuleA extends BaseObservable implements Observable {
 
 
     public void populateMeta() {
-        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setUserName(MainApp.user.getUserName());
+        setProjectName(PROJECT_NAME);
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
-        setProjectName(PROJECT_NAME);
+        setAppver(MainApp.versionName + "." + MainApp.versionCode);
         setUserName(MainApp.user.getUserName());
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setDeviceId(MainApp.deviceid);
-        setAppver(MainApp.versionName + "." + MainApp.versionCode);
         /*setProvinceCode(selectedProvince);
         setDistrictCode(selectedDistrict);
         setTehsilCode(selectedTehsil);
