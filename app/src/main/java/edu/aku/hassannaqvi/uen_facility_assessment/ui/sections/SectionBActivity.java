@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleB;
 
 import android.content.Intent;
@@ -19,7 +18,7 @@ import org.json.JSONException;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleBTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionBBinding;
@@ -49,7 +48,7 @@ public class SectionBActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SB, form.sBtoString());
+            updcount = db.updatesModuleBColumn(ModuleBTable.COLUMN_SB, moduleB.sBtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());

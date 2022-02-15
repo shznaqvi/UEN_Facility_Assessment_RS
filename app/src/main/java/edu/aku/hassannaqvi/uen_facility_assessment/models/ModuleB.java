@@ -13,17 +13,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleBTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
 public class ModuleB extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ModuleB";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    private final String wuid = StringUtils.EMPTY;
-    private final String cuid = StringUtils.EMPTY;
-    // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
+
+
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
@@ -39,17 +38,14 @@ public class ModuleB extends BaseObservable implements Observable {
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
 
-    // SECTION VARIABLES
-
-    private String sB = StringUtils.EMPTY;
 
     // FIELD VARIABLES
-
     private String b01 = StringUtils.EMPTY;
     private String b02 = StringUtils.EMPTY;
     private String b03 = StringUtils.EMPTY;
     private String b04 = StringUtils.EMPTY;
     private String b05 = StringUtils.EMPTY;
+
 
     @Bindable
     public String getB01() {
@@ -222,35 +218,18 @@ public class ModuleB extends BaseObservable implements Observable {
     }
 
 
-    /*JSON DATABASE VARIABLES*/
-
-    public String getsB() {
-        return sB;
-    }
-
-    public void setsB(String sB) {
-        this.sB = sB;
-    }
-
-
     public ModuleB Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
-
-        sBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SB)));
-
-
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_SYNCED_DATE));
+        sBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleBTable.COLUMN_SB)));
         return this;
     }
 
@@ -258,7 +237,6 @@ public class ModuleB extends BaseObservable implements Observable {
     public void sBHydrate(String string) throws JSONException {
         Log.d(TAG, "sBHydrate: " + string);
         if (string != null) {
-
             JSONObject json = null;
             json = new JSONObject(string);
             this.b01 = json.getString("b01");
@@ -281,25 +259,18 @@ public class ModuleB extends BaseObservable implements Observable {
         return json.toString();
     }
 
-
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
-
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-//        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-
-        // Household
-
-        json.put(FormsTable.COLUMN_SB, new JSONObject(sBtoString()));
-
+        json.put(ModuleBTable.COLUMN_ID, this.id);
+        json.put(ModuleBTable.COLUMN_UID, this.uid);
+        json.put(ModuleBTable.COLUMN_USERNAME, this.userName);
+        json.put(ModuleBTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(ModuleBTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(ModuleBTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(ModuleBTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(ModuleBTable.COLUMN_SYNCED, this.synced);
+        json.put(ModuleBTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(ModuleBTable.COLUMN_SB, new JSONObject(sBtoString()));
         return json;
     }
 
