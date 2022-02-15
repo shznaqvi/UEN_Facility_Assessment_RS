@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
-
 import android.database.Cursor;
 import android.util.Log;
 
@@ -10,6 +8,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,100 +16,100 @@ import edu.aku.hassannaqvi.uen_facility_assessment.BR;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleCTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
-public class ModuleC extends BaseObservable implements Observable {
+public class Staffing extends BaseObservable implements Observable {
 
-    private final String TAG = "ModuleC";
+    private final String TAG = "Staffing";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     private String projectName = MainApp.PROJECT_NAME;
 
 
     // APP VARIABLES
-    private String id = _EMPTY_;
-    private String uid = _EMPTY_;
-    private String userName = _EMPTY_;
-    private String sysDate = _EMPTY_;
-    private String cluster = _EMPTY_;
-    private String deviceId = _EMPTY_;
-    private String deviceTag = _EMPTY_;
-    private String appver = _EMPTY_;
-    private String endTime = _EMPTY_;
-    private String iStatus = _EMPTY_;
-    private String iStatus96x = _EMPTY_;
-    private String synced = _EMPTY_;
-    private String syncDate = _EMPTY_;
+    private String id = StringUtils.EMPTY;
+    private String uid = StringUtils.EMPTY;
+    private String userName = StringUtils.EMPTY;
+    private String sysDate = StringUtils.EMPTY;
+    private String cluster = StringUtils.EMPTY;
+    private String deviceId = StringUtils.EMPTY;
+    private String deviceTag = StringUtils.EMPTY;
+    private String appver = StringUtils.EMPTY;
+    private String endTime = StringUtils.EMPTY;
+    private String iStatus = StringUtils.EMPTY;
+    private String iStatus96x = StringUtils.EMPTY;
+    private String synced = StringUtils.EMPTY;
+    private String syncDate = StringUtils.EMPTY;
 
 
     // FIELD VARIABLES
-    private String c01aa = _EMPTY_;
-    private String c01ab = _EMPTY_;
-    private String c01ac = _EMPTY_;
-    private String c01ad = _EMPTY_;
-    private String c01ae = _EMPTY_;
-    private String c01ba = _EMPTY_;
-    private String c01bb = _EMPTY_;
-    private String c01bc = _EMPTY_;
-    private String c01bd = _EMPTY_;
-    private String c01be = _EMPTY_;
-    private String c01ca = _EMPTY_;
-    private String c01cb = _EMPTY_;
-    private String c01cc = _EMPTY_;
-    private String c01cd = _EMPTY_;
-    private String c01ce = _EMPTY_;
-    private String c01da = _EMPTY_;
-    private String c01db = _EMPTY_;
-    private String c01dc = _EMPTY_;
-    private String c01dd = _EMPTY_;
-    private String c01de = _EMPTY_;
-    private String c01ea = _EMPTY_;
-    private String c01eb = _EMPTY_;
-    private String c01ec = _EMPTY_;
-    private String c01ed = _EMPTY_;
-    private String c01ee = _EMPTY_;
-    private String c01fa = _EMPTY_;
-    private String c01fb = _EMPTY_;
-    private String c01fc = _EMPTY_;
-    private String c01fd = _EMPTY_;
-    private String c01fe = _EMPTY_;
-    private String c01ga = _EMPTY_;
-    private String c01gb = _EMPTY_;
-    private String c01gc = _EMPTY_;
-    private String c01gd = _EMPTY_;
-    private String c01ge = _EMPTY_;
-    private String c01ha = _EMPTY_;
-    private String c01hb = _EMPTY_;
-    private String c01hc = _EMPTY_;
-    private String c01hd = _EMPTY_;
-    private String c01he = _EMPTY_;
-    private String c01ia = _EMPTY_;
-    private String c01ib = _EMPTY_;
-    private String c01ic = _EMPTY_;
-    private String c01id = _EMPTY_;
-    private String c01ie = _EMPTY_;
-    private String c01ja = _EMPTY_;
-    private String c01jb = _EMPTY_;
-    private String c01jc = _EMPTY_;
-    private String c01jd = _EMPTY_;
-    private String c01je = _EMPTY_;
-    private String c01ka = _EMPTY_;
-    private String c01kb = _EMPTY_;
-    private String c01kc = _EMPTY_;
-    private String c01kd = _EMPTY_;
-    private String c01ke = _EMPTY_;
-    private String c01la = _EMPTY_;
-    private String c01lb = _EMPTY_;
-    private String c01lc = _EMPTY_;
-    private String c01ld = _EMPTY_;
-    private String c01le = _EMPTY_;
-    private String c021a = _EMPTY_;
-    private String c021b = _EMPTY_;
-    private String c021bfx = _EMPTY_;
-    private String c021c = _EMPTY_;
-    private String c021d = _EMPTY_;
-    private String c021dgx = _EMPTY_;
-    private String c021e = _EMPTY_;
+    private String c01aa = StringUtils.EMPTY;
+    private String c01ab = StringUtils.EMPTY;
+    private String c01ac = StringUtils.EMPTY;
+    private String c01ad = StringUtils.EMPTY;
+    private String c01ae = StringUtils.EMPTY;
+    private String c01ba = StringUtils.EMPTY;
+    private String c01bb = StringUtils.EMPTY;
+    private String c01bc = StringUtils.EMPTY;
+    private String c01bd = StringUtils.EMPTY;
+    private String c01be = StringUtils.EMPTY;
+    private String c01ca = StringUtils.EMPTY;
+    private String c01cb = StringUtils.EMPTY;
+    private String c01cc = StringUtils.EMPTY;
+    private String c01cd = StringUtils.EMPTY;
+    private String c01ce = StringUtils.EMPTY;
+    private String c01da = StringUtils.EMPTY;
+    private String c01db = StringUtils.EMPTY;
+    private String c01dc = StringUtils.EMPTY;
+    private String c01dd = StringUtils.EMPTY;
+    private String c01de = StringUtils.EMPTY;
+    private String c01ea = StringUtils.EMPTY;
+    private String c01eb = StringUtils.EMPTY;
+    private String c01ec = StringUtils.EMPTY;
+    private String c01ed = StringUtils.EMPTY;
+    private String c01ee = StringUtils.EMPTY;
+    private String c01fa = StringUtils.EMPTY;
+    private String c01fb = StringUtils.EMPTY;
+    private String c01fc = StringUtils.EMPTY;
+    private String c01fd = StringUtils.EMPTY;
+    private String c01fe = StringUtils.EMPTY;
+    private String c01ga = StringUtils.EMPTY;
+    private String c01gb = StringUtils.EMPTY;
+    private String c01gc = StringUtils.EMPTY;
+    private String c01gd = StringUtils.EMPTY;
+    private String c01ge = StringUtils.EMPTY;
+    private String c01ha = StringUtils.EMPTY;
+    private String c01hb = StringUtils.EMPTY;
+    private String c01hc = StringUtils.EMPTY;
+    private String c01hd = StringUtils.EMPTY;
+    private String c01he = StringUtils.EMPTY;
+    private String c01ia = StringUtils.EMPTY;
+    private String c01ib = StringUtils.EMPTY;
+    private String c01ic = StringUtils.EMPTY;
+    private String c01id = StringUtils.EMPTY;
+    private String c01ie = StringUtils.EMPTY;
+    private String c01ja = StringUtils.EMPTY;
+    private String c01jb = StringUtils.EMPTY;
+    private String c01jc = StringUtils.EMPTY;
+    private String c01jd = StringUtils.EMPTY;
+    private String c01je = StringUtils.EMPTY;
+    private String c01ka = StringUtils.EMPTY;
+    private String c01kb = StringUtils.EMPTY;
+    private String c01kc = StringUtils.EMPTY;
+    private String c01kd = StringUtils.EMPTY;
+    private String c01ke = StringUtils.EMPTY;
+    private String c01la = StringUtils.EMPTY;
+    private String c01lb = StringUtils.EMPTY;
+    private String c01lc = StringUtils.EMPTY;
+    private String c01ld = StringUtils.EMPTY;
+    private String c01le = StringUtils.EMPTY;
+    private String c021a = StringUtils.EMPTY;
+    private String c021b = StringUtils.EMPTY;
+    private String c021bfx = StringUtils.EMPTY;
+    private String c021c = StringUtils.EMPTY;
+    private String c021d = StringUtils.EMPTY;
+    private String c021dgx = StringUtils.EMPTY;
+    private String c021e = StringUtils.EMPTY;
 
 
-    public ModuleC() {
+    public Staffing() {
     }
 
 
@@ -905,7 +904,7 @@ public class ModuleC extends BaseObservable implements Observable {
     }
 
 
-    public ModuleC Hydrate(Cursor cursor) throws JSONException {
+    public Staffing Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_UID));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_USERNAME));
@@ -994,7 +993,6 @@ public class ModuleC extends BaseObservable implements Observable {
             this.c021e = json.getString("c021e");
         }
     }
-
 
 
     public JSONObject toJSONObject() throws JSONException {
