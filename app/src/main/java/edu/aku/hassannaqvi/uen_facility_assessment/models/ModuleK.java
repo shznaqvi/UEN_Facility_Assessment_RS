@@ -250,6 +250,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101ba(String k101ba) {
         this.k101ba = k101ba;
+        setK101ba03(k101ba.equals("1") ? this.k101ba03 : "");
         notifyPropertyChanged(BR.k101ba);
     }
 
@@ -270,6 +271,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101bb(String k101bb) {
         this.k101bb = k101bb;
+        setK101bb03(k101bb.equals("1") ? this.k101bb03 : "");
         notifyPropertyChanged(BR.k101bb);
     }
 
@@ -290,6 +292,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101bc(String k101bc) {
         this.k101bc = k101bc;
+        setK101bc03(k101bc.equals("1") ? this.k101bc03 : "");
         notifyPropertyChanged(BR.k101bc);
     }
 
@@ -310,6 +313,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101bd(String k101bd) {
         this.k101bd = k101bd;
+        setK101bd03(k101bd.equals("1") ? this.k101bd03 : "");
         notifyPropertyChanged(BR.k101bd);
     }
 
@@ -330,6 +334,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101be(String k101be) {
         this.k101be = k101be;
+        setK101be03(k101be.equals("1") ? this.k101be03 : "");
         notifyPropertyChanged(BR.k101be);
     }
 
@@ -350,6 +355,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101bf(String k101bf) {
         this.k101bf = k101bf;
+        setK101bf03(k101bf.equals("1") ? this.k101bf03 : "");
         notifyPropertyChanged(BR.k101bf);
     }
 
@@ -370,6 +376,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101bg(String k101bg) {
         this.k101bg = k101bg;
+        setK101bg03(k101bg.equals("1") ? this.k101bg03 : "");
         notifyPropertyChanged(BR.k101bg);
     }
 
@@ -411,6 +418,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101b9604(String k101b9604) {
         this.k101b9604 = k101b9604;
+        setK101b9604(k101b96.equals("1") ? this.k101b9604 : "");
         notifyPropertyChanged(BR.k101b9604);
     }
 
@@ -462,6 +470,9 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK201(String k201) {
         this.k201 = k201;
+        setK202(k201.equals("1") ? this.k202 : "");
+        setK203(k201.equals("1") ? this.k203 : "");
+        setK204(k201.equals("1") ? this.k204 : "");
         notifyPropertyChanged(BR.k201);
     }
 
@@ -502,6 +513,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK301(String k301) {
         this.k301 = k301;
+        setK302(k301.equals("2") ? "" : this.k302);
+        setK303(k301.equals("2") ? "" : this.k303);
         notifyPropertyChanged(BR.k301);
     }
 
@@ -683,6 +696,28 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK410(String k410) {
         this.k410 = k410;
+        setK41101(k410.equals("2") ? "" : this.k41101);
+        setK41102(k410.equals("2") ? "" : this.k41102);
+        setK41103(k410.equals("2") ? "" : this.k41103);
+        setK41201(k410.equals("2") ? "" : this.k41201);
+        setK41202(k410.equals("2") ? "" : this.k41202);
+        setK41203(k410.equals("2") ? "" : this.k41203);
+        setK41204(k410.equals("2") ? "" : this.k41204);
+        setK41205(k410.equals("2") ? "" : this.k41205);
+        setK41206(k410.equals("2") ? "" : this.k41206);
+        setK41207(k410.equals("2") ? "" : this.k41207);
+        setK41301(k410.equals("2") ? "" : this.k41301);
+        setK41302(k410.equals("2") ? "" : this.k41302);
+        setK41303(k410.equals("2") ? "" : this.k41303);
+        setK41401(k410.equals("2") ? "" : this.k41401);
+        setK41402(k410.equals("2") ? "" : this.k41402);
+        setK41403(k410.equals("2") ? "" : this.k41403);
+        setK41404(k410.equals("2") ? "" : this.k41404);
+        setK41405(k410.equals("2") ? "" : this.k41405);
+        setK41406(k410.equals("2") ? "" : this.k41406);
+        setK41407(k410.equals("2") ? "" : this.k41407);
+        setK41408(k410.equals("2") ? "" : this.k41408);
+        setK41409(k410.equals("2") ? "" : this.k41409);
         notifyPropertyChanged(BR.k410);
     }
 
