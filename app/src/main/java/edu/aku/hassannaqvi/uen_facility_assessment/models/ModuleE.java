@@ -12,6 +12,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
@@ -478,6 +480,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0103e(String e0103e) {
         this.e0103e = e0103e;
+        setE0104exx(e0103e.equals("96") ? this.e0104exx : "");
         notifyPropertyChanged(BR.e0103e);
     }
 
@@ -618,6 +621,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0204d(String e0204d) {
         this.e0204d = e0204d;
+        setE0204dxx(e0204d.equals("96") ? this. e0204dxx : "");
         notifyPropertyChanged(BR.e0204d);
     }
 
@@ -918,6 +922,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0305e(String e0305e) {
         this.e0305e = e0305e;
+        setE0305exx(this.e0305e.equals("96") ? this.e0305exx : "");
         notifyPropertyChanged(BR.e0305e);
     }
 
@@ -938,6 +943,8 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306a0a(String e0306a0a) {
         this.e0306a0a = e0306a0a;
+        setE0306a0ayx(e0306a0a.equals("3") ? this.e0306a0ayx : "");
+
         notifyPropertyChanged(BR.e0306a0a);
     }
 
@@ -958,6 +965,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306a0f(String e0306a0f) {
         this.e0306a0f = e0306a0f;
+        setE0306a0fyx(e0306a0f.equals("3") ? this.e0306a0fyx : "");
         notifyPropertyChanged(BR.e0306a0f);
     }
 
@@ -978,6 +986,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306b0a(String e0306b0a) {
         this.e0306b0a = e0306b0a;
+        setE0306b0ayx(e0306b0a.equals("3") ? this.e0306b0ayx : "");
         notifyPropertyChanged(BR.e0306b0a);
     }
 
@@ -998,6 +1007,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306b0f(String e0306b0f) {
         this.e0306b0f = e0306b0f;
+        setE0306b0fyx(e0306b0f.equals("3") ? this.e0306b0fyx : "");
         notifyPropertyChanged(BR.e0306b0f);
     }
 
@@ -1018,6 +1028,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306c0a(String e0306c0a) {
         this.e0306c0a = e0306c0a;
+        setE0306c0ayx(e0306c0a.equals("3") ? this.e0306c0ayx : "");
         notifyPropertyChanged(BR.e0306c0a);
     }
 
@@ -1038,6 +1049,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306c0f(String e0306c0f) {
         this.e0306c0f = e0306c0f;
+        setE0306c0fyx(e0306c0f.equals("3") ? this.e0306c0fyx : "");
         notifyPropertyChanged(BR.e0306c0f);
     }
 
@@ -1058,6 +1070,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306d0a(String e0306d0a) {
         this.e0306d0a = e0306d0a;
+        setE0306d0ayx(e0306d0a.equals("3") ? this.e0306d0ayx : "");
         notifyPropertyChanged(BR.e0306d0a);
     }
 
@@ -1078,6 +1091,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306d0f(String e0306d0f) {
         this.e0306d0f = e0306d0f;
+        setE0306d0fyx(e0306d0f.equals("3") ? this.e0306d0fyx : "");
         notifyPropertyChanged(BR.e0306d0f);
     }
 
@@ -1098,6 +1112,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306e0a(String e0306e0a) {
         this.e0306e0a = e0306e0a;
+        setE0306e0ayx(e0306e0a.equals("3") ? this.e0306e0ayx : "");
         notifyPropertyChanged(BR.e0306e0a);
     }
 
@@ -1118,6 +1133,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306e0f(String e0306e0f) {
         this.e0306e0f = e0306e0f;
+        setE0306e0fyx(e0306e0f.equals("3") ? this.e0306e0fyx : "");
         notifyPropertyChanged(BR.e0306e0f);
     }
 
@@ -1138,6 +1154,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306f0a(String e0306f0a) {
         this.e0306f0a = e0306f0a;
+        setE0306f0ayx(e0306a0a.equals("3") ? this.e0306f0ayx : "");
         notifyPropertyChanged(BR.e0306f0a);
     }
 
@@ -1158,6 +1175,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306f0f(String e0306f0f) {
         this.e0306f0f = e0306f0f;
+        setE0306f0fyx(e0306f0f.equals("3") ? this.e0306f0fyx : "");
         notifyPropertyChanged(BR.e0306f0f);
     }
 
@@ -1178,6 +1196,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306g0a(String e0306g0a) {
         this.e0306g0a = e0306g0a;
+        setE0306g0ayx(e0306g0a.equals("3") ? this.e0306g0ayx : "");
         notifyPropertyChanged(BR.e0306g0a);
     }
 
@@ -1198,6 +1217,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306g0f(String e0306g0f) {
         this.e0306g0f = e0306g0f;
+        setE0306g0fyx(e0306g0f.equals("3") ? this.e0306g0fyx : "");
         notifyPropertyChanged(BR.e0306g0f);
     }
 
@@ -1218,6 +1238,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306h0a(String e0306h0a) {
         this.e0306h0a = e0306h0a;
+        setE0306h0ayx(e0306h0a.equals("3") ? this.e0306h0ayx : "");
         notifyPropertyChanged(BR.e0306h0a);
     }
 
@@ -1238,6 +1259,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306h0f(String e0306h0f) {
         this.e0306h0f = e0306h0f;
+        setE0306h0fyx(e0306h0f.equals("3") ? this.e0306h0fyx : "");
         notifyPropertyChanged(BR.e0306h0f);
     }
 
@@ -1258,6 +1280,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306i0a(String e0306i0a) {
         this.e0306i0a = e0306i0a;
+        setE0306i0ayx(e0306i0a.equals("3") ? this.e0306i0ayx : "");
         notifyPropertyChanged(BR.e0306i0a);
     }
 
@@ -1278,6 +1301,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306i0f(String e0306i0f) {
         this.e0306i0f = e0306i0f;
+        setE0306i0fyx(e0306i0f.equals("3") ? this.e0306i0fyx : "");
         notifyPropertyChanged(BR.e0306i0f);
     }
 
@@ -1298,6 +1322,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306j0a(String e0306j0a) {
         this.e0306j0a = e0306j0a;
+        setE0306j0ayx(e0306j0a.equals("3") ? this.e0306j0ayx : "");
         notifyPropertyChanged(BR.e0306j0a);
     }
 
@@ -1318,6 +1343,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306j0f(String e0306j0f) {
         this.e0306j0f = e0306j0f;
+        setE0306j0fyx(e0306j0f.equals("3") ? this.e0306j0fyx : "");
         notifyPropertyChanged(BR.e0306j0f);
     }
 
@@ -1338,6 +1364,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306k0a(String e0306k0a) {
         this.e0306k0a = e0306k0a;
+        setE0306k0ayx(e0306k0a.equals("3") ? this.e0306k0ayx : "");
         notifyPropertyChanged(BR.e0306k0a);
     }
 
@@ -1358,6 +1385,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306k0f(String e0306k0f) {
         this.e0306k0f = e0306k0f;
+        setE0306k0fyx(e0306k0f.equals("3") ? this.e0306k0fyx : "");
         notifyPropertyChanged(BR.e0306k0f);
     }
 
@@ -1378,6 +1406,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306l0a(String e0306l0a) {
         this.e0306l0a = e0306l0a;
+        setE0306l0ayx(e0306l0a.equals("3") ? this.e0306l0ayx : "");
         notifyPropertyChanged(BR.e0306l0a);
     }
 
@@ -1398,6 +1427,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306l0f(String e0306l0f) {
         this.e0306l0f = e0306l0f;
+        setE0306l0fyx(e0306l0f.equals("3") ? this.e0306l0fyx : "");
         notifyPropertyChanged(BR.e0306l0f);
     }
 
@@ -1418,6 +1448,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306m0a(String e0306m0a) {
         this.e0306m0a = e0306m0a;
+        setE0306m0ayx(e0306m0a.equals("3") ? this.e0306m0ayx : "");
         notifyPropertyChanged(BR.e0306m0a);
     }
 
@@ -1438,6 +1469,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306m0f(String e0306m0f) {
         this.e0306m0f = e0306m0f;
+        setE0306m0fyx(e0306m0f.equals("3") ? this.e0306m0fyx : "");
         notifyPropertyChanged(BR.e0306m0f);
     }
 
@@ -1458,6 +1490,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306n0a(String e0306n0a) {
         this.e0306n0a = e0306n0a;
+        setE0306n0ayx(e0306n0a.equals("3") ? this.e0306n0ayx : "");
         notifyPropertyChanged(BR.e0306n0a);
     }
 
@@ -1478,6 +1511,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306n0f(String e0306n0f) {
         this.e0306n0f = e0306n0f;
+        setE0306n0fyx(e0306n0f.equals("3") ? this.e0306n0fyx : "");
         notifyPropertyChanged(BR.e0306n0f);
     }
 
@@ -1498,6 +1532,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306o0a(String e0306o0a) {
         this.e0306o0a = e0306o0a;
+        setE0306o0ayx(e0306o0a.equals("3") ? this.e0306o0ayx : "");
         notifyPropertyChanged(BR.e0306o0a);
     }
 
@@ -1518,6 +1553,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306o0f(String e0306o0f) {
         this.e0306o0f = e0306o0f;
+        setE0306o0fyx(e0306o0f.equals("3") ? this.e0306o0fyx : "");
         notifyPropertyChanged(BR.e0306o0f);
     }
 
@@ -1538,6 +1574,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306p0a(String e0306p0a) {
         this.e0306p0a = e0306p0a;
+        setE0306o0ayx(e0306p0a.equals("3") ? this.e0306p0ayx : "");
         notifyPropertyChanged(BR.e0306p0a);
     }
 
@@ -1558,6 +1595,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306p0f(String e0306p0f) {
         this.e0306p0f = e0306p0f;
+        setE0306p0fyx(e0306p0f.equals("3") ? this.e0306p0fyx : "");
         notifyPropertyChanged(BR.e0306p0f);
     }
 
@@ -1578,6 +1616,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306q0a(String e0306q0a) {
         this.e0306q0a = e0306q0a;
+        setE0306q0ayx(e0306q0a.equals("3") ? this.e0306q0ayx : "");
         notifyPropertyChanged(BR.e0306q0a);
     }
 
@@ -1598,6 +1637,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306q0f(String e0306q0f) {
         this.e0306q0f = e0306q0f;
+        setE0306q0fyx(e0306q0f.equals("3") ? this.e0306q0fyx : "");
         notifyPropertyChanged(BR.e0306q0f);
     }
 
@@ -1618,6 +1658,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306r0a(String e0306r0a) {
         this.e0306r0a = e0306r0a;
+        setE0306r0ayx(e0306r0a.equals("3") ? this.e0306r0ayx : "");
         notifyPropertyChanged(BR.e0306r0a);
     }
 
@@ -1638,6 +1679,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0306r0f(String e0306r0f) {
         this.e0306r0f = e0306r0f;
+        setE0306r0fyx(e0306r0f.equals("3") ? this.e0306r0fyx : "");
         notifyPropertyChanged(BR.e0306r0f);
     }
 
@@ -1808,6 +1850,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0409(String e0409) {
         this.e0409 = e0409;
+        setE0409xx(e0409.equals("96") ? this.e0409xx : "");
         notifyPropertyChanged(BR.e0409);
     }
 
@@ -2488,6 +2531,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0704g(String e0704g) {
         this.e0704g = e0704g;
+        setE0704gxx(e0704g.equals("96") ? this.e0704gxx : "");
         notifyPropertyChanged(BR.e0704g);
     }
 
@@ -2508,6 +2552,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705a0a(String e0705a0a) {
         this.e0705a0a = e0705a0a;
+        setE0705a0ayx(e0705a0a.equals("3") ? this.e0705a0ayx : "");
         notifyPropertyChanged(BR.e0705a0a);
     }
 
@@ -2528,6 +2573,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705a0f(String e0705a0f) {
         this.e0705a0f = e0705a0f;
+        setE0705a0fyx(e0705a0f.equals("3") ? this.e0705a0fyx : "");
         notifyPropertyChanged(BR.e0705a0f);
     }
 
@@ -2548,6 +2594,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705b0a(String e0705b0a) {
         this.e0705b0a = e0705b0a;
+        setE0705b0ayx(e0705b0a.equals("3") ? this.e0705b0ayx : "");
         notifyPropertyChanged(BR.e0705b0a);
     }
 
@@ -2568,6 +2615,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705b0f(String e0705b0f) {
         this.e0705b0f = e0705b0f;
+        setE0705b0fyx(e0705b0f.equals("3") ? this.e0705b0fyx : "");
         notifyPropertyChanged(BR.e0705b0f);
     }
 
@@ -2588,6 +2636,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705c0a(String e0705c0a) {
         this.e0705c0a = e0705c0a;
+        setE0705c0ayx(e0705c0a.equals("3") ? this.e0705c0ayx : "");
         notifyPropertyChanged(BR.e0705c0a);
     }
 
@@ -2608,6 +2657,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705c0f(String e0705c0f) {
         this.e0705c0f = e0705c0f;
+        setE0705c0fyx(e0705c0f.equals("3") ? this.e0705c0fyx : "");
         notifyPropertyChanged(BR.e0705c0f);
     }
 
@@ -2628,6 +2678,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705d0a(String e0705d0a) {
         this.e0705d0a = e0705d0a;
+        setE0705d0ayx(e0705d0a.equals("3") ? this.e0705d0ayx : "");
         notifyPropertyChanged(BR.e0705d0a);
     }
 
@@ -2648,6 +2699,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705d0f(String e0705d0f) {
         this.e0705d0f = e0705d0f;
+        setE0705d0fyx(e0705d0f.equals("3") ? this.e0705d0fyx : "");
         notifyPropertyChanged(BR.e0705d0f);
     }
 
@@ -2668,6 +2720,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705e0a(String e0705e0a) {
         this.e0705e0a = e0705e0a;
+        setE0705e0ayx(e0705e0a.equals("3") ? this.e0705e0ayx : "");
         notifyPropertyChanged(BR.e0705e0a);
     }
 
@@ -2688,6 +2741,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0705e0f(String e0705e0f) {
         this.e0705e0f = e0705e0f;
+        setE0705e0fyx(e0705e0f.equals("3") ? this.e0705e0fyx : "");
         notifyPropertyChanged(BR.e0705e0f);
     }
 

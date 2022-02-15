@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleF;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -37,7 +38,7 @@ public class SectionF2Activity extends AppCompatActivity {
         //bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
-        bi.setForm(form);
+        bi.setForm(moduleF);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 

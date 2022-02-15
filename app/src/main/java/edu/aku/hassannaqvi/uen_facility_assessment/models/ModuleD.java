@@ -246,6 +246,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD05012(String d05012) {
         this.d05012 = d05012;
+        setD0501296x(d05012.equals("96") ? this.d0501296x : "");
         notifyPropertyChanged(BR.d05012);
     }
 
@@ -594,6 +595,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD0701(String d0701) {
         this.d0701 = d0701;
+        setD0701xx(d0701.equals("96") ? this.d0701xx : "");
         notifyPropertyChanged(BR.d0701);
     }
 
@@ -614,6 +616,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD0702(String d0702) {
         this.d0702 = d0702;
+        setD0702xx(d0702.equals("96") ? this.d0702xx : "");
         notifyPropertyChanged(BR.d0702);
     }
 

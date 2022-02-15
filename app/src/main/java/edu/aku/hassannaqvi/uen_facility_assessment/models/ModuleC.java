@@ -731,6 +731,9 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC021b(String c021b) {
         this.c021b = c021b;
+
+        setC021bfx(c021b.equals("96") ? this.c021bfx : "");
+
         notifyPropertyChanged(BR.c021b);
     }
 
@@ -761,6 +764,7 @@ public class ModuleC extends BaseObservable implements Observable {
 
     public void setC021d(String c021d) {
         this.c021d = c021d;
+        setC021dgx(c021d.equals("96") ? this.c021dgx : "");
         notifyPropertyChanged(BR.c021d);
     }
 

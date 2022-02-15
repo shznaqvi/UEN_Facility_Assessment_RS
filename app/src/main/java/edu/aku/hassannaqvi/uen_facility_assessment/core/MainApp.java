@@ -24,6 +24,17 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BuildConfig;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleB;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleC;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleD;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleE;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleF;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleG;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleI;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleJ;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleK;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 
 
@@ -52,6 +63,17 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
+    public static ModuleA moduleA;
+    public static ModuleB moduleB;
+    public static ModuleC moduleC;
+    public static ModuleD moduleD;
+    public static ModuleE moduleE;
+    public static ModuleF moduleF;
+    public static ModuleG moduleG;
+    public static ModuleH moduleH;
+    public static ModuleI moduleI;
+    public static ModuleJ moduleJ;
+    public static ModuleK moduleK;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static Users user;
