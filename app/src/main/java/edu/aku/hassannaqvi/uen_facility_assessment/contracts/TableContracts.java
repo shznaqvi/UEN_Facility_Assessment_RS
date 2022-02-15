@@ -154,6 +154,37 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
+    public static abstract class ModuleETable implements BaseColumns {
+        public static final String TABLE_NAME = "ModuleE";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_LHW_UID = "_lhwuid";
+        public static final String COLUMN_LHW_CODE = "lhwcode";
+        public static final String COLUMN_KHANDAN_NO = "kno";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+
+        public static final String COLUMN_SE1 = "sE1";
+        public static final String COLUMN_SE2 = "sE2";
+        public static final String COLUMN_SE31 = "sE31";
+        public static final String COLUMN_SE32 = "sE32";
+        public static final String COLUMN_SE33 = "sE33";
+        public static final String COLUMN_SE4 = "sE4";
+        public static final String COLUMN_SE5 = "sE5";
+        public static final String COLUMN_SE6 = "sE6";
+        public static final String COLUMN_SE7 = "sE7";
+        public static final String COLUMN_SE8 = "sE8";
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
 
     public static abstract class UsersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";

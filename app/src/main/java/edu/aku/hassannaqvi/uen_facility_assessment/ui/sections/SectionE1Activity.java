@@ -1,7 +1,5 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleC;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleE;
 
 import android.content.Intent;
@@ -49,7 +47,7 @@ public class SectionE1Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SE, form.sEtoString());
+            updcount = db.updatesModuleEColumn(TableContracts.ModuleETable.COLUMN_SE1, moduleE.sE1toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
