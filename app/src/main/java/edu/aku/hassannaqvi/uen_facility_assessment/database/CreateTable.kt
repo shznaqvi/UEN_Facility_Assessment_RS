@@ -176,6 +176,32 @@ object CreateTable {
             + " );"
             )
 
+    const val SQL_CREATE_MODULE_F = ("CREATE TABLE "
+            + ModuleFTable.TABLE_NAME + "("
+            + ModuleFTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ModuleFTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + ModuleFTable.COLUMN_UID + " TEXT,"
+            + ModuleFTable.COLUMN_LHW_UID + " TEXT,"
+            + ModuleFTable.COLUMN_LHW_CODE + " TEXT,"
+            + ModuleFTable.COLUMN_KHANDAN_NO + " TEXT,"
+            + ModuleFTable.COLUMN_USERNAME + " TEXT,"
+            + ModuleFTable.COLUMN_SYSDATE + " TEXT,"
+            + ModuleFTable.COLUMN_ISTATUS + " TEXT,"
+            + ModuleFTable.COLUMN_DEVICEID + " TEXT,"
+            + ModuleFTable.COLUMN_DEVICETAGID + " TEXT,"
+            + ModuleFTable.COLUMN_SYNCED + " TEXT,"
+            + ModuleFTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + ModuleFTable.COLUMN_APPVERSION + " TEXT,"
+            + ModuleFTable.COLUMN_SF1 + " TEXT,"
+            + ModuleFTable.COLUMN_SF2 + " TEXT,"
+            + ModuleFTable.COLUMN_SF3 + " TEXT,"
+            + ModuleFTable.COLUMN_SF4 + " TEXT,"
+            + ModuleFTable.COLUMN_SF5 + " TEXT,"
+            + ModuleFTable.COLUMN_SF6 + " TEXT,"
+            + ModuleFTable.COLUMN_SF7 + " TEXT"
+            + " );"
+            )
+
 
     /*const val SQL_CREATE_LHW_FORMS = ("CREATE TABLE "
             + FormsTable.TABLE_NAME + "("

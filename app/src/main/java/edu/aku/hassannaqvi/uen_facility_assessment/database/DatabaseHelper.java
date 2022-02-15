@@ -13,6 +13,7 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.S
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_C;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_D;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_E;
+import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_F;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_STAFFING;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_TEHSIL;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_USERS;
@@ -48,6 +49,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.Modu
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleCTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleDTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleETable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleFTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.StaffingTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableDistricts;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableHealthFacilities;
@@ -66,6 +68,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleB;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleC;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleD;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleE;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleF;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Tehsil;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
@@ -109,6 +112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_STAFFING);
         db.execSQL(SQL_CREATE_MODULE_D);
         db.execSQL(SQL_CREATE_MODULE_E);
+        db.execSQL(SQL_CREATE_MODULE_F);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ENTRYLOGS);
 
@@ -351,6 +355,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public long addModuleF(ModuleF modf) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+
+        values.put(ModuleFTable.COLUMN_PROJECT_NAME, modf.getProjectName());
+        values.put(ModuleFTable.COLUMN_UID, modf.getUid());
+        values.put(ModuleFTable.COLUMN_USERNAME, modf.getUserName());
+        values.put(ModuleFTable.COLUMN_SYSDATE, modf.getSysDate());
+        values.put(ModuleFTable.COLUMN_SYNCED, modf.getSynced());
+        values.put(ModuleFTable.COLUMN_SYNCED_DATE, modf.getSyncDate());
+
+        values.put(ModuleFTable.COLUMN_SF1, modf.sF1toString());
+        values.put(ModuleFTable.COLUMN_SF2, modf.sF2toString());
+        values.put(ModuleFTable.COLUMN_SF3, modf.sF3toString());
+        values.put(ModuleFTable.COLUMN_SF4, modf.sF4toString());
+        values.put(ModuleFTable.COLUMN_SF5, modf.sF5toString());
+        values.put(ModuleFTable.COLUMN_SF6, modf.sF6toString());
+        values.put(ModuleFTable.COLUMN_SF7, modf.sF7toString());
+
+        values.put(ModuleFTable.COLUMN_ISTATUS, modf.getiStatus());
+        values.put(ModuleFTable.COLUMN_DEVICETAGID, modf.getDeviceTag());
+        values.put(ModuleFTable.COLUMN_DEVICEID, modf.getDeviceId());
+        values.put(ModuleFTable.COLUMN_APPVERSION, modf.getAppver());
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                ModuleFTable.TABLE_NAME,
+                ModuleFTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
 
     //UPDATE in DB
     public int updatesFormColumn(String column, String value) {
@@ -453,6 +491,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.moduleE.getId())};
 
         return db.update(ModuleETable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesModuleFColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = ModuleFTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.moduleF.getId())};
+
+        return db.update(ModuleFTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
