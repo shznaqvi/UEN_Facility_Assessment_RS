@@ -101,13 +101,6 @@ public class ModuleC extends BaseObservable implements Observable {
     private String c01lc = _EMPTY_;
     private String c01ld = _EMPTY_;
     private String c01le = _EMPTY_;
-    private String c021a = _EMPTY_;
-    private String c021b = _EMPTY_;
-    private String c021bfx = _EMPTY_;
-    private String c021c = _EMPTY_;
-    private String c021d = _EMPTY_;
-    private String c021dgx = _EMPTY_;
-    private String c021e = _EMPTY_;
 
 
     public ModuleC() {
@@ -830,79 +823,7 @@ public class ModuleC extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.c01le);
     }
 
-    @Bindable
-    public String getC021a() {
-        return c021a;
-    }
 
-    public void setC021a(String c021a) {
-        this.c021a = c021a;
-        notifyPropertyChanged(BR.c021a);
-    }
-
-    @Bindable
-    public String getC021b() {
-        return c021b;
-    }
-
-    public void setC021b(String c021b) {
-        this.c021b = c021b;
-
-        setC021bfx(c021b.equals("96") ? this.c021bfx : "");
-
-        notifyPropertyChanged(BR.c021b);
-    }
-
-    @Bindable
-    public String getC021bfx() {
-        return c021bfx;
-    }
-
-    public void setC021bfx(String c021bfx) {
-        this.c021bfx = c021bfx;
-        notifyPropertyChanged(BR.c021bfx);
-    }
-
-    @Bindable
-    public String getC021c() {
-        return c021c;
-    }
-
-    public void setC021c(String c021c) {
-        this.c021c = c021c;
-        notifyPropertyChanged(BR.c021c);
-    }
-
-    @Bindable
-    public String getC021d() {
-        return c021d;
-    }
-
-    public void setC021d(String c021d) {
-        this.c021d = c021d;
-        setC021dgx(c021d.equals("96") ? this.c021dgx : "");
-        notifyPropertyChanged(BR.c021d);
-    }
-
-    @Bindable
-    public String getC021dgx() {
-        return c021dgx;
-    }
-
-    public void setC021dgx(String c021dgx) {
-        this.c021dgx = c021dgx;
-        notifyPropertyChanged(BR.c021dgx);
-    }
-
-    @Bindable
-    public String getC021e() {
-        return c021e;
-    }
-
-    public void setC021e(String c021e) {
-        this.c021e = c021e;
-        notifyPropertyChanged(BR.c021e);
-    }
 
 
     public ModuleC Hydrate(Cursor cursor) throws JSONException {
@@ -916,12 +837,12 @@ public class ModuleC extends BaseObservable implements Observable {
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_SYNCED_DATE));
-        sCHydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_SC)));
+        sC1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_SC1)));
         return this;
     }
 
-    public void sCHydrate(String string) throws JSONException {
-        Log.d(TAG, "sCHydrate: " + string);
+    public void sC1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sC1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -985,16 +906,8 @@ public class ModuleC extends BaseObservable implements Observable {
             this.c01lc = json.getString("c01lc");
             this.c01ld = json.getString("c01ld");
             this.c01le = json.getString("c01le");
-            this.c021a = json.getString("c021a");
-            this.c021b = json.getString("c021b");
-            this.c021bfx = json.getString("c021bfx");
-            this.c021c = json.getString("c021c");
-            this.c021d = json.getString("c021d");
-            this.c021dgx = json.getString("c021dgx");
-            this.c021e = json.getString("c021e");
         }
     }
-
 
 
     public JSONObject toJSONObject() throws JSONException {
@@ -1009,12 +922,12 @@ public class ModuleC extends BaseObservable implements Observable {
         json.put(ModuleCTable.COLUMN_ISTATUS, this.iStatus);
         json.put(ModuleCTable.COLUMN_SYNCED, this.synced);
         json.put(ModuleCTable.COLUMN_SYNCED_DATE, this.syncDate);
-        json.put(ModuleCTable.COLUMN_SC, new JSONObject(sCtoString()));
+        json.put(ModuleCTable.COLUMN_SC1, new JSONObject(sC1toString()));
         return json;
     }
 
-    public String sCtoString() throws JSONException {
-        Log.d(TAG, "sCtoString: ");
+    public String sC1toString() throws JSONException {
+        Log.d(TAG, "sC1toString: ");
         JSONObject json = new JSONObject();
         json.put("c01aa", c01aa)
                 .put("c01ab", c01ab)
@@ -1075,14 +988,7 @@ public class ModuleC extends BaseObservable implements Observable {
                 .put("c01lb", c01lb)
                 .put("c01lc", c01lc)
                 .put("c01ld", c01ld)
-                .put("c01le", c01le)
-                .put("c021a", c021a)
-                .put("c021b", c021b)
-                .put("c021bfx", c021bfx)
-                .put("c021c", c021c)
-                .put("c021d", c021d)
-                .put("c021dgx", c021dgx)
-                .put("c021e", c021e);
+                .put("c01le", c01le);
         return json.toString();
     }
 

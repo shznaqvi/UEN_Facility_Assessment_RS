@@ -11,6 +11,7 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.S
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_A;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_B;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_C;
+import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_STAFFING;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_TEHSIL;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_VERSIONAPP;
@@ -43,6 +44,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.Form
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleATable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleBTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleCTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.StaffingTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableDistricts;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableHealthFacilities;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableLhw;
@@ -58,6 +60,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.LHW;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleB;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleC;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Tehsil;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.VersionApp;
@@ -97,6 +100,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_MODULE_A);
         db.execSQL(SQL_CREATE_MODULE_B);
         db.execSQL(SQL_CREATE_MODULE_C);
+        db.execSQL(SQL_CREATE_STAFFING);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ENTRYLOGS);
 
@@ -219,7 +223,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ModuleCTable.COLUMN_SYNCED, modc.getSynced());
         values.put(ModuleCTable.COLUMN_SYNCED_DATE, modc.getSyncDate());
 
-        values.put(ModuleCTable.COLUMN_SC, modc.sCtoString());
+        values.put(ModuleCTable.COLUMN_SC1, modc.sC1toString());
 
         values.put(ModuleCTable.COLUMN_ISTATUS, modc.getiStatus());
         values.put(ModuleCTable.COLUMN_DEVICETAGID, modc.getDeviceTag());
@@ -232,6 +236,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 ModuleCTable.TABLE_NAME,
                 ModuleCTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public long addStaff(Staffing staf) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+
+        values.put(StaffingTable.COLUMN_PROJECT_NAME, staf.getProjectName());
+        values.put(StaffingTable.COLUMN_UID, staf.getUid());
+        values.put(StaffingTable.COLUMN_UUID, staf.getUuid());
+        values.put(StaffingTable.COLUMN_USERNAME, staf.getUserName());
+        values.put(StaffingTable.COLUMN_SYSDATE, staf.getSysDate());
+        values.put(StaffingTable.COLUMN_SYNCED, staf.getSynced());
+        values.put(StaffingTable.COLUMN_SYNCED_DATE, staf.getSyncDate());
+
+        values.put(StaffingTable.COLUMN_SC2, staf.sC2toString());
+
+        values.put(StaffingTable.COLUMN_ISTATUS, staf.getiStatus());
+        values.put(StaffingTable.COLUMN_DEVICETAGID, staf.getDeviceTag());
+        values.put(StaffingTable.COLUMN_DEVICEID, staf.getDeviceId());
+        values.put(StaffingTable.COLUMN_APPVERSION, staf.getAppver());
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                StaffingTable.TABLE_NAME,
+                StaffingTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -293,6 +326,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.moduleC.getId())};
 
         return db.update(ModuleCTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesStaffColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = StaffingTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.staffing.getId())};
+
+        return db.update(StaffingTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
