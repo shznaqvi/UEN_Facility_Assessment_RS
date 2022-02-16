@@ -1118,8 +1118,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK601(String k601) {
         this.k601 = k601;
-        setK601dx(k601.equals("4") ? this.k601dx : ""); // for all skips, mention all skipped questions
-        setK601ex(k601.equals("5") ? this.k601ex : ""); // for all skips, mention all skipped questions
+        setK601dx(k601.equals("2") || k601.equals("3") ? this.k601dx : ""); // for all skips, mention all skipped questions
+        setK601ex(k601.equals("2") || k601.equals("3") ? this.k601ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k601);
     }
 
@@ -1150,8 +1150,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK602(String k602) {
         this.k602 = k602;
-        setK602dx(k602.equals("4") ? this.k602dx : ""); // for all skips, mention all skipped questions
-        setK602ex(k602.equals("5") ? this.k602ex : ""); // for all skips, mention all skipped questions
+        setK602dx(k602.equals("2") || k602.equals("3") ? this.k602dx : ""); // for all skips, mention all skipped questions
+        setK602ex(k601.equals("2") || k602.equals("3") ? this.k602ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k602);
     }
 
@@ -1182,8 +1182,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK603(String k603) {
         this.k603 = k603;
-        setK603dx(k603.equals("4") ? this.k603dx : ""); // for all skips, mention all skipped questions
-        setK603ex(k603.equals("5") ? this.k603ex : ""); // for all skips, mention all skipped questions
+        setK603dx(k603.equals("2") || k603.equals("3") ? this.k603dx : ""); // for all skips, mention all skipped questions
+        setK603ex(k603.equals("2") || k603.equals("3") ? this.k603ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k603);
     }
 
@@ -1214,8 +1214,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK604(String k604) {
         this.k604 = k604;
-        setK604dx(k604.equals("4") ? this.k604dx : ""); // for all skips, mention all skipped questions
-        setK604ex(k604.equals("5") ? this.k604ex : ""); // for all skips, mention all skipped questions
+        setK604dx(k604.equals("2") || k604.equals("3") ? this.k604dx : ""); // for all skips, mention all skipped questions
+        setK604ex(k604.equals("2") || k604.equals("3") ? this.k604ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k604);
     }
 
@@ -1246,8 +1246,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK605(String k605) {
         this.k605 = k605;
-        setK605dx(k605.equals("4") ? this.k605dx : ""); // for all skips, mention all skipped questions
-        setK605ex(k605.equals("5") ? this.k605ex : ""); // for all skips, mention all skipped questions
+        setK605dx(k605.equals("2") || k605.equals("3") ? this.k605dx : ""); // for all skips, mention all skipped questions
+        setK605ex(k605.equals("2") || k605.equals("3") ? this.k605ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k605);
     }
 
@@ -1278,8 +1278,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK606(String k606) {
         this.k606 = k606;
-        setK606dx(k606.equals("4") ? this.k606dx : ""); // for all skips, mention all skipped questions
-        setK606ex(k606.equals("5") ? this.k606ex : ""); // for all skips, mention all skipped questions
+        setK606dx(k606.equals("2") || k606.equals("3") ? this.k606dx : ""); // for all skips, mention all skipped questions
+        setK606ex(k606.equals("2") || k606.equals("3") ? this.k606ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k606);
     }
 
@@ -1310,8 +1310,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK607(String k607) {
         this.k607 = k607;
-        setK607dx(k607.equals("4") ? this.k607dx : ""); // for all skips, mention all skipped questions
-        setK607ex(k607.equals("5") ? this.k607ex : ""); // for all skips, mention all skipped questions
+        setK607dx(k607.equals("2") || k607.equals("3") ? this.k607dx : ""); // for all skips, mention all skipped questions
+        setK607ex(k607.equals("2") || k607.equals("3") ? this.k607ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k607);
     }
 
@@ -1342,8 +1342,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK608(String k608) {
         this.k608 = k608;
-        setK608dx(k608.equals("4") ? this.k608dx : ""); // for all skips, mention all skipped questions
-        setK608ex(k608.equals("5") ? this.k608ex : ""); // for all skips, mention all skipped questions
+        setK608dx(k608.equals("2") || k608.equals("3") ? this.k608dx : ""); // for all skips, mention all skipped questions
+        setK608ex(k608.equals("2") || k608.equals("3") ? this.k608ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k608);
     }
 
@@ -1374,8 +1374,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK609(String k609) {
         this.k609 = k609;
-        setK609dx(k609.equals("4") ? this.k609dx : ""); // for all skips, mention all skipped questions
-        setK609ex(k609.equals("5") ? this.k609ex : ""); // for all skips, mention all skipped questions
+        setK609dx(k609.equals("2") || k609.equals("3") ? this.k609dx : ""); // for all skips, mention all skipped questions
+        setK609ex(k609.equals("2") || k609.equals("3") ? this.k609ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k609);
     }
 
@@ -1406,8 +1406,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK610(String k610) {
         this.k610 = k610;
-        setK610dx(k610.equals("4") ? this.k610dx : ""); // for all skips, mention all skipped questions
-        setK610ex(k610.equals("5") ? this.k610ex : ""); // for all skips, mention all skipped questions
+        setK610dx(k610.equals("2") || k610.equals("3") ? this.k610dx : ""); // for all skips, mention all skipped questions
+        setK610ex(k610.equals("2") || k610.equals("3") ? this.k610ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k610);
     }
 
@@ -1438,8 +1438,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK611(String k611) {
         this.k611 = k611;
-        setK611dx(k611.equals("4") ? this.k611dx : ""); // for all skips, mention all skipped questions
-        setK611ex(k611.equals("5") ? this.k611ex : ""); // for all skips, mention all skipped questions
+        setK611dx(k611.equals("2") || k611.equals("3") ? this.k611dx : ""); // for all skips, mention all skipped questions
+        setK611ex(k611.equals("2") || k611.equals("3") ? this.k611ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k611);
     }
 
@@ -1470,8 +1470,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK612(String k612) {
         this.k612 = k612;
-        setK612dx(k612.equals("4") ? this.k612dx : ""); // for all skips, mention all skipped questions
-        setK612ex(k612.equals("5") ? this.k612ex : ""); // for all skips, mention all skipped questions
+        setK612dx(k612.equals("2") || k612.equals("3") ? this.k612dx : ""); // for all skips, mention all skipped questions
+        setK612ex(k612.equals("2") || k612.equals("3") ? this.k612ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k612);
     }
 
@@ -1502,8 +1502,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK613(String k613) {
         this.k613 = k613;
-        setK613dx(k613.equals("4") ? this.k613dx : ""); // for all skips, mention all skipped questions
-        setK613ex(k613.equals("5") ? this.k613ex : ""); // for all skips, mention all skipped questions
+        setK613dx(k613.equals("2") || k613.equals("3") ? this.k613dx : ""); // for all skips, mention all skipped questions
+        setK613ex(k613.equals("2") || k613.equals("3") ? this.k613ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k613);
     }
 
@@ -1534,8 +1534,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK614(String k614) {
         this.k614 = k614;
-        setK614dx(k614.equals("4") ? this.k614dx : ""); // for all skips, mention all skipped questions
-        setK614ex(k614.equals("5") ? this.k614ex : ""); // for all skips, mention all skipped questions
+        setK614dx(k614.equals("2") || k614.equals("3") ? this.k614dx : ""); // for all skips, mention all skipped questions
+        setK614ex(k614.equals("2") || k614.equals("3") ? this.k614ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k614);
     }
 
@@ -1566,8 +1566,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK615(String k615) {
         this.k615 = k615;
-        setK615dx(k615.equals("4") ? this.k615dx : ""); // for all skips, mention all skipped questions
-        setK615ex(k615.equals("5") ? this.k615ex : ""); // for all skips, mention all skipped questions
+        setK615dx(k615.equals("2") || k615.equals("3") ? this.k615dx : ""); // for all skips, mention all skipped questions
+        setK615ex(k615.equals("2") || k615.equals("3") ? this.k615ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k615);
     }
 
@@ -1598,8 +1598,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK616(String k616) {
         this.k616 = k616;
-        setK616dx(k616.equals("4") ? this.k616dx : ""); // for all skips, mention all skipped questions
-        setK616ex(k616.equals("5") ? this.k616ex : ""); // for all skips, mention all skipped questions
+        setK616dx(k616.equals("2") || k616.equals("3") ? this.k616dx : ""); // for all skips, mention all skipped questions
+        setK616ex(k616.equals("2") || k616.equals("3") ? this.k616ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k616);
     }
 
@@ -1630,8 +1630,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK617(String k617) {
         this.k617 = k617;
-        setK617dx(k617.equals("4") ? this.k617dx : ""); // for all skips, mention all skipped questions
-        setK617ex(k617.equals("5") ? this.k617ex : ""); // for all skips, mention all skipped questions
+        setK617dx(k617.equals("2") || k617.equals("3") ? this.k617dx : ""); // for all skips, mention all skipped questions
+        setK617ex(k617.equals("2") || k617.equals("3") ? this.k617ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k617);
     }
 
@@ -1662,8 +1662,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK618(String k618) {
         this.k618 = k618;
-        setK618dx(k618.equals("4") ? this.k618dx : ""); // for all skips, mention all skipped questions
-        setK618ex(k618.equals("5") ? this.k618ex : ""); // for all skips, mention all skipped questions
+        setK618dx(k618.equals("2") || k618.equals("3") ? this.k618dx : ""); // for all skips, mention all skipped questions
+        setK618ex(k618.equals("2") || k618.equals("3") ? this.k618ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k618);
     }
 
@@ -1694,8 +1694,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK619(String k619) {
         this.k619 = k619;
-        setK619dx(k619.equals("4") ? this.k619dx : ""); // for all skips, mention all skipped questions
-        setK619ex(k619.equals("5") ? this.k619ex : ""); // for all skips, mention all skipped questions
+        setK619dx(k619.equals("2") || k619.equals("3") ? this.k619dx : ""); // for all skips, mention all skipped questions
+        setK619ex(k619.equals("2") || k619.equals("3") ? this.k619ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k619);
     }
 
@@ -1726,8 +1726,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK620(String k620) {
         this.k620 = k620;
-        setK620dx(k620.equals("4") ? this.k620dx : ""); // for all skips, mention all skipped questions
-        setK620ex(k620.equals("5") ? this.k620ex : ""); // for all skips, mention all skipped questions
+        setK620dx(k620.equals("2") || k620.equals("3") ? this.k620dx : ""); // for all skips, mention all skipped questions
+        setK620ex(k620.equals("2") || k620.equals("3") ? this.k620ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k620);
     }
 
@@ -1758,8 +1758,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK621(String k621) {
         this.k621 = k621;
-        setK621dx(k621.equals("4") ? this.k621dx : ""); // for all skips, mention all skipped questions
-        setK621ex(k621.equals("5") ? this.k621ex : ""); // for all skips, mention all skipped questions
+        setK621dx(k621.equals("2") || k621.equals("3") ? this.k621dx : ""); // for all skips, mention all skipped questions
+        setK621ex(k621.equals("2") || k621.equals("3") ? this.k621ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k621);
     }
 
@@ -1790,8 +1790,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK622(String k622) {
         this.k622 = k622;
-        setK622dx(k622.equals("4") ? this.k622dx : ""); // for all skips, mention all skipped questions
-        setK622ex(k622.equals("5") ? this.k622ex : ""); // for all skips, mention all skipped questions
+        setK622dx(k622.equals("2") || k622.equals("3") ? this.k622dx : ""); // for all skips, mention all skipped questions
+        setK622ex(k622.equals("2") || k622.equals("3") ? this.k622ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k622);
     }
 
@@ -1822,8 +1822,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK623(String k623) {
         this.k623 = k623;
-        setK623dx(k623.equals("4") ? this.k623dx : ""); // for all skips, mention all skipped questions
-        setK623ex(k623.equals("5") ? this.k623ex : ""); // for all skips, mention all skipped questions
+        setK623dx(k623.equals("2") || k623.equals("3") ? this.k623dx : ""); // for all skips, mention all skipped questions
+        setK623ex(k623.equals("2") || k623.equals("3") ? this.k623ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k623);
     }
 
@@ -1854,8 +1854,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK624(String k624) {
         this.k624 = k624;
-        setK624dx(k624.equals("4") ? this.k624dx : ""); // for all skips, mention all skipped questions
-        setK624ex(k624.equals("5") ? this.k624ex : ""); // for all skips, mention all skipped questions
+        setK624dx(k624.equals("2") || k624.equals("3") ? this.k624dx : ""); // for all skips, mention all skipped questions
+        setK624ex(k624.equals("2") || k624.equals("3") ? this.k624ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k624);
     }
 
@@ -1886,8 +1886,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK625(String k625) {
         this.k625 = k625;
-        setK625dx(k625.equals("4") ? this.k625dx : ""); // for all skips, mention all skipped questions
-        setK625ex(k625.equals("5") ? this.k625ex : ""); // for all skips, mention all skipped questions
+        setK625dx(k625.equals("2") || k625.equals("3") ? this.k625dx : ""); // for all skips, mention all skipped questions
+        setK625ex(k625.equals("2") || k625.equals("3") ? this.k625ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k625);
     }
 
@@ -1918,8 +1918,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK626(String k626) {
         this.k626 = k626;
-        setK626dx(k626.equals("4") ? this.k626dx : ""); // for all skips, mention all skipped questions
-        setK626ex(k626.equals("5") ? this.k626ex : ""); // for all skips, mention all skipped questions
+        setK626dx(k626.equals("2") || k626.equals("3") ? this.k626dx : ""); // for all skips, mention all skipped questions
+        setK626ex(k626.equals("2") || k626.equals("3") ? this.k626ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k626);
     }
 
@@ -1950,8 +1950,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK627(String k627) {
         this.k627 = k627;
-        setK627dx(k627.equals("4") ? this.k627dx : ""); // for all skips, mention all skipped questions
-        setK627ex(k627.equals("5") ? this.k627ex : ""); // for all skips, mention all skipped questions
+        setK627dx(k627.equals("2") || k627.equals("3") ? this.k627dx : ""); // for all skips, mention all skipped questions
+        setK627ex(k627.equals("2") || k627.equals("3") ? this.k627ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k627);
     }
 
@@ -1982,8 +1982,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK628(String k628) {
         this.k628 = k628;
-        setK628dx(k628.equals("4") ? this.k628dx : ""); // for all skips, mention all skipped questions
-        setK628ex(k628.equals("5") ? this.k628ex : ""); // for all skips, mention all skipped questions
+        setK628dx(k628.equals("2") || k628.equals("3") ? this.k628dx : ""); // for all skips, mention all skipped questions
+        setK628ex(k628.equals("2") || k628.equals("3") ? this.k628ex : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k628);
     }
 
