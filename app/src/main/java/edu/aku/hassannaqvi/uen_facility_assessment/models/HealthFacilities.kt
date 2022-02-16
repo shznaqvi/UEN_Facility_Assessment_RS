@@ -29,7 +29,6 @@ class HealthFacilities {
             cursor.getString(cursor.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_HF_CODE))
         hfName =
             cursor.getString(cursor.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_HF_NAME))
-
         return this
     }
 
