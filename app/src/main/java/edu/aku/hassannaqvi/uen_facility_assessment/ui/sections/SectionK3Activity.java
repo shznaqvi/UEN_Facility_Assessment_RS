@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleK;
 
 import android.content.Intent;
@@ -47,7 +46,7 @@ public class SectionK3Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SK, form.sKtoString());
+            updcount = db.updatesModuleKColumn(TableContracts.ModuleKTable.COLUMN_SK3, moduleK.sK3toString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -66,7 +65,7 @@ public class SectionK3Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionF2Activity.class));
+            startActivity(new Intent(this, SectionK4Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

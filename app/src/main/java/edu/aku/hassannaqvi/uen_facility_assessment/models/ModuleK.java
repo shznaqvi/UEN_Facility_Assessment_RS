@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -8,219 +10,357 @@ import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleKTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
+
 
 public class ModuleK extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ModuleK";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    private final String wuid = StringUtils.EMPTY;
-    private final String cuid = StringUtils.EMPTY;
-    // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
-    // APP VARIABLES
-    private String id = StringUtils.EMPTY;
-    private String uid = StringUtils.EMPTY;
-    private String userName = StringUtils.EMPTY;
-    private String sysDate = StringUtils.EMPTY;
-    private String cluster = StringUtils.EMPTY;
-    private String deviceId = StringUtils.EMPTY;
-    private String deviceTag = StringUtils.EMPTY;
-    private String appver = StringUtils.EMPTY;
-    private String endTime = StringUtils.EMPTY;
-    private String iStatus = StringUtils.EMPTY;
-    private String iStatus96x = StringUtils.EMPTY;
-    private String synced = StringUtils.EMPTY;
-    private String syncDate = StringUtils.EMPTY;
 
-    // SECTION VARIABLES
-    private String sK = StringUtils.EMPTY;
+
+    // APP VARIABLES
+    private String id = MainApp._EMPTY_;
+    private String uid = MainApp._EMPTY_;
+    private String userName = MainApp._EMPTY_;
+    private String sysDate = MainApp._EMPTY_;
+    private String cluster = MainApp._EMPTY_;
+    private String deviceId = MainApp._EMPTY_;
+    private String deviceTag = MainApp._EMPTY_;
+    private String appver = MainApp._EMPTY_;
+    private String endTime = MainApp._EMPTY_;
+    private String iStatus = MainApp._EMPTY_;
+    private String iStatus96x = MainApp._EMPTY_;
+    private String synced = MainApp._EMPTY_;
+    private String syncDate = MainApp._EMPTY_;
+
 
     // FIELD VARIABLES
-    private String k101 = StringUtils.EMPTY;
-    private String k101a = StringUtils.EMPTY;
-    private String k101ba = StringUtils.EMPTY;
-    private String k101ba03 = StringUtils.EMPTY;
-    private String k101bb = StringUtils.EMPTY;
-    private String k101bb03 = StringUtils.EMPTY;
-    private String k101bc = StringUtils.EMPTY;
-    private String k101bc03 = StringUtils.EMPTY;
-    private String k101bd = StringUtils.EMPTY;
-    private String k101bd03 = StringUtils.EMPTY;
-    private String k101be = StringUtils.EMPTY;
-    private String k101be03 = StringUtils.EMPTY;
-    private String k101bf = StringUtils.EMPTY;
-    private String k101bf03 = StringUtils.EMPTY;
-    private String k101bg = StringUtils.EMPTY;
-    private String k101bg03 = StringUtils.EMPTY;
-    private String k101b96 = StringUtils.EMPTY;
-    private String k101b9603x = StringUtils.EMPTY;
-    private String k101b9604 = StringUtils.EMPTY;
-    private String k102 = StringUtils.EMPTY;
-    private String k10296x = StringUtils.EMPTY;
-    private String k103 = StringUtils.EMPTY;
-    private String k104 = StringUtils.EMPTY;
-    private String k201 = StringUtils.EMPTY;
-    private String k202 = StringUtils.EMPTY;
-    private String k203 = StringUtils.EMPTY;
-    private String k204 = StringUtils.EMPTY;
-    private String k301 = StringUtils.EMPTY;
-    private String k302 = StringUtils.EMPTY;
-    private String k303 = StringUtils.EMPTY;
-    private String k304 = StringUtils.EMPTY;
-    private String k305 = StringUtils.EMPTY;
-    private String k306 = StringUtils.EMPTY;
-    private String k307 = StringUtils.EMPTY;
-    private String k30704x = StringUtils.EMPTY;
-    private String k308 = StringUtils.EMPTY;
-    private String k401 = StringUtils.EMPTY;
-    private String k402 = StringUtils.EMPTY;
-    private String k403 = StringUtils.EMPTY;
-    private String k404 = StringUtils.EMPTY;
-    private String k405 = StringUtils.EMPTY;
-    private String k406 = StringUtils.EMPTY;
-    private String k407 = StringUtils.EMPTY;
-    private String k408 = StringUtils.EMPTY;
-    private String k409 = StringUtils.EMPTY;
-    private String k410 = StringUtils.EMPTY;
-    private String k411 = StringUtils.EMPTY;
-    private String k41101 = StringUtils.EMPTY;
-    private String k41102 = StringUtils.EMPTY;
-    private String k41103 = StringUtils.EMPTY;
-    private String k41201 = StringUtils.EMPTY;
-    private String k41202 = StringUtils.EMPTY;
-    private String k41203 = StringUtils.EMPTY;
-    private String k41204 = StringUtils.EMPTY;
-    private String k41205 = StringUtils.EMPTY;
-    private String k41206 = StringUtils.EMPTY;
-    private String k41207 = StringUtils.EMPTY;
-    private String k41301 = StringUtils.EMPTY;
-    private String k41302 = StringUtils.EMPTY;
-    private String k41303 = StringUtils.EMPTY;
-    private String k414 = StringUtils.EMPTY;
-    private String k41401 = StringUtils.EMPTY;
-    private String k41402 = StringUtils.EMPTY;
-    private String k41403 = StringUtils.EMPTY;
-    private String k41404 = StringUtils.EMPTY;
-    private String k41405 = StringUtils.EMPTY;
-    private String k41406 = StringUtils.EMPTY;
-    private String k41407 = StringUtils.EMPTY;
-    private String k41408 = StringUtils.EMPTY;
-    private String k41409 = StringUtils.EMPTY;
-    private String k415 = StringUtils.EMPTY;
-    private String k416 = StringUtils.EMPTY;
-    private String k417 = StringUtils.EMPTY;
-    private String k41796x = StringUtils.EMPTY;
-    private String k418 = StringUtils.EMPTY;
-    private String k419 = StringUtils.EMPTY;
-    private String k41901 = StringUtils.EMPTY;
-    private String k41902 = StringUtils.EMPTY;
-    private String k41903 = StringUtils.EMPTY;
-    private String k41904 = StringUtils.EMPTY;
-    private String k41905 = StringUtils.EMPTY;
-    private String k41906 = StringUtils.EMPTY;
-    private String k41907 = StringUtils.EMPTY;
-    private String k601 = StringUtils.EMPTY;
-    private String k601dx = StringUtils.EMPTY;
-    private String k601ex = StringUtils.EMPTY;
-    private String k602 = StringUtils.EMPTY;
-    private String k602dx = StringUtils.EMPTY;
-    private String k602ex = StringUtils.EMPTY;
-    private String k603 = StringUtils.EMPTY;
-    private String k603dx = StringUtils.EMPTY;
-    private String k603ex = StringUtils.EMPTY;
-    private String k604 = StringUtils.EMPTY;
-    private String k604dx = StringUtils.EMPTY;
-    private String k604ex = StringUtils.EMPTY;
-    private String k605 = StringUtils.EMPTY;
-    private String k605dx = StringUtils.EMPTY;
-    private String k605ex = StringUtils.EMPTY;
-    private String k606 = StringUtils.EMPTY;
-    private String k606dx = StringUtils.EMPTY;
-    private String k606ex = StringUtils.EMPTY;
-    private String k607 = StringUtils.EMPTY;
-    private String k607dx = StringUtils.EMPTY;
-    private String k607ex = StringUtils.EMPTY;
-    private String k608 = StringUtils.EMPTY;
-    private String k608dx = StringUtils.EMPTY;
-    private String k608ex = StringUtils.EMPTY;
-    private String k609 = StringUtils.EMPTY;
-    private String k609dx = StringUtils.EMPTY;
-    private String k609ex = StringUtils.EMPTY;
-    private String k610 = StringUtils.EMPTY;
-    private String k610dx = StringUtils.EMPTY;
-    private String k610ex = StringUtils.EMPTY;
-    private String k611 = StringUtils.EMPTY;
-    private String k611dx = StringUtils.EMPTY;
-    private String k611ex = StringUtils.EMPTY;
-    private String k612 = StringUtils.EMPTY;
-    private String k612dx = StringUtils.EMPTY;
-    private String k612ex = StringUtils.EMPTY;
-    private String k613 = StringUtils.EMPTY;
-    private String k613dx = StringUtils.EMPTY;
-    private String k613ex = StringUtils.EMPTY;
-    private String k614 = StringUtils.EMPTY;
-    private String k614dx = StringUtils.EMPTY;
-    private String k614ex = StringUtils.EMPTY;
-    private String k615 = StringUtils.EMPTY;
-    private String k615dx = StringUtils.EMPTY;
-    private String k615ex = StringUtils.EMPTY;
-    private String k616 = StringUtils.EMPTY;
-    private String k616dx = StringUtils.EMPTY;
-    private String k616ex = StringUtils.EMPTY;
-    private String k617 = StringUtils.EMPTY;
-    private String k617dx = StringUtils.EMPTY;
-    private String k617ex = StringUtils.EMPTY;
-    private String k618 = StringUtils.EMPTY;
-    private String k618dx = StringUtils.EMPTY;
-    private String k618ex = StringUtils.EMPTY;
-    private String k619 = StringUtils.EMPTY;
-    private String k619dx = StringUtils.EMPTY;
-    private String k619ex = StringUtils.EMPTY;
-    private String k620 = StringUtils.EMPTY;
-    private String k620dx = StringUtils.EMPTY;
-    private String k620ex = StringUtils.EMPTY;
-    private String k621 = StringUtils.EMPTY;
-    private String k621dx = StringUtils.EMPTY;
-    private String k621ex = StringUtils.EMPTY;
-    private String k622 = StringUtils.EMPTY;
-    private String k622dx = StringUtils.EMPTY;
-    private String k622ex = StringUtils.EMPTY;
-    private String k623 = StringUtils.EMPTY;
-    private String k623dx = StringUtils.EMPTY;
-    private String k623ex = StringUtils.EMPTY;
-    private String k624 = StringUtils.EMPTY;
-    private String k624dx = StringUtils.EMPTY;
-    private String k624ex = StringUtils.EMPTY;
-    private String k625 = StringUtils.EMPTY;
-    private String k625dx = StringUtils.EMPTY;
-    private String k625ex = StringUtils.EMPTY;
-    private String k626 = StringUtils.EMPTY;
-    private String k626dx = StringUtils.EMPTY;
-    private String k626ex = StringUtils.EMPTY;
-    private String k627 = StringUtils.EMPTY;
-    private String k627dx = StringUtils.EMPTY;
-    private String k627ex = StringUtils.EMPTY;
-    private String k628 = StringUtils.EMPTY;
-    private String k628dx = StringUtils.EMPTY;
-    private String k628ex = StringUtils.EMPTY;
-    private String k701 = StringUtils.EMPTY;
-    private String k702 = StringUtils.EMPTY;
-    private String k703 = StringUtils.EMPTY;
-    private String k704 = StringUtils.EMPTY;
-    private String k705 = StringUtils.EMPTY;
-    private String k706 = StringUtils.EMPTY;
-    private String k707 = StringUtils.EMPTY;
-    private String k708 = StringUtils.EMPTY;
-    private String k709 = StringUtils.EMPTY;
-    private String k710 = StringUtils.EMPTY;
-    private String k711 = StringUtils.EMPTY;
+    private String k101 = MainApp._EMPTY_;
+    private String k101a = MainApp._EMPTY_;
+    private String k101ba = MainApp._EMPTY_;
+    private String k101ba03 = MainApp._EMPTY_;
+    private String k101bb = MainApp._EMPTY_;
+    private String k101bb03 = MainApp._EMPTY_;
+    private String k101bc = MainApp._EMPTY_;
+    private String k101bc03 = MainApp._EMPTY_;
+    private String k101bd = MainApp._EMPTY_;
+    private String k101bd03 = MainApp._EMPTY_;
+    private String k101be = MainApp._EMPTY_;
+    private String k101be03 = MainApp._EMPTY_;
+    private String k101bf = MainApp._EMPTY_;
+    private String k101bf03 = MainApp._EMPTY_;
+    private String k101bg = MainApp._EMPTY_;
+    private String k101bg03 = MainApp._EMPTY_;
+    private String k101b96 = MainApp._EMPTY_;
+    private String k101b9603x = MainApp._EMPTY_;
+    private String k101b9604 = MainApp._EMPTY_;
+    private String k102 = MainApp._EMPTY_;
+    private String k10296x = MainApp._EMPTY_;
+    private String k103 = MainApp._EMPTY_;
+    private String k104 = MainApp._EMPTY_;
+    private String k201 = MainApp._EMPTY_;
+    private String k202 = MainApp._EMPTY_;
+    private String k203 = MainApp._EMPTY_;
+    private String k204 = MainApp._EMPTY_;
+    private String k301 = MainApp._EMPTY_;
+    private String k302 = MainApp._EMPTY_;
+    private String k303 = MainApp._EMPTY_;
+    private String k304 = MainApp._EMPTY_;
+    private String k305 = MainApp._EMPTY_;
+    private String k306 = MainApp._EMPTY_;
+    private String k307 = MainApp._EMPTY_;
+    private String k30704x = MainApp._EMPTY_;
+    private String k308 = MainApp._EMPTY_;
+    private String k401 = MainApp._EMPTY_;
+    private String k402 = MainApp._EMPTY_;
+    private String k403 = MainApp._EMPTY_;
+    private String k404 = MainApp._EMPTY_;
+    private String k405 = MainApp._EMPTY_;
+    private String k406 = MainApp._EMPTY_;
+    private String k407 = MainApp._EMPTY_;
+    private String k408 = MainApp._EMPTY_;
+    private String k409 = MainApp._EMPTY_;
+    private String k410 = MainApp._EMPTY_;
+    private String k411 = MainApp._EMPTY_;
+    private String k41101 = MainApp._EMPTY_;
+    private String k41102 = MainApp._EMPTY_;
+    private String k41103 = MainApp._EMPTY_;
+    private String k41201 = MainApp._EMPTY_;
+    private String k41202 = MainApp._EMPTY_;
+    private String k41203 = MainApp._EMPTY_;
+    private String k41204 = MainApp._EMPTY_;
+    private String k41205 = MainApp._EMPTY_;
+    private String k41206 = MainApp._EMPTY_;
+    private String k41207 = MainApp._EMPTY_;
+    private String k41301 = MainApp._EMPTY_;
+    private String k41302 = MainApp._EMPTY_;
+    private String k41303 = MainApp._EMPTY_;
+    private String k414 = MainApp._EMPTY_;
+    private String k41401 = MainApp._EMPTY_;
+    private String k41402 = MainApp._EMPTY_;
+    private String k41403 = MainApp._EMPTY_;
+    private String k41404 = MainApp._EMPTY_;
+    private String k41405 = MainApp._EMPTY_;
+    private String k41406 = MainApp._EMPTY_;
+    private String k41407 = MainApp._EMPTY_;
+    private String k41408 = MainApp._EMPTY_;
+    private String k41409 = MainApp._EMPTY_;
+    private String k415 = MainApp._EMPTY_;
+    private String k416 = MainApp._EMPTY_;
+    private String k417 = MainApp._EMPTY_;
+    private String k41796x = MainApp._EMPTY_;
+    private String k418 = MainApp._EMPTY_;
+    private String k419 = MainApp._EMPTY_;
+    private String k41901 = MainApp._EMPTY_;
+    private String k41902 = MainApp._EMPTY_;
+    private String k41903 = MainApp._EMPTY_;
+    private String k41904 = MainApp._EMPTY_;
+    private String k41905 = MainApp._EMPTY_;
+    private String k41906 = MainApp._EMPTY_;
+    private String k41907 = MainApp._EMPTY_;
+    private String k601 = MainApp._EMPTY_;
+    private String k601dx = MainApp._EMPTY_;
+    private String k601ex = MainApp._EMPTY_;
+    private String k602 = MainApp._EMPTY_;
+    private String k602dx = MainApp._EMPTY_;
+    private String k602ex = MainApp._EMPTY_;
+    private String k603 = MainApp._EMPTY_;
+    private String k603dx = MainApp._EMPTY_;
+    private String k603ex = MainApp._EMPTY_;
+    private String k604 = MainApp._EMPTY_;
+    private String k604dx = MainApp._EMPTY_;
+    private String k604ex = MainApp._EMPTY_;
+    private String k605 = MainApp._EMPTY_;
+    private String k605dx = MainApp._EMPTY_;
+    private String k605ex = MainApp._EMPTY_;
+    private String k606 = MainApp._EMPTY_;
+    private String k606dx = MainApp._EMPTY_;
+    private String k606ex = MainApp._EMPTY_;
+    private String k607 = MainApp._EMPTY_;
+    private String k607dx = MainApp._EMPTY_;
+    private String k607ex = MainApp._EMPTY_;
+    private String k608 = MainApp._EMPTY_;
+    private String k608dx = MainApp._EMPTY_;
+    private String k608ex = MainApp._EMPTY_;
+    private String k609 = MainApp._EMPTY_;
+    private String k609dx = MainApp._EMPTY_;
+    private String k609ex = MainApp._EMPTY_;
+    private String k610 = MainApp._EMPTY_;
+    private String k610dx = MainApp._EMPTY_;
+    private String k610ex = MainApp._EMPTY_;
+    private String k611 = MainApp._EMPTY_;
+    private String k611dx = MainApp._EMPTY_;
+    private String k611ex = MainApp._EMPTY_;
+    private String k612 = MainApp._EMPTY_;
+    private String k612dx = MainApp._EMPTY_;
+    private String k612ex = MainApp._EMPTY_;
+    private String k613 = MainApp._EMPTY_;
+    private String k613dx = MainApp._EMPTY_;
+    private String k613ex = MainApp._EMPTY_;
+    private String k614 = MainApp._EMPTY_;
+    private String k614dx = MainApp._EMPTY_;
+    private String k614ex = MainApp._EMPTY_;
+    private String k615 = MainApp._EMPTY_;
+    private String k615dx = MainApp._EMPTY_;
+    private String k615ex = MainApp._EMPTY_;
+    private String k616 = MainApp._EMPTY_;
+    private String k616dx = MainApp._EMPTY_;
+    private String k616ex = MainApp._EMPTY_;
+    private String k617 = MainApp._EMPTY_;
+    private String k617dx = MainApp._EMPTY_;
+    private String k617ex = MainApp._EMPTY_;
+    private String k618 = MainApp._EMPTY_;
+    private String k618dx = MainApp._EMPTY_;
+    private String k618ex = MainApp._EMPTY_;
+    private String k619 = MainApp._EMPTY_;
+    private String k619dx = MainApp._EMPTY_;
+    private String k619ex = MainApp._EMPTY_;
+    private String k620 = MainApp._EMPTY_;
+    private String k620dx = MainApp._EMPTY_;
+    private String k620ex = MainApp._EMPTY_;
+    private String k621 = MainApp._EMPTY_;
+    private String k621dx = MainApp._EMPTY_;
+    private String k621ex = MainApp._EMPTY_;
+    private String k622 = MainApp._EMPTY_;
+    private String k622dx = MainApp._EMPTY_;
+    private String k622ex = MainApp._EMPTY_;
+    private String k623 = MainApp._EMPTY_;
+    private String k623dx = MainApp._EMPTY_;
+    private String k623ex = MainApp._EMPTY_;
+    private String k624 = MainApp._EMPTY_;
+    private String k624dx = MainApp._EMPTY_;
+    private String k624ex = MainApp._EMPTY_;
+    private String k625 = MainApp._EMPTY_;
+    private String k625dx = MainApp._EMPTY_;
+    private String k625ex = MainApp._EMPTY_;
+    private String k626 = MainApp._EMPTY_;
+    private String k626dx = MainApp._EMPTY_;
+    private String k626ex = MainApp._EMPTY_;
+    private String k627 = MainApp._EMPTY_;
+    private String k627dx = MainApp._EMPTY_;
+    private String k627ex = MainApp._EMPTY_;
+    private String k628 = MainApp._EMPTY_;
+    private String k628dx = MainApp._EMPTY_;
+    private String k628ex = MainApp._EMPTY_;
+    private String k701 = MainApp._EMPTY_;
+    private String k702 = MainApp._EMPTY_;
+    private String k703 = MainApp._EMPTY_;
+    private String k704 = MainApp._EMPTY_;
+    private String k705 = MainApp._EMPTY_;
+    private String k706 = MainApp._EMPTY_;
+    private String k707 = MainApp._EMPTY_;
+    private String k708 = MainApp._EMPTY_;
+    private String k709 = MainApp._EMPTY_;
+    private String k710 = MainApp._EMPTY_;
+    private String k711 = MainApp._EMPTY_;
+
+
+    public ModuleK() {
+    }
+
+
+    public void populateMeta() {
+        setProjectName(PROJECT_NAME);
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.appInfo.getAppVersion());
+        setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        setUserName(MainApp.user.getUserName());
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        /*setProvinceCode(selectedProvince);
+        setDistrictCode(selectedDistrict);
+        setTehsilCode(selectedTehsil);
+        setUcCode(selectedUc);
+        setVillageCode(selectedVillage);
+        setPsuCode(selectedPSU);
+        setHhid(selectedHHID);*/
+    }
+
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+        notifyPropertyChanged(BR.cluster);
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getSysDate() {
+        return sysDate;
+    }
+
+    public void setSysDate(String sysDate) {
+        this.sysDate = sysDate;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDeviceTag() {
+        return deviceTag;
+    }
+
+    public void setDeviceTag(String deviceTag) {
+        this.deviceTag = deviceTag;
+    }
+
+    public String getAppver() {
+        return appver;
+    }
+
+    public void setAppver(String appver) {
+        this.appver = appver;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getSynced() {
+        return synced;
+    }
+
+    public void setSynced(String synced) {
+        this.synced = synced;
+    }
+
+    public String getSyncDate() {
+        return syncDate;
+    }
+
+    public void setSyncDate(String syncDate) {
+        this.syncDate = syncDate;
+    }
 
 
     @Bindable
@@ -2118,159 +2258,29 @@ public class ModuleK extends BaseObservable implements Observable {
     }
 
 
-    public ModuleK() {
-    }
-
-
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
-    }
-
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getSysDate() {
-        return sysDate;
-    }
-
-    public void setSysDate(String sysDate) {
-        this.sysDate = sysDate;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceTag() {
-        return deviceTag;
-    }
-
-    public void setDeviceTag(String deviceTag) {
-        this.deviceTag = deviceTag;
-    }
-
-    public String getAppver() {
-        return appver;
-    }
-
-    public void setAppver(String appver) {
-        this.appver = appver;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
-
-    public String getSynced() {
-        return synced;
-    }
-
-    public void setSynced(String synced) {
-        this.synced = synced;
-    }
-
-    public String getSyncDate() {
-        return syncDate;
-    }
-
-    public void setSyncDate(String syncDate) {
-        this.syncDate = syncDate;
-    }
-
-
-    /*JSON DATABASE VARIABLES*/
-
-    public String getsK() {
-        return sK;
-    }
-
-    public void setsK(String sK) {
-        this.sK = sK;
-    }
-
-
     public ModuleK Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
-        sKHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SK)));
-
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SYNCED_DATE));
+        sK1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SK1)));
+        sK2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SK2)));
+        sK3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SK3)));
+        sK4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SK4)));
+        sK61Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SK61)));
+        sK62Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SK62)));
+        sK7Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SK7)));
         return this;
     }
 
-
-    public void sKHydrate(String string) throws JSONException {
-        Log.d(TAG, "sKHydrate: " + string);
+    public void sK1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sK1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -2297,10 +2307,26 @@ public class ModuleK extends BaseObservable implements Observable {
             this.k10296x = json.getString("k10296x");
             this.k103 = json.getString("k103");
             this.k104 = json.getString("k104");
+        }
+    }
+
+    public void sK2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sK2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.k201 = json.getString("k201");
             this.k202 = json.getString("k202");
             this.k203 = json.getString("k203");
             this.k204 = json.getString("k204");
+        }
+    }
+
+    public void sK3Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sK3Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.k301 = json.getString("k301");
             this.k302 = json.getString("k302");
             this.k303 = json.getString("k303");
@@ -2310,6 +2336,14 @@ public class ModuleK extends BaseObservable implements Observable {
             this.k307 = json.getString("k307");
             this.k30704x = json.getString("k30704x");
             this.k308 = json.getString("k308");
+        }
+    }
+
+    public void sK4Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sK4Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.k401 = json.getString("k401");
             this.k402 = json.getString("k402");
             this.k403 = json.getString("k403");
@@ -2354,6 +2388,14 @@ public class ModuleK extends BaseObservable implements Observable {
             this.k41905 = json.getString("k41905");
             this.k41906 = json.getString("k41906");
             this.k41907 = json.getString("k41907");
+        }
+    }
+
+    public void sK61Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sK61Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.k601 = json.getString("k601");
             this.k601dx = json.getString("k601dx");
             this.k601ex = json.getString("k601ex");
@@ -2411,6 +2453,14 @@ public class ModuleK extends BaseObservable implements Observable {
             this.k619 = json.getString("k619");
             this.k619dx = json.getString("k619dx");
             this.k619ex = json.getString("k619ex");
+        }
+    }
+
+    public void sK62Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sK62Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.k620 = json.getString("k620");
             this.k620dx = json.getString("k620dx");
             this.k620ex = json.getString("k620ex");
@@ -2438,6 +2488,14 @@ public class ModuleK extends BaseObservable implements Observable {
             this.k628 = json.getString("k628");
             this.k628dx = json.getString("k628dx");
             this.k628ex = json.getString("k628ex");
+        }
+    }
+
+    public void sK7Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sK7Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.k701 = json.getString("k701");
             this.k702 = json.getString("k702");
             this.k703 = json.getString("k703");
@@ -2453,10 +2511,29 @@ public class ModuleK extends BaseObservable implements Observable {
     }
 
 
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put(ModuleKTable.COLUMN_ID, this.id);
+        json.put(ModuleKTable.COLUMN_UID, this.uid);
+        json.put(ModuleKTable.COLUMN_USERNAME, this.userName);
+        json.put(ModuleKTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(ModuleKTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(ModuleKTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(ModuleKTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(ModuleKTable.COLUMN_SYNCED, this.synced);
+        json.put(ModuleKTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(ModuleKTable.COLUMN_SK1, new JSONObject(sK1toString()));
+        json.put(ModuleKTable.COLUMN_SK2, new JSONObject(sK2toString()));
+        json.put(ModuleKTable.COLUMN_SK3, new JSONObject(sK3toString()));
+        json.put(ModuleKTable.COLUMN_SK4, new JSONObject(sK4toString()));
+        json.put(ModuleKTable.COLUMN_SK61, new JSONObject(sK61toString()));
+        json.put(ModuleKTable.COLUMN_SK62, new JSONObject(sK62toString()));
+        json.put(ModuleKTable.COLUMN_SK7, new JSONObject(sK7toString()));
+        return json;
+    }
 
-
-    public String sKtoString() throws JSONException {
-        Log.d(TAG, "sKtoString: ");
+    public String sK1toString() throws JSONException {
+        Log.d(TAG, "sK1toString: ");
         JSONObject json = new JSONObject();
         json.put("k101", k101)
                 .put("k101a", k101a)
@@ -2480,12 +2557,24 @@ public class ModuleK extends BaseObservable implements Observable {
                 .put("k102", k102)
                 .put("k10296x", k10296x)
                 .put("k103", k103)
-                .put("k104", k104)
-                .put("k201", k201)
+                .put("k104", k104);
+        return json.toString();
+    }
+
+    public String sK2toString() throws JSONException {
+        Log.d(TAG, "sK2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("k201", k201)
                 .put("k202", k202)
                 .put("k203", k203)
-                .put("k204", k204)
-                .put("k301", k301)
+                .put("k204", k204);
+        return json.toString();
+    }
+
+    public String sK3toString() throws JSONException {
+        Log.d(TAG, "sK3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("k301", k301)
                 .put("k302", k302)
                 .put("k303", k303)
                 .put("k304", k304)
@@ -2493,8 +2582,14 @@ public class ModuleK extends BaseObservable implements Observable {
                 .put("k306", k306)
                 .put("k307", k307)
                 .put("k30704x", k30704x)
-                .put("k308", k308)
-                .put("k401", k401)
+                .put("k308", k308);
+        return json.toString();
+    }
+
+    public String sK4toString() throws JSONException {
+        Log.d(TAG, "sK4toString: ");
+        JSONObject json = new JSONObject();
+        json.put("k401", k401)
                 .put("k402", k402)
                 .put("k403", k403)
                 .put("k404", k404)
@@ -2537,8 +2632,14 @@ public class ModuleK extends BaseObservable implements Observable {
                 .put("k41904", k41904)
                 .put("k41905", k41905)
                 .put("k41906", k41906)
-                .put("k41907", k41907)
-                .put("k601", k601)
+                .put("k41907", k41907);
+        return json.toString();
+    }
+
+    public String sK61toString() throws JSONException {
+        Log.d(TAG, "sK61toString: ");
+        JSONObject json = new JSONObject();
+        json.put("k601", k601)
                 .put("k601dx", k601dx)
                 .put("k601ex", k601ex)
                 .put("k602", k602)
@@ -2594,8 +2695,14 @@ public class ModuleK extends BaseObservable implements Observable {
                 .put("k618ex", k618ex)
                 .put("k619", k619)
                 .put("k619dx", k619dx)
-                .put("k619ex", k619ex)
-                .put("k620", k620)
+                .put("k619ex", k619ex);
+        return json.toString();
+    }
+
+    public String sK62toString() throws JSONException {
+        Log.d(TAG, "sK62toString: ");
+        JSONObject json = new JSONObject();
+        json.put("k620", k620)
                 .put("k620dx", k620dx)
                 .put("k620ex", k620ex)
                 .put("k621", k621)
@@ -2621,8 +2728,14 @@ public class ModuleK extends BaseObservable implements Observable {
                 .put("k627ex", k627ex)
                 .put("k628", k628)
                 .put("k628dx", k628dx)
-                .put("k628ex", k628ex)
-                .put("k701", k701)
+                .put("k628ex", k628ex);
+        return json.toString();
+    }
+
+    public String sK7toString() throws JSONException {
+        Log.d(TAG, "sKtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("k701", k701)
                 .put("k702", k702)
                 .put("k703", k703)
                 .put("k704", k704)
@@ -2634,25 +2747,6 @@ public class ModuleK extends BaseObservable implements Observable {
                 .put("k710", k710)
                 .put("k711", k711);
         return json.toString();
-    }
-
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-//        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-
-        // Household
-        json.put(FormsTable.COLUMN_SK, new JSONObject(sKtoString()));
-        return json;
     }
 
 
