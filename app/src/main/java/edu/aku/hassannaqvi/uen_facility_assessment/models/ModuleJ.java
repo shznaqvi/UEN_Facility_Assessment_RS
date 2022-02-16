@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -8,238 +11,374 @@ import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleJTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
 public class ModuleJ extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ModuleJ";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    private final String wuid = StringUtils.EMPTY;
-    private final String cuid = StringUtils.EMPTY;
-    // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
-    // APP VARIABLES
-    private String id = StringUtils.EMPTY;
-    private String uid = StringUtils.EMPTY;
-    private String userName = StringUtils.EMPTY;
-    private String sysDate = StringUtils.EMPTY;
-    private String cluster = StringUtils.EMPTY;
-    private String deviceId = StringUtils.EMPTY;
-    private String deviceTag = StringUtils.EMPTY;
-    private String appver = StringUtils.EMPTY;
-    private String endTime = StringUtils.EMPTY;
-    private String iStatus = StringUtils.EMPTY;
-    private String iStatus96x = StringUtils.EMPTY;
-    private String synced = StringUtils.EMPTY;
-    private String syncDate = StringUtils.EMPTY;
 
-    // SECTION VARIABLES
-    private String sJ = StringUtils.EMPTY;
+
+    // APP VARIABLES
+    private String id = _EMPTY_;
+    private String uid = _EMPTY_;
+    private String userName = _EMPTY_;
+    private String sysDate = _EMPTY_;
+    private String cluster = _EMPTY_;
+    private String deviceId = _EMPTY_;
+    private String deviceTag = _EMPTY_;
+    private String appver = _EMPTY_;
+    private String endTime = _EMPTY_;
+    private String iStatus = _EMPTY_;
+    private String iStatus96x = _EMPTY_;
+    private String synced = _EMPTY_;
+    private String syncDate = _EMPTY_;
 
 
     // FIELD VARIABLES
-    private String j0100a = StringUtils.EMPTY;
-    private String j0100b = StringUtils.EMPTY;
-    private String j0100c = StringUtils.EMPTY;
-    private String j0101a = StringUtils.EMPTY;
-    private String j0101b = StringUtils.EMPTY;
-    private String j0101c = StringUtils.EMPTY;
-    private String j0101d = StringUtils.EMPTY;
-    private String j0101e = StringUtils.EMPTY;
-    private String j0101f = StringUtils.EMPTY;
-    private String j0101g = StringUtils.EMPTY;
-    private String j0101h = StringUtils.EMPTY;
-    private String j0101ia = StringUtils.EMPTY;
-    private String j0101ib = StringUtils.EMPTY;
-    private String j0101j = StringUtils.EMPTY;
-    private String j0101k = StringUtils.EMPTY;
-    private String j0101l = StringUtils.EMPTY;
-    private String j0101m = StringUtils.EMPTY;
-    private String j0101ma = StringUtils.EMPTY;
-    private String j0101mb = StringUtils.EMPTY;
-    private String j0101mc = StringUtils.EMPTY;
-    private String j0101md = StringUtils.EMPTY;
-    private String j0101me = StringUtils.EMPTY;
-    private String j0101mf = StringUtils.EMPTY;
-    private String j0101mxx = StringUtils.EMPTY;
-    private String j0101mxxx = StringUtils.EMPTY;
-    private String j0200a = StringUtils.EMPTY;
-    private String j0200b = StringUtils.EMPTY;
-    private String j0200c = StringUtils.EMPTY;
-    private String j0201a = StringUtils.EMPTY;
-    private String j0201b = StringUtils.EMPTY;
-    private String j0201c = StringUtils.EMPTY;
-    private String j0201d = StringUtils.EMPTY;
-    private String j0201e = StringUtils.EMPTY;
-    private String j0201f = StringUtils.EMPTY;
-    private String j0201g = StringUtils.EMPTY;
-    private String j0201ga = StringUtils.EMPTY;
-    private String j0201gb = StringUtils.EMPTY;
-    private String j0201gc = StringUtils.EMPTY;
-    private String j0201gd = StringUtils.EMPTY;
-    private String j0201ge = StringUtils.EMPTY;
-    private String j0201gf = StringUtils.EMPTY;
-    private String j0201gxx = StringUtils.EMPTY;
-    private String j0201gxxx = StringUtils.EMPTY;
-    private String j0300a = StringUtils.EMPTY;
-    private String j0300b = StringUtils.EMPTY;
-    private String j0300c = StringUtils.EMPTY;
-    private String j0301a = StringUtils.EMPTY;
-    private String j0301b = StringUtils.EMPTY;
-    private String j0301c = StringUtils.EMPTY;
-    private String j0301d = StringUtils.EMPTY;
-    private String j0301e = StringUtils.EMPTY;
-    private String j0301f = StringUtils.EMPTY;
-    private String j0301g = StringUtils.EMPTY;
-    private String j0301h = StringUtils.EMPTY;
-    private String j0301i = StringUtils.EMPTY;
-    private String j0301j = StringUtils.EMPTY;
-    private String j0301k = StringUtils.EMPTY;
-    private String j0301l = StringUtils.EMPTY;
-    private String j0301m = StringUtils.EMPTY;
-    private String j0301n = StringUtils.EMPTY;
-    private String j0301o = StringUtils.EMPTY;
-    private String j0301p = StringUtils.EMPTY;
-    private String j0301q = StringUtils.EMPTY;
-    private String j0301r = StringUtils.EMPTY;
-    private String j0301s = StringUtils.EMPTY;
-    private String j0301t = StringUtils.EMPTY;
-    private String j0301u = StringUtils.EMPTY;
-    private String j0301v = StringUtils.EMPTY;
-    private String j0301w = StringUtils.EMPTY;
-    private String j0301wa = StringUtils.EMPTY;
-    private String j0301wb = StringUtils.EMPTY;
-    private String j0301wc = StringUtils.EMPTY;
-    private String j0301wd = StringUtils.EMPTY;
-    private String j0301we = StringUtils.EMPTY;
-    private String j0301wf = StringUtils.EMPTY;
-    private String j0301wxx = StringUtils.EMPTY;
-    private String j0301wxxx = StringUtils.EMPTY;
-    private String j0400a = StringUtils.EMPTY;
-    private String j0400b = StringUtils.EMPTY;
-    private String j0400c = StringUtils.EMPTY;
-    private String j0401a = StringUtils.EMPTY;
-    private String j0401b = StringUtils.EMPTY;
-    private String j0401c = StringUtils.EMPTY;
-    private String j0401d = StringUtils.EMPTY;
-    private String j0401e = StringUtils.EMPTY;
-    private String j0401f = StringUtils.EMPTY;
-    private String j0401g = StringUtils.EMPTY;
-    private String j0401h = StringUtils.EMPTY;
-    private String j0401i = StringUtils.EMPTY;
-    private String j0401j = StringUtils.EMPTY;
-    private String j0401k = StringUtils.EMPTY;
-    private String j0401l = StringUtils.EMPTY;
-    private String j0401m = StringUtils.EMPTY;
-    private String j0401ma = StringUtils.EMPTY;
-    private String j0401mb = StringUtils.EMPTY;
-    private String j0401mc = StringUtils.EMPTY;
-    private String j0401md = StringUtils.EMPTY;
-    private String j0401me = StringUtils.EMPTY;
-    private String j0401mf = StringUtils.EMPTY;
-    private String j0401mxx = StringUtils.EMPTY;
-    private String j0401mxxx = StringUtils.EMPTY;
-    private String j0500a = StringUtils.EMPTY;
-    private String j0500b = StringUtils.EMPTY;
-    private String j0500c = StringUtils.EMPTY;
-    private String j0501a = StringUtils.EMPTY;
-    private String j0501b = StringUtils.EMPTY;
-    private String j0501c = StringUtils.EMPTY;
-    private String j0501d = StringUtils.EMPTY;
-    private String j0501e = StringUtils.EMPTY;
-    private String j0501f = StringUtils.EMPTY;
-    private String j0501g = StringUtils.EMPTY;
-    private String j0501h = StringUtils.EMPTY;
-    private String j0501i = StringUtils.EMPTY;
-    private String j0501j = StringUtils.EMPTY;
-    private String j0501k = StringUtils.EMPTY;
-    private String j0501l = StringUtils.EMPTY;
-    private String j0501m = StringUtils.EMPTY;
-    private String j0501n = StringUtils.EMPTY;
-    private String j0501na = StringUtils.EMPTY;
-    private String j0501nb = StringUtils.EMPTY;
-    private String j0501nc = StringUtils.EMPTY;
-    private String j0501nd = StringUtils.EMPTY;
-    private String j0501ne = StringUtils.EMPTY;
-    private String j0501nf = StringUtils.EMPTY;
-    private String j0501nxx = StringUtils.EMPTY;
-    private String j0501nxxx = StringUtils.EMPTY;
-    private String j0600a = StringUtils.EMPTY;
-    private String j0600b = StringUtils.EMPTY;
-    private String j0600c = StringUtils.EMPTY;
-    private String j0601a = StringUtils.EMPTY;
-    private String j0601b = StringUtils.EMPTY;
-    private String j0601c = StringUtils.EMPTY;
-    private String j0601d = StringUtils.EMPTY;
-    private String j0601e = StringUtils.EMPTY;
-    private String j0601f = StringUtils.EMPTY;
-    private String j0601g = StringUtils.EMPTY;
-    private String j0601h = StringUtils.EMPTY;
-    private String j0601i = StringUtils.EMPTY;
-    private String j0601j = StringUtils.EMPTY;
-    private String j0601k = StringUtils.EMPTY;
-    private String j0601l = StringUtils.EMPTY;
-    private String j0601m = StringUtils.EMPTY;
-    private String j0601ma = StringUtils.EMPTY;
-    private String j0601mb = StringUtils.EMPTY;
-    private String j0601mc = StringUtils.EMPTY;
-    private String j0601md = StringUtils.EMPTY;
-    private String j0601me = StringUtils.EMPTY;
-    private String j0601mf = StringUtils.EMPTY;
-    private String j0601mxx = StringUtils.EMPTY;
-    private String j0601mxxx = StringUtils.EMPTY;
-    private String j0700a = StringUtils.EMPTY;
-    private String j0700b = StringUtils.EMPTY;
-    private String j0700c = StringUtils.EMPTY;
-    private String j0701a = StringUtils.EMPTY;
-    private String j0701b = StringUtils.EMPTY;
-    private String j0701c = StringUtils.EMPTY;
-    private String j0701d = StringUtils.EMPTY;
-    private String j0701e = StringUtils.EMPTY;
-    private String j0701f = StringUtils.EMPTY;
-    private String j0701g = StringUtils.EMPTY;
-    private String j0701ga = StringUtils.EMPTY;
-    private String j0701gb = StringUtils.EMPTY;
-    private String j0701gc = StringUtils.EMPTY;
-    private String j0701gd = StringUtils.EMPTY;
-    private String j0701ge = StringUtils.EMPTY;
-    private String j0701gf = StringUtils.EMPTY;
-    private String j0701gxx = StringUtils.EMPTY;
-    private String j0701gxxx = StringUtils.EMPTY;
-    private String j0800a = StringUtils.EMPTY;
-    private String j0800b = StringUtils.EMPTY;
-    private String j0800c = StringUtils.EMPTY;
-    private String j0801a = StringUtils.EMPTY;
-    private String j0801b = StringUtils.EMPTY;
-    private String j0801c = StringUtils.EMPTY;
-    private String j0801d = StringUtils.EMPTY;
-    private String j0801e = StringUtils.EMPTY;
-    private String j0801f = StringUtils.EMPTY;
-    private String j0801g = StringUtils.EMPTY;
-    private String j0801ga = StringUtils.EMPTY;
-    private String j0801gb = StringUtils.EMPTY;
-    private String j0801gc = StringUtils.EMPTY;
-    private String j0801gd = StringUtils.EMPTY;
-    private String j0900a = StringUtils.EMPTY;
-    private String j0900b = StringUtils.EMPTY;
-    private String j0900c = StringUtils.EMPTY;
-    private String j0901a = StringUtils.EMPTY;
-    private String j0901b = StringUtils.EMPTY;
-    private String j0901c = StringUtils.EMPTY;
-    private String j0901d = StringUtils.EMPTY;
-    private String j0901e = StringUtils.EMPTY;
-    private String j0901f = StringUtils.EMPTY;
-    private String j0901fa = StringUtils.EMPTY;
-    private String j0901fb = StringUtils.EMPTY;
-    private String j0901fc = StringUtils.EMPTY;
-    private String j0901fd = StringUtils.EMPTY;
-    private String j0901fe = StringUtils.EMPTY;
+    private String j0100a = _EMPTY_;
+    private String j0100b = _EMPTY_;
+    private String j0100c = _EMPTY_;
+    private String j0101a = _EMPTY_;
+    private String j0101b = _EMPTY_;
+    private String j0101c = _EMPTY_;
+    private String j0101d = _EMPTY_;
+    private String j0101e = _EMPTY_;
+    private String j0101f = _EMPTY_;
+    private String j0101g = _EMPTY_;
+    private String j0101h = _EMPTY_;
+    private String j0101ia = _EMPTY_;
+    private String j0101ib = _EMPTY_;
+    private String j0101j = _EMPTY_;
+    private String j0101k = _EMPTY_;
+    private String j0101l = _EMPTY_;
+    private String j0101m = _EMPTY_;
+    private String j0101ma = _EMPTY_;
+    private String j0101mb = _EMPTY_;
+    private String j0101mc = _EMPTY_;
+    private String j0101md = _EMPTY_;
+    private String j0101me = _EMPTY_;
+    private String j0101mf = _EMPTY_;
+    private String j0101mxx = _EMPTY_;
+    private String j0101mxxx = _EMPTY_;
+    private String j0200a = _EMPTY_;
+    private String j0200b = _EMPTY_;
+    private String j0200c = _EMPTY_;
+    private String j0201a = _EMPTY_;
+    private String j0201b = _EMPTY_;
+    private String j0201c = _EMPTY_;
+    private String j0201d = _EMPTY_;
+    private String j0201e = _EMPTY_;
+    private String j0201f = _EMPTY_;
+    private String j0201g = _EMPTY_;
+    private String j0201ga = _EMPTY_;
+    private String j0201gb = _EMPTY_;
+    private String j0201gc = _EMPTY_;
+    private String j0201gd = _EMPTY_;
+    private String j0201ge = _EMPTY_;
+    private String j0201gf = _EMPTY_;
+    private String j0201gxx = _EMPTY_;
+    private String j0201gxxx = _EMPTY_;
+    private String j0300a = _EMPTY_;
+    private String j0300b = _EMPTY_;
+    private String j0300c = _EMPTY_;
+    private String j0301a = _EMPTY_;
+    private String j0301b = _EMPTY_;
+    private String j0301c = _EMPTY_;
+    private String j0301d = _EMPTY_;
+    private String j0301e = _EMPTY_;
+    private String j0301f = _EMPTY_;
+    private String j0301g = _EMPTY_;
+    private String j0301h = _EMPTY_;
+    private String j0301i = _EMPTY_;
+    private String j0301j = _EMPTY_;
+    private String j0301k = _EMPTY_;
+    private String j0301l = _EMPTY_;
+    private String j0301m = _EMPTY_;
+    private String j0301n = _EMPTY_;
+    private String j0301o = _EMPTY_;
+    private String j0301p = _EMPTY_;
+    private String j0301q = _EMPTY_;
+    private String j0301r = _EMPTY_;
+    private String j0301s = _EMPTY_;
+    private String j0301t = _EMPTY_;
+    private String j0301u = _EMPTY_;
+    private String j0301v = _EMPTY_;
+    private String j0301w = _EMPTY_;
+    private String j0301wa = _EMPTY_;
+    private String j0301wb = _EMPTY_;
+    private String j0301wc = _EMPTY_;
+    private String j0301wd = _EMPTY_;
+    private String j0301we = _EMPTY_;
+    private String j0301wf = _EMPTY_;
+    private String j0301wxx = _EMPTY_;
+    private String j0301wxxx = _EMPTY_;
+    private String j0400a = _EMPTY_;
+    private String j0400b = _EMPTY_;
+    private String j0400c = _EMPTY_;
+    private String j0401a = _EMPTY_;
+    private String j0401b = _EMPTY_;
+    private String j0401c = _EMPTY_;
+    private String j0401d = _EMPTY_;
+    private String j0401e = _EMPTY_;
+    private String j0401f = _EMPTY_;
+    private String j0401g = _EMPTY_;
+    private String j0401h = _EMPTY_;
+    private String j0401i = _EMPTY_;
+    private String j0401j = _EMPTY_;
+    private String j0401k = _EMPTY_;
+    private String j0401l = _EMPTY_;
+    private String j0401m = _EMPTY_;
+    private String j0401ma = _EMPTY_;
+    private String j0401mb = _EMPTY_;
+    private String j0401mc = _EMPTY_;
+    private String j0401md = _EMPTY_;
+    private String j0401me = _EMPTY_;
+    private String j0401mf = _EMPTY_;
+    private String j0401mxx = _EMPTY_;
+    private String j0401mxxx = _EMPTY_;
+    private String j0500a = _EMPTY_;
+    private String j0500b = _EMPTY_;
+    private String j0500c = _EMPTY_;
+    private String j0501a = _EMPTY_;
+    private String j0501b = _EMPTY_;
+    private String j0501c = _EMPTY_;
+    private String j0501d = _EMPTY_;
+    private String j0501e = _EMPTY_;
+    private String j0501f = _EMPTY_;
+    private String j0501g = _EMPTY_;
+    private String j0501h = _EMPTY_;
+    private String j0501i = _EMPTY_;
+    private String j0501j = _EMPTY_;
+    private String j0501k = _EMPTY_;
+    private String j0501l = _EMPTY_;
+    private String j0501m = _EMPTY_;
+    private String j0501n = _EMPTY_;
+    private String j0501na = _EMPTY_;
+    private String j0501nb = _EMPTY_;
+    private String j0501nc = _EMPTY_;
+    private String j0501nd = _EMPTY_;
+    private String j0501ne = _EMPTY_;
+    private String j0501nf = _EMPTY_;
+    private String j0501nxx = _EMPTY_;
+    private String j0501nxxx = _EMPTY_;
+    private String j0600a = _EMPTY_;
+    private String j0600b = _EMPTY_;
+    private String j0600c = _EMPTY_;
+    private String j0601a = _EMPTY_;
+    private String j0601b = _EMPTY_;
+    private String j0601c = _EMPTY_;
+    private String j0601d = _EMPTY_;
+    private String j0601e = _EMPTY_;
+    private String j0601f = _EMPTY_;
+    private String j0601g = _EMPTY_;
+    private String j0601h = _EMPTY_;
+    private String j0601i = _EMPTY_;
+    private String j0601j = _EMPTY_;
+    private String j0601k = _EMPTY_;
+    private String j0601l = _EMPTY_;
+    private String j0601m = _EMPTY_;
+    private String j0601ma = _EMPTY_;
+    private String j0601mb = _EMPTY_;
+    private String j0601mc = _EMPTY_;
+    private String j0601md = _EMPTY_;
+    private String j0601me = _EMPTY_;
+    private String j0601mf = _EMPTY_;
+    private String j0601mxx = _EMPTY_;
+    private String j0601mxxx = _EMPTY_;
+    private String j0700a = _EMPTY_;
+    private String j0700b = _EMPTY_;
+    private String j0700c = _EMPTY_;
+    private String j0701a = _EMPTY_;
+    private String j0701b = _EMPTY_;
+    private String j0701c = _EMPTY_;
+    private String j0701d = _EMPTY_;
+    private String j0701e = _EMPTY_;
+    private String j0701f = _EMPTY_;
+    private String j0701g = _EMPTY_;
+    private String j0701ga = _EMPTY_;
+    private String j0701gb = _EMPTY_;
+    private String j0701gc = _EMPTY_;
+    private String j0701gd = _EMPTY_;
+    private String j0701ge = _EMPTY_;
+    private String j0701gf = _EMPTY_;
+    private String j0701gxx = _EMPTY_;
+    private String j0701gxxx = _EMPTY_;
+    private String j0800a = _EMPTY_;
+    private String j0800b = _EMPTY_;
+    private String j0800c = _EMPTY_;
+    private String j0801a = _EMPTY_;
+    private String j0801b = _EMPTY_;
+    private String j0801c = _EMPTY_;
+    private String j0801d = _EMPTY_;
+    private String j0801e = _EMPTY_;
+    private String j0801f = _EMPTY_;
+    private String j0801g = _EMPTY_;
+    private String j0801ga = _EMPTY_;
+    private String j0801gb = _EMPTY_;
+    private String j0801gc = _EMPTY_;
+    private String j0801gd = _EMPTY_;
+    private String j0900a = _EMPTY_;
+    private String j0900b = _EMPTY_;
+    private String j0900c = _EMPTY_;
+    private String j0901a = _EMPTY_;
+    private String j0901b = _EMPTY_;
+    private String j0901c = _EMPTY_;
+    private String j0901d = _EMPTY_;
+    private String j0901e = _EMPTY_;
+    private String j0901f = _EMPTY_;
+    private String j0901fa = _EMPTY_;
+    private String j0901fb = _EMPTY_;
+    private String j0901fc = _EMPTY_;
+    private String j0901fd = _EMPTY_;
+    private String j0901fe = _EMPTY_;
+
+
+    public ModuleJ() {
+    }
+
+
+    public void populateMeta() {
+        setProjectName(PROJECT_NAME);
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.appInfo.getAppVersion());
+        setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        setUserName(MainApp.user.getUserName());
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        /*setProvinceCode(selectedProvince);
+        setDistrictCode(selectedDistrict);
+        setTehsilCode(selectedTehsil);
+        setUcCode(selectedUc);
+        setVillageCode(selectedVillage);
+        setPsuCode(selectedPSU);
+        setHhid(selectedHHID);*/
+    }
+
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+        notifyPropertyChanged(BR.cluster);
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getSysDate() {
+        return sysDate;
+    }
+
+    public void setSysDate(String sysDate) {
+        this.sysDate = sysDate;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDeviceTag() {
+        return deviceTag;
+    }
+
+    public void setDeviceTag(String deviceTag) {
+        this.deviceTag = deviceTag;
+    }
+
+    public String getAppver() {
+        return appver;
+    }
+
+    public void setAppver(String appver) {
+        this.appver = appver;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getSynced() {
+        return synced;
+    }
+
+    public void setSynced(String synced) {
+        this.synced = synced;
+    }
+
+    public String getSyncDate() {
+        return syncDate;
+    }
+
+    public void setSyncDate(String syncDate) {
+        this.syncDate = syncDate;
+    }
 
 
     @Bindable
@@ -2268,162 +2407,31 @@ public class ModuleJ extends BaseObservable implements Observable {
     }
 
 
-    public ModuleJ() {
-    }
-
-
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
-    }
-
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getSysDate() {
-        return sysDate;
-    }
-
-    public void setSysDate(String sysDate) {
-        this.sysDate = sysDate;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceTag() {
-        return deviceTag;
-    }
-
-    public void setDeviceTag(String deviceTag) {
-        this.deviceTag = deviceTag;
-    }
-
-    public String getAppver() {
-        return appver;
-    }
-
-    public void setAppver(String appver) {
-        this.appver = appver;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
-
-    public String getSynced() {
-        return synced;
-    }
-
-    public void setSynced(String synced) {
-        this.synced = synced;
-    }
-
-    public String getSyncDate() {
-        return syncDate;
-    }
-
-    public void setSyncDate(String syncDate) {
-        this.syncDate = syncDate;
-    }
-
-
-    /*JSON DATABASE VARIABLES*/
-
-    public String getsJ() {
-        return sJ;
-    }
-
-    public void setsJ(String sJ) {
-        this.sJ = sJ;
-    }
-
-
-
-
     public ModuleJ Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
-        sJHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SJ)));
-
-
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SYNCED_DATE));
+        sJ1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ1)));
+        sJ2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ2)));
+        sJ3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ3)));
+        sJ4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ4)));
+        sJ5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ5)));
+        sJ6Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ6)));
+        sJ7Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ7)));
+        sJ8Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ8)));
+        sJ9Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleJTable.COLUMN_SJ9)));
         return this;
     }
 
-
-    public void sJHydrate(String string) throws JSONException {
-        Log.d(TAG, "sJHydrate: " + string);
+    public void sJ1Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ1Hydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -2451,6 +2459,14 @@ public class ModuleJ extends BaseObservable implements Observable {
             this.j0101mf = json.getString("j0101mf");
             this.j0101mxx = json.getString("j0101mxx");
             this.j0101mxxx = json.getString("j0101mxxx");
+        }
+    }
+
+    public void sJ2Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ2Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.j0200a = json.getString("j0200a");
             this.j0200b = json.getString("j0200b");
             this.j0200c = json.getString("j0200c");
@@ -2468,6 +2484,14 @@ public class ModuleJ extends BaseObservable implements Observable {
             this.j0201gf = json.getString("j0201gf");
             this.j0201gxx = json.getString("j0201gxx");
             this.j0201gxxx = json.getString("j0201gxxx");
+        }
+    }
+
+    public void sJ3Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ3Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.j0300a = json.getString("j0300a");
             this.j0300b = json.getString("j0300b");
             this.j0300c = json.getString("j0300c");
@@ -2501,6 +2525,14 @@ public class ModuleJ extends BaseObservable implements Observable {
             this.j0301wf = json.getString("j0301wf");
             this.j0301wxx = json.getString("j0301wxx");
             this.j0301wxxx = json.getString("j0301wxxx");
+        }
+    }
+
+    public void sJ4Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ4Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.j0400a = json.getString("j0400a");
             this.j0400b = json.getString("j0400b");
             this.j0400c = json.getString("j0400c");
@@ -2524,6 +2556,14 @@ public class ModuleJ extends BaseObservable implements Observable {
             this.j0401mf = json.getString("j0401mf");
             this.j0401mxx = json.getString("j0401mxx");
             this.j0401mxxx = json.getString("j0401mxxx");
+        }
+    }
+
+    public void sJ5Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ5Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.j0500a = json.getString("j0500a");
             this.j0500b = json.getString("j0500b");
             this.j0500c = json.getString("j0500c");
@@ -2548,6 +2588,14 @@ public class ModuleJ extends BaseObservable implements Observable {
             this.j0501nf = json.getString("j0501nf");
             this.j0501nxx = json.getString("j0501nxx");
             this.j0501nxxx = json.getString("j0501nxxx");
+        }
+    }
+
+    public void sJ6Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ6Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.j0600a = json.getString("j0600a");
             this.j0600b = json.getString("j0600b");
             this.j0600c = json.getString("j0600c");
@@ -2571,6 +2619,14 @@ public class ModuleJ extends BaseObservable implements Observable {
             this.j0601mf = json.getString("j0601mf");
             this.j0601mxx = json.getString("j0601mxx");
             this.j0601mxxx = json.getString("j0601mxxx");
+        }
+    }
+
+    public void sJ7Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ7Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.j0700a = json.getString("j0700a");
             this.j0700b = json.getString("j0700b");
             this.j0700c = json.getString("j0700c");
@@ -2588,6 +2644,14 @@ public class ModuleJ extends BaseObservable implements Observable {
             this.j0701gf = json.getString("j0701gf");
             this.j0701gxx = json.getString("j0701gxx");
             this.j0701gxxx = json.getString("j0701gxxx");
+        }
+    }
+
+    public void sJ8Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ8Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.j0800a = json.getString("j0800a");
             this.j0800b = json.getString("j0800b");
             this.j0800c = json.getString("j0800c");
@@ -2601,6 +2665,14 @@ public class ModuleJ extends BaseObservable implements Observable {
             this.j0801gb = json.getString("j0801gb");
             this.j0801gc = json.getString("j0801gc");
             this.j0801gd = json.getString("j0801gd");
+        }
+    }
+
+    public void sJ9Hydrate(String string) throws JSONException {
+        Log.d(TAG, "sJ9Hydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
             this.j0900a = json.getString("j0900a");
             this.j0900b = json.getString("j0900b");
             this.j0900c = json.getString("j0900c");
@@ -2618,8 +2690,31 @@ public class ModuleJ extends BaseObservable implements Observable {
     }
 
 
-    public String sJtoString() throws JSONException {
-        Log.d(TAG, "sJtoString: ");
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put(ModuleJTable.COLUMN_ID, this.id);
+        json.put(ModuleJTable.COLUMN_UID, this.uid);
+        json.put(ModuleJTable.COLUMN_USERNAME, this.userName);
+        json.put(ModuleJTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(ModuleJTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(ModuleJTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(ModuleJTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(ModuleJTable.COLUMN_SYNCED, this.synced);
+        json.put(ModuleJTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(ModuleJTable.COLUMN_SJ1, new JSONObject(sJ1toString()));
+        json.put(ModuleJTable.COLUMN_SJ2, new JSONObject(sJ2toString()));
+        json.put(ModuleJTable.COLUMN_SJ3, new JSONObject(sJ3toString()));
+        json.put(ModuleJTable.COLUMN_SJ4, new JSONObject(sJ4toString()));
+        json.put(ModuleJTable.COLUMN_SJ5, new JSONObject(sJ5toString()));
+        json.put(ModuleJTable.COLUMN_SJ6, new JSONObject(sJ6toString()));
+        json.put(ModuleJTable.COLUMN_SJ7, new JSONObject(sJ7toString()));
+        json.put(ModuleJTable.COLUMN_SJ8, new JSONObject(sJ8toString()));
+        json.put(ModuleJTable.COLUMN_SJ9, new JSONObject(sJ9toString()));
+        return json;
+    }
+
+    public String sJ1toString() throws JSONException {
+        Log.d(TAG, "sJ1toString: ");
         JSONObject json = new JSONObject();
         json.put("j0100a", j0100a)
                 .put("j0100b", j0100b)
@@ -2644,8 +2739,14 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0101me", j0101me)
                 .put("j0101mf", j0101mf)
                 .put("j0101mxx", j0101mxx)
-                .put("j0101mxxx", j0101mxxx)
-                .put("j0200a", j0200a)
+                .put("j0101mxxx", j0101mxxx);
+        return json.toString();
+    }
+
+    public String sJ2toString() throws JSONException {
+        Log.d(TAG, "sJ2toString: ");
+        JSONObject json = new JSONObject();
+        json.put("j0200a", j0200a)
                 .put("j0200b", j0200b)
                 .put("j0200c", j0200c)
                 .put("j0201a", j0201a)
@@ -2661,8 +2762,14 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0201ge", j0201ge)
                 .put("j0201gf", j0201gf)
                 .put("j0201gxx", j0201gxx)
-                .put("j0201gxxx", j0201gxxx)
-                .put("j0300a", j0300a)
+                .put("j0201gxxx", j0201gxxx);
+        return json.toString();
+    }
+
+    public String sJ3toString() throws JSONException {
+        Log.d(TAG, "sJ3toString: ");
+        JSONObject json = new JSONObject();
+        json.put("j0300a", j0300a)
                 .put("j0300b", j0300b)
                 .put("j0300c", j0300c)
                 .put("j0301a", j0301a)
@@ -2694,8 +2801,14 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0301we", j0301we)
                 .put("j0301wf", j0301wf)
                 .put("j0301wxx", j0301wxx)
-                .put("j0301wxxx", j0301wxxx)
-                .put("j0400a", j0400a)
+                .put("j0301wxxx", j0301wxxx);
+        return json.toString();
+    }
+
+    public String sJ4toString() throws JSONException {
+        Log.d(TAG, "sJ4toString: ");
+        JSONObject json = new JSONObject();
+        json.put("j0400a", j0400a)
                 .put("j0400b", j0400b)
                 .put("j0400c", j0400c)
                 .put("j0401a", j0401a)
@@ -2717,8 +2830,14 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0401me", j0401me)
                 .put("j0401mf", j0401mf)
                 .put("j0401mxx", j0401mxx)
-                .put("j0401mxxx", j0401mxxx)
-                .put("j0500a", j0500a)
+                .put("j0401mxxx", j0401mxxx);
+        return json.toString();
+    }
+
+    public String sJ5toString() throws JSONException {
+        Log.d(TAG, "sJ5toString: ");
+        JSONObject json = new JSONObject();
+        json.put("j0500a", j0500a)
                 .put("j0500b", j0500b)
                 .put("j0500c", j0500c)
                 .put("j0501a", j0501a)
@@ -2741,8 +2860,14 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0501ne", j0501ne)
                 .put("j0501nf", j0501nf)
                 .put("j0501nxx", j0501nxx)
-                .put("j0501nxxx", j0501nxxx)
-                .put("j0600a", j0600a)
+                .put("j0501nxxx", j0501nxxx);
+        return json.toString();
+    }
+
+    public String sJ6toString() throws JSONException {
+        Log.d(TAG, "sJ6toString: ");
+        JSONObject json = new JSONObject();
+        json.put("j0600a", j0600a)
                 .put("j0600b", j0600b)
                 .put("j0600c", j0600c)
                 .put("j0601a", j0601a)
@@ -2764,8 +2889,14 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0601me", j0601me)
                 .put("j0601mf", j0601mf)
                 .put("j0601mxx", j0601mxx)
-                .put("j0601mxxx", j0601mxxx)
-                .put("j0700a", j0700a)
+                .put("j0601mxxx", j0601mxxx);
+        return json.toString();
+    }
+
+    public String sJ7toString() throws JSONException {
+        Log.d(TAG, "sJ7toString: ");
+        JSONObject json = new JSONObject();
+        json.put("j0700a", j0700a)
                 .put("j0700b", j0700b)
                 .put("j0700c", j0700c)
                 .put("j0701a", j0701a)
@@ -2781,8 +2912,14 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0701ge", j0701ge)
                 .put("j0701gf", j0701gf)
                 .put("j0701gxx", j0701gxx)
-                .put("j0701gxxx", j0701gxxx)
-                .put("j0800a", j0800a)
+                .put("j0701gxxx", j0701gxxx);
+        return json.toString();
+    }
+
+    public String sJ8toString() throws JSONException {
+        Log.d(TAG, "sJ8toString: ");
+        JSONObject json = new JSONObject();
+        json.put("j0800a", j0800a)
                 .put("j0800b", j0800b)
                 .put("j0800c", j0800c)
                 .put("j0801a", j0801a)
@@ -2794,8 +2931,14 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0801ga", j0801ga)
                 .put("j0801gb", j0801gb)
                 .put("j0801gc", j0801gc)
-                .put("j0801gd", j0801gd)
-                .put("j0900a", j0900a)
+                .put("j0801gd", j0801gd);
+        return json.toString();
+    }
+
+    public String sJ9toString() throws JSONException {
+        Log.d(TAG, "sJ9toString: ");
+        JSONObject json = new JSONObject();
+        json.put("j0900a", j0900a)
                 .put("j0900b", j0900b)
                 .put("j0900c", j0900c)
                 .put("j0901a", j0901a)
@@ -2809,28 +2952,6 @@ public class ModuleJ extends BaseObservable implements Observable {
                 .put("j0901fd", j0901fd)
                 .put("j0901fe", j0901fe);
         return json.toString();
-    }
-
-
-
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-//        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-
-        // Household
-        json.put(FormsTable.COLUMN_SJ, new JSONObject(sJtoString()));
-
-        return json;
     }
 
 
