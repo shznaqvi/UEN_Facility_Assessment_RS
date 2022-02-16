@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -8,100 +11,237 @@ import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleITable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
 public class ModuleI extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "ModuleI";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    private final String wuid = StringUtils.EMPTY;
-    private final String cuid = StringUtils.EMPTY;
-    // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
-    // APP VARIABLES
-    private String id = StringUtils.EMPTY;
-    private String uid = StringUtils.EMPTY;
-    private String userName = StringUtils.EMPTY;
-    private String sysDate = StringUtils.EMPTY;
-    private String cluster = StringUtils.EMPTY;
-    private String deviceId = StringUtils.EMPTY;
-    private String deviceTag = StringUtils.EMPTY;
-    private String appver = StringUtils.EMPTY;
-    private String endTime = StringUtils.EMPTY;
-    private String iStatus = StringUtils.EMPTY;
-    private String iStatus96x = StringUtils.EMPTY;
-    private String synced = StringUtils.EMPTY;
-    private String syncDate = StringUtils.EMPTY;
 
-    // SECTION VARIABLES
-    private String sI = StringUtils.EMPTY;
+
+    // APP VARIABLES
+    private String id = _EMPTY_;
+    private String uid = _EMPTY_;
+    private String userName = _EMPTY_;
+    private String sysDate = _EMPTY_;
+    private String cluster = _EMPTY_;
+    private String deviceId = _EMPTY_;
+    private String deviceTag = _EMPTY_;
+    private String appver = _EMPTY_;
+    private String endTime = _EMPTY_;
+    private String iStatus = _EMPTY_;
+    private String iStatus96x = _EMPTY_;
+    private String synced = _EMPTY_;
+    private String syncDate = _EMPTY_;
+
 
     // FIELD VARIABLES
-    private String i0101 = StringUtils.EMPTY;
-    private String i0102aa = StringUtils.EMPTY;
-    private String i0102ab = StringUtils.EMPTY;
-    private String i0102ac = StringUtils.EMPTY;
-    private String i0102ba = StringUtils.EMPTY;
-    private String i0102bb = StringUtils.EMPTY;
-    private String i0103 = StringUtils.EMPTY;
-    private String i0104 = StringUtils.EMPTY;
-    private String i0105 = StringUtils.EMPTY;
-    private String i0106a = StringUtils.EMPTY;
-    private String i0106b = StringUtils.EMPTY;
-    private String i0107 = StringUtils.EMPTY;
-    private String i0108 = StringUtils.EMPTY;
-    private String i0108a = StringUtils.EMPTY;
-    private String i0108b = StringUtils.EMPTY;
-    private String i0108c = StringUtils.EMPTY;
-    private String i0108d = StringUtils.EMPTY;
-    private String i0108e = StringUtils.EMPTY;
-    private String i0108f = StringUtils.EMPTY;
-    private String i0108g = StringUtils.EMPTY;
-    private String i010896 = StringUtils.EMPTY;
-    private String i010896x = StringUtils.EMPTY;
-    private String i01091 = StringUtils.EMPTY;
-    private String i01092 = StringUtils.EMPTY;
-    private String i01093 = StringUtils.EMPTY;
-    private String i01094 = StringUtils.EMPTY;
-    private String i01095 = StringUtils.EMPTY;
-    private String i01096 = StringUtils.EMPTY;
-    private String i0110 = StringUtils.EMPTY;
-    private String i0110a = StringUtils.EMPTY;
-    private String i0110ax = StringUtils.EMPTY;
-    private String i0110b = StringUtils.EMPTY;
-    private String i0110bx = StringUtils.EMPTY;
-    private String i0110c = StringUtils.EMPTY;
-    private String i0110cx = StringUtils.EMPTY;
-    private String i0111 = StringUtils.EMPTY;
-    private String i0111a = StringUtils.EMPTY;
-    private String i0111ax = StringUtils.EMPTY;
-    private String i0111b = StringUtils.EMPTY;
-    private String i0111bx = StringUtils.EMPTY;
-    private String i0111c = StringUtils.EMPTY;
-    private String i0111cx = StringUtils.EMPTY;
-    private String i0112 = StringUtils.EMPTY;
-    private String i0112a = StringUtils.EMPTY;
-    private String i0112ax = StringUtils.EMPTY;
-    private String i0112b = StringUtils.EMPTY;
-    private String i0112bx = StringUtils.EMPTY;
-    private String i0113 = StringUtils.EMPTY;
-    private String i0114 = StringUtils.EMPTY;
-    private String i0115 = StringUtils.EMPTY;
-    private String i0115a = StringUtils.EMPTY;
-    private String i0115ax = StringUtils.EMPTY;
-    private String i0115b = StringUtils.EMPTY;
-    private String i0115bx = StringUtils.EMPTY;
-    private String i0115c = StringUtils.EMPTY;
-    private String i0115cx = StringUtils.EMPTY;
-    private String i0116 = StringUtils.EMPTY;
-    private String i011696x = StringUtils.EMPTY;
-    private String i0117 = StringUtils.EMPTY;
+    private String i0101 = _EMPTY_;
+    private String i0102aa = _EMPTY_;
+    private String i0102ab = _EMPTY_;
+    private String i0102ac = _EMPTY_;
+    private String i0102ba = _EMPTY_;
+    private String i0102bb = _EMPTY_;
+    private String i0103 = _EMPTY_;
+    private String i0104 = _EMPTY_;
+    private String i0105 = _EMPTY_;
+    private String i0106a = _EMPTY_;
+    private String i0106b = _EMPTY_;
+    private String i0107 = _EMPTY_;
+    private String i0108 = _EMPTY_;
+    private String i0108a = _EMPTY_;
+    private String i0108b = _EMPTY_;
+    private String i0108c = _EMPTY_;
+    private String i0108d = _EMPTY_;
+    private String i0108e = _EMPTY_;
+    private String i0108f = _EMPTY_;
+    private String i0108g = _EMPTY_;
+    private String i010896 = _EMPTY_;
+    private String i010896x = _EMPTY_;
+    private String i01091 = _EMPTY_;
+    private String i01092 = _EMPTY_;
+    private String i01093 = _EMPTY_;
+    private String i01094 = _EMPTY_;
+    private String i01095 = _EMPTY_;
+    private String i01096 = _EMPTY_;
+    private String i0110 = _EMPTY_;
+    private String i0110a = _EMPTY_;
+    private String i0110ax = _EMPTY_;
+    private String i0110b = _EMPTY_;
+    private String i0110bx = _EMPTY_;
+    private String i0110c = _EMPTY_;
+    private String i0110cx = _EMPTY_;
+    private String i0111 = _EMPTY_;
+    private String i0111a = _EMPTY_;
+    private String i0111ax = _EMPTY_;
+    private String i0111b = _EMPTY_;
+    private String i0111bx = _EMPTY_;
+    private String i0111c = _EMPTY_;
+    private String i0111cx = _EMPTY_;
+    private String i0112 = _EMPTY_;
+    private String i0112a = _EMPTY_;
+    private String i0112ax = _EMPTY_;
+    private String i0112b = _EMPTY_;
+    private String i0112bx = _EMPTY_;
+    private String i0113 = _EMPTY_;
+    private String i0114 = _EMPTY_;
+    private String i0115 = _EMPTY_;
+    private String i0115a = _EMPTY_;
+    private String i0115ax = _EMPTY_;
+    private String i0115b = _EMPTY_;
+    private String i0115bx = _EMPTY_;
+    private String i0115c = _EMPTY_;
+    private String i0115cx = _EMPTY_;
+    private String i0116 = _EMPTY_;
+    private String i011696x = _EMPTY_;
+    private String i0117 = _EMPTY_;
+
+
+    public ModuleI() {
+    }
+
+
+    public void populateMeta() {
+        setProjectName(PROJECT_NAME);
+        setDeviceId(MainApp.deviceid);
+        setAppver(MainApp.appInfo.getAppVersion());
+        setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        setUserName(MainApp.user.getUserName());
+        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        /*setProvinceCode(selectedProvince);
+        setDistrictCode(selectedDistrict);
+        setTehsilCode(selectedTehsil);
+        setUcCode(selectedUc);
+        setVillageCode(selectedVillage);
+        setPsuCode(selectedPSU);
+        setHhid(selectedHHID);*/
+    }
+
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+        notifyPropertyChanged(BR.cluster);
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getSysDate() {
+        return sysDate;
+    }
+
+    public void setSysDate(String sysDate) {
+        this.sysDate = sysDate;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDeviceTag() {
+        return deviceTag;
+    }
+
+    public void setDeviceTag(String deviceTag) {
+        this.deviceTag = deviceTag;
+    }
+
+    public String getAppver() {
+        return appver;
+    }
+
+    public void setAppver(String appver) {
+        this.appver = appver;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getSynced() {
+        return synced;
+    }
+
+    public void setSynced(String synced) {
+        this.synced = synced;
+    }
+
+    public String getSyncDate() {
+        return syncDate;
+    }
+
+    public void setSyncDate(String syncDate) {
+        this.syncDate = syncDate;
+    }
 
 
     @Bindable
@@ -727,158 +867,20 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
 
-    public ModuleI() {
-    }
-
-
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
-    }
-
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getSysDate() {
-        return sysDate;
-    }
-
-    public void setSysDate(String sysDate) {
-        this.sysDate = sysDate;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceTag() {
-        return deviceTag;
-    }
-
-    public void setDeviceTag(String deviceTag) {
-        this.deviceTag = deviceTag;
-    }
-
-    public String getAppver() {
-        return appver;
-    }
-
-    public void setAppver(String appver) {
-        this.appver = appver;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
-
-    public String getSynced() {
-        return synced;
-    }
-
-    public void setSynced(String synced) {
-        this.synced = synced;
-    }
-
-    public String getSyncDate() {
-        return syncDate;
-    }
-
-    public void setSyncDate(String syncDate) {
-        this.syncDate = syncDate;
-    }
-
-
-    /*JSON DATABASE VARIABLES*/
-
-    public String getsI() {
-        return sI;
-    }
-
-    public void setsI(String sI) {
-        this.sI = sI;
-    }
-
-
-
-
     public ModuleI Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
-        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
-        sIHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SI)));
-
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_SYNCED_DATE));
+        sIHydrate(cursor.getString(cursor.getColumnIndexOrThrow(ModuleITable.COLUMN_SI)));
         return this;
     }
-
 
     public void sIHydrate(String string) throws JSONException {
         Log.d(TAG, "sIHydrate: " + string);
@@ -943,9 +945,20 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
 
-
-
-
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put(ModuleITable.COLUMN_ID, this.id);
+        json.put(ModuleITable.COLUMN_UID, this.uid);
+        json.put(ModuleITable.COLUMN_USERNAME, this.userName);
+        json.put(ModuleITable.COLUMN_SYSDATE, this.sysDate);
+        json.put(ModuleITable.COLUMN_DEVICEID, this.deviceId);
+        json.put(ModuleITable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(ModuleITable.COLUMN_ISTATUS, this.iStatus);
+        json.put(ModuleITable.COLUMN_SYNCED, this.synced);
+        json.put(ModuleITable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(ModuleITable.COLUMN_SI, new JSONObject(sItoString()));
+        return json;
+    }
 
     public String sItoString() throws JSONException {
         Log.d(TAG, "sItoString: ");
@@ -1005,26 +1018,6 @@ public class ModuleI extends BaseObservable implements Observable {
                 .put("i011696x", i011696x)
                 .put("i0117", i0117);
         return json.toString();
-    }
-
-
-    public JSONObject toJSONObject() throws JSONException {
-        JSONObject json = new JSONObject();
-
-        json.put(FormsTable.COLUMN_ID, this.id);
-        json.put(FormsTable.COLUMN_UID, this.uid);
-//        json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
-        json.put(FormsTable.COLUMN_USERNAME, this.userName);
-        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-        json.put(FormsTable.COLUMN_SYNCED, this.synced);
-        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
-
-        // Household
-        json.put(FormsTable.COLUMN_SI, new JSONObject(sItoString()));
-        return json;
     }
 
 

@@ -16,6 +16,7 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.S
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_F;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_G;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_H;
+import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_I;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_STAFFING;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_TEHSIL;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_USERS;
@@ -54,6 +55,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.Modu
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleFTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleGTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleHTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleITable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.StaffingTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableDistricts;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableHealthFacilities;
@@ -75,6 +77,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleE;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleF;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleG;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleI;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Tehsil;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
@@ -121,6 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_MODULE_F);
         db.execSQL(SQL_CREATE_MODULE_G);
         db.execSQL(SQL_CREATE_MODULE_H);
+        db.execSQL(SQL_CREATE_MODULE_I);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ENTRYLOGS);
 
@@ -478,6 +482,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public long addModuleI(ModuleI modi) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+
+        values.put(ModuleITable.COLUMN_PROJECT_NAME, modi.getProjectName());
+        values.put(ModuleITable.COLUMN_UID, modi.getUid());
+        values.put(ModuleITable.COLUMN_USERNAME, modi.getUserName());
+        values.put(ModuleITable.COLUMN_SYSDATE, modi.getSysDate());
+        values.put(ModuleITable.COLUMN_SYNCED, modi.getSynced());
+        values.put(ModuleITable.COLUMN_SYNCED_DATE, modi.getSyncDate());
+
+        values.put(ModuleITable.COLUMN_SI, modi.sItoString());
+
+        values.put(ModuleITable.COLUMN_ISTATUS, modi.getiStatus());
+        values.put(ModuleITable.COLUMN_DEVICETAGID, modi.getDeviceTag());
+        values.put(ModuleITable.COLUMN_DEVICEID, modi.getDeviceId());
+        values.put(ModuleITable.COLUMN_APPVERSION, modi.getAppver());
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                ModuleITable.TABLE_NAME,
+                ModuleITable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
 
     //UPDATE in DB
     public int updatesFormColumn(String column, String value) {
@@ -625,6 +657,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.moduleH.getId())};
 
         return db.update(ModuleHTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesModuleIColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = ModuleITable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.moduleI.getId())};
+
+        return db.update(ModuleITable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
