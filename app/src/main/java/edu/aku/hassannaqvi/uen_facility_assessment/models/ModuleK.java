@@ -575,7 +575,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK307(String k307) {
         this.k307 = k307;
-        setK30704x(k307.equals("4") ? this.k30704x : ""); // for all skips, mention all skipped questions
+        setK30704x(k307.equals("2") || k307.equals("3") || k307.equals("4") ? this.k30704x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.k307);
     }
 
