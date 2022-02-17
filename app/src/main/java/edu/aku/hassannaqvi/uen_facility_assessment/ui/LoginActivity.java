@@ -11,7 +11,6 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.D
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -22,7 +21,6 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -122,7 +120,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
-        //initializingCountry();
         Dexter.withContext(this)
                 .withPermissions(
                         Manifest.permission.ACCESS_NETWORK_STATE,
@@ -146,15 +143,9 @@ public class LoginActivity extends AppCompatActivity {
                 token.continuePermissionRequest();
             }
         }).check();
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_login);
         bi.setCallback(this);
-
         db = MainApp.appInfo.getDbHelper();
-
-
-        settingCountryCode();
-
         MainApp.appInfo = new AppInfo(this);
         MainApp.user = new Users();
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
@@ -173,56 +164,9 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    /*    private void settingCountryCode() {
 
-
-     *//*
-        bi.countrySwitch.setChecked(false);
-
-
-        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean showBounds) {
-               // prefs.setShowBounds(showBounds);
-            }
-        });
-*//*
-     *//*      editor
-                .putString("lang", bi.countrySwitch.isChecked()? "1" : "3")
-                .apply();*//*
-        bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
-
-        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // do something, the isChecked will be
-                // true if the switch is in the On position
-                changeLanguage(isChecked ? 1 : 3);
-
-                startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-
-            }
-        });
-
-    }*/
-
-
-    /*    *//*
-     * Setting country code in Shared Preference
-     * *//*
-    private void initializingCountry() {
-        countryCode= Integer.parseInt(sharedPref.getString("lang", "0"));
-            if (countryCode == 0) {
-               MainApp.editor.putString("lang","1").apply();
-            }
-
-        changeLanguage(1);
-    }*/
 
     public void dbBackup() {
-
-
-        // if (sharedPref.getBoolean("flag", false)) {
 
         String dt = sharedPref.getString("dt", new SimpleDateFormat("yyyy_mm_dd").format(new Date()));
 
@@ -281,7 +225,6 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, getString(R.string.folder_not_created), Toast.LENGTH_SHORT).show();
         }
-        // }
 
     }
 
@@ -341,11 +284,7 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            //if(!Validator.emptySpinner(this, bi.countrySwitch)) return;
-            /*if (bi.countrySwitch.getSelectedItemPosition() == 0) {
-                bi.as1q01.setError(getString(R.string.as1q01));
-                return;
-            }*/
+
             try {
 
                 if ((username.equals("dmu@aku") && password.equals("aku?dmu"))
@@ -467,154 +406,5 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    /*
-     * Toggle Language
-     * */
-    private void changeLanguage(int code) {
-        String lang;
-        String country;
-        /*if (code == TAJIKISTAN) {
-            lang = "ur";
-            country = "PK";
-            MainApp.editor
-                    .putString("lang", "3")
-                    .apply();
-        } else {
-            lang = "en";
-            country = "US";
-            MainApp.editor
-                    .putString("lang", "1")
-                    .apply();
-        }*/
-        switch (code) {
-            case 1:
-                lang = "ur";
-                country = "PK";
-                MainApp.editor
-                        .putString("lang", "1")
-                        .apply();
-                break;
-            case 2:
-                lang = "sd";
-                country = "PK";
-                MainApp.editor
-                        .putString("lang", "2")
-                        .apply();
-                break;
-            default:
-                lang = "en";
-                country = "US";
-                MainApp.editor
-                        .putString("lang", "0")
-                        .apply();
-                break;
-        }
-        Locale locale = new Locale(lang, country);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.setLocale(locale);
-        config.setLayoutDirection(new Locale(lang, country));
-        this.getResources().updateConfiguration(config, this.getResources().getDisplayMetrics());
-
-    }
-
-    private void settingCountryCode() {
-
-        /*bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
-
-        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // do something, the isChecked will be
-                // true if the switch is in the On position
-                changeLanguage(isChecked ? 1 : 3);
-
-                startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-
-            }
-        });*/
-        bi.countrySwitch.setAdapter(new ArrayAdapter<>(LoginActivity.this, R.layout.custom_spinner, getResources().getStringArray(R.array.langs)));
-        bi.countrySwitch.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                changeLanguage(position);
-                /*startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);*/
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-
-    }
-
-    /*
-     * Setting country code in Shared Preference
-     * */
-    private void initializingCountry() {
-        countryCode = Integer.parseInt(sharedPref.getString("lang", "0"));
-        if (countryCode == 0) {
-            MainApp.editor.putString("lang", "0").apply();
-        }
-
-        changeLanguage(Integer.parseInt(sharedPref.getString("lang", "0")));
-    }
-
-   /* private void GZIPTest() throws IOException, DataFormatException {
-        // deflater
-        Deflater d = new Deflater();
-
-        // get the text
-        String pattern = "QPmrkqaqWwqQzn4LkvVf9MQIC3Y9XvrolZRBmOhLvx5kuNnjTQ+5p85ukfMWJ+q6UwtDYO1SrWse4h7UOevmSLnVGIpiy2zZ";
-        String text = "QPmrkqaqWwqQzn4LkvVf9MQIC3Y9XvrolZRBmOhLvx5kuNnjTQ+5p85ukfMWJ+q6UwtDYO1SrWse4h7UOevmSLnVGIpiy2zZ";
-
-       generate the text
-        for (int i = 0; i < 4; i++)
-            text += pattern;
-
-        // set the input for deflator
-        d.setInput(text.getBytes("UTF-8"));
-
-        // finish
-        d.finish();
-
-        // output bytes
-        byte output[] = new byte[text.getBytes(StandardCharsets.UTF_8).length];
-
-        // compress the data
-        int size = d.deflate(output);
-
-        // compressed String
-        System.out.println("Compressed String :"
-                + new String(output)
-                + "\n Size " + size);
-        // compressed String
-        System.out.println("Compressed String (base64) :"
-                + Base64.encodeToString(output, Base64.NO_WRAP)
-        );
-
-        // original String
-        System.out.println("Original String :"
-                + text + "\n Size "
-                + text.length());
-
-        // compressed String
-        System.out.println("Original String (base64) :"
-                + Base64.encodeToString(text.getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP)
-        );
-
-
-        //Decompresses the data
-        Inflater i = new Inflater();
-        i.setInput(output, 0, size);
-        byte[] result = new byte[output.length];
-        int resultLength = i.inflate(result);
-        i.end();
-        String outStr = new String(result, 0, resultLength, "UTF-8");
-        System.out.println("Deflated data: "+outStr);
-        // end
-        d.end();
-    }*/
 }
 
