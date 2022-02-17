@@ -40,9 +40,9 @@ public class SectionK7Activity extends AppCompatActivity {
         bi.setForm(moduleK);
     }
 
+
     private boolean updateDB() {
         if (MainApp.superuser) return true;
-
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
@@ -58,6 +58,7 @@ public class SectionK7Activity extends AppCompatActivity {
             return false;
         }
     }
+
 
     public void btnContinue(View view) {
         bi.llbtn.setVisibility(View.GONE);
@@ -79,5 +80,12 @@ public class SectionK7Activity extends AppCompatActivity {
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
 
 }

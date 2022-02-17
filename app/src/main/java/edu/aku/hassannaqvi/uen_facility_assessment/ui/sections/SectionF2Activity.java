@@ -40,6 +40,7 @@ public class SectionF2Activity extends AppCompatActivity {
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
+
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 
@@ -58,6 +59,7 @@ public class SectionF2Activity extends AppCompatActivity {
             return false;
         }
     }
+
 
     public void btnContinue(View view) {
         bi.llbtn.setVisibility(View.GONE);
@@ -79,5 +81,12 @@ public class SectionF2Activity extends AppCompatActivity {
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
+
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
 
 }

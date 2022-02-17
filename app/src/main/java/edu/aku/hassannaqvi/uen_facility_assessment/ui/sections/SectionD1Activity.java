@@ -83,6 +83,7 @@ public class SectionD1Activity extends AppCompatActivity {
         }
     }
 
+
     public void btnContinue(View view) {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
