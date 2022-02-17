@@ -42,9 +42,10 @@ public class TableContracts {
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
-        public static final String COLUMN_LHW_UID = "_lhwuid";
-        public static final String COLUMN_LHW_CODE = "lhwcode";
-        public static final String COLUMN_KHANDAN_NO = "kno";
+        public static final String COLUMN_DISTRICT_CODE = "districtCode";
+        public static final String COLUMN_TEHSIL_CODE = "tehsilCode";
+        public static final String COLUMN_UC_CODE = "ucCode";
+        public static final String COLUMN_HF_CODE = "hfCode";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
 

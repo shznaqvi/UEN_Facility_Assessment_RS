@@ -199,6 +199,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ModuleATable.COLUMN_SYNCED, moda.getSynced());
         values.put(ModuleATable.COLUMN_SYNCED_DATE, moda.getSyncDate());
 
+        values.put(ModuleATable.COLUMN_DISTRICT_CODE, moda.getDistrictCode());
+        values.put(ModuleATable.COLUMN_TEHSIL_CODE, moda.getTehsilCode());
+        values.put(ModuleATable.COLUMN_UC_CODE, moda.getUcCode());
+        values.put(ModuleATable.COLUMN_HF_CODE, moda.getHfCode());
         values.put(ModuleATable.COLUMN_SA, moda.sAtoString());
 
         values.put(ModuleATable.COLUMN_ISTATUS, moda.getiStatus());
@@ -1255,7 +1259,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    //get Distinct Districts
+    //get Data From DataBase
     public Collection<Districts> getAllDistricts() {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1294,7 +1298,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDistricts;
     }
 
-
     public Form getFormByClusterHHNo(String cluster_no, String hh_no) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1330,7 +1333,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return HHForm;
     }
-
 
     public Collection<Form> getFormsByCluster(String cluster) {
 
@@ -1413,7 +1415,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-
     public Collection<Form> getPendingForms() {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
@@ -1452,7 +1453,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return allFC;
     }
-
 
     public Collection<Tehsil> getTehsilByDist(String distCode) {
 
@@ -1530,6 +1530,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return healthFacilities;
+    }
+
+    public ModuleA getFormByHfCode(String hfCode) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ModuleATable.COLUMN_HF_CODE + "=?";
+
+        String[] whereArgs = {hfCode};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ModuleATable.COLUMN_ID + " ASC";
+
+        ModuleA moda = null;
+
+        c = db.query(
+                ModuleATable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            moda = new ModuleA().Hydrate(c);
+        }
+
+        db.close();
+
+        return moda;
     }
 
 
