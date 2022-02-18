@@ -3,11 +3,9 @@ package edu.aku.hassannaqvi.uen_facility_assessment.database;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.UserAuth.checkPassword;
-import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_DISTRICT;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_ENTRYLOGS;
+import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_HEALTH_FACILITY;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_HH_FORMS;
-import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_LHW;
-import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_LHW_HF;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_A;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_B;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_C;
@@ -20,7 +18,6 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.S
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_J;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_K;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_STAFFING;
-import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_TEHSIL;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_VERSIONAPP;
 
@@ -61,18 +58,13 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.Modu
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleJTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleKTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.StaffingTable;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableDistricts;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableHealthFacilities;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableLhw;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableTehsil;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.Districts;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.EntryLog;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.HealthFacilities;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.LHW;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleB;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleC;
@@ -85,7 +77,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleI;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleJ;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleK;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.Tehsil;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.VersionApp;
 
@@ -116,10 +107,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USERS);
-        db.execSQL(SQL_CREATE_DISTRICT);
-        db.execSQL(SQL_CREATE_TEHSIL);
-        db.execSQL(SQL_CREATE_LHW);
-        db.execSQL(SQL_CREATE_LHW_HF);
+        db.execSQL(SQL_CREATE_HEALTH_FACILITY);
+        db.execSQL(SQL_CREATE_VERSIONAPP);
+        db.execSQL(SQL_CREATE_ENTRYLOGS);
         db.execSQL(SQL_CREATE_HH_FORMS);
         db.execSQL(SQL_CREATE_MODULE_A);
         db.execSQL(SQL_CREATE_MODULE_B);
@@ -133,8 +123,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_MODULE_I);
         db.execSQL(SQL_CREATE_MODULE_J);
         db.execSQL(SQL_CREATE_MODULE_K);
-        db.execSQL(SQL_CREATE_VERSIONAPP);
-        db.execSQL(SQL_CREATE_ENTRYLOGS);
 
     }
 
@@ -592,6 +580,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addEntryLog(EntryLog entryLog) throws SQLiteException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(EntryLogTable.COLUMN_PROJECT_NAME, entryLog.getProjectName());
+        values.put(EntryLogTable.COLUMN_UUID, entryLog.getUuid());
+        values.put(EntryLogTable.COLUMN_PSU_CODE, entryLog.getPsuCode());
+        values.put(EntryLogTable.COLUMN_HHID, entryLog.getHhid());
+        values.put(EntryLogTable.COLUMN_USERNAME, entryLog.getUserName());
+        values.put(EntryLogTable.COLUMN_SYSDATE, entryLog.getSysDate());
+        values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getiStatus());
+        values.put(EntryLogTable.COLUMN_ISTATUS96x, entryLog.getiStatus96x());
+        values.put(EntryLogTable.COLUMN_ENTRY_TYPE, entryLog.getEntryType());
+        values.put(EntryLogTable.COLUMN_ENTRY_DATE, entryLog.getEntryDate());
+        values.put(EntryLogTable.COLUMN_DEVICEID, entryLog.getDeviceId());
+        values.put(EntryLogTable.COLUMN_SYNCED, entryLog.getSynced());
+        values.put(EntryLogTable.COLUMN_SYNC_DATE, entryLog.getSyncDate());
+        values.put(EntryLogTable.COLUMN_APPVERSION, entryLog.getAppver());
+
+        long newRowId;
+        newRowId = db.insertOrThrow(
+                EntryLogTable.TABLE_NAME,
+                EntryLogTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
 
     //UPDATE in DB
     public int updatesFormColumn(String column, String value) {
@@ -789,6 +803,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
+    public int updatesEntryLogColumn(String column, String value, String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = EntryLogTable._ID + " =? ";
+        String[] selectionArgs = {id};
+
+        return db.update(EntryLogTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatePassword(String hashedPassword) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(UsersTable.COLUMN_PASSWORD, hashedPassword);
+        values.put(UsersTable.COLUMN_ISNEW_USER, "");
+
+        String selection = UsersTable.COLUMN_USERNAME + " =? ";
+        String[] selectionArgs = {MainApp.user.getUserName()};
+
+        return db.update(UsersTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
 
     public int updateEnding() {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -986,6 +1030,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }*/
 
 
+    //DATA DOWNLOAD TABLES
+    //APP VERSION
     public int syncVersionApp(JSONObject VersionList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(VersionTable.TABLE_NAME, null, null);
@@ -1010,6 +1056,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return (int) count;
     }
 
+    //USERS
     public int syncUser(JSONArray userList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(UsersTable.TABLE_NAME, null, null);
@@ -1039,86 +1086,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insertCount;
     }
 
-    /*
-     * Download data functions
-     * */
-    public int syncDistricts(JSONArray Districtslist) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        db.delete(TableDistricts.TABLE_NAME, null, null);
-        int insertCount = 0;
-        for (int i = 0; i < Districtslist.length(); i++) {
-            JSONObject jsonObjectDistrict = Districtslist.getJSONObject(i);
-            Districts District = new Districts();
-            District.sync(jsonObjectDistrict);
-            ContentValues values = new ContentValues();
-
-            values.put(TableDistricts.COLUMN_DISTRICT_CODE, District.getDistrictCode());
-            values.put(TableDistricts.COLUMN_DISTRICT_NAME, District.getDistrictName());
-            long rowID = db.insert(TableDistricts.TABLE_NAME, null, values);
-            if (rowID != -1) insertCount++;
-        }
-
-
-        db.close();
-
-        return insertCount;
-    }
-
-
-    //    Sync LHW
-    public int syncLhw(JSONArray lhwList) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        db.delete(TableLhw.TABLE_NAME, null, null);
-        int insertCount = 0;
-
-        for (int i = 0; i < lhwList.length(); i++) {
-            JSONObject json = lhwList.getJSONObject(i);
-            LHW lhw = new LHW();
-            lhw.sync(json);
-            ContentValues values = new ContentValues();
-
-            values.put(TableLhw.COLUMN_HF_CODE, lhw.getHf_Code());
-            values.put(TableLhw.COLUMN_LHW_CODE, lhw.getLhw_Code());
-            values.put(TableLhw.COLUMN_LHW_NAME, lhw.getLhw_Name());
-
-            long rowID = db.insert(TableLhw.TABLE_NAME, null, values);
-            if (rowID != -1) insertCount++;
-        }
-        db.close();
-
-
-        return insertCount;
-    }
-
-    //    Sync Tehsil
-    public int syncTehsil(JSONArray tehsilList) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        db.delete(TableTehsil.TABLE_NAME, null, null);
-        int insertCount = 0;
-
-
-        for (int i = 0; i < tehsilList.length(); i++) {
-            JSONObject json = tehsilList.getJSONObject(i);
-            Tehsil tehsil = new Tehsil();
-            tehsil.sync(json);
-            ContentValues values = new ContentValues();
-
-            values.put(TableTehsil.COLUMN_DIST_ID, tehsil.getDist_id());
-            values.put(TableTehsil.COLUMN_TEHSIL_NAME, tehsil.getTehsilName());
-            values.put(TableTehsil.COLUMN_TEHSIL_CODE, tehsil.getTehsilCode());
-
-            long rowID = db.insert(TableTehsil.TABLE_NAME, null, values);
-            if (rowID != -1) insertCount++;
-        }
-        db.close();
-
-
-        db.close();
-
-        return insertCount;
-    }
-
-    //    Sync LHWHF
+    //HEALTH FACILITY
     public int syncHealthFacilities(JSONArray healthfacilities) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(TableHealthFacilities.TABLE_NAME, null, null);
@@ -1126,26 +1094,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         for (int i = 0; i < healthfacilities.length(); i++) {
             JSONObject json = healthfacilities.getJSONObject(i);
-            HealthFacilities lhwHF = new HealthFacilities();
-            lhwHF.sync(json);
+            HealthFacilities hf = new HealthFacilities();
+            hf.sync(json);
             ContentValues values = new ContentValues();
 
-            values.put(TableHealthFacilities.COLUMN_HF_CODE, lhwHF.getHfCode());
-            values.put(TableHealthFacilities.COLUMN_HF_NAME, lhwHF.getHfName());
-            values.put(TableHealthFacilities.COLUMN_DIST_ID, lhwHF.getDist_id());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_CODE, hf.getProvinceCode());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getProvinceCode());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_CODE, hf.getDistrictCode());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getDistrictCode());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_CODE, hf.getTehsilCode());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getTehsilCode());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_CODE, hf.getUcCode());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getUcCode());
+            values.put(TableHealthFacilities.COLUMN_HF_CODE, hf.getHfCode());
+            values.put(TableHealthFacilities.COLUMN_HF_NAME, hf.getHfName());
 
             long rowID = db.insert(TableHealthFacilities.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
         db.close();
-
-
         db.close();
-
         return insertCount;
     }
 
 
+    //COLLECT UNSYNCED TABLES
+    //FORMS
     public JSONArray getUnsyncedForms() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1192,8 +1166,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    //ENTRYLOG
+    public JSONArray getUnsyncedEntryLog() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = EntryLogTable.COLUMN_SYNCED + " = '' ";
 
-    //update SyncedTables
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = EntryLogTable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+        c = db.query(
+                EntryLogTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedEntryLog: " + c.getCount());
+            EntryLog entryLog = new EntryLog();
+            all.put(entryLog.Hydrate(c).toJSONObject());
+        }
+        Log.d(TAG, "getUnsyncedEntryLog: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedEntryLog: " + all);
+        return all;
+    }
+
+
+    //UPDATE SYNCED TABLES
+    //FORMS
     public void updateSyncedForm(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
@@ -1208,6 +1216,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int count = db.update(
                 FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ENTRYLOG
+    public void updateSyncedEntryLog(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(EntryLogTable.COLUMN_SYNCED, true);
+        values.put(EntryLogTable.COLUMN_SYNC_DATE, new Date().toString());
+        String where = EntryLogTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                EntryLogTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -1260,17 +1283,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //get Data From DataBase
-    public Collection<Districts> getAllDistricts() {
+    public Collection<HealthFacilities> getAllDistricts() {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
-        String[] columns = {TableDistricts.COLUMN_DISTRICT_CODE, TableDistricts.COLUMN_DISTRICT_NAME};
-
-        String orderBy = TableDistricts.COLUMN_DISTRICT_NAME + " ASC";
-
-        Collection<Districts> allDistricts = new ArrayList<>();
+        String[] columns = {TableHealthFacilities.COLUMN_DISTRICT_CODE, TableHealthFacilities.COLUMN_DISTRICT_NAME};
+        String orderBy = TableHealthFacilities.COLUMN_DISTRICT_NAME + " ASC";
+        Collection<HealthFacilities> allDistricts = new ArrayList<>();
         c = db.query(
                 true,
-                TableDistricts.TABLE_NAME,  // The table to query
+                TableHealthFacilities.TABLE_NAME,  // The table to query
                 columns,
                 null,
                 null,
@@ -1278,24 +1299,171 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 null,
                 orderBy,
                 "5000"
-
-                // The sort order
         );
         while (c.moveToNext()) {
+            Log.d(TAG, "getAllDistricts: " + c.getCount());
+            HealthFacilities dist = new HealthFacilities();
+            dist.setDistrictCode(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_DISTRICT_CODE)));
+            dist.setDistrictName(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_DISTRICT_NAME)));
+            allDistricts.add(dist);
+        }
+        db.close();
+        return allDistricts;
+    }
 
+    public Collection<HealthFacilities> getTehsilByDist(String distCode) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {TableHealthFacilities.COLUMN_TEHSIL_CODE, TableHealthFacilities.COLUMN_TEHSIL_NAME};
+        String whereClause;
+        whereClause = TableHealthFacilities.COLUMN_DISTRICT_CODE + " = ? ";
+        String[] whereArgs = {distCode};
+        String orderBy = TableHealthFacilities.COLUMN_ID + " ASC";
+        List<HealthFacilities> allTehsils = new ArrayList<>();
+        c = db.query(
+                true,
+                TableHealthFacilities.TABLE_NAME,  // The table to query
+                columns,
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                orderBy,
+                "5000"
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getTehsilByDist: " + c.getCount());
+            HealthFacilities tehsil = new HealthFacilities();
+            tehsil.setTehsilCode(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_TEHSIL_CODE)));
+            tehsil.setTehsilName(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_TEHSIL_NAME)));
+            allTehsils.add(tehsil);
+        }
+        db.close();
+        return allTehsils;
+    }
 
-            Log.d(TAG, "getUnsyncedPreg: " + c.getCount());
-            Districts cluster = new Districts();
-            cluster.setDistrictCode(c.getString(c.getColumnIndexOrThrow(TableDistricts.COLUMN_DISTRICT_CODE)));
-            cluster.setDistrictName(c.getString(c.getColumnIndexOrThrow(TableDistricts.COLUMN_DISTRICT_NAME)));
-            allDistricts.add(cluster);
+    public Collection<HealthFacilities> getUcsByTehsil(String tehsilCode) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {TableHealthFacilities.COLUMN_UC_CODE, TableHealthFacilities.COLUMN_UC_NAME};
+        String whereClause;
+        whereClause = TableHealthFacilities.COLUMN_TEHSIL_CODE + " = ? ";
+        String[] whereArgs = {tehsilCode};
+        String orderBy = TableHealthFacilities.COLUMN_ID + " ASC";
+        List<HealthFacilities> allUcs = new ArrayList<>();
+        c = db.query(
+                true,
+                TableHealthFacilities.TABLE_NAME,  // The table to query
+                columns,
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                orderBy,
+                "5000"
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUcsByTehsil: " + c.getCount());
+            HealthFacilities uc = new HealthFacilities();
+            uc.setUcCode(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_UC_CODE)));
+            uc.setUcName(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_UC_NAME)));
+            allUcs.add(uc);
+        }
+        db.close();
+        return allUcs;
+    }
 
+    public Collection<HealthFacilities> getHFsByUc(String ucCode) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {TableHealthFacilities.COLUMN_HF_CODE, TableHealthFacilities.COLUMN_HF_NAME};
+        String whereClause;
+        whereClause = TableHealthFacilities.COLUMN_UC_CODE + " = ? ";
+        String[] whereArgs = {ucCode};
+        String orderBy = TableHealthFacilities.COLUMN_ID + " ASC";
+        List<HealthFacilities> allHFs = new ArrayList<>();
+        c = db.query(
+                true,
+                TableHealthFacilities.TABLE_NAME,  // The table to query
+                columns,
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                orderBy,
+                "5000"
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getHfByUc: " + c.getCount());
+            HealthFacilities hf = new HealthFacilities();
+            hf.setHfCode(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_HF_CODE)));
+            hf.setHfName(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_HF_NAME)));
+            allHFs.add(hf);
+        }
+        db.close();
+        return allHFs;
+    }
+
+    public Collection<HealthFacilities> getHealthFacilityByDist(String distCode) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = TableHealthFacilities.COLUMN_DISTRICT_CODE + " = ? ";
+        String[] whereArgs = {distCode};
+        String groupBy = null;
+        String having = null;
+        String orderBy = TableHealthFacilities.COLUMN_ID + " ASC";
+        List<HealthFacilities> healthFacilities = new ArrayList<>();
+        c = db.query(
+                TableHealthFacilities.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            healthFacilities.add(new HealthFacilities().hydrate(c));
+        }
+        db.close();
+        return healthFacilities;
+    }
+
+    public ModuleA getFormByHfCode(String hfCode) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ModuleATable.COLUMN_HF_CODE + "=?";
+
+        String[] whereArgs = {hfCode};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ModuleATable.COLUMN_ID + " ASC";
+
+        ModuleA moda = null;
+
+        c = db.query(
+                ModuleATable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            moda = new ModuleA().Hydrate(c);
         }
 
         db.close();
 
-
-        return allDistricts;
+        return moda;
     }
 
     public Form getFormByClusterHHNo(String cluster_no, String hh_no) throws JSONException {
@@ -1454,220 +1622,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<Tehsil> getTehsilByDist(String distCode) {
 
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = TableTehsil.COLUMN_DIST_ID + " = ? ";
-
-        String[] whereArgs = {distCode};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = TableTehsil.COLUMN_ID + " ASC";
-
-        List<Tehsil> tehsils = new ArrayList<>();
-
-        c = db.query(
-                TableTehsil.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-
-            tehsils.add(new Tehsil().hydrate(c));
-
-
-        }
-
-        db.close();
-
-        return tehsils;
-    }
-
-    public Collection<HealthFacilities> getHealthFacilityByDist(String distCode) {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = TableHealthFacilities.COLUMN_DIST_ID + " = ? ";
-
-        String[] whereArgs = {distCode};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = TableHealthFacilities.COLUMN_ID + " ASC";
-
-        List<HealthFacilities> healthFacilities = new ArrayList<>();
-
-        c = db.query(
-                TableHealthFacilities.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-
-            healthFacilities.add(new HealthFacilities().hydrate(c));
-
-
-        }
-
-        db.close();
-
-        return healthFacilities;
-    }
-
-    public ModuleA getFormByHfCode(String hfCode) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = ModuleATable.COLUMN_HF_CODE + "=?";
-
-        String[] whereArgs = {hfCode};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = ModuleATable.COLUMN_ID + " ASC";
-
-        ModuleA moda = null;
-
-        c = db.query(
-                ModuleATable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            moda = new ModuleA().Hydrate(c);
-        }
-
-        db.close();
-
-        return moda;
-    }
-
-
-    public Long addEntryLog(EntryLog entryLog) throws SQLiteException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(EntryLogTable.COLUMN_PROJECT_NAME, entryLog.getProjectName());
-        values.put(EntryLogTable.COLUMN_UUID, entryLog.getUuid());
-        values.put(EntryLogTable.COLUMN_PSU_CODE, entryLog.getPsuCode());
-        values.put(EntryLogTable.COLUMN_HHID, entryLog.getHhid());
-        values.put(EntryLogTable.COLUMN_USERNAME, entryLog.getUserName());
-        values.put(EntryLogTable.COLUMN_SYSDATE, entryLog.getSysDate());
-        values.put(EntryLogTable.COLUMN_ISTATUS, entryLog.getiStatus());
-        values.put(EntryLogTable.COLUMN_ISTATUS96x, entryLog.getiStatus96x());
-        values.put(EntryLogTable.COLUMN_ENTRY_TYPE, entryLog.getEntryType());
-        values.put(EntryLogTable.COLUMN_ENTRY_DATE, entryLog.getEntryDate());
-        values.put(EntryLogTable.COLUMN_DEVICEID, entryLog.getDeviceId());
-        values.put(EntryLogTable.COLUMN_SYNCED, entryLog.getSynced());
-        values.put(EntryLogTable.COLUMN_SYNC_DATE, entryLog.getSyncDate());
-        values.put(EntryLogTable.COLUMN_APPVERSION, entryLog.getAppver());
-
-        long newRowId;
-        newRowId = db.insertOrThrow(
-                EntryLogTable.TABLE_NAME,
-                EntryLogTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
-    public int updatesEntryLogColumn(String column, String value, String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-
-        String selection = EntryLogTable._ID + " =? ";
-        String[] selectionArgs = {id};
-
-        return db.update(EntryLogTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
-
-    public JSONArray getUnsyncedEntryLog() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-        String whereClause;
-        whereClause = EntryLogTable.COLUMN_SYNCED + " = '' ";
-
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-        String orderBy = EntryLogTable.COLUMN_ID + " ASC";
-
-        JSONArray all = new JSONArray();
-        c = db.query(
-                EntryLogTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedEntryLog: " + c.getCount());
-            EntryLog entryLog = new EntryLog();
-            all.put(entryLog.Hydrate(c).toJSONObject());
-        }
-        Log.d(TAG, "getUnsyncedEntryLog: " + all.toString().length());
-        Log.d(TAG, "getUnsyncedEntryLog: " + all);
-        return all;
-    }
-
-    public void updateSyncedEntryLog(String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(EntryLogTable.COLUMN_SYNCED, true);
-        values.put(EntryLogTable.COLUMN_SYNC_DATE, new Date().toString());
-        String where = EntryLogTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-        int count = db.update(
-                EntryLogTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    public int updatePassword(String hashedPassword) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
-        ContentValues values = new ContentValues();
-        values.put(UsersTable.COLUMN_PASSWORD, hashedPassword);
-        values.put(UsersTable.COLUMN_ISNEW_USER, "");
-
-        String selection = UsersTable.COLUMN_USERNAME + " =? ";
-        String[] selectionArgs = {MainApp.user.getUserName()};
-
-        return db.update(UsersTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
 }

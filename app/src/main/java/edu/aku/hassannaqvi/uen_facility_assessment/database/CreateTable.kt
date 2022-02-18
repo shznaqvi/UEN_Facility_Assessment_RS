@@ -342,33 +342,6 @@ object CreateTable {
             )
 
 
-    /*const val SQL_CREATE_LHW_FORMS = ("CREATE TABLE "
-            + FormsTable.TABLE_NAME + "("
-            + FormsTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + FormsTable.COLUMN_PROJECT_NAME + " TEXT,"
-            + FormsTable.COLUMN_UID + " TEXT,"
-            + FormsTable.COLUMN_CLUSTER + " TEXT,"
-            + FormsTable.COLUMN_USERNAME + " TEXT,"
-            + FormsTable.COLUMN_SYSDATE + " TEXT,"
-            + FormsTable.COLUMN_ISTATUS + " TEXT,"
-            + FormsTable.COLUMN_DEVICEID + " TEXT,"
-            + FormsTable.COLUMN_DEVICETAGID + " TEXT,"
-            + FormsTable.COLUMN_SYNCED + " TEXT,"
-            + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
-            + FormsTable.COLUMN_APPVERSION + " TEXT,"
-            + FormsTable.COLUMN_A101 + " TEXT,"
-            + FormsTable.COLUMN_A102 + " TEXT,"
-            + FormsTable.COLUMN_A103 + " TEXT,"
-            + FormsTable.COLUMN_A104n + " TEXT,"
-            + FormsTable.COLUMN_A104c + " TEXT,"
-            + FormsTable.COLUMN_SL1 + " TEXT,"
-            + FormsTable.COLUMN_SL2 + " TEXT,"
-            + FormsTable.COLUMN_SL3 + " TEXT,"
-            + FormsTable.COLUMN_SL4 + " TEXT"
-            + " );"
-            )*/
-
-
     const val SQL_CREATE_USERS = ("CREATE TABLE "
             + UsersTable.TABLE_NAME + "("
             + UsersTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -406,38 +379,19 @@ object CreateTable {
             )
 
 
-    const val SQL_CREATE_DISTRICT = ("CREATE TABLE " + TableDistricts.TABLE_NAME + "("
-            + TableDistricts.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + TableDistricts.COLUMN_DISTRICT_NAME + " TEXT,"
-            + TableDistricts.COLUMN_DISTRICT_CODE + " TEXT"
-            + " );")
-
-
-    const val SQL_CREATE_LHW = ("CREATE TABLE " + TableLhw.TABLE_NAME + "("
-            + TableLhw.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + TableLhw.COLUMN_HF_CODE + " TEXT,"
-            + TableLhw.COLUMN_LHW_CODE + " TEXT,"
-            + TableLhw.COLUMN_LHW_NAME + " TEXT"
-            + " );")
-
-    const val SQL_CREATE_TEHSIL = ("CREATE TABLE " + TableTehsil.TABLE_NAME + "("
-            + TableTehsil.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + TableTehsil.COLUMN_DIST_ID + " TEXT,"
-            + TableTehsil.COLUMN_TEHSIL_NAME + " TEXT,"
-            + TableTehsil.COLUMN_TEHSIL_CODE + " TEXT"
-            + " );")
-
-    const val SQL_CREATE_LHW_HF = ("CREATE TABLE " + TableHealthFacilities.TABLE_NAME + "("
+    const val SQL_CREATE_HEALTH_FACILITY = ("CREATE TABLE "
+            + TableHealthFacilities.TABLE_NAME + "("
             + TableHealthFacilities.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + TableHealthFacilities.COLUMN_PROVINCE_CODE + " TEXT,"
+            + TableHealthFacilities.COLUMN_PROVINCE_NAME + " TEXT,"
+            + TableHealthFacilities.COLUMN_DISTRICT_CODE + " TEXT,"
+            + TableHealthFacilities.COLUMN_DISTRICT_NAME + " TEXT,"
+            + TableHealthFacilities.COLUMN_TEHSIL_CODE + " TEXT,"
+            + TableHealthFacilities.COLUMN_TEHSIL_NAME + " TEXT,"
+            + TableHealthFacilities.COLUMN_UC_CODE + " TEXT,"
+            + TableHealthFacilities.COLUMN_UC_NAME + " TEXT,"
             + TableHealthFacilities.COLUMN_HF_CODE + " TEXT,"
-            + TableHealthFacilities.COLUMN_HF_NAME + " TEXT,"
-            + TableHealthFacilities.COLUMN_DIST_ID + " TEXT"
-            + " );")
-
-    const val SQL_CREATE_PROVINCE = ("CREATE TABLE " + TableProvince.TABLE_NAME + "("
-            + TableProvince.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + TableProvince.COLUMN_PROVINCE + " TEXT,"
-            + TableProvince.COLUMN_PRO_ID + " TEXT"
+            + TableHealthFacilities.COLUMN_HF_NAME + " TEXT"
             + " );")
 
 
