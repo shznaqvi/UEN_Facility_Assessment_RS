@@ -8,14 +8,14 @@
 
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.uen_facility_assessment.models.Form" />
+            type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA" />
 
     </data>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
 
@@ -38,20 +38,22 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
 
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:orientation="vertical">
 
 
                 <!-- a01  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa01"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -195,7 +197,7 @@
 
 
                 <!-- a07  Radio   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa07"
                     style="@style/cardView">
 
@@ -296,6 +298,48 @@
 
                     </LinearLayout>
 
+                </androidx.cardview.widget.CardView>-->
+
+
+                <!-- a07 DistrictText -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVa07"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_a07" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/a07" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@={form.a07}" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -304,7 +348,7 @@
                     android:id="@+id/fldGrpCVa08"
                     style="@style/cardView">
 
-                        <LinearLayout
+                    <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
@@ -482,7 +526,8 @@
                 <!-- a12  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa12"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"

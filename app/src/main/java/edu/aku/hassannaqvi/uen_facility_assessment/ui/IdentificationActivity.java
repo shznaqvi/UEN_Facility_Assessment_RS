@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleA;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,7 +25,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivityIdentificationBinding;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
 
 
@@ -47,18 +48,18 @@ public class IdentificationActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         bi.btnContinue.setText(R.string.open_hf);
         if (MainApp.superuser) bi.btnContinue.setText("Review Form");
-        MainApp.moduleA = new ModuleA();
-
+        moduleA = new ModuleA();
+        bi.setForm(moduleA);
         populateSpinner();
 
-        openIntent = new Intent();
+        /*openIntent = new Intent();
         switch (MainApp.idType) {
             case 1:
                 bi.btnContinue.setText(R.string.open_hf);
                 MainApp.form = new Form();
                 openIntent = new Intent(this, SectionMainActivity.class);
                 break;
-         /*   case 2:
+         *//*   case 2:
                 bi.btnContinue.setText(R.string.open_anhtro_form);
                 MainApp.anthro = new Anthro();
                 openIntent = new Intent(this, SectionAnthroActivity.class);
@@ -72,9 +73,9 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.btnContinue.setText(R.string.open_stool_form);
                 //    MainApp.sample = new Sample();
                 openIntent = new Intent(this, SectionSamplesActivity.class);
-                break;*/
+                break;*//*
 
-        }
+        }*/
 
     }
 
@@ -176,7 +177,7 @@ public class IdentificationActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (!hhExists())
             saveDraftForm();
-        if (MainApp.moduleA.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+        if (moduleA.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
             startActivity(new Intent(this, SectionMainActivity.class));
@@ -197,14 +198,14 @@ public class IdentificationActivity extends AppCompatActivity {
 
 
     private boolean hhExists() {
-        MainApp.moduleA = new ModuleA();
+        moduleA = new ModuleA();
         try {
-            MainApp.moduleA = db.getFormByHfCode(hfCodes.get(bi.a13.getSelectedItemPosition()));
+            moduleA = db.getFormByHfCode(hfCodes.get(bi.a13.getSelectedItemPosition()));
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        return MainApp.moduleA != null;
+        return moduleA != null;
     }
 
     private boolean hhDone(String kNo) {
@@ -222,19 +223,19 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     private void saveDraftForm() {
-        MainApp.moduleA = new ModuleA();
-        MainApp.moduleA.setUserName(MainApp.user.getUserName());
-        MainApp.moduleA.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        MainApp.moduleA.setDeviceId(MainApp.deviceid);
-        MainApp.moduleA.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        moduleA = new ModuleA();
+        moduleA.setUserName(MainApp.user.getUserName());
+        moduleA.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        moduleA.setDeviceId(MainApp.deviceid);
+        moduleA.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.moduleA.setTehsilCode(tehsilCodes.get(bi.a08.getSelectedItemPosition()));
-        MainApp.moduleA.setA08(bi.a08.getSelectedItem().toString());
-        MainApp.moduleA.setUcCode(ucCodes.get(bi.a09.getSelectedItemPosition()));
-        MainApp.moduleA.setA09(bi.a09.getSelectedItem().toString());
-        MainApp.moduleA.setHfCode(hfCodes.get(bi.a13.getSelectedItemPosition()));
-        MainApp.moduleA.setA12(hfCodes.get(bi.a13.getSelectedItemPosition()));
-        MainApp.moduleA.setA13(bi.a13.getSelectedItem().toString());
+        moduleA.setTehsilCode(tehsilCodes.get(bi.a08.getSelectedItemPosition()));
+        moduleA.setA08(bi.a08.getSelectedItem().toString());
+        moduleA.setUcCode(ucCodes.get(bi.a09.getSelectedItemPosition()));
+        moduleA.setA09(bi.a09.getSelectedItem().toString());
+        moduleA.setHfCode(hfCodes.get(bi.a13.getSelectedItemPosition()));
+        moduleA.setA12(hfCodes.get(bi.a13.getSelectedItemPosition()));
+        moduleA.setA13(bi.a13.getSelectedItem().toString());
     }
 
 

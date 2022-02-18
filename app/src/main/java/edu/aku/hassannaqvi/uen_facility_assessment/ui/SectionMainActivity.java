@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionMainBinding;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionAActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionBActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionC1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionD1Activity;
@@ -69,43 +70,43 @@ public class SectionMainActivity extends AppCompatActivity {
 
         try {
             if (!form.getsB().isEmpty() && new JSONObject(form.getsB()).has("b05")) {
-                bi.formB.setEnabled(false);
+                //bi.formB.setEnabled(false);
                 bi.checkedB.setVisibility(View.VISIBLE);
             }
 
             if ((!form.getsC().isEmpty() && new JSONObject(form.getsC()).has("c01le")) || form.getA10().equals("2")) {
-                bi.formC.setEnabled(false);
+                //bi.formC.setEnabled(false);
                 bi.checkedC.setVisibility(View.VISIBLE);
                 flag = true;
             }
 
             if (!form.getsD().isEmpty() && new JSONObject(form.getsD()).has("d0810b")) {
-                bi.formD.setEnabled(false);
+                //bi.formD.setEnabled(false);
                 bi.checkedD.setVisibility(View.VISIBLE);
             }
 
             if (!form.getsE().isEmpty() && new JSONObject(form.getsE()).has("e0814")) {
-                bi.formE.setEnabled(false);
+                //bi.formE.setEnabled(false);
                 bi.checkedE.setVisibility(View.VISIBLE);
             }
 
             if ((!form.getsF().isEmpty() && new JSONObject(form.getsF()).has("f0701aad0fyx")) || form.getA10().equals("2")) {
-                bi.formF.setEnabled(false);
+                //bi.formF.setEnabled(false);
                 bi.checkedF.setVisibility(View.VISIBLE);
             }
 
             if ((!form.getsG().isEmpty() && new JSONObject(form.getsG()).has("g4406cm")) || form.getA10().equals("2")) {
-                bi.formG.setEnabled(false);
+                //bi.formG.setEnabled(false);
                 bi.checkedG.setVisibility(View.VISIBLE);
             }
 
             if (!form.getsH().isEmpty() && (new JSONObject(form.getsH()).has("h1605xx") || new JSONObject(form.getsH()).has("h1501z0dn"))) {
-                bi.formH.setEnabled(false);
+                //bi.formH.setEnabled(false);
                 bi.checkedH.setVisibility(View.VISIBLE);
             }
 
             if (!form.getsI().equals("")) {
-                bi.formI.setEnabled(false);
+                //bi.formI.setEnabled(false);
                 bi.checkedI.setVisibility(View.VISIBLE);
             }
 
@@ -115,7 +116,7 @@ public class SectionMainActivity extends AppCompatActivity {
             }
 
             if (!form.getsK().isEmpty() && new JSONObject(form.getsK()).has("k711")) {
-                bi.formK.setEnabled(false);
+                //bi.formK.setEnabled(false);
                 bi.checkedK.setVisibility(View.VISIBLE);
             }
 
@@ -176,6 +177,9 @@ public class SectionMainActivity extends AppCompatActivity {
         Intent oF = new Intent();
         if (!MainApp.superuser) {
             switch (id) {
+                case R.id.formA:
+                    oF = new Intent(this, SectionAActivity.class);
+                    break;
                 case R.id.formB:
                     oF = new Intent(this, SectionBActivity.class);
                     break;
