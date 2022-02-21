@@ -689,13 +689,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int updatesModuleAColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
         ContentValues values = new ContentValues();
         values.put(column, value);
-
         String selection = ModuleATable._ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.moduleA.getId())};
-
         return db.update(ModuleATable.TABLE_NAME,
                 values,
                 selection,
@@ -2079,19 +2076,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
-
         String whereClause;
         whereClause = ModuleATable.COLUMN_HF_CODE + "=?";
-
         String[] whereArgs = {hfCode};
-
         String groupBy = null;
         String having = null;
-
         String orderBy = ModuleATable.COLUMN_ID + " ASC";
-
         ModuleA moda = null;
-
         c = db.query(
                 ModuleATable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return
@@ -2104,9 +2095,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         while (c.moveToNext()) {
             moda = new ModuleA().Hydrate(c);
         }
-
         db.close();
-
         return moda;
     }
 

@@ -18,11 +18,8 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
-import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
@@ -55,7 +52,6 @@ public class IdentificationActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         bi.btnContinue.setText(R.string.open_hf);
         if (MainApp.superuser) bi.btnContinue.setText("Review Form");
-        moduleA = new ModuleA();
         bi.setForm(moduleA);
         populateSpinner();
 
@@ -89,7 +85,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 if (position == 0) return;
 
-                Collection<HealthFacilities> tehs = db.getTehsilByDist(String.valueOf(bi.a07.getSelectedItemPosition()));
+                Collection<HealthFacilities> tehs = db.getTehsilByDist(districtCodes.get(position));
                 tehsilNames = new ArrayList<>();
                 tehsilCodes = new ArrayList<>();
                 tehsilNames.add("...");
@@ -120,7 +116,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 if (position == 0) return;
 
-                Collection<HealthFacilities> ucs = db.getUcsByTehsil(String.valueOf(bi.a08.getSelectedItemPosition()));
+                Collection<HealthFacilities> ucs = db.getUcsByTehsil(tehsilCodes.get(position));
                 ucNames = new ArrayList<>();
                 ucCodes = new ArrayList<>();
                 ucNames.add("...");
@@ -146,10 +142,8 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.a13.setAdapter(null);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
-
                 if (position == 0) return;
-
-                Collection<HealthFacilities> hfs = db.getHFsByUc(String.valueOf(bi.a09.getSelectedItemPosition()));
+                Collection<HealthFacilities> hfs = db.getHFsByUc(ucCodes.get(position));
                 hfNames = new ArrayList<>();
                 hfCodes = new ArrayList<>();
                 hfNames.add("...");
@@ -159,6 +153,20 @@ public class IdentificationActivity extends AppCompatActivity {
                     hfCodes.add(hf.getHfCode());
                 }
                 bi.a13.setAdapter(new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, hfNames));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+
+        });
+
+        bi.a13.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+                bi.btnContinue.setEnabled(false);
+                if (position == 0) return;
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
                 bi.btnContinue.setEnabled(true);
             }
@@ -191,11 +199,6 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
 
-    private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
-    }
-
-
     private boolean hhExists() {
         moduleA = new ModuleA();
         try {
@@ -222,12 +225,8 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     private void saveDraftForm() {
-        moduleA = new ModuleA();
-        moduleA.setUserName(MainApp.user.getUserName());
-        moduleA.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        moduleA.setDeviceId(MainApp.deviceid);
-        moduleA.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-
+        moduleA.setDistrictCode(districtCodes.get(bi.a07.getSelectedItemPosition()));
+        moduleA.setA07(bi.a07.getSelectedItem().toString());
         moduleA.setTehsilCode(tehsilCodes.get(bi.a08.getSelectedItemPosition()));
         moduleA.setA08(bi.a08.getSelectedItem().toString());
         moduleA.setUcCode(ucCodes.get(bi.a09.getSelectedItemPosition()));
@@ -235,6 +234,11 @@ public class IdentificationActivity extends AppCompatActivity {
         moduleA.setHfCode(hfCodes.get(bi.a13.getSelectedItemPosition()));
         moduleA.setA12(hfCodes.get(bi.a13.getSelectedItemPosition()));
         moduleA.setA13(bi.a13.getSelectedItem().toString());
+    }
+
+
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 

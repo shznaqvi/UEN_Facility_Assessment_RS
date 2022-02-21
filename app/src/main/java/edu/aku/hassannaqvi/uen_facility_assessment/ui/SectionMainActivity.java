@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleA;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -69,6 +70,9 @@ public class SectionMainActivity extends AppCompatActivity {
     private void updateSections() {
 
         try {
+            if (moduleA != null && !moduleA.getA22().isEmpty()) {
+                bi.checkedB.setVisibility(View.VISIBLE);
+            }
             if (!form.getsB().isEmpty() && new JSONObject(form.getsB()).has("b05")) {
                 //bi.formB.setEnabled(false);
                 bi.checkedB.setVisibility(View.VISIBLE);
