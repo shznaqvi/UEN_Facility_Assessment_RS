@@ -401,10 +401,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleFTable.COLUMN_PROJECT_NAME, modf.getProjectName());
         values.put(ModuleFTable.COLUMN_UID, modf.getUid());
+        values.put(ModuleFTable.COLUMN_UUID, modf.getUuid());
         values.put(ModuleFTable.COLUMN_USERNAME, modf.getUserName());
         values.put(ModuleFTable.COLUMN_SYSDATE, modf.getSysDate());
         values.put(ModuleFTable.COLUMN_SYNCED, modf.getSynced());
         values.put(ModuleFTable.COLUMN_SYNCED_DATE, modf.getSyncDate());
+
+        values.put(ModuleFTable.COLUMN_DISTRICT_CODE, modf.getDistrictCode());
+        values.put(ModuleFTable.COLUMN_TEHSIL_CODE, modf.getTehsilCode());
+        values.put(ModuleFTable.COLUMN_UC_CODE, modf.getUcCode());
+        values.put(ModuleFTable.COLUMN_HF_CODE, modf.getHfCode());
 
         values.put(ModuleFTable.COLUMN_SF1, modf.sF1toString());
         values.put(ModuleFTable.COLUMN_SF2, modf.sF2toString());
@@ -435,10 +441,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleGTable.COLUMN_PROJECT_NAME, modg.getProjectName());
         values.put(ModuleGTable.COLUMN_UID, modg.getUid());
+        values.put(ModuleGTable.COLUMN_UUID, modg.getUuid());
         values.put(ModuleGTable.COLUMN_USERNAME, modg.getUserName());
         values.put(ModuleGTable.COLUMN_SYSDATE, modg.getSysDate());
         values.put(ModuleGTable.COLUMN_SYNCED, modg.getSynced());
         values.put(ModuleGTable.COLUMN_SYNCED_DATE, modg.getSyncDate());
+
+        values.put(ModuleGTable.COLUMN_DISTRICT_CODE, modg.getDistrictCode());
+        values.put(ModuleGTable.COLUMN_TEHSIL_CODE, modg.getTehsilCode());
+        values.put(ModuleGTable.COLUMN_UC_CODE, modg.getUcCode());
+        values.put(ModuleGTable.COLUMN_HF_CODE, modg.getHfCode());
 
         values.put(ModuleGTable.COLUMN_SG1, modg.sG1toString());
         values.put(ModuleGTable.COLUMN_SG2, modg.sG2toString());
@@ -471,10 +483,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleHTable.COLUMN_PROJECT_NAME, modh.getProjectName());
         values.put(ModuleHTable.COLUMN_UID, modh.getUid());
+        values.put(ModuleHTable.COLUMN_UUID, modh.getUuid());
         values.put(ModuleHTable.COLUMN_USERNAME, modh.getUserName());
         values.put(ModuleHTable.COLUMN_SYSDATE, modh.getSysDate());
         values.put(ModuleHTable.COLUMN_SYNCED, modh.getSynced());
         values.put(ModuleHTable.COLUMN_SYNCED_DATE, modh.getSyncDate());
+
+        values.put(ModuleHTable.COLUMN_DISTRICT_CODE, modh.getDistrictCode());
+        values.put(ModuleHTable.COLUMN_TEHSIL_CODE, modh.getTehsilCode());
+        values.put(ModuleHTable.COLUMN_UC_CODE, modh.getUcCode());
+        values.put(ModuleHTable.COLUMN_HF_CODE, modh.getHfCode());
 
         values.put(ModuleHTable.COLUMN_SH1, modh.sH1toString());
         values.put(ModuleHTable.COLUMN_SH2, modh.sH2toString());
@@ -516,10 +534,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleITable.COLUMN_PROJECT_NAME, modi.getProjectName());
         values.put(ModuleITable.COLUMN_UID, modi.getUid());
+        values.put(ModuleITable.COLUMN_UUID, modi.getUuid());
         values.put(ModuleITable.COLUMN_USERNAME, modi.getUserName());
         values.put(ModuleITable.COLUMN_SYSDATE, modi.getSysDate());
         values.put(ModuleITable.COLUMN_SYNCED, modi.getSynced());
         values.put(ModuleITable.COLUMN_SYNCED_DATE, modi.getSyncDate());
+
+        values.put(ModuleITable.COLUMN_DISTRICT_CODE, modi.getDistrictCode());
+        values.put(ModuleITable.COLUMN_TEHSIL_CODE, modi.getTehsilCode());
+        values.put(ModuleITable.COLUMN_UC_CODE, modi.getUcCode());
+        values.put(ModuleITable.COLUMN_HF_CODE, modi.getHfCode());
 
         values.put(ModuleITable.COLUMN_SI, modi.sItoString());
 
@@ -544,10 +568,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleJTable.COLUMN_PROJECT_NAME, modj.getProjectName());
         values.put(ModuleJTable.COLUMN_UID, modj.getUid());
+        values.put(ModuleJTable.COLUMN_UUID, modj.getUuid());
         values.put(ModuleJTable.COLUMN_USERNAME, modj.getUserName());
         values.put(ModuleJTable.COLUMN_SYSDATE, modj.getSysDate());
         values.put(ModuleJTable.COLUMN_SYNCED, modj.getSynced());
         values.put(ModuleJTable.COLUMN_SYNCED_DATE, modj.getSyncDate());
+
+        values.put(ModuleJTable.COLUMN_DISTRICT_CODE, modj.getDistrictCode());
+        values.put(ModuleJTable.COLUMN_TEHSIL_CODE, modj.getTehsilCode());
+        values.put(ModuleJTable.COLUMN_UC_CODE, modj.getUcCode());
+        values.put(ModuleJTable.COLUMN_HF_CODE, modj.getHfCode());
 
         values.put(ModuleJTable.COLUMN_SJ1, modj.sJ1toString());
         values.put(ModuleJTable.COLUMN_SJ2, modj.sJ2toString());
@@ -580,10 +610,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleKTable.COLUMN_PROJECT_NAME, modk.getProjectName());
         values.put(ModuleKTable.COLUMN_UID, modk.getUid());
+        values.put(ModuleKTable.COLUMN_UUID, modk.getUuid());
         values.put(ModuleKTable.COLUMN_USERNAME, modk.getUserName());
         values.put(ModuleKTable.COLUMN_SYSDATE, modk.getSysDate());
         values.put(ModuleKTable.COLUMN_SYNCED, modk.getSynced());
         values.put(ModuleKTable.COLUMN_SYNCED_DATE, modk.getSyncDate());
+
+        values.put(ModuleKTable.COLUMN_DISTRICT_CODE, modk.getDistrictCode());
+        values.put(ModuleKTable.COLUMN_TEHSIL_CODE, modk.getTehsilCode());
+        values.put(ModuleKTable.COLUMN_UC_CODE, modk.getUcCode());
+        values.put(ModuleKTable.COLUMN_HF_CODE, modk.getHfCode());
 
         values.put(ModuleKTable.COLUMN_SK1, modk.sK1toString());
         values.put(ModuleKTable.COLUMN_SK2, modk.sK2toString());
@@ -1146,7 +1182,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    //COLLECT UNSYNCED TABLES
+    /*COLLECT UNSYNCED TABLES*/
     //FORMS
     public JSONArray getUnsyncedForms() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1194,6 +1230,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    //MODULEA
+    public JSONArray getUnsyncedModuleA() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ModuleATable.COLUMN_SYNCED + " ='' AND " +
+                ModuleATable.COLUMN_ISTATUS + "!= ''";
+
+        String[] whereArgs = null;
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ModuleATable.COLUMN_ID + " ASC";
+
+        JSONArray all = new JSONArray();
+
+        c = db.query(
+                ModuleATable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleA: " + c.getCount());
+            ModuleA moda = new ModuleA();
+            all.put(moda.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleA: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleA: " + all);
+        return all;
+    }
+
     //ENTRYLOG
     public JSONArray getUnsyncedEntryLog() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1228,7 +1303,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    //UPDATE SYNCED TABLES
+    /*UPDATE SYNCED TABLES*/
     //FORMS
     public void updateSyncedForm(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1244,6 +1319,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int count = db.update(
                 FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //MODULEA
+    public void updateSyncedModuleA(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleATable.COLUMN_SYNCED, true);
+        values.put(ModuleATable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleATable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleATable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
