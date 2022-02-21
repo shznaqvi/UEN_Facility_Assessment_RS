@@ -214,11 +214,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleBTable.COLUMN_PROJECT_NAME, modb.getProjectName());
         values.put(ModuleBTable.COLUMN_UID, modb.getUid());
+        values.put(ModuleBTable.COLUMN_UUID, modb.getUuid());
         values.put(ModuleBTable.COLUMN_USERNAME, modb.getUserName());
         values.put(ModuleBTable.COLUMN_SYSDATE, modb.getSysDate());
         values.put(ModuleBTable.COLUMN_SYNCED, modb.getSynced());
         values.put(ModuleBTable.COLUMN_SYNCED_DATE, modb.getSyncDate());
 
+        values.put(ModuleBTable.COLUMN_DISTRICT_CODE, modb.getDistrictCode());
+        values.put(ModuleBTable.COLUMN_TEHSIL_CODE, modb.getTehsilCode());
+        values.put(ModuleBTable.COLUMN_UC_CODE, modb.getUcCode());
+        values.put(ModuleBTable.COLUMN_HF_CODE, modb.getHfCode());
         values.put(ModuleBTable.COLUMN_SB, modb.sBtoString());
 
         values.put(ModuleBTable.COLUMN_ISTATUS, modb.getiStatus());
