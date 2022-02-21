@@ -1269,6 +1269,369 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
+    //MODULEB
+    public JSONArray getUnsyncedModuleB() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleBTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleBTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleBTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleBTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleB: " + c.getCount());
+            ModuleB modb = new ModuleB();
+            all.put(modb.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleB: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleB: " + all);
+        return all;
+    }
+
+    //MODULEC
+    public JSONArray getUnsyncedModuleC() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleCTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleCTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleCTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleCTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleC: " + c.getCount());
+            ModuleC modc = new ModuleC();
+            all.put(modc.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleC: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleC: " + all);
+        return all;
+    }
+
+    //Staffing
+    public JSONArray getUnsyncedStaffing() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = StaffingTable.COLUMN_SYNCED + " ='' AND " +
+                StaffingTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = StaffingTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                StaffingTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedStaffing: " + c.getCount());
+            Staffing staf = new Staffing();
+            all.put(staf.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedStaffing: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedStaffing: " + all);
+        return all;
+    }
+
+    //MODULED
+    public JSONArray getUnsyncedModuleD() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleDTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleDTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleDTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleDTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleD: " + c.getCount());
+            ModuleD modd = new ModuleD();
+            all.put(modd.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleD: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleD: " + all);
+        return all;
+    }
+
+    //ModuleE
+    public JSONArray getUnsyncedModuleE() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleETable.COLUMN_SYNCED + " ='' AND " +
+                ModuleETable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleETable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleETable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleE: " + c.getCount());
+            ModuleE mode = new ModuleE();
+            all.put(mode.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleE: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleE: " + all);
+        return all;
+    }
+
+    //ModuleF
+    public JSONArray getUnsyncedModuleF() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleFTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleFTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleFTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleFTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleF: " + c.getCount());
+            ModuleF modf = new ModuleF();
+            all.put(modf.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleF: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleF: " + all);
+        return all;
+    }
+
+    //ModuleG
+    public JSONArray getUnsyncedModuleG() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleGTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleGTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleGTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleGTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleG: " + c.getCount());
+            ModuleG modg = new ModuleG();
+            all.put(modg.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleG: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleG: " + all);
+        return all;
+    }
+
+    //ModuleH
+    public JSONArray getUnsyncedModuleH() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleHTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleHTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleHTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleHTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleH: " + c.getCount());
+            ModuleH modh = new ModuleH();
+            all.put(modh.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleH: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleH: " + all);
+        return all;
+    }
+
+    //ModuleI
+    public JSONArray getUnsyncedModuleI() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleITable.COLUMN_SYNCED + " ='' AND " +
+                ModuleITable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleITable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleITable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleI: " + c.getCount());
+            ModuleI modi = new ModuleI();
+            all.put(modi.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleI: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleI: " + all);
+        return all;
+    }
+
+    //ModuleJ
+    public JSONArray getUnsyncedModuleJ() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleJTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleJTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleJTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleJTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleJ: " + c.getCount());
+            ModuleJ modj = new ModuleJ();
+            all.put(modj.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleJ: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleJ: " + all);
+        return all;
+    }
+
+    //ModuleK
+    public JSONArray getUnsyncedModuleK() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleKTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleKTable.COLUMN_ISTATUS + "!= ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleKTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleKTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleK: " + c.getCount());
+            ModuleK modc = new ModuleK();
+            all.put(modc.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleK: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleK: " + all);
+        return all;
+    }
+
     //ENTRYLOG
     public JSONArray getUnsyncedEntryLog() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
