@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
@@ -17,6 +20,7 @@ import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
 
@@ -25,6 +29,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivityIdentificationBinding;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.HealthFacilities;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
 
 
@@ -34,6 +39,8 @@ public class IdentificationActivity extends AppCompatActivity {
     ActivityIdentificationBinding bi;
     private DatabaseHelper db;
     private Intent openIntent;
+    private ArrayList<String> districtNames;
+    private ArrayList<String> districtCodes;
     private ArrayList<String> tehsilNames;
     private ArrayList<String> tehsilCodes;
     private ArrayList<String> ucNames;
@@ -52,93 +59,77 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.setForm(moduleA);
         populateSpinner();
 
-        /*openIntent = new Intent();
-        switch (MainApp.idType) {
-            case 1:
-                bi.btnContinue.setText(R.string.open_hf);
-                MainApp.form = new Form();
-                openIntent = new Intent(this, SectionMainActivity.class);
-                break;
-         *//*   case 2:
-                bi.btnContinue.setText(R.string.open_anhtro_form);
-                MainApp.anthro = new Anthro();
-                openIntent = new Intent(this, SectionAnthroActivity.class);
-                break;
-            case 3:
-                bi.btnContinue.setText(R.string.open_blood_form);
-                //     MainApp.sample = new Sample();
-                openIntent = new Intent(this, SectionSamplesActivity.class);
-                break;
-            case 4:
-                bi.btnContinue.setText(R.string.open_stool_form);
-                //    MainApp.sample = new Sample();
-                openIntent = new Intent(this, SectionSamplesActivity.class);
-                break;*//*
-
-        }*/
-
     }
 
     private void populateSpinner() {
 
-        /*Collection<Form> lhw = db.getRegisteredLhws();
-        tehsilNames = new ArrayList<>();
-        tehsilCodes = new ArrayList<>();
-
-        tehsilNames.add("...");
-        tehsilCodes.add("...");
-        for (Form lf : lhw) {
-            tehsilNames.add(lf.getA104n());
-            tehsilCodes.add(lf.getA104c());
+        Collection<HealthFacilities> dists = db.getAllDistricts();
+        districtNames = new ArrayList<>();
+        districtCodes = new ArrayList<>();
+        districtNames.add("...");
+        districtCodes.add("...");
+        for (HealthFacilities dist : dists) {
+            districtNames.add(dist.getDistrictName());
+            districtCodes.add(dist.getDistrictCode());
         }
 
         // Apply the adapter to the spinner
-        bi.a08.setAdapter(new ArrayAdapter<>(IdentificationActivity.this, R.layout.custom_spinner, tehsilNames));
+        bi.a07.setAdapter(new ArrayAdapter<>(IdentificationActivity.this, R.layout.custom_spinner, districtNames));
 
-        bi.a08.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.a07.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                bi.a08.setAdapter(null);
                 bi.a09.setAdapter(null);
-                bi.a12.setText(null);
-
+                bi.a10.clearCheck();
+                bi.a11.clearCheck();
+                bi.a13.setAdapter(null);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
 
                 if (position == 0) return;
-                try {
-                    lhwhhs = db.getKhandanNoByLHW(lhwCodes.get(position));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(IdentificationActivity.this, "JSONException(LHWHouseholds)" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                khandanNo = new ArrayList<>();
-                hhheads = new ArrayList<>();
 
-                khandanNo.add("...");
-                hhheads.add("...");
-
-                Iterator<LHWHouseholds> i = lhwhhs.iterator();
-                while (i.hasNext()) {
-                    LHWHouseholds lhwhh = i.next();
-                    if (!hhDone(lhwhh.getH102())) {
-                        khandanNo.add(lhwhh.getH102());
-                    } else {
-                        i.remove();
-                    }
+                Collection<HealthFacilities> tehs = db.getTehsilByDist(String.valueOf(bi.a07.getSelectedItemPosition()));
+                tehsilNames = new ArrayList<>();
+                tehsilCodes = new ArrayList<>();
+                tehsilNames.add("...");
+                tehsilCodes.add("...");
+                for (HealthFacilities teh : tehs) {
+                    tehsilNames.add(teh.getTehsilName());
+                    tehsilCodes.add(teh.getTehsilCode());
                 }
 
-                for (LHWHouseholds lhwhh : lhwhhs) {
-                    if (!hhDone(lhwhh.getH102())){
-                        khandanNo.add(lhwhh.getH102());} else {
+                bi.a08.setAdapter(new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, tehsilNames));
+            }
 
-                    }
-                    // hhheads.add(lhwhh.getH103());
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+
+        });
+
+        bi.a08.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bi.a09.setAdapter(null);
+                bi.a10.clearCheck();
+                bi.a11.clearCheck();
+                bi.a13.setAdapter(null);
+                bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+                bi.btnContinue.setEnabled(false);
+
+                if (position == 0) return;
+
+                Collection<HealthFacilities> ucs = db.getUcsByTehsil(String.valueOf(bi.a08.getSelectedItemPosition()));
+                ucNames = new ArrayList<>();
+                ucCodes = new ArrayList<>();
+                ucNames.add("...");
+                ucCodes.add("...");
+                for (HealthFacilities uc : ucs) {
+                    ucNames.add(uc.getUcName());
+                    ucCodes.add(uc.getUcCode());
                 }
-
-                // Apply the adapter to the spinner
                 bi.a09.setAdapter(new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, ucNames));
-
             }
 
             @Override
@@ -150,16 +141,24 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a09.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                bi.a12.setText(null);
-
+                bi.a10.clearCheck();
+                bi.a11.clearCheck();
+                bi.a13.setAdapter(null);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
 
                 if (position == 0) return;
-                // position -1, because lhwhhs does not have ... on 0 index`
-                bi.a12.setText(hfCodes.get(position - 1).getHfCode);
-                MainApp.LHWHouseholds = lhwhhs.get(position - 1);
+
+                Collection<HealthFacilities> hfs = db.getHFsByUc(String.valueOf(bi.a09.getSelectedItemPosition()));
+                hfNames = new ArrayList<>();
+                hfCodes = new ArrayList<>();
+                hfNames.add("...");
+                hfCodes.add("...");
+                for (HealthFacilities hf : hfs) {
+                    hfNames.add(hf.getHfName());
+                    hfCodes.add(hf.getHfCode());
+                }
+                bi.a13.setAdapter(new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, hfNames));
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
                 bi.btnContinue.setEnabled(true);
             }
@@ -168,7 +167,7 @@ public class IdentificationActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
 
-        });*/
+        });
 
     }
 
