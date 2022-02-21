@@ -47,7 +47,7 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.adapters.SyncListAdapter;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableHealthFacilities;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.VersionTable;
@@ -82,19 +82,16 @@ public class SyncActivity extends AppCompatActivity {
         bi.setCallback(this);
         setSupportActionBar(bi.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         db = MainApp.appInfo.getDbHelper();
         uploadTables = new ArrayList<>();
         downloadTables = new ArrayList<>();
         uploadData = new ArrayList<>();
         sdDir = new File(this.getExternalFilesDir(
                 Environment.DIRECTORY_PICTURES), PROJECT_NAME);
-
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
         listActivityCreated = true;
         uploadlistActivityCreated = true;
-
         db = MainApp.appInfo.dbHelper;
         //dbBackup(this);
 /*        OneTimeWorkRequest JSONWorker =
@@ -130,13 +127,9 @@ public class SyncActivity extends AppCompatActivity {
 
         if (!MainApp.isNetworkAvailable(this))
             return;
-
         switch (view.getId()) {
-
             case R.id.btnUpload:
-
                 bi.activityTitle.setText("Upload Data");
-
                 bi.dataLayout.setVisibility(View.VISIBLE);
                 bi.photoLayout.setVisibility(View.GONE);
                 bi.mTextViewS.setVisibility(View.GONE);
@@ -144,26 +137,121 @@ public class SyncActivity extends AppCompatActivity {
                 uploadTables.clear();
                 uploadData.clear();
 
-
-                // Upload Forms
-                uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
+                // Upload ModuleA
+                uploadTables.add(new SyncModel(TableContracts.ModuleATable.TABLE_NAME));
                 try {
-                    uploadData.add(db.getUnsyncedForms());
+                    uploadData.add(db.getUnsyncedModuleA());
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(this, "JSONException(Forms): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "JSONException(ModuleA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleB
+                uploadTables.add(new SyncModel(TableContracts.ModuleBTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleB());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleB): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleC
+                uploadTables.add(new SyncModel(TableContracts.ModuleCTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleC());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleC): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload Staffing
+                uploadTables.add(new SyncModel(TableContracts.StaffingTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedStaffing());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(Staffing): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleD
+                uploadTables.add(new SyncModel(TableContracts.ModuleDTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleD());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleD): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleE
+                uploadTables.add(new SyncModel(TableContracts.ModuleETable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleE());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleE): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleF
+                uploadTables.add(new SyncModel(TableContracts.ModuleFTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleF());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleF): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleG
+                uploadTables.add(new SyncModel(TableContracts.ModuleGTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleG());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleG): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleH
+                uploadTables.add(new SyncModel(TableContracts.ModuleHTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleH());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleH): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleI
+                uploadTables.add(new SyncModel(TableContracts.ModuleITable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleI());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleI): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleJ
+                uploadTables.add(new SyncModel(TableContracts.ModuleJTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleJ());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleJ): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+                // Upload ModuleK
+                uploadTables.add(new SyncModel(TableContracts.ModuleKTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleK());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleK): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
 
                 MainApp.downloadData = new String[uploadData.size()];
-
                 setAdapter(uploadTables);
                 BeginUpload();
                 break;
             case R.id.btnSync:
-
                 bi.activityTitle.setText("Download Data");
-
                 MainApp.downloadData = new String[0];
                 bi.dataLayout.setVisibility(View.VISIBLE);
                 bi.photoLayout.setVisibility(View.GONE);
