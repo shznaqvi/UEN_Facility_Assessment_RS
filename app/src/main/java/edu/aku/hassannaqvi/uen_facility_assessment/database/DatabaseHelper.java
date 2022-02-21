@@ -1182,8 +1182,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    /*COLLECT UNSYNCED TABLES*/
-    //FORMS
+    //FORMS  COLLECT UNSYNCED TABLES
     public JSONArray getUnsyncedForms() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1230,7 +1229,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
-    //MODULEA
+    //ModuleA
     public JSONArray getUnsyncedModuleA() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1269,7 +1268,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    //MODULEB
+    //ModuleB
     public JSONArray getUnsyncedModuleB() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1302,7 +1301,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    //MODULEC
+    //ModuleC
     public JSONArray getUnsyncedModuleC() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1368,7 +1367,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    //MODULED
+    //ModuleD
     public JSONArray getUnsyncedModuleD() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1666,8 +1665,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    /*UPDATE SYNCED TABLES*/
-    //FORMS
+    //FORMS  UPDATE SYNCED TABLES
     public void updateSyncedForm(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
@@ -1687,7 +1685,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    //MODULEA
+    //ModuleA
     public void updateSyncedModuleA(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
@@ -1697,6 +1695,171 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {id};
         int count = db.update(
                 ModuleATable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleB
+    public void updateSyncedModuleB(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleBTable.COLUMN_SYNCED, true);
+        values.put(ModuleBTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleBTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleBTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleC
+    public void updateSyncedModuleC(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleCTable.COLUMN_SYNCED, true);
+        values.put(ModuleCTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleCTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleCTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //Staffing
+    public void updateSyncedStaffing(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(StaffingTable.COLUMN_SYNCED, true);
+        values.put(StaffingTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = StaffingTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                StaffingTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleD
+    public void updateSyncedModuleD(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleDTable.COLUMN_SYNCED, true);
+        values.put(ModuleDTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleDTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleDTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleE
+    public void updateSyncedModuleE(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleETable.COLUMN_SYNCED, true);
+        values.put(ModuleETable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleETable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleETable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleF
+    public void updateSyncedModuleF(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleFTable.COLUMN_SYNCED, true);
+        values.put(ModuleFTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleFTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleFTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleG
+    public void updateSyncedModuleG(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleGTable.COLUMN_SYNCED, true);
+        values.put(ModuleGTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleGTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleGTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleH
+    public void updateSyncedModuleH(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleHTable.COLUMN_SYNCED, true);
+        values.put(ModuleHTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleHTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleHTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleI
+    public void updateSyncedModuleI(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleITable.COLUMN_SYNCED, true);
+        values.put(ModuleITable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleITable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleITable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleJ
+    public void updateSyncedModuleJ(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleJTable.COLUMN_SYNCED, true);
+        values.put(ModuleJTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleJTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleJTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleK
+    public void updateSyncedModuleK(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleKTable.COLUMN_SYNCED, true);
+        values.put(ModuleKTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleKTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleKTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
