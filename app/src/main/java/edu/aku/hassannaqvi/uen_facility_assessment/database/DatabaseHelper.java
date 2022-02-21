@@ -1163,13 +1163,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
 
             values.put(TableHealthFacilities.COLUMN_PROVINCE_CODE, hf.getProvinceCode());
-            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getProvinceCode());
-            values.put(TableHealthFacilities.COLUMN_PROVINCE_CODE, hf.getDistrictCode());
-            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getDistrictCode());
-            values.put(TableHealthFacilities.COLUMN_PROVINCE_CODE, hf.getTehsilCode());
-            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getTehsilCode());
-            values.put(TableHealthFacilities.COLUMN_PROVINCE_CODE, hf.getUcCode());
-            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getUcCode());
+            values.put(TableHealthFacilities.COLUMN_PROVINCE_NAME, hf.getProvinceName());
+            values.put(TableHealthFacilities.COLUMN_DISTRICT_CODE, hf.getDistrictCode());
+            values.put(TableHealthFacilities.COLUMN_DISTRICT_NAME, hf.getDistrictName());
+            values.put(TableHealthFacilities.COLUMN_TEHSIL_CODE, hf.getTehsilCode());
+            values.put(TableHealthFacilities.COLUMN_TEHSIL_NAME, hf.getTehsilName());
+            values.put(TableHealthFacilities.COLUMN_UC_CODE, hf.getUcCode());
+            values.put(TableHealthFacilities.COLUMN_UC_NAME, hf.getUcName());
             values.put(TableHealthFacilities.COLUMN_HF_CODE, hf.getHfCode());
             values.put(TableHealthFacilities.COLUMN_HF_NAME, hf.getHfName());
 
