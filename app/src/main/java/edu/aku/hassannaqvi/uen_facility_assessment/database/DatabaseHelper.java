@@ -247,10 +247,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleCTable.COLUMN_PROJECT_NAME, modc.getProjectName());
         values.put(ModuleCTable.COLUMN_UID, modc.getUid());
+        values.put(ModuleCTable.COLUMN_UUID, modc.getUuid());
         values.put(ModuleCTable.COLUMN_USERNAME, modc.getUserName());
         values.put(ModuleCTable.COLUMN_SYSDATE, modc.getSysDate());
         values.put(ModuleCTable.COLUMN_SYNCED, modc.getSynced());
         values.put(ModuleCTable.COLUMN_SYNCED_DATE, modc.getSyncDate());
+
+        values.put(ModuleCTable.COLUMN_DISTRICT_CODE, modc.getDistrictCode());
+        values.put(ModuleCTable.COLUMN_TEHSIL_CODE, modc.getTehsilCode());
+        values.put(ModuleCTable.COLUMN_UC_CODE, modc.getUcCode());
+        values.put(ModuleCTable.COLUMN_HF_CODE, modc.getHfCode());
 
         values.put(ModuleCTable.COLUMN_SC1, modc.sC1toString());
 
@@ -281,6 +287,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(StaffingTable.COLUMN_SYNCED, staf.getSynced());
         values.put(StaffingTable.COLUMN_SYNCED_DATE, staf.getSyncDate());
 
+        values.put(StaffingTable.COLUMN_DISTRICT_CODE, staf.getDistrictCode());
+        values.put(StaffingTable.COLUMN_TEHSIL_CODE, staf.getTehsilCode());
+        values.put(StaffingTable.COLUMN_UC_CODE, staf.getUcCode());
+        values.put(StaffingTable.COLUMN_HF_CODE, staf.getHfCode());
+
         values.put(StaffingTable.COLUMN_SC2, staf.sC2toString());
 
         values.put(StaffingTable.COLUMN_ISTATUS, staf.getiStatus());
@@ -304,10 +315,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleDTable.COLUMN_PROJECT_NAME, modd.getProjectName());
         values.put(ModuleDTable.COLUMN_UID, modd.getUid());
+        values.put(ModuleDTable.COLUMN_UUID, modd.getUuid());
         values.put(ModuleDTable.COLUMN_USERNAME, modd.getUserName());
         values.put(ModuleDTable.COLUMN_SYSDATE, modd.getSysDate());
         values.put(ModuleDTable.COLUMN_SYNCED, modd.getSynced());
         values.put(ModuleDTable.COLUMN_SYNCED_DATE, modd.getSyncDate());
+
+        values.put(ModuleDTable.COLUMN_DISTRICT_CODE, modd.getDistrictCode());
+        values.put(ModuleDTable.COLUMN_TEHSIL_CODE, modd.getTehsilCode());
+        values.put(ModuleDTable.COLUMN_UC_CODE, modd.getUcCode());
+        values.put(ModuleDTable.COLUMN_HF_CODE, modd.getHfCode());
 
         values.put(ModuleDTable.COLUMN_SD1, modd.sD1toString());
         values.put(ModuleDTable.COLUMN_SD2, modd.sD2toString());
@@ -340,10 +357,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(ModuleETable.COLUMN_PROJECT_NAME, mode.getProjectName());
         values.put(ModuleETable.COLUMN_UID, mode.getUid());
+        values.put(ModuleETable.COLUMN_UUID, mode.getUuid());
         values.put(ModuleETable.COLUMN_USERNAME, mode.getUserName());
         values.put(ModuleETable.COLUMN_SYSDATE, mode.getSysDate());
         values.put(ModuleETable.COLUMN_SYNCED, mode.getSynced());
         values.put(ModuleETable.COLUMN_SYNCED_DATE, mode.getSyncDate());
+
+        values.put(ModuleETable.COLUMN_DISTRICT_CODE, mode.getDistrictCode());
+        values.put(ModuleETable.COLUMN_TEHSIL_CODE, mode.getTehsilCode());
+        values.put(ModuleETable.COLUMN_UC_CODE, mode.getUcCode());
+        values.put(ModuleETable.COLUMN_HF_CODE, mode.getHfCode());
 
         values.put(ModuleETable.COLUMN_SE1, mode.sE1toString());
         values.put(ModuleETable.COLUMN_SE2, mode.sE2toString());
