@@ -32,9 +32,9 @@ public class ModuleD extends BaseObservable implements Observable {
     // APP VARIABLES
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
+    private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String cluster = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
@@ -43,6 +43,10 @@ public class ModuleD extends BaseObservable implements Observable {
     private String iStatus96x = _EMPTY_;
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
+    private String districtCode = _EMPTY_;
+    private String tehsilCode = _EMPTY_;
+    private String ucCode = _EMPTY_;
+    private String hfCode = _EMPTY_;
 
 
     // FIELD VARIABLES
@@ -142,13 +146,10 @@ public class ModuleD extends BaseObservable implements Observable {
         setAppver(MainApp.versionName + "." + MainApp.versionCode);
         setUserName(MainApp.user.getUserName());
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        /*setProvinceCode(selectedProvince);
-        setDistrictCode(selectedDistrict);
-        setTehsilCode(selectedTehsil);
-        setUcCode(selectedUc);
-        setVillageCode(selectedVillage);
-        setPsuCode(selectedPSU);
-        setHhid(selectedHHID);*/
+        setDistrictCode(MainApp.moduleA.getDistrictCode());
+        setTehsilCode(MainApp.moduleA.getTehsilCode());
+        setUcCode(MainApp.moduleA.getUcCode());
+        setHfCode(MainApp.moduleA.getHfCode());
     }
 
 
@@ -176,14 +177,13 @@ public class ModuleD extends BaseObservable implements Observable {
         this.uid = uid;
     }
 
-    @Bindable
-    public String getCluster() {
-        return cluster;
+
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
 
@@ -265,6 +265,42 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setSyncDate(String syncDate) {
         this.syncDate = syncDate;
+    }
+
+
+    public String getDistrictCode() {
+        return districtCode;
+    }
+
+    public void setDistrictCode(String districtCode) {
+        this.districtCode = districtCode;
+    }
+
+
+    public String getTehsilCode() {
+        return tehsilCode;
+    }
+
+    public void setTehsilCode(String tehsilCode) {
+        this.tehsilCode = tehsilCode;
+    }
+
+
+    public String getUcCode() {
+        return ucCode;
+    }
+
+    public void setUcCode(String ucCode) {
+        this.ucCode = ucCode;
+    }
+
+
+    public String getHfCode() {
+        return hfCode;
+    }
+
+    public void setHfCode(String hfCode) {
+        this.hfCode = hfCode;
     }
 
 
@@ -1113,6 +1149,11 @@ public class ModuleD extends BaseObservable implements Observable {
     public ModuleD Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_UUID));
+        this.districtCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_DISTRICT_CODE));
+        this.tehsilCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_TEHSIL_CODE));
+        this.ucCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_UC_CODE));
+        this.hfCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_HF_CODE));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleDTable.COLUMN_DEVICEID));
@@ -1284,6 +1325,11 @@ public class ModuleD extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put(ModuleDTable.COLUMN_ID, this.id);
         json.put(ModuleDTable.COLUMN_UID, this.uid);
+        json.put(ModuleDTable.COLUMN_UUID, this.uuid);
+        json.put(ModuleDTable.COLUMN_DISTRICT_CODE, this.districtCode);
+        json.put(ModuleDTable.COLUMN_TEHSIL_CODE, this.tehsilCode);
+        json.put(ModuleDTable.COLUMN_UC_CODE, this.ucCode);
+        json.put(ModuleDTable.COLUMN_HF_CODE, this.hfCode);
         json.put(ModuleDTable.COLUMN_USERNAME, this.userName);
         json.put(ModuleDTable.COLUMN_SYSDATE, this.sysDate);
         json.put(ModuleDTable.COLUMN_DEVICEID, this.deviceId);
