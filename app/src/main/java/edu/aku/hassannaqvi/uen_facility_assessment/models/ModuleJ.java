@@ -290,14 +290,13 @@ public class ModuleJ extends BaseObservable implements Observable {
         this.uid = uid;
     }
 
-    @Bindable
+
     public String getUuid() {
         return uuid;
     }
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
-        notifyPropertyChanged(BR.cluster);
     }
 
 

@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -30,200 +31,204 @@ public class ModuleK extends BaseObservable implements Observable {
 
 
     // APP VARIABLES
-    private String id = MainApp._EMPTY_;
-    private String uid = MainApp._EMPTY_;
-    private String userName = MainApp._EMPTY_;
-    private String sysDate = MainApp._EMPTY_;
-    private String cluster = MainApp._EMPTY_;
-    private String deviceId = MainApp._EMPTY_;
-    private String deviceTag = MainApp._EMPTY_;
-    private String appver = MainApp._EMPTY_;
-    private String endTime = MainApp._EMPTY_;
-    private String iStatus = MainApp._EMPTY_;
-    private String iStatus96x = MainApp._EMPTY_;
-    private String synced = MainApp._EMPTY_;
-    private String syncDate = MainApp._EMPTY_;
+    private String id = _EMPTY_;
+    private String uid = _EMPTY_;
+    private String uuid = _EMPTY_;
+    private String userName = _EMPTY_;
+    private String sysDate = _EMPTY_;
+    private String deviceId = _EMPTY_;
+    private String deviceTag = _EMPTY_;
+    private String appver = _EMPTY_;
+    private String endTime = _EMPTY_;
+    private String iStatus = _EMPTY_;
+    private String iStatus96x = _EMPTY_;
+    private String synced = _EMPTY_;
+    private String syncDate = _EMPTY_;
+    private String districtCode = _EMPTY_;
+    private String tehsilCode = _EMPTY_;
+    private String ucCode = _EMPTY_;
+    private String hfCode = _EMPTY_;
 
 
     // FIELD VARIABLES
-    private String k101 = MainApp._EMPTY_;
-    private String k101a = MainApp._EMPTY_;
-    private String k101ba = MainApp._EMPTY_;
-    private String k101ba03 = MainApp._EMPTY_;
-    private String k101bb = MainApp._EMPTY_;
-    private String k101bb03 = MainApp._EMPTY_;
-    private String k101bc = MainApp._EMPTY_;
-    private String k101bc03 = MainApp._EMPTY_;
-    private String k101bd = MainApp._EMPTY_;
-    private String k101bd03 = MainApp._EMPTY_;
-    private String k101be = MainApp._EMPTY_;
-    private String k101be03 = MainApp._EMPTY_;
-    private String k101bf = MainApp._EMPTY_;
-    private String k101bf03 = MainApp._EMPTY_;
-    private String k101bg = MainApp._EMPTY_;
-    private String k101bg03 = MainApp._EMPTY_;
-    private String k101b96 = MainApp._EMPTY_;
-    private String k101b9603x = MainApp._EMPTY_;
-    private String k101b9604 = MainApp._EMPTY_;
-    private String k102 = MainApp._EMPTY_;
-    private String k10296x = MainApp._EMPTY_;
-    private String k103 = MainApp._EMPTY_;
-    private String k104 = MainApp._EMPTY_;
-    private String k201 = MainApp._EMPTY_;
-    private String k202 = MainApp._EMPTY_;
-    private String k203 = MainApp._EMPTY_;
-    private String k204 = MainApp._EMPTY_;
-    private String k301 = MainApp._EMPTY_;
-    private String k302 = MainApp._EMPTY_;
-    private String k303 = MainApp._EMPTY_;
-    private String k304 = MainApp._EMPTY_;
-    private String k305 = MainApp._EMPTY_;
-    private String k306 = MainApp._EMPTY_;
-    private String k307 = MainApp._EMPTY_;
-    private String k30704x = MainApp._EMPTY_;
-    private String k308 = MainApp._EMPTY_;
-    private String k401 = MainApp._EMPTY_;
-    private String k402 = MainApp._EMPTY_;
-    private String k403 = MainApp._EMPTY_;
-    private String k404 = MainApp._EMPTY_;
-    private String k405 = MainApp._EMPTY_;
-    private String k406 = MainApp._EMPTY_;
-    private String k407 = MainApp._EMPTY_;
-    private String k408 = MainApp._EMPTY_;
-    private String k409 = MainApp._EMPTY_;
-    private String k410 = MainApp._EMPTY_;
-    private String k411 = MainApp._EMPTY_;
-    private String k41101 = MainApp._EMPTY_;
-    private String k41102 = MainApp._EMPTY_;
-    private String k41103 = MainApp._EMPTY_;
-    private String k41201 = MainApp._EMPTY_;
-    private String k41202 = MainApp._EMPTY_;
-    private String k41203 = MainApp._EMPTY_;
-    private String k41204 = MainApp._EMPTY_;
-    private String k41205 = MainApp._EMPTY_;
-    private String k41206 = MainApp._EMPTY_;
-    private String k41207 = MainApp._EMPTY_;
-    private String k41301 = MainApp._EMPTY_;
-    private String k41302 = MainApp._EMPTY_;
-    private String k41303 = MainApp._EMPTY_;
-    private String k414 = MainApp._EMPTY_;
-    private String k41401 = MainApp._EMPTY_;
-    private String k41402 = MainApp._EMPTY_;
-    private String k41403 = MainApp._EMPTY_;
-    private String k41404 = MainApp._EMPTY_;
-    private String k41405 = MainApp._EMPTY_;
-    private String k41406 = MainApp._EMPTY_;
-    private String k41407 = MainApp._EMPTY_;
-    private String k41408 = MainApp._EMPTY_;
-    private String k41409 = MainApp._EMPTY_;
-    private String k415 = MainApp._EMPTY_;
-    private String k416 = MainApp._EMPTY_;
-    private String k417 = MainApp._EMPTY_;
-    private String k41796x = MainApp._EMPTY_;
-    private String k418 = MainApp._EMPTY_;
-    private String k419 = MainApp._EMPTY_;
-    private String k41901 = MainApp._EMPTY_;
-    private String k41902 = MainApp._EMPTY_;
-    private String k41903 = MainApp._EMPTY_;
-    private String k41904 = MainApp._EMPTY_;
-    private String k41905 = MainApp._EMPTY_;
-    private String k41906 = MainApp._EMPTY_;
-    private String k41907 = MainApp._EMPTY_;
-    private String k601 = MainApp._EMPTY_;
-    private String k601dx = MainApp._EMPTY_;
-    private String k601ex = MainApp._EMPTY_;
-    private String k602 = MainApp._EMPTY_;
-    private String k602dx = MainApp._EMPTY_;
-    private String k602ex = MainApp._EMPTY_;
-    private String k603 = MainApp._EMPTY_;
-    private String k603dx = MainApp._EMPTY_;
-    private String k603ex = MainApp._EMPTY_;
-    private String k604 = MainApp._EMPTY_;
-    private String k604dx = MainApp._EMPTY_;
-    private String k604ex = MainApp._EMPTY_;
-    private String k605 = MainApp._EMPTY_;
-    private String k605dx = MainApp._EMPTY_;
-    private String k605ex = MainApp._EMPTY_;
-    private String k606 = MainApp._EMPTY_;
-    private String k606dx = MainApp._EMPTY_;
-    private String k606ex = MainApp._EMPTY_;
-    private String k607 = MainApp._EMPTY_;
-    private String k607dx = MainApp._EMPTY_;
-    private String k607ex = MainApp._EMPTY_;
-    private String k608 = MainApp._EMPTY_;
-    private String k608dx = MainApp._EMPTY_;
-    private String k608ex = MainApp._EMPTY_;
-    private String k609 = MainApp._EMPTY_;
-    private String k609dx = MainApp._EMPTY_;
-    private String k609ex = MainApp._EMPTY_;
-    private String k610 = MainApp._EMPTY_;
-    private String k610dx = MainApp._EMPTY_;
-    private String k610ex = MainApp._EMPTY_;
-    private String k611 = MainApp._EMPTY_;
-    private String k611dx = MainApp._EMPTY_;
-    private String k611ex = MainApp._EMPTY_;
-    private String k612 = MainApp._EMPTY_;
-    private String k612dx = MainApp._EMPTY_;
-    private String k612ex = MainApp._EMPTY_;
-    private String k613 = MainApp._EMPTY_;
-    private String k613dx = MainApp._EMPTY_;
-    private String k613ex = MainApp._EMPTY_;
-    private String k614 = MainApp._EMPTY_;
-    private String k614dx = MainApp._EMPTY_;
-    private String k614ex = MainApp._EMPTY_;
-    private String k615 = MainApp._EMPTY_;
-    private String k615dx = MainApp._EMPTY_;
-    private String k615ex = MainApp._EMPTY_;
-    private String k616 = MainApp._EMPTY_;
-    private String k616dx = MainApp._EMPTY_;
-    private String k616ex = MainApp._EMPTY_;
-    private String k617 = MainApp._EMPTY_;
-    private String k617dx = MainApp._EMPTY_;
-    private String k617ex = MainApp._EMPTY_;
-    private String k618 = MainApp._EMPTY_;
-    private String k618dx = MainApp._EMPTY_;
-    private String k618ex = MainApp._EMPTY_;
-    private String k619 = MainApp._EMPTY_;
-    private String k619dx = MainApp._EMPTY_;
-    private String k619ex = MainApp._EMPTY_;
-    private String k620 = MainApp._EMPTY_;
-    private String k620dx = MainApp._EMPTY_;
-    private String k620ex = MainApp._EMPTY_;
-    private String k621 = MainApp._EMPTY_;
-    private String k621dx = MainApp._EMPTY_;
-    private String k621ex = MainApp._EMPTY_;
-    private String k622 = MainApp._EMPTY_;
-    private String k622dx = MainApp._EMPTY_;
-    private String k622ex = MainApp._EMPTY_;
-    private String k623 = MainApp._EMPTY_;
-    private String k623dx = MainApp._EMPTY_;
-    private String k623ex = MainApp._EMPTY_;
-    private String k624 = MainApp._EMPTY_;
-    private String k624dx = MainApp._EMPTY_;
-    private String k624ex = MainApp._EMPTY_;
-    private String k625 = MainApp._EMPTY_;
-    private String k625dx = MainApp._EMPTY_;
-    private String k625ex = MainApp._EMPTY_;
-    private String k626 = MainApp._EMPTY_;
-    private String k626dx = MainApp._EMPTY_;
-    private String k626ex = MainApp._EMPTY_;
-    private String k627 = MainApp._EMPTY_;
-    private String k627dx = MainApp._EMPTY_;
-    private String k627ex = MainApp._EMPTY_;
-    private String k628 = MainApp._EMPTY_;
-    private String k628dx = MainApp._EMPTY_;
-    private String k628ex = MainApp._EMPTY_;
-    private String k701 = MainApp._EMPTY_;
-    private String k702 = MainApp._EMPTY_;
-    private String k703 = MainApp._EMPTY_;
-    private String k704 = MainApp._EMPTY_;
-    private String k705 = MainApp._EMPTY_;
-    private String k706 = MainApp._EMPTY_;
-    private String k707 = MainApp._EMPTY_;
-    private String k708 = MainApp._EMPTY_;
-    private String k709 = MainApp._EMPTY_;
-    private String k710 = MainApp._EMPTY_;
-    private String k711 = MainApp._EMPTY_;
+    private String k101 = _EMPTY_;
+    private String k101a = _EMPTY_;
+    private String k101ba = _EMPTY_;
+    private String k101ba03 = _EMPTY_;
+    private String k101bb = _EMPTY_;
+    private String k101bb03 = _EMPTY_;
+    private String k101bc = _EMPTY_;
+    private String k101bc03 = _EMPTY_;
+    private String k101bd = _EMPTY_;
+    private String k101bd03 = _EMPTY_;
+    private String k101be = _EMPTY_;
+    private String k101be03 = _EMPTY_;
+    private String k101bf = _EMPTY_;
+    private String k101bf03 = _EMPTY_;
+    private String k101bg = _EMPTY_;
+    private String k101bg03 = _EMPTY_;
+    private String k101b96 = _EMPTY_;
+    private String k101b9603x = _EMPTY_;
+    private String k101b9604 = _EMPTY_;
+    private String k102 = _EMPTY_;
+    private String k10296x = _EMPTY_;
+    private String k103 = _EMPTY_;
+    private String k104 = _EMPTY_;
+    private String k201 = _EMPTY_;
+    private String k202 = _EMPTY_;
+    private String k203 = _EMPTY_;
+    private String k204 = _EMPTY_;
+    private String k301 = _EMPTY_;
+    private String k302 = _EMPTY_;
+    private String k303 = _EMPTY_;
+    private String k304 = _EMPTY_;
+    private String k305 = _EMPTY_;
+    private String k306 = _EMPTY_;
+    private String k307 = _EMPTY_;
+    private String k30704x = _EMPTY_;
+    private String k308 = _EMPTY_;
+    private String k401 = _EMPTY_;
+    private String k402 = _EMPTY_;
+    private String k403 = _EMPTY_;
+    private String k404 = _EMPTY_;
+    private String k405 = _EMPTY_;
+    private String k406 = _EMPTY_;
+    private String k407 = _EMPTY_;
+    private String k408 = _EMPTY_;
+    private String k409 = _EMPTY_;
+    private String k410 = _EMPTY_;
+    private String k411 = _EMPTY_;
+    private String k41101 = _EMPTY_;
+    private String k41102 = _EMPTY_;
+    private String k41103 = _EMPTY_;
+    private String k41201 = _EMPTY_;
+    private String k41202 = _EMPTY_;
+    private String k41203 = _EMPTY_;
+    private String k41204 = _EMPTY_;
+    private String k41205 = _EMPTY_;
+    private String k41206 = _EMPTY_;
+    private String k41207 = _EMPTY_;
+    private String k41301 = _EMPTY_;
+    private String k41302 = _EMPTY_;
+    private String k41303 = _EMPTY_;
+    private String k414 = _EMPTY_;
+    private String k41401 = _EMPTY_;
+    private String k41402 = _EMPTY_;
+    private String k41403 = _EMPTY_;
+    private String k41404 = _EMPTY_;
+    private String k41405 = _EMPTY_;
+    private String k41406 = _EMPTY_;
+    private String k41407 = _EMPTY_;
+    private String k41408 = _EMPTY_;
+    private String k41409 = _EMPTY_;
+    private String k415 = _EMPTY_;
+    private String k416 = _EMPTY_;
+    private String k417 = _EMPTY_;
+    private String k41796x = _EMPTY_;
+    private String k418 = _EMPTY_;
+    private String k419 = _EMPTY_;
+    private String k41901 = _EMPTY_;
+    private String k41902 = _EMPTY_;
+    private String k41903 = _EMPTY_;
+    private String k41904 = _EMPTY_;
+    private String k41905 = _EMPTY_;
+    private String k41906 = _EMPTY_;
+    private String k41907 = _EMPTY_;
+    private String k601 = _EMPTY_;
+    private String k601dx = _EMPTY_;
+    private String k601ex = _EMPTY_;
+    private String k602 = _EMPTY_;
+    private String k602dx = _EMPTY_;
+    private String k602ex = _EMPTY_;
+    private String k603 = _EMPTY_;
+    private String k603dx = _EMPTY_;
+    private String k603ex = _EMPTY_;
+    private String k604 = _EMPTY_;
+    private String k604dx = _EMPTY_;
+    private String k604ex = _EMPTY_;
+    private String k605 = _EMPTY_;
+    private String k605dx = _EMPTY_;
+    private String k605ex = _EMPTY_;
+    private String k606 = _EMPTY_;
+    private String k606dx = _EMPTY_;
+    private String k606ex = _EMPTY_;
+    private String k607 = _EMPTY_;
+    private String k607dx = _EMPTY_;
+    private String k607ex = _EMPTY_;
+    private String k608 = _EMPTY_;
+    private String k608dx = _EMPTY_;
+    private String k608ex = _EMPTY_;
+    private String k609 = _EMPTY_;
+    private String k609dx = _EMPTY_;
+    private String k609ex = _EMPTY_;
+    private String k610 = _EMPTY_;
+    private String k610dx = _EMPTY_;
+    private String k610ex = _EMPTY_;
+    private String k611 = _EMPTY_;
+    private String k611dx = _EMPTY_;
+    private String k611ex = _EMPTY_;
+    private String k612 = _EMPTY_;
+    private String k612dx = _EMPTY_;
+    private String k612ex = _EMPTY_;
+    private String k613 = _EMPTY_;
+    private String k613dx = _EMPTY_;
+    private String k613ex = _EMPTY_;
+    private String k614 = _EMPTY_;
+    private String k614dx = _EMPTY_;
+    private String k614ex = _EMPTY_;
+    private String k615 = _EMPTY_;
+    private String k615dx = _EMPTY_;
+    private String k615ex = _EMPTY_;
+    private String k616 = _EMPTY_;
+    private String k616dx = _EMPTY_;
+    private String k616ex = _EMPTY_;
+    private String k617 = _EMPTY_;
+    private String k617dx = _EMPTY_;
+    private String k617ex = _EMPTY_;
+    private String k618 = _EMPTY_;
+    private String k618dx = _EMPTY_;
+    private String k618ex = _EMPTY_;
+    private String k619 = _EMPTY_;
+    private String k619dx = _EMPTY_;
+    private String k619ex = _EMPTY_;
+    private String k620 = _EMPTY_;
+    private String k620dx = _EMPTY_;
+    private String k620ex = _EMPTY_;
+    private String k621 = _EMPTY_;
+    private String k621dx = _EMPTY_;
+    private String k621ex = _EMPTY_;
+    private String k622 = _EMPTY_;
+    private String k622dx = _EMPTY_;
+    private String k622ex = _EMPTY_;
+    private String k623 = _EMPTY_;
+    private String k623dx = _EMPTY_;
+    private String k623ex = _EMPTY_;
+    private String k624 = _EMPTY_;
+    private String k624dx = _EMPTY_;
+    private String k624ex = _EMPTY_;
+    private String k625 = _EMPTY_;
+    private String k625dx = _EMPTY_;
+    private String k625ex = _EMPTY_;
+    private String k626 = _EMPTY_;
+    private String k626dx = _EMPTY_;
+    private String k626ex = _EMPTY_;
+    private String k627 = _EMPTY_;
+    private String k627dx = _EMPTY_;
+    private String k627ex = _EMPTY_;
+    private String k628 = _EMPTY_;
+    private String k628dx = _EMPTY_;
+    private String k628ex = _EMPTY_;
+    private String k701 = _EMPTY_;
+    private String k702 = _EMPTY_;
+    private String k703 = _EMPTY_;
+    private String k704 = _EMPTY_;
+    private String k705 = _EMPTY_;
+    private String k706 = _EMPTY_;
+    private String k707 = _EMPTY_;
+    private String k708 = _EMPTY_;
+    private String k709 = _EMPTY_;
+    private String k710 = _EMPTY_;
+    private String k711 = _EMPTY_;
 
 
     public ModuleK() {
@@ -237,13 +242,10 @@ public class ModuleK extends BaseObservable implements Observable {
         setAppver(MainApp.versionName + "." + MainApp.versionCode);
         setUserName(MainApp.user.getUserName());
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        /*setProvinceCode(selectedProvince);
-        setDistrictCode(selectedDistrict);
-        setTehsilCode(selectedTehsil);
-        setUcCode(selectedUc);
-        setVillageCode(selectedVillage);
-        setPsuCode(selectedPSU);
-        setHhid(selectedHHID);*/
+        setDistrictCode(MainApp.moduleA.getDistrictCode());
+        setTehsilCode(MainApp.moduleA.getTehsilCode());
+        setUcCode(MainApp.moduleA.getUcCode());
+        setHfCode(MainApp.moduleA.getHfCode());
     }
 
 
@@ -271,14 +273,13 @@ public class ModuleK extends BaseObservable implements Observable {
         this.uid = uid;
     }
 
-    @Bindable
-    public String getCluster() {
-        return cluster;
+
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setCluster(String cluster) {
-        this.cluster = cluster;
-        notifyPropertyChanged(BR.cluster);
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
 
@@ -360,6 +361,42 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setSyncDate(String syncDate) {
         this.syncDate = syncDate;
+    }
+
+
+    public String getDistrictCode() {
+        return districtCode;
+    }
+
+    public void setDistrictCode(String districtCode) {
+        this.districtCode = districtCode;
+    }
+
+
+    public String getTehsilCode() {
+        return tehsilCode;
+    }
+
+    public void setTehsilCode(String tehsilCode) {
+        this.tehsilCode = tehsilCode;
+    }
+
+
+    public String getUcCode() {
+        return ucCode;
+    }
+
+    public void setUcCode(String ucCode) {
+        this.ucCode = ucCode;
+    }
+
+
+    public String getHfCode() {
+        return hfCode;
+    }
+
+    public void setHfCode(String hfCode) {
+        this.hfCode = hfCode;
     }
 
 
@@ -2261,6 +2298,11 @@ public class ModuleK extends BaseObservable implements Observable {
     public ModuleK Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_UUID));
+        this.districtCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_DISTRICT_CODE));
+        this.tehsilCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_TEHSIL_CODE));
+        this.ucCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_UC_CODE));
+        this.hfCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_HF_CODE));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ModuleKTable.COLUMN_DEVICEID));
@@ -2515,6 +2557,11 @@ public class ModuleK extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put(ModuleKTable.COLUMN_ID, this.id);
         json.put(ModuleKTable.COLUMN_UID, this.uid);
+        json.put(ModuleKTable.COLUMN_UUID, this.uuid);
+        json.put(ModuleKTable.COLUMN_DISTRICT_CODE, this.districtCode);
+        json.put(ModuleKTable.COLUMN_TEHSIL_CODE, this.tehsilCode);
+        json.put(ModuleKTable.COLUMN_UC_CODE, this.ucCode);
+        json.put(ModuleKTable.COLUMN_HF_CODE, this.hfCode);
         json.put(ModuleKTable.COLUMN_USERNAME, this.userName);
         json.put(ModuleKTable.COLUMN_SYSDATE, this.sysDate);
         json.put(ModuleKTable.COLUMN_DEVICEID, this.deviceId);
