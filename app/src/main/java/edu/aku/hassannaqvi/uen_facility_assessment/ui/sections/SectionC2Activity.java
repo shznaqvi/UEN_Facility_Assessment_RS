@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.countC;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.staffing;
 
 import android.content.Intent;
@@ -16,12 +17,13 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionC2Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.EndingActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
@@ -38,6 +40,7 @@ public class SectionC2Activity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
+        staffing = new Staffing();
         bi.setForm(staffing);
     }
 
@@ -96,9 +99,22 @@ public class SectionC2Activity extends AppCompatActivity {
     }
 
 
+    public void addMore(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
+        if (!formValidation()) return;
+        if (!insertNewRecord()) return;
+        if (updateDB()) {
+            countC++;
+            finish();
+            startActivity(new Intent(this, SectionC2Activity.class));
+        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+    }
+
+
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 

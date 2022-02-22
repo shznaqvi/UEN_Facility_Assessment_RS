@@ -1,8 +1,17 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleA;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleB;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleC;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleD;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleE;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleF;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleG;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleH;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleI;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleJ;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleK;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +22,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
+import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionMainBinding;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionAActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionBActivity;
@@ -36,13 +45,15 @@ public class SectionMainActivity extends AppCompatActivity {
     //public static String maternalCount = 0, paedsCount = 0;
     public static int countC2 = 0, countI = 0;
     ActivitySectionMainBinding bi;
+    private DatabaseHelper db;
     boolean flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_main);
-        bi.setForm(form);
+        //bi.setForm(form);
+        db = MainApp.appInfo.getDbHelper();
 
 
         /*if (countC2 != 0 && !flag) {
@@ -67,62 +78,60 @@ public class SectionMainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateSections();
+    }
+
     private void updateSections() {
 
         try {
-            if (moduleA != null && !moduleA.getA22().isEmpty()) {
-                bi.checkedB.setVisibility(View.VISIBLE);
-            }
-            if (!form.getsB().isEmpty() && new JSONObject(form.getsB()).has("b05")) {
-                //bi.formB.setEnabled(false);
-                bi.checkedB.setVisibility(View.VISIBLE);
-            }
+            if (!moduleA.getA22().isEmpty()) bi.checkedA.setVisibility(View.VISIBLE);
 
-            if ((!form.getsC().isEmpty() && new JSONObject(form.getsC()).has("c01le")) || form.getA10().equals("2")) {
-                //bi.formC.setEnabled(false);
-                bi.checkedC.setVisibility(View.VISIBLE);
+            moduleB = db.getModuleBByUUid();
+            if (!moduleB.getB05().isEmpty()) bi.checkedB.setVisibility(View.VISIBLE);
+
+            moduleC = db.getModuleCByUUid();
+            if (!moduleC.getC01le().isEmpty()) bi.checkedC.setVisibility(View.VISIBLE);
+            if (moduleA.getA10().equals("2")) {
+                bi.formC.setEnabled(false);
+                bi.formF.setEnabled(false);
+                bi.formG.setEnabled(false);
                 flag = true;
             }
 
-            if (!form.getsD().isEmpty() && new JSONObject(form.getsD()).has("d0810b")) {
-                //bi.formD.setEnabled(false);
-                bi.checkedD.setVisibility(View.VISIBLE);
-            }
+            moduleD = db.getModuleDByUUid();
+            if (!moduleD.getD0801j0fq().isEmpty()) bi.checkedD.setVisibility(View.VISIBLE);
 
-            if (!form.getsE().isEmpty() && new JSONObject(form.getsE()).has("e0814")) {
-                //bi.formE.setEnabled(false);
-                bi.checkedE.setVisibility(View.VISIBLE);
-            }
+            moduleE = db.getModuleEByUUid();
+            if (!moduleE.getE0814().isEmpty()) bi.checkedE.setVisibility(View.VISIBLE);
 
-            if ((!form.getsF().isEmpty() && new JSONObject(form.getsF()).has("f0701aad0fyx")) || form.getA10().equals("2")) {
-                //bi.formF.setEnabled(false);
-                bi.checkedF.setVisibility(View.VISIBLE);
-            }
+            moduleF = db.getModuleFByUUid();
+            if (!moduleF.getF0701aad0fqx().isEmpty()) bi.checkedF.setVisibility(View.VISIBLE);
 
-            if ((!form.getsG().isEmpty() && new JSONObject(form.getsG()).has("g4406cm")) || form.getA10().equals("2")) {
-                //bi.formG.setEnabled(false);
-                bi.checkedG.setVisibility(View.VISIBLE);
-            }
+            moduleG = db.getModuleGByUUid();
+            if (!moduleG.getG0403270sm().isEmpty()) bi.checkedG.setVisibility(View.VISIBLE);
 
-            if (!form.getsH().isEmpty() && (new JSONObject(form.getsH()).has("h1605xx") || new JSONObject(form.getsH()).has("h1501z0dn"))) {
+            moduleH = db.getModuleHByUUid();
+            if (!moduleH.getH1704().isEmpty() || !moduleH.getH1605xxx().isEmpty() || !moduleH.getH1501z0dy().isEmpty())
+                bi.checkedH.setVisibility(View.VISIBLE);
+
+            moduleI = db.getModuleIByUUid();
+            if (!moduleI.getI011696x().isEmpty()) bi.checkedI.setVisibility(View.VISIBLE);
+
+            moduleJ = db.getModuleJByUUid();
+            if (!moduleJ.getJ0901fe().isEmpty()) bi.checkedJ.setVisibility(View.VISIBLE);
+
+            moduleK = db.getModuleKByUUid();
+            if (!moduleK.getK711().isEmpty()) bi.checkedK.setVisibility(View.VISIBLE);
+
+
+            /*if (!form.getsH().isEmpty() && (new JSONObject(form.getsH()).has("h1605xx") || new JSONObject(form.getsH()).has("h1501z0dn"))) {
                 //bi.formH.setEnabled(false);
                 bi.checkedH.setVisibility(View.VISIBLE);
-            }
+            }*/
 
-            if (!form.getsI().equals("")) {
-                //bi.formI.setEnabled(false);
-                bi.checkedI.setVisibility(View.VISIBLE);
-            }
-
-            if (!form.getsJ().isEmpty() && new JSONObject(form.getsJ()).has("j0901fxx")) {
-                bi.formJ.setEnabled(false);
-                bi.checkedJ.setVisibility(View.VISIBLE);
-            }
-
-            if (!form.getsK().isEmpty() && new JSONObject(form.getsK()).has("k711")) {
-                //bi.formK.setEnabled(false);
-                bi.checkedK.setVisibility(View.VISIBLE);
-            }
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -203,14 +212,14 @@ public class SectionMainActivity extends AppCompatActivity {
                     oF = new Intent(this, SectionG1Activity.class);
                     break;
                 case R.id.formH:
-                    oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH2Activity.class);
+                    oF = new Intent(this, moduleA.getA10().equals("2") ? SectionH16Activity.class : SectionH2Activity.class);
                     break;
                 case R.id.formI:
                     countI = 0;
                     oF = new Intent(this, SectionI1Activity.class);
                     break;
                 case R.id.formJ:
-                    if (form.getA10().equals("1")) {
+                    if (moduleA.getA10().equals("1")) {
                         oF = new Intent(this, SectionJ1Activity.class);
                     } /*else {
                         if (form.getDistrictType().equals("2") || form.getDistrictType().equals("4")) {

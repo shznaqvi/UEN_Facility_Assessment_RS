@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.countC;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleC;
 
 import android.content.Intent;
@@ -16,12 +17,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionC1Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.EndingActivity;
 
 
 public class SectionC1Activity extends AppCompatActivity {
@@ -38,6 +39,7 @@ public class SectionC1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleC);
+        countC = 0;
     }
 
 
@@ -98,7 +100,7 @@ public class SectionC1Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
@@ -107,10 +109,10 @@ public class SectionC1Activity extends AppCompatActivity {
     }
 
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
 
 }

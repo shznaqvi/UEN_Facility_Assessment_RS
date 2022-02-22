@@ -1,6 +1,10 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleA;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedDistrict;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedHf;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedTehsil;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedUc;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -84,8 +88,8 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.btnContinue.setEnabled(false);
 
                 if (position == 0) return;
-
-                Collection<HealthFacilities> tehs = db.getTehsilByDist(districtCodes.get(position));
+                selectedDistrict = districtCodes.get(position);
+                Collection<HealthFacilities> tehs = db.getTehsilByDist(selectedDistrict);
                 tehsilNames = new ArrayList<>();
                 tehsilCodes = new ArrayList<>();
                 tehsilNames.add("...");
@@ -115,8 +119,8 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.btnContinue.setEnabled(false);
 
                 if (position == 0) return;
-
-                Collection<HealthFacilities> ucs = db.getUcsByTehsil(tehsilCodes.get(position));
+                selectedTehsil = tehsilCodes.get(position);
+                Collection<HealthFacilities> ucs = db.getUcsByTehsil(selectedTehsil);
                 ucNames = new ArrayList<>();
                 ucCodes = new ArrayList<>();
                 ucNames.add("...");
@@ -143,7 +147,8 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
                 if (position == 0) return;
-                Collection<HealthFacilities> hfs = db.getHFsByUc(ucCodes.get(position));
+                selectedUc = ucCodes.get(position);
+                Collection<HealthFacilities> hfs = db.getHFsByUc(selectedUc);
                 hfNames = new ArrayList<>();
                 hfCodes = new ArrayList<>();
                 hfNames.add("...");
@@ -167,6 +172,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
                 if (position == 0) return;
+                selectedHf = hfCodes.get(position);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
                 bi.btnContinue.setEnabled(true);
             }
@@ -182,13 +188,15 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!hhExists())
-            saveDraftForm();
-        if (moduleA.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+        if (!hhExists()) {
+            //saveDraftForm();
+            finish();
+            startActivity(new Intent(this, SectionMainActivity.class));
+        } else if (moduleA.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
-            startActivity(new Intent(this, SectionMainActivity.class));
             finish();
+            startActivity(new Intent(this, SectionMainActivity.class));
         }
     }
 
@@ -202,7 +210,7 @@ public class IdentificationActivity extends AppCompatActivity {
     private boolean hhExists() {
         moduleA = new ModuleA();
         try {
-            moduleA = db.getFormByHfCode(hfCodes.get(bi.a13.getSelectedItemPosition()));
+            moduleA = db.getFormByHfCode(selectedHf);
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();

@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,13 +9,16 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleB" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
+
 
 
         <!-- CUSTOM TOOLBAR -->
@@ -32,15 +36,18 @@
             app:title="@string/modbtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- b01  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -80,7 +87,7 @@
                             <RadioButton
                                 android:id="@+id/b01a"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.b01.equals(`1`)}"
                                 android:onClick="@{()->form.setB01(`1`)}"
@@ -89,14 +96,18 @@
                             <RadioButton
                                 android:id="@+id/b01b"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.b01.equals(`2`)}"
                                 android:onClick="@{()->form.setB01(`2`)}"
                                 android:text="@string/b01b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b02  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -136,7 +147,7 @@
                             <RadioButton
                                 android:id="@+id/b02a"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.b02.equals(`1`)}"
                                 android:onClick="@{()->form.setB02(`1`)}"
@@ -145,14 +156,18 @@
                             <RadioButton
                                 android:id="@+id/b02b"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.b02.equals(`2`)}"
                                 android:onClick="@{()->form.setB02(`2`)}"
                                 android:text="@string/b02b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b03  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -186,16 +201,20 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/b03"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/b03"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:hint="###"
                             android:inputType="number"
                             android:maxLength="3"
                             android:text="@={form.b03}"
                             app:maxValue="400"
                             app:minValue="0"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- b04  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -229,8 +248,9 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/b04"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/b04"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:hint="###"
                             android:inputType="number"
                             android:maxLength="3"
                             android:text="@={form.b04}"
@@ -275,8 +295,9 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/b05"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/b05"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:hint="###"
                             android:inputType="number"
                             android:maxLength="3"
                             android:text="@={form.b05}"

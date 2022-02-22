@@ -2,6 +2,10 @@ package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedDistrict;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedHf;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedTehsil;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedUc;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -124,10 +128,11 @@ public class ModuleC extends BaseObservable implements Observable {
         setAppver(MainApp.versionName + "." + MainApp.versionCode);
         setUserName(MainApp.user.getUserName());
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setDistrictCode(MainApp.moduleA.getDistrictCode());
-        setTehsilCode(MainApp.moduleA.getTehsilCode());
-        setUcCode(MainApp.moduleA.getUcCode());
-        setHfCode(MainApp.moduleA.getHfCode());
+        setUuid(MainApp.moduleA.getUid());
+        setDistrictCode(selectedDistrict);
+        setTehsilCode(selectedTehsil);
+        setUcCode(selectedUc);
+        setHfCode(selectedHf);
     }
 
 

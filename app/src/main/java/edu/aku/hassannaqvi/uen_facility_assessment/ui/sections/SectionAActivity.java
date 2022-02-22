@@ -16,12 +16,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionABinding;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.EndingActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
@@ -35,10 +35,10 @@ public class SectionAActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a);
-        db = MainApp.appInfo.dbHelper;
-        setSupportActionBar(bi.toolbar);
-        if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleA);
+        setSupportActionBar(bi.toolbar);
+        db = MainApp.appInfo.dbHelper;
+        if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
 
@@ -50,7 +50,7 @@ public class SectionAActivity extends AppCompatActivity {
             rowId = db.addModuleA(moduleA);
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "JSONException(moduleA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
             return false;
         }
         moduleA.setId(String.valueOf(rowId));
@@ -67,8 +67,6 @@ public class SectionAActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
-
-        db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
             updcount = db.updatesModuleAColumn(TableContracts.ModuleATable.COLUMN_SA, moduleA.sAtoString());
@@ -99,7 +97,7 @@ public class SectionAActivity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
@@ -108,10 +106,10 @@ public class SectionAActivity extends AppCompatActivity {
     }
 
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
 
 }

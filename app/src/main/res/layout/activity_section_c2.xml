@@ -77,7 +77,7 @@
                         <EditText
                             android:id="@+id/c021a"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="52dp"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/c021a"
                             android:text="@={form.c021a}" />
@@ -172,15 +172,19 @@
                             <EditText
                                 android:id="@+id/c021bfx"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c021bf"
                                 android:tag="c021bf"
                                 android:text="@={form.c021bfx}"
                                 android:visibility="@{form.c021b.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c021c  Input   -->
                 <androidx.cardview.widget.CardView
@@ -214,12 +218,15 @@
                         <EditText
                             android:id="@+id/c021c"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="52dp"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/c021c"
                             android:text="@={form.c021c}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c021d  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -314,15 +321,19 @@
                             <EditText
                                 android:id="@+id/c021dgx"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/c021dg"
                                 android:tag="c021dg"
                                 android:text="@={form.c021dgx}"
                                 android:visibility="@{form.c021d.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c021e  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -356,8 +367,9 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/c021e"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/c021e"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:hint="###"
                             android:inputType="number"
                             android:maxLength="3"
                             android:text="@={form.c021e}"
@@ -378,6 +390,17 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
                     android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnAdd"
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/yellow"
+                        android:elevation="20dp"
+                        android:onClick="addMore"
+                        android:text="Add Staff"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_End"

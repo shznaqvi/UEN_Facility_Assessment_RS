@@ -65,6 +65,10 @@ public class MainApp extends Application {
     public static String[] downloadData;
     public static Form form;
     public static ModuleA moduleA;
+    public static String selectedDistrict = "";
+    public static String selectedTehsil = "";
+    public static String selectedUc = "";
+    public static String selectedHf = "";
     public static ModuleB moduleB;
     public static ModuleC moduleC;
     public static Staffing staffing;
@@ -86,15 +90,10 @@ public class MainApp extends Application {
     public static String deviceid;
     public static int versionCode = BuildConfig.VERSION_CODE;
     public static String versionName = BuildConfig.VERSION_NAME;
-
     public static boolean permissionCheck = false;
-    public static int idType = 0;
-
-    public static int lhwHHCount = 0;
-    public static int memberCount = 0;
-
+    public static int countC = 0;
+    public static int countI = 0;
     public static boolean superuser = false;
-
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.

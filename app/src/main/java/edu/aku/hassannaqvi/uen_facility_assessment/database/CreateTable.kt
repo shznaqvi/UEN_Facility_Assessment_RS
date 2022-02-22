@@ -46,6 +46,7 @@ object CreateTable {
             + ModuleATable.COLUMN_UID + " TEXT,"
             + ModuleATable.COLUMN_DISTRICT_CODE + " TEXT,"
             + ModuleATable.COLUMN_TEHSIL_CODE + " TEXT,"
+            + ModuleATable.COLUMN_UC_CODE + " TEXT,"
             + ModuleATable.COLUMN_HF_CODE + " TEXT,"
             + ModuleATable.COLUMN_USERNAME + " TEXT,"
             + ModuleATable.COLUMN_SYSDATE + " TEXT,"

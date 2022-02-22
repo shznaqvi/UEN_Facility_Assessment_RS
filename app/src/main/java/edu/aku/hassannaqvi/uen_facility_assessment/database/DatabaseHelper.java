@@ -201,7 +201,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
-        newRowId = db.insert(
+        newRowId = db.insertOrThrow(
                 ModuleATable.TABLE_NAME,
                 ModuleATable.COLUMN_NAME_NULLABLE,
                 values);
@@ -2045,6 +2045,318 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allHFs;
     }
 
+
+    //GET MODULEB By UUID
+    public ModuleB getModuleBByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleBTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleBTable.COLUMN_ID + " ASC";
+        ModuleB modb = new ModuleB();
+        c = db.query(
+                ModuleBTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modb = new ModuleB().Hydrate(c);
+        }
+        db.close();
+        return modb;
+    }
+
+    //GET MODULEC By UUID
+    public ModuleC getModuleCByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleCTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleCTable.COLUMN_ID + " ASC";
+        ModuleC modc = new ModuleC();
+        c = db.query(
+                ModuleCTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modc = new ModuleC().Hydrate(c);
+        }
+        db.close();
+        return modc;
+    }
+
+    //GET MODULED By UUID
+    public ModuleD getModuleDByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleDTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleDTable.COLUMN_ID + " ASC";
+        ModuleD modd = new ModuleD();
+        c = db.query(
+                ModuleDTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modd = new ModuleD().Hydrate(c);
+        }
+        db.close();
+        return modd;
+    }
+
+    //GET MODULEE By UUID
+    public ModuleE getModuleEByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleETable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleETable.COLUMN_ID + " ASC";
+        ModuleE mode = new ModuleE();
+        c = db.query(
+                ModuleETable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            mode = new ModuleE().Hydrate(c);
+        }
+        db.close();
+        return mode;
+    }
+
+    //GET MODULEF By UUID
+    public ModuleF getModuleFByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleFTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleFTable.COLUMN_ID + " ASC";
+        ModuleF modf = new ModuleF();
+        c = db.query(
+                ModuleFTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modf = new ModuleF().Hydrate(c);
+        }
+        db.close();
+        return modf;
+    }
+
+    //GET MODULEG By UUID
+    public ModuleG getModuleGByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleGTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleGTable.COLUMN_ID + " ASC";
+        ModuleG modg = new ModuleG();
+        c = db.query(
+                ModuleGTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modg = new ModuleG().Hydrate(c);
+        }
+        db.close();
+        return modg;
+    }
+
+    //GET MODULEH By UUID
+    public ModuleH getModuleHByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleHTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleHTable.COLUMN_ID + " ASC";
+        ModuleH modh = new ModuleH();
+        c = db.query(
+                ModuleHTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modh = new ModuleH().Hydrate(c);
+        }
+        db.close();
+        return modh;
+    }
+
+    //GET MODULEI By UUID
+    public ModuleI getModuleIByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleITable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleITable.COLUMN_ID + " ASC";
+        ModuleI modi = new ModuleI();
+        c = db.query(
+                ModuleITable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modi = new ModuleI().Hydrate(c);
+        }
+        db.close();
+        return modi;
+    }
+
+    //GET MODULEJ By UUID
+    public ModuleJ getModuleJByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleJTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleJTable.COLUMN_ID + " ASC";
+        ModuleJ modj = new ModuleJ();
+        c = db.query(
+                ModuleJTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modj = new ModuleJ().Hydrate(c);
+        }
+        db.close();
+        return modj;
+    }
+
+    //GET MODULEK By UUID
+    public ModuleK getModuleKByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleKTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleKTable.COLUMN_ID + " ASC";
+        ModuleK modk = new ModuleK();
+        c = db.query(
+                ModuleKTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modk = new ModuleK().Hydrate(c);
+        }
+        db.close();
+        return modk;
+    }
+
+    //GET STAFFING By UUID
+    /*public Staffing getStaffingByFMID(String fmuid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = StaffingTable.COLUMN_UUID + "=? AND " +
+                StaffingTable.COLUMN_FMUID + "=?";
+        String[] whereArgs = {MainApp.moduleA.getUid(), fmuid};
+        String groupBy = null;
+        String having = null;
+        String orderBy = StaffingTable.COLUMN_ID + " ASC";
+        Staffing staf = new Staffing();  // Pregnancies can never be null.
+
+        c = db.query(
+                StaffingTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                   // The sort order
+        );
+        while (c.moveToNext()) {
+            staf = new Staffing().Hydrate(c);
+        }
+        db.close();
+        return staf;
+    }*/
+
+
     public Collection<HealthFacilities> getHealthFacilityByDist(String distCode) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -2074,29 +2386,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public ModuleA getFormByHfCode(String hfCode) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
+        Cursor c = null;
+        Boolean distinct = false;
+        String tableName = ModuleATable.TABLE_NAME;
         String[] columns = null;
-        String whereClause;
-        whereClause = ModuleATable.COLUMN_HF_CODE + "=?";
+        String whereClause = ModuleATable.COLUMN_HF_CODE + "= ? ";
         String[] whereArgs = {hfCode};
         String groupBy = null;
         String having = null;
-        String orderBy = ModuleATable.COLUMN_ID + " ASC";
-        ModuleA moda = null;
+        String orderBy = ModuleATable.COLUMN_SYSDATE + " ASC";
+        String limitRows = "1";
+
         c = db.query(
-                ModuleATable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
+                distinct,       // Distinct values
+                tableName,      // The table to query
+                columns,        // The columns to return
+                whereClause,    // The columns for the WHERE clause
+                whereArgs,      // The values for the WHERE clause
+                groupBy,        // don't group the rows
+                having,         // don't filter by row groups
+                orderBy,
+                limitRows
         );
+
+        ModuleA moda = new ModuleA();
         while (c.moveToNext()) {
-            moda = new ModuleA().Hydrate(c);
+            moda = (new ModuleA().Hydrate(c));
         }
+
+        c.close();
         db.close();
         return moda;
+
     }
 
     public Form getFormByClusterHHNo(String cluster_no, String hh_no) throws JSONException {
