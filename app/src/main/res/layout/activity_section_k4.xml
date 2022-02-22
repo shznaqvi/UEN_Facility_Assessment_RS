@@ -709,470 +709,504 @@
                     android:orientation="vertical"
                     android:visibility="@{form.k410.equals(`2`) ? View.GONE : View.VISIBLE}">
 
-                <!-- k411  CheckBox   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVk411"
-                    style="@style/cardView">
+                    <!-- k411  CheckBox   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVk411"
+                        style="@style/cardView">
 
-                    <LinearLayout
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_k411" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/k411" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/k411check"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:tag="0">
+
+                                <CheckBox
+                                    android:id="@+id/k41101"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41101.equals(`1`)}"
+                                    android:onClick="@{()->form.setK41101(form.k41101.equals(`1`)?``:`1`)}"
+                                    android:text="@string/k41101" />
+
+                                <CheckBox
+                                    android:id="@+id/k41102"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41102.equals(`2`)}"
+                                    android:onClick="@{()->form.setK41102(form.k41102.equals(`2`)?``:`2`)}"
+                                    android:text="@string/k41102" />
+
+                                <CheckBox
+                                    android:id="@+id/k41103"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41103.equals(`3`)}"
+                                    android:onClick="@{()->form.setK41103(form.k41103.equals(`3`)?``:`3`)}"
+                                    android:text="@string/k41103" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- k412  Title   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVk412"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_k412" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/k412" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/k41201" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/k41202" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="@string/k41203" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="@string/k41204" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="@string/k41205" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="@string/k41206" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="@string/k41207" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41201"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41201}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41202"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41202}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41203"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41203}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41204"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41204}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41205"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41205}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41206"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41206}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41207"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41207}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <!-- k412t  Title   -->
+                    <TextView
+                        style="@style/info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:text="@string/k412t" />
+
+
+                    <!-- k413  Title   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVk413"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_k411" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/k411" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/k411check"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
-
-                            <CheckBox
-                                android:id="@+id/k41101"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.k41101.equals(`1`)}"
-                                android:onClick="@{()->form.setK41101(form.k41101.equals(`1`)?``:`1`)}"
-                                android:text="@string/k41101" />
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                            <CheckBox
-                                android:id="@+id/k41102"
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_k413" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/k413" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.k41102.equals(`2`)}"
-                                android:onClick="@{()->form.setK41102(form.k41102.equals(`2`)?``:`2`)}"
-                                android:text="@string/k41102" />
+                                android:orientation="horizontal">
 
-                            <CheckBox
-                                android:id="@+id/k41103"
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/k41301" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41301"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41301}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.k41103.equals(`3`)}"
-                                android:onClick="@{()->form.setK41103(form.k41103.equals(`3`)?``:`3`)}"
-                                android:text="@string/k41103" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                                android:orientation="horizontal">
 
-                <!-- k412  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVk412"
-                    style="@style/cardView">
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/k41302" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41302"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41302}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_k412" />
-
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/k412" />
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/textView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/k41303" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/k41303"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:hint="#####"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:text="@={form.k41303}"
+                                    app:maxValue="15000"
+                                    app:minValue="0"
+                                    app:type="range" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                    </androidx.cardview.widget.CardView>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/k41201" />
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/k41202" />
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/k41203" />
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/k41204" />
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/k41205" />
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/k41206" />
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/k41207" />
-
-                        </LinearLayout>
+                    <!-- k414  CheckBox   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVk414"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/k41201"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="#####"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                android:text="@={form.k41201}"
-                                app:maxValue="15000"
-                                app:minValue="0"
-                                app:type="range" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/k41202"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="#####"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                android:text="@={form.k41202}"
-                                app:maxValue="15000"
-                                app:minValue="0"
-                                app:type="range" />
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_k414" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/k41203"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="#####"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                android:text="@={form.k41203}"
-                                app:maxValue="15000"
-                                app:minValue="0"
-                                app:type="range" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/k414" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/k41204"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="#####"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                android:text="@={form.k41204}"
-                                app:maxValue="15000"
-                                app:minValue="0"
-                                app:type="range" />
+                            </LinearLayout>
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/k41205"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="#####"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                android:text="@={form.k41205}"
-                                app:maxValue="15000"
-                                app:minValue="0"
-                                app:type="range" />
+                            <LinearLayout
+                                android:id="@+id/k414check"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:tag="0">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/k41206"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="#####"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                android:text="@={form.k41206}"
-                                app:maxValue="15000"
-                                app:minValue="0"
-                                app:type="range" />
+                                <CheckBox
+                                    android:id="@+id/k41401"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41401.equals(`1`)}"
+                                    android:onClick="@{()->form.setK41401(form.k41401.equals(`1`)?``:`1`)}"
+                                    android:text="@string/k41401" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/k41207"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="#####"
-                                android:inputType="number"
-                                android:maxLength="5"
-                                android:text="@={form.k41207}"
-                                app:maxValue="15000"
-                                app:minValue="0"
-                                app:type="range" />
+                                <CheckBox
+                                    android:id="@+id/k41402"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41402.equals(`2`)}"
+                                    android:onClick="@{()->form.setK41402(form.k41402.equals(`2`)?``:`2`)}"
+                                    android:text="@string/k41402" />
 
+                                <CheckBox
+                                    android:id="@+id/k41403"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41403.equals(`3`)}"
+                                    android:onClick="@{()->form.setK41403(form.k41403.equals(`3`)?``:`3`)}"
+                                    android:text="@string/k41403" />
+
+                                <CheckBox
+                                    android:id="@+id/k41404"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41404.equals(`4`)}"
+                                    android:onClick="@{()->form.setK41404(form.k41404.equals(`4`)?``:`4`)}"
+                                    android:text="@string/k41404" />
+
+                                <CheckBox
+                                    android:id="@+id/k41405"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41405.equals(`5`)}"
+                                    android:onClick="@{()->form.setK41405(form.k41405.equals(`5`)?``:`5`)}"
+                                    android:text="@string/k41405" />
+
+                                <CheckBox
+                                    android:id="@+id/k41406"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41406.equals(`6`)}"
+                                    android:onClick="@{()->form.setK41406(form.k41406.equals(`6`)?``:`6`)}"
+                                    android:text="@string/k41406" />
+
+                                <CheckBox
+                                    android:id="@+id/k41407"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41407.equals(`7`)}"
+                                    android:onClick="@{()->form.setK41407(form.k41407.equals(`7`)?``:`7`)}"
+                                    android:text="@string/k41407" />
+
+                                <CheckBox
+                                    android:id="@+id/k41408"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41408.equals(`8`)}"
+                                    android:onClick="@{()->form.setK41408(form.k41408.equals(`8`)?``:`8`)}"
+                                    android:text="@string/k41408" />
+
+                                <CheckBox
+                                    android:id="@+id/k41409"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.k41409.equals(`9`)}"
+                                    android:onClick="@{()->form.setK41409(form.k41409.equals(`9`)?``:`9`)}"
+                                    android:text="@string/k41409" />
+                            </LinearLayout>
                         </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- k412t  Title   -->
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/k412t" />
-
-                <!-- k413  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVk413"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_k413" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/k413" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/k41301" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/k41301"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/k41301"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            android:text="@={form.k41301}"
-                            app:maxValue="15000"
-                            app:minValue="0"
-                            app:type="range" />
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/k41302" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/k41302"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/k41302"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            android:text="@={form.k41302}"
-                            app:maxValue="15000"
-                            app:minValue="0"
-                            app:type="range" />
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/k41303" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/k41303"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/k41303"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            android:text="@={form.k41303}"
-                            app:maxValue="15000"
-                            app:minValue="0"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- k414  CheckBox   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVk414"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_k414" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/k414" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/k414check"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:tag="0">
-
-                            <CheckBox
-                                android:id="@+id/k41401"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41401.equals(`1`)}"
-                                android:onClick="@{()->form.setK41401(form.k41401.equals(`1`)?``:`1`)}"
-                                android:text="@string/k41401" />
-
-                            <CheckBox
-                                android:id="@+id/k41402"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41402.equals(`2`)}"
-                                android:onClick="@{()->form.setK41402(form.k41402.equals(`2`)?``:`2`)}"
-                                android:text="@string/k41402" />
-
-                            <CheckBox
-                                android:id="@+id/k41403"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41403.equals(`3`)}"
-                                android:onClick="@{()->form.setK41403(form.k41403.equals(`3`)?``:`3`)}"
-                                android:text="@string/k41403" />
-
-                            <CheckBox
-                                android:id="@+id/k41404"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41404.equals(`4`)}"
-                                android:onClick="@{()->form.setK41404(form.k41404.equals(`4`)?``:`4`)}"
-                                android:text="@string/k41404" />
-
-                            <CheckBox
-                                android:id="@+id/k41405"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41405.equals(`5`)}"
-                                android:onClick="@{()->form.setK41405(form.k41405.equals(`5`)?``:`5`)}"
-                                android:text="@string/k41405" />
-
-                            <CheckBox
-                                android:id="@+id/k41406"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41406.equals(`6`)}"
-                                android:onClick="@{()->form.setK41406(form.k41406.equals(`6`)?``:`6`)}"
-                                android:text="@string/k41406" />
-
-                            <CheckBox
-                                android:id="@+id/k41407"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41407.equals(`7`)}"
-                                android:onClick="@{()->form.setK41407(form.k41407.equals(`7`)?``:`7`)}"
-                                android:text="@string/k41407" />
-
-                            <CheckBox
-                                android:id="@+id/k41408"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41408.equals(`8`)}"
-                                android:onClick="@{()->form.setK41408(form.k41408.equals(`8`)?``:`8`)}"
-                                android:text="@string/k41408" />
-
-                            <CheckBox
-                                android:id="@+id/k41409"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.k41409.equals(`9`)}"
-                                android:onClick="@{()->form.setK41409(form.k41409.equals(`9`)?``:`9`)}"
-                                android:text="@string/k41409" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
