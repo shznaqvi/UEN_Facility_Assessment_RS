@@ -14,7 +14,10 @@ object CreateTable {
             + FormsTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FormsTable.COLUMN_PROJECT_NAME + " TEXT,"
             + FormsTable.COLUMN_UID + " TEXT,"
-
+            + FormsTable.COLUMN_DISTRICT_CODE + " TEXT,"
+            + FormsTable.COLUMN_TEHSIL_CODE + " TEXT,"
+            + FormsTable.COLUMN_UC_CODE + " TEXT,"
+            + FormsTable.COLUMN_HF_CODE + " TEXT,"
             + FormsTable.COLUMN_USERNAME + " TEXT,"
             + FormsTable.COLUMN_SYSDATE + " TEXT,"
             + FormsTable.COLUMN_ISTATUS + " TEXT,"
