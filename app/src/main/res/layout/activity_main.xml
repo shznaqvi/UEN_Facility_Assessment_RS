@@ -22,13 +22,13 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:textAlignment="center"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:menu="@menu/item_menu"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/app_name"
-            app:titleTextColor="@color/colorPrimary" />
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
         <ImageView
@@ -84,6 +84,7 @@
                                 android:background="@color/white"
                                 android:drawableStart="@drawable/new_form"
                                 android:drawablePadding="12dp"
+                                android:includeFontPadding="false"
                                 android:gravity="center_vertical"
                                 android:minWidth="460dp"
                                 android:text="Open Household Form"
@@ -96,7 +97,8 @@
                                 android:layout_marginStart="36dp"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:text="Open to enter household Form"
-                                android:textColor="@color/gray"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/grayLight"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -422,7 +424,7 @@
                 android:radius="10dp"
                 android:text="MAIN SCREEN"
                 android:textColor="@color/white"
-                android:textSize="32dp"
+                android:textSize="22dp"
                 android:textStyle="bold" />
 
 
