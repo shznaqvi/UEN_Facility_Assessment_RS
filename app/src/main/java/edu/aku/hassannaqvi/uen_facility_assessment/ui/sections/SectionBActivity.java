@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleB;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +18,6 @@ import org.json.JSONException;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleBTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionBBinding;
@@ -39,31 +38,33 @@ public class SectionBActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
-        bi.setForm(moduleB);
+        bi.setForm(form);
     }
 
 
+/*
     private boolean insertNewRecord() {
-        if (!moduleB.getUid().equals("") || MainApp.superuser) return true;
-        moduleB.populateMeta();
+        if (!form.getUid().equals("") || MainApp.superuser) return true;
+        form.populateMeta();
         long rowId = 0;
         try {
-            rowId = db.addModuleB(moduleB);
+            rowId = db.addForm(form);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
-        moduleB.setId(String.valueOf(rowId));
+        form.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            moduleB.setUid(moduleB.getDeviceId() + moduleB.getId());
-            db.updatesModuleBColumn(TableContracts.ModuleBTable.COLUMN_UID, moduleB.getUid());
+            form.setUid(form.getDeviceId() + form.getId());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
     }
+*/
 
 
     private boolean updateDB() {
@@ -72,7 +73,7 @@ public class SectionBActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesModuleBColumn(ModuleBTable.COLUMN_SB, moduleB.sBtoString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SB, form.sBtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -90,7 +91,7 @@ public class SectionBActivity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        // if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));

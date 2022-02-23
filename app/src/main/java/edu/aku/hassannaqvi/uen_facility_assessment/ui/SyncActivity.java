@@ -138,22 +138,22 @@ public class SyncActivity extends AppCompatActivity {
                 uploadData.clear();
 
                 // Upload ModuleA
-                uploadTables.add(new SyncModel(TableContracts.ModuleATable.TABLE_NAME));
+                uploadTables.add(new SyncModel(TableContracts.FormsTable.TABLE_NAME));
                 try {
-                    uploadData.add(db.getUnsyncedModuleA());
+                    uploadData.add(db.getUnsyncedForms());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(this, "JSONException(ModuleA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
-                // Upload ModuleB
+               /* // Upload ModuleB
                 uploadTables.add(new SyncModel(TableContracts.ModuleBTable.TABLE_NAME));
                 try {
                     uploadData.add(db.getUnsyncedModuleB());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(this, "JSONException(ModuleB): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+                }*/
 
                 // Upload ModuleC
                 uploadTables.add(new SyncModel(TableContracts.ModuleCTable.TABLE_NAME));

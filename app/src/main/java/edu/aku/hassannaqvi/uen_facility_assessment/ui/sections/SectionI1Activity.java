@@ -56,7 +56,7 @@ public class SectionI1Activity extends AppCompatActivity {
         moduleI.setId(String.valueOf(rowId));
         if (rowId > 0) {
             moduleI.setUid(moduleI.getDeviceId() + moduleI.getId());
-            db.updatesModuleAColumn(TableContracts.ModuleATable.COLUMN_UID, moduleI.getUid());
+            db.updatesModuleIColumn(TableContracts.ModuleITable.COLUMN_UID, moduleI.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();

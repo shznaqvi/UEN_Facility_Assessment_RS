@@ -7,17 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.json.JSONException;
 
 import java.util.Collections;
 import java.util.List;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
-import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
 
@@ -144,13 +140,13 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     }
 
     private void editHousehold(int position) {
-        MainApp.form = new Form();
+       /* MainApp.form = new Form();
         try {
             MainApp.form = db.getFormByClusterHHNo(fc.get(position).getA12(), fc.get(position).getA13());
         } catch (JSONException e) {
             Log.d(TAG, c.getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(c, c.getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 
     // Provide a reference to the views for each data item

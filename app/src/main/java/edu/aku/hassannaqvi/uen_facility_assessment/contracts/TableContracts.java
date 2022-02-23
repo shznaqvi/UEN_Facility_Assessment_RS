@@ -5,28 +5,21 @@ import android.provider.BaseColumns;
 public class TableContracts {
 
     public static abstract class FormsTable implements BaseColumns {
-        public static final String TABLE_NAME = "HouseholdForm";
+        public static final String TABLE_NAME = "Forms";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
-        public static final String COLUMN_LHW_UID = "_lhwuid";
-        public static final String COLUMN_LHW_CODE = "lhwcode";
-        public static final String COLUMN_KHANDAN_NO = "kno";
+        public static final String COLUMN_DISTRICT_CODE = "districtCode";
+        public static final String COLUMN_TEHSIL_CODE = "tehsilCode";
+        public static final String COLUMN_UC_CODE = "ucCode";
+        public static final String COLUMN_HF_CODE = "hfCode";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
 
+
         public static final String COLUMN_SA = "sA";
         public static final String COLUMN_SB = "sB";
-        public static final String COLUMN_SC = "sC";
-        public static final String COLUMN_SD = "sD";
-        public static final String COLUMN_SE = "sE";
-        public static final String COLUMN_SF = "sF";
-        public static final String COLUMN_SG = "sG";
-        public static final String COLUMN_SH = "sH";
-        public static final String COLUMN_SI = "sI";
-        public static final String COLUMN_SJ = "sJ";
-        public static final String COLUMN_SK = "sK";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
@@ -36,7 +29,7 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
-    public static abstract class ModuleATable implements BaseColumns {
+    /*public static abstract class ModuleATable implements BaseColumns {
         public static final String TABLE_NAME = "ModuleA";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
@@ -81,7 +74,7 @@ public class TableContracts {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_ISTATUS = "istatus";
-    }
+    }*/
 
     public static abstract class ModuleCTable implements BaseColumns {
         public static final String TABLE_NAME = "ModuleC";
@@ -114,6 +107,7 @@ public class TableContracts {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_CUID = "_cuid";
         public static final String COLUMN_DISTRICT_CODE = "districtCode";
         public static final String COLUMN_TEHSIL_CODE = "tehsilCode";
         public static final String COLUMN_UC_CODE = "ucCode";

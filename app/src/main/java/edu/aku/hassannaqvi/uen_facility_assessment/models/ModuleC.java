@@ -2,10 +2,6 @@ package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedDistrict;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedHf;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedTehsil;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedUc;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -18,12 +14,7 @@ import androidx.databinding.PropertyChangeRegistry;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleCTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 
@@ -125,14 +116,13 @@ public class ModuleC extends BaseObservable implements Observable {
         setProjectName(PROJECT_NAME);
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
-        setAppver(MainApp.versionName + "." + MainApp.versionCode);
         setUserName(MainApp.user.getUserName());
-        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setUuid(MainApp.moduleA.getUid());
-        setDistrictCode(selectedDistrict);
-        setTehsilCode(selectedTehsil);
-        setUcCode(selectedUc);
-        setHfCode(selectedHf);
+        setSysDate(MainApp.form.getSysDate());
+        setUuid(MainApp.form.getUid());
+        setDistrictCode(MainApp.form.getDistrictCode());
+        setTehsilCode(MainApp.form.getTehsilCode());
+        setUcCode(MainApp.form.getUcCode());
+        setHfCode(MainApp.form.getHfCode());
     }
 
 
@@ -893,7 +883,7 @@ public class ModuleC extends BaseObservable implements Observable {
     public ModuleC Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ModuleBTable.COLUMN_UUID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_UUID));
         this.districtCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_DISTRICT_CODE));
         this.tehsilCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_TEHSIL_CODE));
         this.ucCode = cursor.getString(cursor.getColumnIndexOrThrow(ModuleCTable.COLUMN_UC_CODE));

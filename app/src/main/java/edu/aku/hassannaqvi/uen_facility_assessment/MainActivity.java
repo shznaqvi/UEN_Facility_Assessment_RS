@@ -13,7 +13,7 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.ChangePasswordActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.SyncActivity;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.openForm:
             case R.id.seca:
-                MainApp.moduleA = new ModuleA();
+                MainApp.form = new Form();
                 startActivity(new Intent(this, IdentificationActivity.class));
                 break;
             case R.id.changePassword:

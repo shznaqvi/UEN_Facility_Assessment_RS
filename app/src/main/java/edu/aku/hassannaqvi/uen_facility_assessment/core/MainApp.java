@@ -24,8 +24,6 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BuildConfig;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleB;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleC;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleD;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleE;
@@ -62,12 +60,10 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
-    public static ModuleA moduleA;
     public static String selectedDistrict = "";
     public static String selectedTehsil = "";
     public static String selectedUc = "";
     public static String selectedHf = "";
-    public static ModuleB moduleB;
     public static ModuleC moduleC;
     public static Staffing staffing;
     public static ModuleD moduleD;

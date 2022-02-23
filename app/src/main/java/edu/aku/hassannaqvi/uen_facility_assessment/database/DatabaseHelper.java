@@ -4,10 +4,8 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.IBAHC;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.UserAuth.checkPassword;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_ENTRYLOGS;
+import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_FORMS;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_HEALTH_FACILITY;
-import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_HH_FORMS;
-import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_A;
-import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_B;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_C;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_D;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_E;
@@ -46,8 +44,6 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.FormsTable;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleATable;
-import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleBTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleCTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleDTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleETable;
@@ -65,8 +61,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.EntryLog;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.HealthFacilities;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleB;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleC;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleD;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleE;
@@ -110,9 +104,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_HEALTH_FACILITY);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ENTRYLOGS);
-        db.execSQL(SQL_CREATE_HH_FORMS);
-        db.execSQL(SQL_CREATE_MODULE_A);
-        db.execSQL(SQL_CREATE_MODULE_B);
+        db.execSQL(SQL_CREATE_FORMS);
+
         db.execSQL(SQL_CREATE_MODULE_C);
         db.execSQL(SQL_CREATE_STAFFING);
         db.execSQL(SQL_CREATE_MODULE_D);
@@ -150,15 +143,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         values.put(FormsTable.COLUMN_SA, form.sAtoString());
         values.put(FormsTable.COLUMN_SB, form.sBtoString());
-        values.put(FormsTable.COLUMN_SC, form.sCtoString());
-        values.put(FormsTable.COLUMN_SD, form.sDtoString());
-        values.put(FormsTable.COLUMN_SE, form.sEtoString());
-        values.put(FormsTable.COLUMN_SF, form.sFtoString());
-        values.put(FormsTable.COLUMN_SG, form.sGtoString());
-        values.put(FormsTable.COLUMN_SH, form.sHtoString());
-        values.put(FormsTable.COLUMN_SI, form.sItoString());
-        values.put(FormsTable.COLUMN_SJ, form.sJtoString());
-        values.put(FormsTable.COLUMN_SK, form.sKtoString());
+
 
 
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
@@ -172,71 +157,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 FormsTable.TABLE_NAME,
                 FormsTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
-    public long addModuleA(ModuleA moda) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-
-        values.put(ModuleATable.COLUMN_PROJECT_NAME, moda.getProjectName());
-        values.put(ModuleATable.COLUMN_UID, moda.getUid());
-        values.put(ModuleATable.COLUMN_USERNAME, moda.getUserName());
-        values.put(ModuleATable.COLUMN_SYSDATE, moda.getSysDate());
-        values.put(ModuleATable.COLUMN_SYNCED, moda.getSynced());
-        values.put(ModuleATable.COLUMN_SYNCED_DATE, moda.getSyncDate());
-
-        values.put(ModuleATable.COLUMN_DISTRICT_CODE, moda.getDistrictCode());
-        values.put(ModuleATable.COLUMN_TEHSIL_CODE, moda.getTehsilCode());
-        values.put(ModuleATable.COLUMN_UC_CODE, moda.getUcCode());
-        values.put(ModuleATable.COLUMN_HF_CODE, moda.getHfCode());
-        values.put(ModuleATable.COLUMN_SA, moda.sAtoString());
-
-        values.put(ModuleATable.COLUMN_ISTATUS, moda.getiStatus());
-        values.put(ModuleATable.COLUMN_DEVICETAGID, moda.getDeviceTag());
-        values.put(ModuleATable.COLUMN_DEVICEID, moda.getDeviceId());
-        values.put(ModuleATable.COLUMN_APPVERSION, moda.getAppver());
-
-
-        // Insert the new row, returning the primary key value of the new row
-        long newRowId;
-        newRowId = db.insertOrThrow(
-                ModuleATable.TABLE_NAME,
-                ModuleATable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
-    public long addModuleB(ModuleB modb) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-
-        values.put(ModuleBTable.COLUMN_PROJECT_NAME, modb.getProjectName());
-        values.put(ModuleBTable.COLUMN_UID, modb.getUid());
-        values.put(ModuleBTable.COLUMN_UUID, modb.getUuid());
-        values.put(ModuleBTable.COLUMN_USERNAME, modb.getUserName());
-        values.put(ModuleBTable.COLUMN_SYSDATE, modb.getSysDate());
-        values.put(ModuleBTable.COLUMN_SYNCED, modb.getSynced());
-        values.put(ModuleBTable.COLUMN_SYNCED_DATE, modb.getSyncDate());
-
-        values.put(ModuleBTable.COLUMN_DISTRICT_CODE, modb.getDistrictCode());
-        values.put(ModuleBTable.COLUMN_TEHSIL_CODE, modb.getTehsilCode());
-        values.put(ModuleBTable.COLUMN_UC_CODE, modb.getUcCode());
-        values.put(ModuleBTable.COLUMN_HF_CODE, modb.getHfCode());
-        values.put(ModuleBTable.COLUMN_SB, modb.sBtoString());
-
-        values.put(ModuleBTable.COLUMN_ISTATUS, modb.getiStatus());
-        values.put(ModuleBTable.COLUMN_DEVICETAGID, modb.getDeviceTag());
-        values.put(ModuleBTable.COLUMN_DEVICEID, modb.getDeviceId());
-        values.put(ModuleBTable.COLUMN_APPVERSION, modb.getAppver());
-
-
-        // Insert the new row, returning the primary key value of the new row
-        long newRowId;
-        newRowId = db.insert(
-                ModuleBTable.TABLE_NAME,
-                ModuleBTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -282,6 +202,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(StaffingTable.COLUMN_PROJECT_NAME, staf.getProjectName());
         values.put(StaffingTable.COLUMN_UID, staf.getUid());
         values.put(StaffingTable.COLUMN_UUID, staf.getUuid());
+        values.put(StaffingTable.COLUMN_CUID, staf.getCuid());
         values.put(StaffingTable.COLUMN_USERNAME, staf.getUserName());
         values.put(StaffingTable.COLUMN_SYSDATE, staf.getSysDate());
         values.put(StaffingTable.COLUMN_SYNCED, staf.getSynced());
@@ -687,32 +608,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesModuleAColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-        String selection = ModuleATable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.moduleA.getId())};
-        return db.update(ModuleATable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
-
-    public int updatesModuleBColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-
-        String selection = ModuleBTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.moduleB.getId())};
-
-        return db.update(ModuleBTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
 
     public int updatesModuleCColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1226,78 +1121,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
-    //ModuleA
-    public JSONArray getUnsyncedModuleA() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = ModuleATable.COLUMN_SYNCED + " ='' AND " +
-                ModuleATable.COLUMN_ISTATUS + "!= ''";
-
-        String[] whereArgs = null;
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = ModuleATable.COLUMN_ID + " ASC";
-
-        JSONArray all = new JSONArray();
-
-        c = db.query(
-                ModuleATable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedModuleA: " + c.getCount());
-            ModuleA moda = new ModuleA();
-            all.put(moda.Hydrate(c).toJSONObject());
-        }
-        db.close();
-        Log.d(TAG, "getUnsyncedModuleA: " + all.toString().length());
-        Log.d(TAG, "getUnsyncedModuleA: " + all);
-        return all;
-    }
-
-    //ModuleB
-    public JSONArray getUnsyncedModuleB() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-        String whereClause;
-        whereClause = ModuleBTable.COLUMN_SYNCED + " ='' AND " +
-                ModuleBTable.COLUMN_ISTATUS + "!= ''";
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-        String orderBy = ModuleBTable.COLUMN_ID + " ASC";
-        JSONArray all = new JSONArray();
-        c = db.query(
-                ModuleBTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedModuleB: " + c.getCount());
-            ModuleB modb = new ModuleB();
-            all.put(modb.Hydrate(c).toJSONObject());
-        }
-        db.close();
-        Log.d(TAG, "getUnsyncedModuleB: " + all.toString().length());
-        Log.d(TAG, "getUnsyncedModuleB: " + all);
-        return all;
-    }
-
     //ModuleC
     public JSONArray getUnsyncedModuleC() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1682,35 +1505,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    //ModuleA
-    public void updateSyncedModuleA(String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(ModuleATable.COLUMN_SYNCED, true);
-        values.put(ModuleATable.COLUMN_SYNCED_DATE, new Date().toString());
-        String where = ModuleATable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-        int count = db.update(
-                ModuleATable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
-    //ModuleB
-    public void updateSyncedModuleB(String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(ModuleBTable.COLUMN_SYNCED, true);
-        values.put(ModuleBTable.COLUMN_SYNCED_DATE, new Date().toString());
-        String where = ModuleBTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-        int count = db.update(
-                ModuleBTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
 
     //ModuleC
     public void updateSyncedModuleC(String id) {
@@ -2046,33 +1840,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    //GET MODULEB By UUID
-    public ModuleB getModuleBByUUid() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-        String whereClause;
-        whereClause = ModuleBTable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
-        String groupBy = null;
-        String having = null;
-        String orderBy = ModuleBTable.COLUMN_ID + " ASC";
-        ModuleB modb = new ModuleB();
-        c = db.query(
-                ModuleBTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            modb = new ModuleB().Hydrate(c);
-        }
-        db.close();
-        return modb;
-    }
 
     //GET MODULEC By UUID
     public ModuleC getModuleCByUUid() throws JSONException {
@@ -2081,7 +1848,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleCTable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleCTable.COLUMN_ID + " ASC";
@@ -2109,7 +1876,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleDTable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleDTable.COLUMN_ID + " ASC";
@@ -2137,7 +1904,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleETable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleETable.COLUMN_ID + " ASC";
@@ -2165,7 +1932,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleFTable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleFTable.COLUMN_ID + " ASC";
@@ -2193,7 +1960,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleGTable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleGTable.COLUMN_ID + " ASC";
@@ -2221,7 +1988,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleHTable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleHTable.COLUMN_ID + " ASC";
@@ -2249,7 +2016,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleITable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleITable.COLUMN_ID + " ASC";
@@ -2277,7 +2044,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleJTable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleJTable.COLUMN_ID + " ASC";
@@ -2305,7 +2072,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleKTable.COLUMN_UUID + "=? ";
-        String[] whereArgs = {MainApp.moduleA.getUid()};
+        String[] whereArgs = {MainApp.form.getUid()};
         String groupBy = null;
         String having = null;
         String orderBy = ModuleKTable.COLUMN_ID + " ASC";
@@ -2384,17 +2151,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return healthFacilities;
     }
 
-    public ModuleA getFormByHfCode(String hfCode) throws JSONException {
+    /* public Form getFormByClusterHHNo(String cluster_no, String hh_no) throws JSONException {
+         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+         Cursor c = null;
+         String[] columns = null;
+
+         String whereClause;
+         whereClause = FormsTable.COLUMN_LHW_CODE + "=? AND " +
+                 FormsTable.COLUMN_KHANDAN_NO + " =? ";
+
+         String[] whereArgs = {cluster_no, hh_no};
+
+         String groupBy = null;
+         String having = null;
+
+         String orderBy = FormsTable.COLUMN_ID + " ASC";
+
+         Form HHForm = null;
+
+         c = db.query(
+                 FormsTable.TABLE_NAME,  // The table to query
+                 columns,                   // The columns to return
+                 whereClause,               // The columns for the WHERE clause
+                 whereArgs,                 // The values for the WHERE clause
+                 groupBy,                   // don't group the rows
+                 having,                    // don't filter by row groups
+                 orderBy                    // The sort order
+         );
+         while (c.moveToNext()) {
+             HHForm = new Form().Hydrate(c);
+         }
+
+         db.close();
+
+         return HHForm;
+     }*/
+    public Form getFormByHfCode(String hfCode) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         Boolean distinct = false;
-        String tableName = ModuleATable.TABLE_NAME;
+        String tableName = FormsTable.TABLE_NAME;
         String[] columns = null;
-        String whereClause = ModuleATable.COLUMN_HF_CODE + "= ? ";
+        String whereClause = FormsTable.COLUMN_HF_CODE + "= ? ";
         String[] whereArgs = {hfCode};
         String groupBy = null;
         String having = null;
-        String orderBy = ModuleATable.COLUMN_SYSDATE + " ASC";
+        String orderBy = FormsTable.COLUMN_SYSDATE + " ASC";
         String limitRows = "1";
 
         c = db.query(
@@ -2409,9 +2211,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 limitRows
         );
 
-        ModuleA moda = new ModuleA();
+        Form moda = new Form();
         while (c.moveToNext()) {
-            moda = (new ModuleA().Hydrate(c));
+            moda = (new Form().Hydrate(c));
         }
 
         c.close();
@@ -2420,50 +2222,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Form getFormByClusterHHNo(String cluster_no, String hh_no) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = FormsTable.COLUMN_LHW_CODE + "=? AND " +
-                FormsTable.COLUMN_KHANDAN_NO + " =? ";
-
-        String[] whereArgs = {cluster_no, hh_no};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = FormsTable.COLUMN_ID + " ASC";
-
-        Form HHForm = null;
-
-        c = db.query(
-                FormsTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            HHForm = new Form().Hydrate(c);
-        }
-
-        db.close();
-
-        return HHForm;
-    }
-
-    public Collection<Form> getFormsByCluster(String cluster) {
+    public Collection<Form> getFormsByCluster(String hfCode) {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
-        String whereClause = FormsTable.COLUMN_LHW_CODE + " = ? ";
-        String[] whereArgs = new String[]{cluster};
+        String whereClause = FormsTable.COLUMN_HF_CODE + " = ? ";
+        String[] whereArgs = new String[]{hfCode};
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;

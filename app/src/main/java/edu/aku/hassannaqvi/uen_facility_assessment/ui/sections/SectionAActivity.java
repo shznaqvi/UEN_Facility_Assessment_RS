@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleA;
+
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +23,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionABinding;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.EndingActivity;
-import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
 public class SectionAActivity extends AppCompatActivity {
@@ -35,41 +35,43 @@ public class SectionAActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a);
-        bi.setForm(moduleA);
+        bi.setForm(form);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
     }
 
 
+/*
     private boolean insertNewRecord() {
-        if (!moduleA.getUid().equals("") || MainApp.superuser) return true;
-        moduleA.populateMeta();
+        if (!form.getUid().equals("") || MainApp.superuser) return true;
+        form.populateMeta();
         long rowId = 0;
         try {
-            rowId = db.addModuleA(moduleA);
+            rowId = db.addForm(form);
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, "JSONException(moduleA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "JSONException(form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
             return false;
         }
-        moduleA.setId(String.valueOf(rowId));
+        form.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            moduleA.setUid(moduleA.getDeviceId() + moduleA.getId());
-            db.updatesModuleAColumn(TableContracts.ModuleATable.COLUMN_UID, moduleA.getUid());
+            form.setUid(form.getDeviceId() + form.getId());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
             return true;
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
     }
+*/
 
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
         long updcount = 0;
         try {
-            updcount = db.updatesModuleAColumn(TableContracts.ModuleATable.COLUMN_SA, moduleA.sAtoString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, form.sAtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -87,10 +89,10 @@ public class SectionAActivity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        //  if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionMainActivity.class));
+            //   startActivity(new Intent(this, SectionMainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
