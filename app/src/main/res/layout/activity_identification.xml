@@ -6,9 +6,7 @@
 
         <import type="android.view.View" />
 
-        <variable
-            name="form"
-            type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA" />
+
 
     </data>
 
@@ -84,8 +82,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="52dp"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/a01"
-                            android:text="@={form.a01}" />
+                            android:hint="@string/a01" />
 
                     </LinearLayout>
 
@@ -351,8 +348,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.a10.equals(`1`)}"
-                                android:onClick="@{()->form.setA10(`1`)}"
+
                                 android:text="@string/a10a" />
 
                             <RadioButton
@@ -360,8 +356,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.a10.equals(`2`)}"
-                                android:onClick="@{()->form.setA10(`2`)}"
                                 android:text="@string/a10b" />
 
                         </RadioGroup>
@@ -407,8 +401,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.a11.equals(`1`)}"
-                                android:onClick="@{()->form.setA11(`1`)}"
+
                                 android:text="@string/a11a" />
 
                             <RadioButton
@@ -416,8 +409,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.a11.equals(`2`)}"
-                                android:onClick="@{()->form.setA11(`2`)}"
+
                                 android:text="@string/a11b" />
 
                         </RadioGroup>
@@ -466,7 +458,6 @@
                             android:hint="###"
                             android:inputType="number"
                             android:maxLength="3"
-                            android:text="@={form.a12}"
                             app:maxValue="100"
                             app:minValue="0"
                             app:type="range" />

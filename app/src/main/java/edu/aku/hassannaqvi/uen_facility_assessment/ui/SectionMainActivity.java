@@ -1,8 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleA;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleB;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleC;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleD;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleE;
@@ -24,6 +23,7 @@ import androidx.databinding.DataBindingUtil;
 import org.json.JSONException;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionMainBinding;
@@ -42,17 +42,18 @@ import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionK1Activity
 
 
 public class SectionMainActivity extends AppCompatActivity {
+    private static final String TAG = "SectionMainActivity";
     //public static String maternalCount = 0, paedsCount = 0;
     public static int countC2 = 0, countI = 0;
     ActivitySectionMainBinding bi;
-    private DatabaseHelper db;
     boolean flag = false;
+    private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_main);
-        //bi.setForm(form);
+        bi.setForm(form);
         db = MainApp.appInfo.getDbHelper();
 
 
@@ -73,7 +74,8 @@ public class SectionMainActivity extends AppCompatActivity {
             Toast.makeText(this, "countC2: 0" + countC2, Toast.LENGTH_SHORT).show();
         }*/
 
-        updateSections();
+
+        insertNewRecord();
 
 
     }
@@ -86,45 +88,91 @@ public class SectionMainActivity extends AppCompatActivity {
 
     private void updateSections() {
 
+        if (!form.getA22().isEmpty()) bi.checkedA.setVisibility(View.VISIBLE);
+
+        // moduleB = db.getModuleBByUUid();
+        if (!form.getB05().isEmpty()) bi.checkedB.setVisibility(View.VISIBLE);
+
         try {
-            if (!moduleA.getA22().isEmpty()) bi.checkedA.setVisibility(View.VISIBLE);
-
-            moduleB = db.getModuleBByUUid();
-            if (!moduleB.getB05().isEmpty()) bi.checkedB.setVisibility(View.VISIBLE);
-
             moduleC = db.getModuleCByUUid();
+
             if (!moduleC.getC01le().isEmpty()) bi.checkedC.setVisibility(View.VISIBLE);
-            if (moduleA.getA10().equals("2")) {
+            if (form.getA10().equals("2")) {
                 bi.formC.setEnabled(false);
                 bi.formF.setEnabled(false);
                 bi.formG.setEnabled(false);
                 flag = true;
             }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleC)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        }
+        try {
             moduleD = db.getModuleDByUUid();
             if (!moduleD.getD0801j0fq().isEmpty()) bi.checkedD.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleD)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        }
+        try {
             moduleE = db.getModuleEByUUid();
             if (!moduleE.getE0814().isEmpty()) bi.checkedE.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleE)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        }
+        try {
             moduleF = db.getModuleFByUUid();
             if (!moduleF.getF0701aad0fqx().isEmpty()) bi.checkedF.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleF)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        }
+        try {
             moduleG = db.getModuleGByUUid();
             if (!moduleG.getG0403270sm().isEmpty()) bi.checkedG.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleG)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        }
+        try {
             moduleH = db.getModuleHByUUid();
             if (!moduleH.getH1704().isEmpty() || !moduleH.getH1605xxx().isEmpty() || !moduleH.getH1501z0dy().isEmpty())
                 bi.checkedH.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleH)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        }
+        try {
             moduleI = db.getModuleIByUUid();
             if (!moduleI.getI011696x().isEmpty()) bi.checkedI.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleI)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        }
+        try {
             moduleJ = db.getModuleJByUUid();
             if (!moduleJ.getJ0901fe().isEmpty()) bi.checkedJ.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleJ)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
+        }
+        try {
             moduleK = db.getModuleKByUUid();
             if (!moduleK.getK711().isEmpty()) bi.checkedK.setVisibility(View.VISIBLE);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleK)" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        }
 
 
             /*if (!form.getsH().isEmpty() && (new JSONObject(form.getsH()).has("h1605xx") || new JSONObject(form.getsH()).has("h1501z0dn"))) {
@@ -133,10 +181,6 @@ public class SectionMainActivity extends AppCompatActivity {
             }*/
 
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
     }
 
 
@@ -144,6 +188,46 @@ public class SectionMainActivity extends AppCompatActivity {
         OpenFormFunc(v.getId());
     }
 
+
+    private boolean insertNewRecord() {
+        if (!form.getUid().equals("") || MainApp.superuser) return true;
+        form.populateMeta();
+        long rowId = 0;
+        try {
+            rowId = db.addForm(form);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        form.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            form.setUid(form.getDeviceId() + form.getId());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+
+/*    private boolean updateDB() {
+        if (MainApp.superuser) return true;
+        long updcount = 0;
+        try {
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SA, form.sAtoString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, R.string.upd_db + e.getMessage());
+            Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        if (updcount > 0) return true;
+        else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }*/
 
     public void btnContinue(View v) {
         if (!bi.formB.isEnabled()
@@ -212,14 +296,14 @@ public class SectionMainActivity extends AppCompatActivity {
                     oF = new Intent(this, SectionG1Activity.class);
                     break;
                 case R.id.formH:
-                    oF = new Intent(this, moduleA.getA10().equals("2") ? SectionH16Activity.class : SectionH2Activity.class);
+                    oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH2Activity.class);
                     break;
                 case R.id.formI:
                     countI = 0;
                     oF = new Intent(this, SectionI1Activity.class);
                     break;
                 case R.id.formJ:
-                    if (moduleA.getA10().equals("1")) {
+                    if (form.getA10().equals("1")) {
                         oF = new Intent(this, SectionJ1Activity.class);
                     } /*else {
                         if (form.getDistrictType().equals("2") || form.getDistrictType().equals("4")) {

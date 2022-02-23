@@ -2,10 +2,6 @@ package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedDistrict;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedHf;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedTehsil;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedUc;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -17,10 +13,6 @@ import androidx.databinding.PropertyChangeRegistry;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.BR;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.StaffingTable;
@@ -37,6 +29,7 @@ public class Staffing extends BaseObservable implements Observable {
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
+    private String cuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -71,14 +64,16 @@ public class Staffing extends BaseObservable implements Observable {
         setProjectName(PROJECT_NAME);
         setDeviceId(MainApp.deviceid);
         setAppver(MainApp.appInfo.getAppVersion());
-        setAppver(MainApp.versionName + "." + MainApp.versionCode);
         setUserName(MainApp.user.getUserName());
-        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setUuid(MainApp.moduleA.getUid());
-        setDistrictCode(selectedDistrict);
-        setTehsilCode(selectedTehsil);
-        setUcCode(selectedUc);
-        setHfCode(selectedHf);
+        setSysDate(MainApp.form.getSysDate());
+
+        setUuid(MainApp.form.getUid());
+        setCuid(MainApp.moduleC.getUid());
+
+        setDistrictCode(MainApp.form.getDistrictCode());
+        setTehsilCode(MainApp.form.getTehsilCode());
+        setUcCode(MainApp.form.getUcCode());
+        setHfCode(MainApp.form.getHfCode());
     }
 
 
@@ -114,6 +109,13 @@ public class Staffing extends BaseObservable implements Observable {
         this.uuid = uuid;
     }
 
+    public String getCuid() {
+        return cuid;
+    }
+
+    public void setCuid(String cuid) {
+        this.cuid = cuid;
+    }
 
 
     public String getUserName() {
@@ -312,6 +314,7 @@ public class Staffing extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(StaffingTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(StaffingTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(StaffingTable.COLUMN_UUID));
+        this.cuid = cursor.getString(cursor.getColumnIndexOrThrow(StaffingTable.COLUMN_CUID));
         this.districtCode = cursor.getString(cursor.getColumnIndexOrThrow(StaffingTable.COLUMN_DISTRICT_CODE));
         this.tehsilCode = cursor.getString(cursor.getColumnIndexOrThrow(StaffingTable.COLUMN_TEHSIL_CODE));
         this.ucCode = cursor.getString(cursor.getColumnIndexOrThrow(StaffingTable.COLUMN_UC_CODE));
@@ -350,6 +353,7 @@ public class Staffing extends BaseObservable implements Observable {
         json.put(StaffingTable.COLUMN_ID, this.id);
         json.put(StaffingTable.COLUMN_UID, this.uid);
         json.put(StaffingTable.COLUMN_UUID, this.uuid);
+        json.put(StaffingTable.COLUMN_CUID, this.cuid);
         json.put(StaffingTable.COLUMN_DISTRICT_CODE, this.districtCode);
         json.put(StaffingTable.COLUMN_TEHSIL_CODE, this.tehsilCode);
         json.put(StaffingTable.COLUMN_UC_CODE, this.ucCode);

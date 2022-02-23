@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleA;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedDistrict;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedHf;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedTehsil;
@@ -30,8 +29,8 @@ import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivityIdentificationBinding;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.Form;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.HealthFacilities;
-import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleA;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -56,7 +55,6 @@ public class IdentificationActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         bi.btnContinue.setText(R.string.open_hf);
         if (MainApp.superuser) bi.btnContinue.setText("Review Form");
-        bi.setForm(moduleA);
         populateSpinner();
 
     }
@@ -189,10 +187,9 @@ public class IdentificationActivity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (!hhExists()) {
-            //saveDraftForm();
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));
-        } else if (moduleA.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+        } else if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
             finish();
@@ -208,14 +205,14 @@ public class IdentificationActivity extends AppCompatActivity {
 
 
     private boolean hhExists() {
-        moduleA = new ModuleA();
+        MainApp.form = new Form();
         try {
-            moduleA = db.getFormByHfCode(selectedHf);
+            MainApp.form = db.getFormByHfCode(selectedHf);
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        return moduleA != null;
+        return MainApp.form != null;
     }
 
     private boolean hhDone(String kNo) {
@@ -230,18 +227,6 @@ public class IdentificationActivity extends AppCompatActivity {
             return form.getiStatus().equals("1");
         return false;*/
         return true;
-    }
-
-    private void saveDraftForm() {
-        moduleA.setDistrictCode(districtCodes.get(bi.a07.getSelectedItemPosition()));
-        moduleA.setA07(bi.a07.getSelectedItem().toString());
-        moduleA.setTehsilCode(tehsilCodes.get(bi.a08.getSelectedItemPosition()));
-        moduleA.setA08(bi.a08.getSelectedItem().toString());
-        moduleA.setUcCode(ucCodes.get(bi.a09.getSelectedItemPosition()));
-        moduleA.setA09(bi.a09.getSelectedItem().toString());
-        moduleA.setHfCode(hfCodes.get(bi.a13.getSelectedItemPosition()));
-        moduleA.setA12(hfCodes.get(bi.a13.getSelectedItemPosition()));
-        moduleA.setA13(bi.a13.getSelectedItem().toString());
     }
 
 

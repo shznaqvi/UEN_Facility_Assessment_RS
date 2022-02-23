@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleA;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,7 +41,7 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     private void saveDraft() {
-        moduleA.setiStatus(bi.istatusa.isChecked() ? "1"
+        MainApp.form.setiStatus(bi.istatusa.isChecked() ? "1"
                 : bi.istatusb.isChecked() ? "2"
                 /*: bi.istatusc.isChecked() ? "3"
                 : bi.istatusd.isChecked() ? "4"
@@ -74,11 +73,11 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     private void cleanupProcess() {
-        moduleA = null;
+        MainApp.form = null;
     }
 
     private boolean UpdateDB() {
-        int updcount = db.updatesModuleAColumn(TableContracts.ModuleATable.COLUMN_ISTATUS, moduleA.getiStatus());
+        int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, MainApp.form.getiStatus());
         return updcount > 0;
     }
 
