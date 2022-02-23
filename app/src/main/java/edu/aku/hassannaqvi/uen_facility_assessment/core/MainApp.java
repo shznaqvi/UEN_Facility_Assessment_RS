@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.core;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.DATABASE_NAME;
+
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -169,6 +171,7 @@ public class MainApp extends Application {
             Bundle bundle = ai.metaData;
             int TRATS = bundle.getInt("YEK_TRATS");
             IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            Log.d(TAG, "onCreate: YEK_REVRES = " + DATABASE_NAME);
             Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

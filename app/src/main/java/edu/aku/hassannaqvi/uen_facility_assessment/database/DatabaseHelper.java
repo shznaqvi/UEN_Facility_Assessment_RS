@@ -140,10 +140,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SYNCED, form.getSynced());
         values.put(FormsTable.COLUMN_SYNCED_DATE, form.getSyncDate());
+        values.put(FormsTable.COLUMN_DISTRICT_CODE, form.getDistrictCode());
+        values.put(FormsTable.COLUMN_TEHSIL_CODE, form.getTehsilCode());
+        values.put(FormsTable.COLUMN_UC_CODE, form.getUcCode());
+        values.put(FormsTable.COLUMN_HF_CODE, form.getHfCode());
 
         values.put(FormsTable.COLUMN_SA, form.sAtoString());
         values.put(FormsTable.COLUMN_SB, form.sBtoString());
-
 
 
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());

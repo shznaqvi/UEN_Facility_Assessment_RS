@@ -269,13 +269,10 @@ public class SyncActivity extends AppCompatActivity {
                     filter = "  ";
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(TableHealthFacilities.TABLE_NAME));
                 } else {
 
                     select = " * ";
                     filter = " col_flag is null AND dist_id = '" + MainApp.user.getDist_id() + "' ";
-                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME, select, filter));
-                    downloadTables.add(new SyncModel(VersionTable.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(TableHealthFacilities.TABLE_NAME, select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
