@@ -1039,8 +1039,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
-
-
         db.close();
         return insertCount;
     }
@@ -1071,7 +1069,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long rowID = db.insert(TableHealthFacilities.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
-        db.close();
         db.close();
         return insertCount;
     }
