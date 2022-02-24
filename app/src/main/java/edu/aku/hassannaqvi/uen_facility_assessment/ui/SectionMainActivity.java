@@ -91,7 +91,7 @@ public class SectionMainActivity extends AppCompatActivity {
         if (!form.getA22().isEmpty()) bi.checkedA.setVisibility(View.VISIBLE);
 
         // moduleB = db.getModuleBByUUid();
-        if (!form.getB05().isEmpty()) bi.checkedB.setVisibility(View.VISIBLE);
+        if (!form.getB02().isEmpty()) bi.checkedB.setVisibility(View.VISIBLE);
 
         try {
             moduleC = db.getModuleCByUUid();
