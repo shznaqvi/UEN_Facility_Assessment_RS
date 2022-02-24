@@ -110,8 +110,8 @@
                             <RadioButton
                                 android:id="@+id/d0801a0ay"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.d0801a0a.equals(`1`)}"
                                 android:onClick="@{()->form.setD0801a0a(`1`)}"
                                 android:text="@string/d0801a0ay" />
@@ -119,8 +119,8 @@
                             <RadioButton
                                 android:id="@+id/d0801a0an"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.d0801a0a.equals(`2`)}"
                                 android:onClick="@{()->form.setD0801a0a(`2`)}"
                                 android:text="@string/d0801a0an" />
@@ -135,17 +135,18 @@
                 <!-- d0801a0f  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd0801a0f"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d0801a0a.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
                         <TextView
@@ -167,28 +168,30 @@
                             android:orientation="horizontal">
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/textView"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/d0801a0fq" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/d0801a0fq"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:hint="###"
-                            android:gravity="center"
-                            android:layout_weight="1"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.d0801a0fq}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/d0801a0fq"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                android:text="@={form.d0801a0fq}"
+                                app:maxValue="100"
+                                app:minValue="0"
+                                app:type="range" />
 
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- d0801b0a  Radio   -->

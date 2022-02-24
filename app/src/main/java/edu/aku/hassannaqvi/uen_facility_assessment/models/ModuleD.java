@@ -948,6 +948,7 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD0801a0a(String d0801a0a) {
         this.d0801a0a = d0801a0a;
+        setD0801a0fq(d0801a0a.equals("1") ? this.d0801a0fq : "");
         notifyPropertyChanged(BR.d0801a0a);
     }
 
