@@ -55,6 +55,14 @@ public class ModuleD extends BaseObservable implements Observable {
     private String d0302 = _EMPTY_;
     private String d0303 = _EMPTY_;
     private String d0304 = _EMPTY_;
+    private String d0401 = _EMPTY_;
+    private String d0402 = _EMPTY_;
+    private String d0403 = _EMPTY_;
+    private String d0404 = _EMPTY_;
+    private String d0405 = _EMPTY_;
+    private String d0406 = _EMPTY_;
+    private String d0507 = _EMPTY_;
+    private String d0608 = _EMPTY_;
     private String d0501 = _EMPTY_;
     private String d05011 = _EMPTY_;
     private String d05012 = _EMPTY_;
@@ -101,34 +109,26 @@ public class ModuleD extends BaseObservable implements Observable {
     private String d0704c = _EMPTY_;
     private String d0704d = _EMPTY_;
     private String d0704e = _EMPTY_;
-    private String d0801a0a = _EMPTY_;
-    private String d0801a0fq = _EMPTY_;
-    private String d0801b0a = _EMPTY_;
-    private String d0801b0fq = _EMPTY_;
-    private String d0801c0a = _EMPTY_;
-    private String d0801c0fq = _EMPTY_;
-    private String d0801d0a = _EMPTY_;
-    private String d0801d0fq = _EMPTY_;
-    private String d0801e0a = _EMPTY_;
-    private String d0801e0fq = _EMPTY_;
-    private String d0801f0a = _EMPTY_;
-    private String d0801f0fq = _EMPTY_;
-    private String d0801g0a = _EMPTY_;
-    private String d0801g0fq = _EMPTY_;
-    private String d0801h0a = _EMPTY_;
-    private String d0801h0fq = _EMPTY_;
-    private String d0801i0a = _EMPTY_;
-    private String d0801i0fq = _EMPTY_;
-    private String d0801j0a = _EMPTY_;
-    private String d0801j0fq = _EMPTY_;
-    private String d0401 = _EMPTY_;
-    private String d0402 = _EMPTY_;
-    private String d0403 = _EMPTY_;
-    private String d0404 = _EMPTY_;
-    private String d0405 = _EMPTY_;
-    private String d0406 = _EMPTY_;
-    private String d0507 = _EMPTY_;
-    private String d0608 = _EMPTY_;
+    private String d8011 = _EMPTY_;
+    private String d8012 = _EMPTY_;
+    private String d8021 = _EMPTY_;
+    private String d8022 = _EMPTY_;
+    private String d8031 = _EMPTY_;
+    private String d8032 = _EMPTY_;
+    private String d8041 = _EMPTY_;
+    private String d8042 = _EMPTY_;
+    private String d8051 = _EMPTY_;
+    private String d8052 = _EMPTY_;
+    private String d8061 = _EMPTY_;
+    private String d8062 = _EMPTY_;
+    private String d8071 = _EMPTY_;
+    private String d8072 = _EMPTY_;
+    private String d8081 = _EMPTY_;
+    private String d8082 = _EMPTY_;
+    private String d8091 = _EMPTY_;
+    private String d8092 = _EMPTY_;
+    private String d8101 = _EMPTY_;
+    private String d8102 = _EMPTY_;
 
 
     public ModuleD() {
@@ -942,204 +942,222 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getD0801a0a() {
-        return d0801a0a;
+    public String getD8011() {
+        return d8011;
     }
 
-    public void setD0801a0a(String d0801a0a) {
-        this.d0801a0a = d0801a0a;
-        setD0801a0fq(d0801a0a.equals("1") ? this.d0801a0fq : "");
-        notifyPropertyChanged(BR.d0801a0a);
-    }
-
-    @Bindable
-    public String getD0801a0fq() {
-        return d0801a0fq;
-    }
-
-    public void setD0801a0fq(String d0801a0fq) {
-        this.d0801a0fq = d0801a0fq;
-        notifyPropertyChanged(BR.d0801a0fq);
+    public void setD8011(String d8011) {
+        this.d8011 = d8011;
+        setD8012(d8011.equals("1") ? this.d8012 : "");
+        notifyPropertyChanged(BR.d8011);
     }
 
     @Bindable
-    public String getD0801b0a() {
-        return d0801b0a;
+    public String getD8012() {
+        return d8012;
     }
 
-    public void setD0801b0a(String d0801b0a) {
-        this.d0801b0a = d0801b0a;
-        notifyPropertyChanged(BR.d0801b0a);
+    public void setD8012(String d8012) {
+        this.d8012 = d8012;
+        notifyPropertyChanged(BR.d8012);
+    }
+
+
+    @Bindable
+    public String getD8021() {
+        return d8021;
+    }
+
+    public void setD8021(String d8021) {
+        this.d8021 = d8021;
+        setD8022(d8021.equals("1") ? this.d8022 : "");
+        notifyPropertyChanged(BR.d8021);
     }
 
     @Bindable
-    public String getD0801b0fq() {
-        return d0801b0fq;
+    public String getD8022() {
+        return d8022;
     }
 
-    public void setD0801b0fq(String d0801b0fq) {
-        this.d0801b0fq = d0801b0fq;
-        notifyPropertyChanged(BR.d0801b0fq);
+    public void setD8022(String d8022) {
+        this.d8022 = d8022;
+        notifyPropertyChanged(BR.d8022);
+    }
+
+
+    @Bindable
+    public String getD8031() {
+        return d8031;
+    }
+
+    public void setD8031(String d8031) {
+        this.d8031 = d8031;
+        setD8032(d8031.equals("1") ? this.d8032 : "");
+        notifyPropertyChanged(BR.d8031);
     }
 
     @Bindable
-    public String getD0801c0a() {
-        return d0801c0a;
+    public String getD8032() {
+        return d8032;
     }
 
-    public void setD0801c0a(String d0801c0a) {
-        this.d0801c0a = d0801c0a;
-        notifyPropertyChanged(BR.d0801c0a);
+    public void setD8032(String d8032) {
+        this.d8032 = d8032;
+        notifyPropertyChanged(BR.d8032);
+    }
+
+
+    @Bindable
+    public String getD8041() {
+        return d8041;
+    }
+
+    public void setD8041(String d8041) {
+        this.d8041 = d8041;
+        setD8042(d8041.equals("1") ? this.d8042 : "");
+        notifyPropertyChanged(BR.d8041);
     }
 
     @Bindable
-    public String getD0801c0fq() {
-        return d0801c0fq;
+    public String getD8042() {
+        return d8042;
     }
 
-    public void setD0801c0fq(String d0801c0fq) {
-        this.d0801c0fq = d0801c0fq;
-        notifyPropertyChanged(BR.d0801c0fq);
+    public void setD8042(String d8042) {
+        this.d8042 = d8042;
+        notifyPropertyChanged(BR.d8042);
+    }
+
+
+    @Bindable
+    public String getD8051() {
+        return d8051;
+    }
+
+    public void setD8051(String d8051) {
+        this.d8051 = d8051;
+        setD8052(d8051.equals("1") ? this.d8052 : "");
+        notifyPropertyChanged(BR.d8051);
     }
 
     @Bindable
-    public String getD0801d0a() {
-        return d0801d0a;
+    public String getD8052() {
+        return d8052;
     }
 
-    public void setD0801d0a(String d0801d0a) {
-        this.d0801d0a = d0801d0a;
-        notifyPropertyChanged(BR.d0801d0a);
+    public void setD8052(String d8052) {
+        this.d8052 = d8052;
+        notifyPropertyChanged(BR.d8052);
+    }
+
+
+    @Bindable
+    public String getD8061() {
+        return d8061;
+    }
+
+    public void setD8061(String d8061) {
+        this.d8061 = d8061;
+        setD8062(d8061.equals("1") ? this.d8062 : "");
+        notifyPropertyChanged(BR.d8061);
     }
 
     @Bindable
-    public String getD0801d0fq() {
-        return d0801d0fq;
+    public String getD8062() {
+        return d8062;
     }
 
-    public void setD0801d0fq(String d0801d0fq) {
-        this.d0801d0fq = d0801d0fq;
-        notifyPropertyChanged(BR.d0801d0fq);
+    public void setD8062(String d8062) {
+        this.d8062 = d8062;
+        notifyPropertyChanged(BR.d8062);
+    }
+
+
+    @Bindable
+    public String getD8071() {
+        return d8071;
+    }
+
+    public void setD8071(String d8071) {
+        this.d8071 = d8071;
+        setD8072(d8071.equals("1") ? this.d8072 : "");
+        notifyPropertyChanged(BR.d8071);
     }
 
     @Bindable
-    public String getD0801e0a() {
-        return d0801e0a;
+    public String getD8072() {
+        return d8072;
     }
 
-    public void setD0801e0a(String d0801e0a) {
-        this.d0801e0a = d0801e0a;
-        notifyPropertyChanged(BR.d0801e0a);
+    public void setD8072(String d8072) {
+        this.d8072 = d8072;
+        notifyPropertyChanged(BR.d8072);
+    }
+
+
+    @Bindable
+    public String getD8081() {
+        return d8081;
+    }
+
+    public void setD8081(String d8081) {
+        this.d8081 = d8081;
+        setD8082(d8081.equals("1") ? this.d8082 : "");
+        notifyPropertyChanged(BR.d8081);
     }
 
     @Bindable
-    public String getD0801e0fq() {
-        return d0801e0fq;
+    public String getD8082() {
+        return d8082;
     }
 
-    public void setD0801e0fq(String d0801e0fq) {
-        this.d0801e0fq = d0801e0fq;
-        notifyPropertyChanged(BR.d0801e0fq);
+    public void setD8082(String d8082) {
+        this.d8082 = d8082;
+        notifyPropertyChanged(BR.d8082);
+    }
+
+
+    @Bindable
+    public String getD8091() {
+        return d8091;
+    }
+
+    public void setD8091(String d8091) {
+        this.d8091 = d8091;
+        setD8092(d8091.equals("1") ? this.d8092 : "");
+        notifyPropertyChanged(BR.d8091);
     }
 
     @Bindable
-    public String getD0801f0a() {
-        return d0801f0a;
+    public String getD8092() {
+        return d8092;
     }
 
-    public void setD0801f0a(String d0801f0a) {
-        this.d0801f0a = d0801f0a;
-        notifyPropertyChanged(BR.d0801f0a);
+    public void setD8092(String d8092) {
+        this.d8092 = d8092;
+        notifyPropertyChanged(BR.d8092);
+    }
+
+
+    @Bindable
+    public String getD8101() {
+        return d8101;
+    }
+
+    public void setD8101(String d8101) {
+        this.d8101 = d8101;
+        setD8102(d8101.equals("1") ? this.d8102 : "");
+        notifyPropertyChanged(BR.d8101);
     }
 
     @Bindable
-    public String getD0801f0fq() {
-        return d0801f0fq;
+    public String getD8102() {
+        return d8102;
     }
 
-    public void setD0801f0fq(String d0801f0fq) {
-        this.d0801f0fq = d0801f0fq;
-        notifyPropertyChanged(BR.d0801f0fq);
-    }
-
-    @Bindable
-    public String getD0801g0a() {
-        return d0801g0a;
-    }
-
-    public void setD0801g0a(String d0801g0a) {
-        this.d0801g0a = d0801g0a;
-        notifyPropertyChanged(BR.d0801g0a);
-    }
-
-    @Bindable
-    public String getD0801g0fq() {
-        return d0801g0fq;
-    }
-
-    public void setD0801g0fq(String d0801g0fq) {
-        this.d0801g0fq = d0801g0fq;
-        notifyPropertyChanged(BR.d0801g0fq);
-    }
-
-    @Bindable
-    public String getD0801h0a() {
-        return d0801h0a;
-    }
-
-    public void setD0801h0a(String d0801h0a) {
-        this.d0801h0a = d0801h0a;
-        notifyPropertyChanged(BR.d0801h0a);
-    }
-
-    @Bindable
-    public String getD0801h0fq() {
-        return d0801h0fq;
-    }
-
-    public void setD0801h0fq(String d0801h0fq) {
-        this.d0801h0fq = d0801h0fq;
-        notifyPropertyChanged(BR.d0801h0fq);
-    }
-
-    @Bindable
-    public String getD0801i0a() {
-        return d0801i0a;
-    }
-
-    public void setD0801i0a(String d0801i0a) {
-        this.d0801i0a = d0801i0a;
-        notifyPropertyChanged(BR.d0801i0a);
-    }
-
-    @Bindable
-    public String getD0801i0fq() {
-        return d0801i0fq;
-    }
-
-    public void setD0801i0fq(String d0801i0fq) {
-        this.d0801i0fq = d0801i0fq;
-        notifyPropertyChanged(BR.d0801i0fq);
-    }
-
-    @Bindable
-    public String getD0801j0a() {
-        return d0801j0a;
-    }
-
-    public void setD0801j0a(String d0801j0a) {
-        this.d0801j0a = d0801j0a;
-        notifyPropertyChanged(BR.d0801j0a);
-    }
-
-    @Bindable
-    public String getD0801j0fq() {
-        return d0801j0fq;
-    }
-
-    public void setD0801j0fq(String d0801j0fq) {
-        this.d0801j0fq = d0801j0fq;
-        notifyPropertyChanged(BR.d0801j0fq);
+    public void setD8102(String d8102) {
+        this.d8102 = d8102;
+        notifyPropertyChanged(BR.d8102);
     }
 
 
@@ -1294,26 +1312,26 @@ public class ModuleD extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.d0801a0a = json.getString("d0801a0a");
-            this.d0801a0fq = json.getString("d0801a0fq");
-            this.d0801b0a = json.getString("d0801b0a");
-            this.d0801b0fq = json.getString("d0801b0fq");
-            this.d0801c0a = json.getString("d0801c0a");
-            this.d0801c0fq = json.getString("d0801c0fq");
-            this.d0801d0a = json.getString("d0801d0a");
-            this.d0801d0fq = json.getString("d0801d0fq");
-            this.d0801e0a = json.getString("d0801e0a");
-            this.d0801e0fq = json.getString("d0801e0fq");
-            this.d0801f0a = json.getString("d0801f0a");
-            this.d0801f0fq = json.getString("d0801f0fq");
-            this.d0801g0a = json.getString("d0801g0a");
-            this.d0801g0fq = json.getString("d0801g0fq");
-            this.d0801h0a = json.getString("d0801h0a");
-            this.d0801h0fq = json.getString("d0801h0fq");
-            this.d0801i0a = json.getString("d0801i0a");
-            this.d0801i0fq = json.getString("d0801i0fq");
-            this.d0801j0a = json.getString("d0801j0a");
-            this.d0801j0fq = json.getString("d0801j0fq");
+            this.d8011 = json.getString("d8011");
+            this.d8012 = json.getString("d8012");
+            this.d8021 = json.getString("d8021");
+            this.d8022 = json.getString("d8022");
+            this.d8031 = json.getString("d8031");
+            this.d8032 = json.getString("d8032");
+            this.d8041 = json.getString("d8041");
+            this.d8042 = json.getString("d8042");
+            this.d8051 = json.getString("d8051");
+            this.d8052 = json.getString("d8052");
+            this.d8061 = json.getString("d8061");
+            this.d8062 = json.getString("d8062");
+            this.d8071 = json.getString("d8071");
+            this.d8072 = json.getString("d8072");
+            this.d8081 = json.getString("d8081");
+            this.d8082 = json.getString("d8082");
+            this.d8091 = json.getString("d8091");
+            this.d8092 = json.getString("d8092");
+            this.d8101 = json.getString("d8101");
+            this.d8102 = json.getString("d8102");
         }
     }
 
@@ -1453,26 +1471,26 @@ public class ModuleD extends BaseObservable implements Observable {
     public String sD8toString() throws JSONException {
         Log.d(TAG, "sD8toString: ");
         JSONObject json = new JSONObject();
-        json.put("d0801a0a", d0801a0a)
-                .put("d0801a0fq", d0801a0fq)
-                .put("d0801b0a", d0801b0a)
-                .put("d0801b0fq", d0801b0fq)
-                .put("d0801c0a", d0801c0a)
-                .put("d0801c0fq", d0801c0fq)
-                .put("d0801d0a", d0801d0a)
-                .put("d0801d0fq", d0801d0fq)
-                .put("d0801e0a", d0801e0a)
-                .put("d0801e0fq", d0801e0fq)
-                .put("d0801f0a", d0801f0a)
-                .put("d0801f0fq", d0801f0fq)
-                .put("d0801g0a", d0801g0a)
-                .put("d0801g0fq", d0801g0fq)
-                .put("d0801h0a", d0801h0a)
-                .put("d0801h0fq", d0801h0fq)
-                .put("d0801i0a", d0801i0a)
-                .put("d0801i0fq", d0801i0fq)
-                .put("d0801j0a", d0801j0a)
-                .put("d0801j0fq", d0801j0fq);
+        json.put("d8011", d8011)
+                .put("d8012", d8012)
+                .put("d8021", d8021)
+                .put("d8022", d8022)
+                .put("d8031", d8031)
+                .put("d8032", d8032)
+                .put("d8041", d8041)
+                .put("d8042", d8042)
+                .put("d8051", d8051)
+                .put("d8052", d8052)
+                .put("d8061", d8061)
+                .put("d8062", d8062)
+                .put("d8071", d8071)
+                .put("d8072", d8072)
+                .put("d8081", d8081)
+                .put("d8082", d8082)
+                .put("d8091", d8091)
+                .put("d8092", d8092)
+                .put("d8101", d8101)
+                .put("d8102", d8102);
         return json.toString();
     }
 

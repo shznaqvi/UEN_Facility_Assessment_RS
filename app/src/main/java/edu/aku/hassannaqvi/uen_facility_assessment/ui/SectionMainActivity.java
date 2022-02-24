@@ -110,7 +110,7 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleD = db.getModuleDByUUid();
-            if (!moduleD.getD0801j0fq().isEmpty()) bi.checkedD.setVisibility(View.VISIBLE);
+            if (!moduleD.getD8101().isEmpty()) bi.checkedD.setVisibility(View.VISIBLE);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleD)" + e.getMessage(), Toast.LENGTH_SHORT).show();
