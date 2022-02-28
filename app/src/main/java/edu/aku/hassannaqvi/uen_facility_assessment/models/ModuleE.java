@@ -2557,6 +2557,22 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0501(String e0501) {
         this.e0501 = e0501;
+        setE0502a(e0501.equals("1") ? this.e0502a : "");
+        setE0502b(e0501.equals("1") ? this.e0502b : "");
+        setE0502c(e0501.equals("1") ? this.e0502c : "");
+        setE0502d(e0501.equals("1") ? this.e0502d : "");
+        setE0502e(e0501.equals("1") ? this.e0502e : "");
+        setE0502f(e0501.equals("1") ? this.e0502f : "");
+        setE0502g(e0501.equals("1") ? this.e0502g : "");
+        setE0502h(e0501.equals("1") ? this.e0502h : "");
+        setE0502i(e0501.equals("1") ? this.e0502i : "");
+        setE0503(e0501.equals("1") ? this.e0503 : "");
+        setE0504(e0501.equals("1") ? this.e0504 : "");
+        setE0505(e0501.equals("1") ? this.e0505 : "");
+        setE0506(e0501.equals("1") ? this.e0506 : "");
+        setE0507(e0501.equals("1") ? this.e0507 : "");
+        setE0508(e0501.equals("1") ? this.e0508 : "");
+        setE0509(e0501.equals("1") ? this.e0509 : "");
         notifyPropertyChanged(BR.e0501);
     }
 
