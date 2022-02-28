@@ -710,6 +710,18 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0201(String e0201) {
         this.e0201 = e0201;
+        setE0202a(e0201.equals("1") ? this.e0202a : "");
+        setE0202b(e0201.equals("1") ? this.e0202b : "");
+        setE0202c(e0201.equals("1") ? this.e0202c : "");
+        setE0202d(e0201.equals("1") ? this.e0202d : "");
+        setE0202e(e0201.equals("1") ? this.e0202e : "");
+        setE0202f(e0201.equals("1") ? this.e0202f : "");
+        setE0203a(e0201.equals("1") ? this.e0203a : "");
+        setE0203b(e0201.equals("1") ? this.e0203b : "");
+        setE0204a(e0201.equals("1") ? this.e0204a : "");
+        setE0204b(e0201.equals("1") ? this.e0204b : "");
+        setE0204c(e0201.equals("1") ? this.e0204c : "");
+        setE0204d(e0201.equals("1") ? this.e0204d : "");
         notifyPropertyChanged(BR.e0201);
     }
 
@@ -800,6 +812,9 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0204a(String e0204a) {
         this.e0204a = e0204a;
+        setE0204b(e0204a.equals("1") ? this.e0204b : "");
+        setE0204c(e0204a.equals("1") ? this.e0204c : "");
+        setE0204d(e0204a.equals("1") ? this.e0204d : "");
         notifyPropertyChanged(BR.e0204a);
     }
 
