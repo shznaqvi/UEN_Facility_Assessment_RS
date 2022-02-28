@@ -2743,6 +2743,19 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0601(String e0601) {
         this.e0601 = e0601;
+        setE0602(e0601.equals("1") ? this.e0602 : "");
+        setE0603(e0601.equals("1") ? this.e0603 : "");
+        setE0604(e0601.equals("1") ? this.e0604 : "");
+        setE0605a(e0601.equals("1") ? this.e0605a : "");
+        setE0605b(e0601.equals("1") ? this.e0605b : "");
+        setE0605c(e0601.equals("1") ? this.e0605c : "");
+        setE0605d(e0601.equals("1") ? this.e0605d : "");
+        setE0606(e0601.equals("1") ? this.e0606 : "");
+        setE0607(e0601.equals("1") ? this.e0607 : "");
+        setE0608(e0601.equals("1") ? this.e0608 : "");
+        setE0609(e0601.equals("1") ? this.e0609 : "");
+        setE0610(e0601.equals("1") ? this.e0610 : "");
+        setE0611(e0601.equals("1") ? this.e0611 : "");
         notifyPropertyChanged(BR.e0601);
     }
 
