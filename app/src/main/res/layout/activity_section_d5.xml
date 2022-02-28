@@ -281,6 +281,7 @@
                 </androidx.cardview.widget.CardView>
 
 
+
                 <!-- d0502a0a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd0502a0a"
@@ -347,7 +348,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.d0502a0a.equals(`2`)}"
-                                android:onClick="@{()->form.setD0502a0a(`2`)}"
+                                android:onClick="@{()->form.setD0502a0a(`2`) + d0502a0f.clearCheck()}"
                                 android:text="@string/d0502a0an" />
 
                         </RadioGroup>
@@ -360,7 +361,8 @@
                 <!-- d0502a0f  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd0502a0f"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d0502a0a.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -499,7 +501,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.d0502b0a.equals(`2`)}"
-                                android:onClick="@{()->form.setD0502b0a(`2`)}"
+                                android:onClick="@{()->form.setD0502b0a(`2`) + d0502b0f.clearCheck()}"
                                 android:text="@string/d0502b0an" />
 
                         </RadioGroup>
@@ -512,7 +514,8 @@
                 <!-- d0502b0f  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd0502b0f"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d0502b0a.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -651,7 +654,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.d0502c0a.equals(`2`)}"
-                                android:onClick="@{()->form.setD0502c0a(`2`)}"
+                                android:onClick="@{()->form.setD0502c0a(`2`) + d0502c0f.clearCheck()}"
                                 android:text="@string/d0502c0an" />
 
                         </RadioGroup>
@@ -664,7 +667,8 @@
                 <!-- d0502c0f  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd0502c0f"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d0502c0a.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -803,7 +807,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.d0502d0a.equals(`2`)}"
-                                android:onClick="@{()->form.setD0502d0a(`2`)}"
+                                android:onClick="@{()->form.setD0502d0a(`2`) + d0502d0f.clearCheck()}"
                                 android:text="@string/d0502d0an" />
 
                         </RadioGroup>
@@ -816,7 +820,8 @@
                 <!-- d0502d0f  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd0502d0f"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d0502d0a.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

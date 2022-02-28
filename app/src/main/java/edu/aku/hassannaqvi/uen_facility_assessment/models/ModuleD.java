@@ -521,6 +521,7 @@ public class ModuleD extends BaseObservable implements Observable {
     public void setD0502a0a(String d0502a0a) {
         this.d0502a0a = d0502a0a;
         setD0502a0ayx(d0502a0a.equals("1") ? this.d0502a0ayx : "");
+        setD0502a0f(d0502a0a.equals("1") ? this.d0502a0f : "");
         notifyPropertyChanged(BR.d0502a0a);
     }
 
@@ -563,6 +564,7 @@ public class ModuleD extends BaseObservable implements Observable {
     public void setD0502b0a(String d0502b0a) {
         this.d0502b0a = d0502b0a;
         setD0502b0ayx(d0502b0a.equals("1") ? this.d0502b0ayx : "");
+        setD0502b0f(d0502b0a.equals("1") ? this.d0502b0f : "");
         notifyPropertyChanged(BR.d0502b0a);
     }
 
@@ -605,6 +607,7 @@ public class ModuleD extends BaseObservable implements Observable {
     public void setD0502c0a(String d0502c0a) {
         this.d0502c0a = d0502c0a;
         setD0502c0ayx(d0502c0a.equals("1") ? this.d0502c0ayx : "");
+        setD0502c0f(d0502c0a.equals("1") ? this.d0502c0f : "");
         notifyPropertyChanged(BR.d0502c0a);
     }
 
@@ -647,6 +650,7 @@ public class ModuleD extends BaseObservable implements Observable {
     public void setD0502d0a(String d0502d0a) {
         this.d0502d0a = d0502d0a;
         setD0502d0ayx(d0502d0a.equals("1") ? this.d0502d0ayx : "");
+        setD0502d0f(d0502d0a.equals("1") ? this.d0502d0f : "");
         notifyPropertyChanged(BR.d0502d0a);
     }
 
@@ -808,6 +812,8 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD0602(String d0602) {
         this.d0602 = d0602;
+        setD0603(d0602.equals("1") ? this.d0603 : "");
+        setD0604(d0602.equals("1") ? this.d0604 : "");
         notifyPropertyChanged(BR.d0602);
     }
 
