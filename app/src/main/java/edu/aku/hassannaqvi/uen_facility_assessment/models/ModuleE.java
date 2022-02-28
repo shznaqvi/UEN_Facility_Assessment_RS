@@ -496,6 +496,23 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0101(String e0101) {
         this.e0101 = e0101;
+        setE0102a(e0101.equals("1") ? this.e0102a : "");
+        setE0102b(e0101.equals("1") ? this.e0102b : "");
+        setE0102c(e0101.equals("1") ? this.e0102c : "");
+        setE0102d(e0101.equals("1") ? this.e0102d : "");
+        setE0102e(e0101.equals("1") ? this.e0102e : "");
+        setE0102f(e0101.equals("1") ? this.e0102f : "");
+        setE0102g(e0101.equals("1") ? this.e0102g : "");
+        setE0102h(e0101.equals("1") ? this.e0102h : "");
+        setE0102i(e0101.equals("1") ? this.e0102i : "");
+        setE0102j(e0101.equals("1") ? this.e0102j : "");
+        setE0103a(e0101.equals("1") ? this.e0103a : "");
+        setE0103b(e0101.equals("1") ? this.e0103b : "");
+        setE0104a(e0101.equals("1") ? this.e0104a : "");
+        setE0104b(e0101.equals("1") ? this.e0104b : "");
+        setE0104c(e0101.equals("1") ? this.e0104c : "");
+        setE0104d(e0101.equals("1") ? this.e0104d : "");
+        setE0104e(e0101.equals("1") ? this.e0104e : "");
         notifyPropertyChanged(BR.e0101);
     }
 
@@ -626,6 +643,9 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0104a(String e0104a) {
         this.e0104a = e0104a;
+        setE0104c(e0104a.equals("2") && this.e0104b.equals("2") ? "" : this.e0104c);
+        setE0104d(e0104a.equals("2") && this.e0104b.equals("2") ? "" : this.e0104d);
+        setE0104e(e0104a.equals("2") && this.e0104b.equals("2") ? "" : this.e0104e);
         notifyPropertyChanged(BR.e0104a);
     }
 
@@ -636,6 +656,9 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0104b(String e0104b) {
         this.e0104b = e0104b;
+        setE0104c(e0104b.equals("2") && this.e0104a.equals("2") ? "" : this.e0104c);
+        setE0104d(e0104b.equals("2") && this.e0104a.equals("2") ? "" : this.e0104d);
+        setE0104e(e0104b.equals("2") && this.e0104a.equals("2") ? "" : this.e0104e);
         notifyPropertyChanged(BR.e0104b);
     }
 
