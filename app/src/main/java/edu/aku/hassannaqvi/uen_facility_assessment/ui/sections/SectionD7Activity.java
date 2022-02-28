@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleD;
 
 import android.content.Intent;
@@ -38,6 +39,8 @@ public class SectionD7Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleD);
+        if (form.getA10().equals("2")) bi.fldGrpCVd0704.setVisibility(View.GONE);
+        else bi.fldGrpCVd0704.setVisibility(View.VISIBLE);
     }
 
 
