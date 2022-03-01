@@ -137,6 +137,7 @@ public class ModuleF extends BaseObservable implements Observable {
     private String f0302aaa0a = _EMPTY_;
     private String f0302aaa0aqx = _EMPTY_;
     private String f0302aaa0f = _EMPTY_;
+    private String f0302aaa0fqx = _EMPTY_;
     private String f0401 = _EMPTY_;
     private String f0401aaa0a = _EMPTY_;
     private String f0401aaa0aqx = _EMPTY_;
@@ -1270,6 +1271,7 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0301(String f0301) {
         this.f0301 = f0301;
+        setF0301aaa0a(f0301.equals("1") ? this.f0301aaa0a : "");
         notifyPropertyChanged(BR.f0301);
     }
 
@@ -1281,6 +1283,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF0301aaa0a(String f0301aaa0a) {
         this.f0301aaa0a = f0301aaa0a;
         setF0301aaa0aqx(f0301aaa0a.equals("1") ? this.f0301aaa0aqx : "");
+        setF0301aaa0f(f0301aaa0a.equals("1") ? this.f0301aaa0f : "");
         notifyPropertyChanged(BR.f0301aaa0a);
     }
 
@@ -1322,6 +1325,7 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0302(String f0302) {
         this.f0302 = f0302;
+        setF0302aaa0a(f0302.equals("1") ? this.f0302aaa0a : "");
         notifyPropertyChanged(BR.f0302);
     }
 
@@ -1333,6 +1337,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF0302aaa0a(String f0302aaa0a) {
         this.f0302aaa0a = f0302aaa0a;
         setF0302aaa0aqx(f0302aaa0a.equals("1") ? this.f0302aaa0aqx : "");
+        setF0302aaa0f(f0302aaa0a.equals("1") ? this.f0302aaa0f : "");
         notifyPropertyChanged(BR.f0302aaa0a);
     }
 
@@ -1353,7 +1358,18 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0302aaa0f(String f0302aaa0f) {
         this.f0302aaa0f = f0302aaa0f;
+        setF0302aaa0fqx(f0302aaa0f.equals("1") ? this.f0302aaa0fqx : "");
         notifyPropertyChanged(BR.f0302aaa0f);
+    }
+
+    @Bindable
+    public String getF0302aaa0fqx() {
+        return f0302aaa0fqx;
+    }
+
+    public void setF0302aaa0fqx(String f0302aaa0fqx) {
+        this.f0302aaa0fqx = f0302aaa0fqx;
+        notifyPropertyChanged(BR.f0302aaa0fqx);
     }
 
     @Bindable
@@ -2184,6 +2200,7 @@ public class ModuleF extends BaseObservable implements Observable {
             this.f0302aaa0a = json.getString("f0302aaa0a");
             this.f0302aaa0aqx = json.getString("f0302aaa0aqx");
             this.f0302aaa0f = json.getString("f0302aaa0f");
+            this.f0302aaa0fqx = json.getString("f0302aaa0fqx");
         }
     }
 
@@ -2417,7 +2434,8 @@ public class ModuleF extends BaseObservable implements Observable {
                 .put("f0302", f0302)
                 .put("f0302aaa0a", f0302aaa0a)
                 .put("f0302aaa0aqx", f0302aaa0aqx)
-                .put("f0302aaa0f", f0302aaa0f);
+                .put("f0302aaa0f", f0302aaa0f)
+                .put("f0302aaa0fqx", f0302aaa0fqx);
         return json.toString();
     }
 
