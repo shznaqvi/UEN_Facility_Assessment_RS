@@ -5,6 +5,9 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleF;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -12,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -33,11 +37,43 @@ public class SectionF2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f2);
-        //bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         bi.setForm(moduleF);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
+        setupTextWatchers();
+    }
+
+
+    private void setupTextWatchers() {
+        editTextImplementation(bi.f0201aaa0aqx, bi.f0201aaa0fqx);
+        editTextImplementation(bi.f0201aab0aqx, bi.f0201aab0fqx);
+        editTextImplementation(bi.f0202aaa0aqx, bi.f0202aaa0fqx);
+        editTextImplementation(bi.f0202aab0aqx, bi.f0202aab0fqx);
+        editTextImplementation(bi.f0203aaa0aqx, bi.f0203aaa0fqx);
+        editTextImplementation(bi.f0203aab0aqx, bi.f0203aab0fqx);
+    }
+
+
+    public void editTextImplementation(EditTextPicker edit01, EditTextPicker edit02) {
+
+        edit01.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (TextUtils.isEmpty(edit01.getText())) return;
+                edit02.setMaxvalue(Integer.parseInt(edit01.getText().toString().trim()));
+            }
+        });
+
     }
 
 
