@@ -1683,7 +1683,7 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0501(String f0501) {
         this.f0501 = f0501;
-
+        setF05021(f0501.equals("1") ? this.f05021 : "");
         notifyPropertyChanged(BR.f0501);
     }
 
@@ -1695,6 +1695,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF05021(String f05021) {
         this.f05021 = f05021;
         setF05021qx(f05021.equals("1") ? this.f05021qx : "");
+        setF05022(f05021.equals("1") ? this.f05022 : "");
         notifyPropertyChanged(BR.f05021);
     }
 
