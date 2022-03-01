@@ -5,6 +5,9 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleE;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -12,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -38,6 +42,38 @@ public class SectionE7Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleE);
+        setupTextWatchers();
+    }
+
+
+    private void setupTextWatchers() {
+        editTextImplementation(bi.e0705a0ayx, bi.e0705a0fyx);
+        editTextImplementation(bi.e0705b0ayx, bi.e0705b0fyx);
+        editTextImplementation(bi.e0705c0ayx, bi.e0705c0fyx);
+        editTextImplementation(bi.e0705d0ayx, bi.e0705d0fyx);
+        editTextImplementation(bi.e0705e0ayx, bi.e0705e0fyx);
+    }
+
+
+    public void editTextImplementation(EditTextPicker edit01, EditTextPicker edit02) {
+
+        edit01.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (TextUtils.isEmpty(edit01.getText())) return;
+                edit02.setMaxvalue(Integer.parseInt(edit01.getText().toString().trim()));
+            }
+        });
+
     }
 
 

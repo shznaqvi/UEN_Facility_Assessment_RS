@@ -2896,6 +2896,39 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0701(String e0701) {
         this.e0701 = e0701;
+        setE0702a(e0701.equals("1") ? this.e0702a : "");
+        setE0702b(e0701.equals("1") ? this.e0702b : "");
+        setE0702c(e0701.equals("1") ? this.e0702c : "");
+        setE0702d(e0701.equals("1") ? this.e0702d : "");
+        setE0702e(e0701.equals("1") ? this.e0702e : "");
+        setE0702f(e0701.equals("1") ? this.e0702f : "");
+        setE0702g(e0701.equals("1") ? this.e0702g : "");
+        setE0702h(e0701.equals("1") ? this.e0702h : "");
+        setE0702i(e0701.equals("1") ? this.e0702i : "");
+        setE0702j(e0701.equals("1") ? this.e0702j : "");
+        setE0702k(e0701.equals("1") ? this.e0702k : "");
+        setE0702l(e0701.equals("1") ? this.e0702l : "");
+        setE0703a(e0701.equals("1") ? this.e0703a : "");
+        setE0703b(e0701.equals("1") ? this.e0703b : "");
+        setE0703c(e0701.equals("1") ? this.e0703c : "");
+        setE0703d(e0701.equals("1") ? this.e0703d : "");
+        setE0704a(e0701.equals("1") ? this.e0704a : "");
+        setE0704b(e0701.equals("1") ? this.e0704b : "");
+        setE0704c(e0701.equals("1") ? this.e0704c : "");
+        setE0704d(e0701.equals("1") ? this.e0704d : "");
+        setE0704e(e0701.equals("1") ? this.e0704e : "");
+        setE0704f(e0701.equals("1") ? this.e0704f : "");
+        setE0704g(e0701.equals("1") ? this.e0704g : "");
+        setE0705a0a(e0701.equals("1") ? this.e0705a0a : "");
+        setE0705a0f(e0701.equals("1") ? this.e0705a0f : "");
+        setE0705b0a(e0701.equals("1") ? this.e0705b0a : "");
+        setE0705b0f(e0701.equals("1") ? this.e0705b0f : "");
+        setE0705c0a(e0701.equals("1") ? this.e0705c0a : "");
+        setE0705c0f(e0701.equals("1") ? this.e0705c0f : "");
+        setE0705d0a(e0701.equals("1") ? this.e0705d0a : "");
+        setE0705d0f(e0701.equals("1") ? this.e0705d0f : "");
+        setE0705e0a(e0701.equals("1") ? this.e0705e0a : "");
+        setE0705e0f(e0701.equals("1") ? this.e0705e0f : "");
         notifyPropertyChanged(BR.e0701);
     }
 
@@ -3066,6 +3099,9 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0704a(String e0704a) {
         this.e0704a = e0704a;
+        setE0704e(e0704a.equals("2") && this.e0704b.equals("2") && this.e0704c.equals("2") && this.e0704d.equals("2") ? "" : this.e0704e);
+        setE0704f(e0704a.equals("2") && this.e0704b.equals("2") && this.e0704c.equals("2") && this.e0704d.equals("2") ? "" : this.e0704f);
+        setE0704g(e0704a.equals("2") && this.e0704b.equals("2") && this.e0704c.equals("2") && this.e0704d.equals("2") ? "" : this.e0704g);
         notifyPropertyChanged(BR.e0704a);
     }
 
@@ -3076,6 +3112,9 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0704b(String e0704b) {
         this.e0704b = e0704b;
+        setE0704e(e0704b.equals("2") && this.e0704a.equals("2") && this.e0704c.equals("2") && this.e0704d.equals("2") ? "" : this.e0704e);
+        setE0704f(e0704b.equals("2") && this.e0704a.equals("2") && this.e0704c.equals("2") && this.e0704d.equals("2") ? "" : this.e0704f);
+        setE0704g(e0704b.equals("2") && this.e0704a.equals("2") && this.e0704c.equals("2") && this.e0704d.equals("2") ? "" : this.e0704g);
         notifyPropertyChanged(BR.e0704b);
     }
 
@@ -3086,6 +3125,9 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0704c(String e0704c) {
         this.e0704c = e0704c;
+        setE0704e(e0704c.equals("2") && this.e0704a.equals("2") && this.e0704b.equals("2") && this.e0704d.equals("2") ? "" : this.e0704e);
+        setE0704f(e0704c.equals("2") && this.e0704a.equals("2") && this.e0704b.equals("2") && this.e0704d.equals("2") ? "" : this.e0704f);
+        setE0704g(e0704c.equals("2") && this.e0704a.equals("2") && this.e0704b.equals("2") && this.e0704d.equals("2") ? "" : this.e0704g);
         notifyPropertyChanged(BR.e0704c);
     }
 
@@ -3096,6 +3138,9 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0704d(String e0704d) {
         this.e0704d = e0704d;
+        setE0704e(e0704d.equals("2") && this.e0704a.equals("2") && this.e0704b.equals("2") && this.e0704c.equals("2") ? "" : this.e0704e);
+        setE0704f(e0704d.equals("2") && this.e0704a.equals("2") && this.e0704b.equals("2") && this.e0704c.equals("2") ? "" : this.e0704f);
+        setE0704g(e0704d.equals("2") && this.e0704a.equals("2") && this.e0704b.equals("2") && this.e0704c.equals("2") ? "" : this.e0704g);
         notifyPropertyChanged(BR.e0704d);
     }
 
@@ -3148,6 +3193,7 @@ public class ModuleE extends BaseObservable implements Observable {
     public void setE0705a0a(String e0705a0a) {
         this.e0705a0a = e0705a0a;
         setE0705a0ayx(e0705a0a.equals("1") ? this.e0705a0ayx : "");
+        setE0705a0f(e0705a0a.equals("1") ? this.e0705a0f : "");
         notifyPropertyChanged(BR.e0705a0a);
     }
 
@@ -3190,6 +3236,7 @@ public class ModuleE extends BaseObservable implements Observable {
     public void setE0705b0a(String e0705b0a) {
         this.e0705b0a = e0705b0a;
         setE0705b0ayx(e0705b0a.equals("1") ? this.e0705b0ayx : "");
+        setE0705b0f(e0705b0a.equals("1") ? this.e0705b0f : "");
         notifyPropertyChanged(BR.e0705b0a);
     }
 
@@ -3232,6 +3279,7 @@ public class ModuleE extends BaseObservable implements Observable {
     public void setE0705c0a(String e0705c0a) {
         this.e0705c0a = e0705c0a;
         setE0705c0ayx(e0705c0a.equals("1") ? this.e0705c0ayx : "");
+        setE0705c0f(e0705c0a.equals("1") ? this.e0705c0f : "");
         notifyPropertyChanged(BR.e0705c0a);
     }
 
@@ -3274,6 +3322,7 @@ public class ModuleE extends BaseObservable implements Observable {
     public void setE0705d0a(String e0705d0a) {
         this.e0705d0a = e0705d0a;
         setE0705d0ayx(e0705d0a.equals("1") ? this.e0705d0ayx : "");
+        setE0705d0f(e0705d0a.equals("1") ? this.e0705d0f : "");
         notifyPropertyChanged(BR.e0705d0a);
     }
 
@@ -3316,6 +3365,7 @@ public class ModuleE extends BaseObservable implements Observable {
     public void setE0705e0a(String e0705e0a) {
         this.e0705e0a = e0705e0a;
         setE0705e0ayx(e0705e0a.equals("1") ? this.e0705e0ayx : "");
+        setE0705e0f(e0705e0a.equals("1") ? this.e0705e0f : "");
         notifyPropertyChanged(BR.e0705e0a);
     }
 
