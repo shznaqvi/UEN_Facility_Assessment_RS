@@ -1379,6 +1379,9 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0401(String f0401) {
         this.f0401 = f0401;
+        setF0401aaa0a(f0401.equals("1") ? this.f0401aaa0a : "");
+        setF0401aab0a(f0401.equals("1") ? this.f0401aab0a : "");
+        setF0401aac0a(f0401.equals("1") ? this.f0401aac0a : "");
         notifyPropertyChanged(BR.f0401);
     }
 
@@ -1390,6 +1393,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF0401aaa0a(String f0401aaa0a) {
         this.f0401aaa0a = f0401aaa0a;
         setF0401aaa0aqx(f0401aaa0a.equals("1") ? this.f0401aaa0aqx : "");
+        setF0401aaa0f(f0401aaa0a.equals("1") ? this.f0401aaa0f : "");
         notifyPropertyChanged(BR.f0401aaa0a);
     }
 
@@ -1432,6 +1436,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF0401aab0a(String f0401aab0a) {
         this.f0401aab0a = f0401aab0a;
         setF0401aab0aqx(f0401aab0a.equals("1") ? this.f0401aab0aqx : "");
+        setF0401aab0f(f0401aab0a.equals("1") ? this.f0401aab0f : "");
         notifyPropertyChanged(BR.f0401aab0a);
     }
 
@@ -1474,6 +1479,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF0401aac0a(String f0401aac0a) {
         this.f0401aac0a = f0401aac0a;
         setF0401aac0aqx(f0401aac0a.equals("1") ? this.f0401aac0aqx : "");
+        setF0401aac0f(f0401aac0a.equals("1") ? this.f0401aac0f : "");
         notifyPropertyChanged(BR.f0401aac0a);
     }
 
@@ -1515,6 +1521,7 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0402(String f0402) {
         this.f0402 = f0402;
+        setF0402aaa0a(f0402.equals("1") ? this.f0402aaa0a : "");
         notifyPropertyChanged(BR.f0402);
     }
 
@@ -1526,6 +1533,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF0402aaa0a(String f0402aaa0a) {
         this.f0402aaa0a = f0402aaa0a;
         setF0402aaa0aqx(f0402aaa0a.equals("1") ? this.f0402aaa0aqx : "");
+        setF0402aaa0f(f0402aaa0a.equals("1") ? this.f0402aaa0f : "");
         notifyPropertyChanged(BR.f0402aaa0a);
     }
 
@@ -1567,6 +1575,7 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0403(String f0403) {
         this.f0403 = f0403;
+        setF0403aaa0a(f0403.equals("1") ? this.f0403aaa0a : "");
         notifyPropertyChanged(BR.f0403);
     }
 
@@ -1578,6 +1587,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF0403aaa0a(String f0403aaa0a) {
         this.f0403aaa0a = f0403aaa0a;
         setF0403aaa0aqx(f0403aaa0a.equals("1") ? this.f0403aaa0aqx : "");
+        setF0403aaa0f(f0403aaa0a.equals("1") ? this.f0403aaa0f : "");
         notifyPropertyChanged(BR.f0403aaa0a);
     }
 
@@ -1619,6 +1629,7 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0404(String f0404) {
         this.f0404 = f0404;
+        setF0404aaa0a(f0404.equals("1") ? this.f0404aaa0a : "");
         notifyPropertyChanged(BR.f0404);
     }
 
@@ -1630,6 +1641,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF0404aaa0a(String f0404aaa0a) {
         this.f0404aaa0a = f0404aaa0a;
         setF0404aaa0aqx(f0404aaa0a.equals("1") ? this.f0404aaa0aqx : "");
+        setF0404aaa0f(f0404aaa0a.equals("1") ? this.f0404aaa0f : "");
         notifyPropertyChanged(BR.f0404aaa0a);
     }
 
