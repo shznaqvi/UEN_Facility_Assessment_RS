@@ -3610,6 +3610,10 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1601(String h1601) {
         this.h1601 = h1601;
+        setH1602(h1601.equals("1") ? this.h1602 : "");
+        setH1603(h1601.equals("1") ? this.h1603 : "");
+        setH1604(h1601.equals("1") ? this.h1604 : "");
+        setH1605(h1601.equals("2") ? this.h1605 : "");
         notifyPropertyChanged(BR.h1601);
     }
 

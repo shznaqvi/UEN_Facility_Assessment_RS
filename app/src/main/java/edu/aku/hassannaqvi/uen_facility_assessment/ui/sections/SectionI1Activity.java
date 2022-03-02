@@ -16,6 +16,8 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.Calendar;
+
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
@@ -38,6 +40,11 @@ public class SectionI1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleI);
+        moduleI.setI0102aa(String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)));
+        moduleI.setI0102ab(String.valueOf(Calendar.getInstance().get(Calendar.MONTH) + 1));
+        moduleI.setI0102ac(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
+        moduleI.setI0102ba(String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + 1));
+        moduleI.setI0102bb(String.valueOf(Calendar.getInstance().get(Calendar.MINUTE)));
     }
 
 
