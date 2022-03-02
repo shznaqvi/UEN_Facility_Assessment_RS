@@ -1729,6 +1729,7 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH0601(String h0601) {
         this.h0601 = h0601;
+        setH0601aa(h0601.equals("1") ? this.h0601aa : "");
         notifyPropertyChanged(BR.h0601);
     }
 
@@ -1739,6 +1740,7 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH0601aa(String h0601aa) {
         this.h0601aa = h0601aa;
+        setH0601aaax(h0601aa.equals("1") ? this.h0601aaax : "");
         notifyPropertyChanged(BR.h0601aa);
     }
 

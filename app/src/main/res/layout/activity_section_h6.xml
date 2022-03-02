@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,13 +9,16 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
+
 
 
         <!-- CUSTOM TOOLBAR -->
@@ -37,28 +41,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- h06  Title   -->
-               <!-- <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVh06"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/h06" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>-->
 
                 <!-- h0601  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -97,29 +87,34 @@
 
                             <RadioButton
                                 android:id="@+id/h0601a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.h0601.equals(`1`)}"
                                 android:onClick="@{()->form.setH0601(`1`)}"
                                 android:text="@string/h0601a" />
 
                             <RadioButton
                                 android:id="@+id/h0601b"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.h0601.equals(`2`)}"
                                 android:onClick="@{()->form.setH0601(`2`)}"
                                 android:text="@string/h0601b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- h0601aa  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh0601aa"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.h0601.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -154,8 +149,8 @@
                             <RadioButton
                                 android:id="@+id/h0601aaa"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.h0601aa.equals(`1`)}"
                                 android:onClick="@{()->form.setH0601aa(`1`)}"
                                 android:text="@string/h0601aaa" />
@@ -163,9 +158,10 @@
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/h0601aaax"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/h0601aaa"
+                                android:gravity="center"
+                                android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="h0601aaa"
@@ -174,9 +170,13 @@
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- h0602  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -234,6 +234,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- h0603  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh0603"
@@ -264,6 +265,7 @@
                     </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- h0603a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -321,6 +323,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- h0603b  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh0603b"
@@ -376,6 +379,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- h0603c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -471,8 +475,11 @@
 
             </LinearLayout>
 
+
         </ScrollView>
 
+
     </LinearLayout>
+
 
 </layout>
