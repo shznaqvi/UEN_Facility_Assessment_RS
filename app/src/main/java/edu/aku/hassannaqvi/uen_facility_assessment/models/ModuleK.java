@@ -666,6 +666,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK203(String k203) {
         this.k203 = k203;
+        setK204(k203.equals("1") ? this.k204 : "");
         notifyPropertyChanged(BR.k203);
     }
 
