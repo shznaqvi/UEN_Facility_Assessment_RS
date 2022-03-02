@@ -2030,6 +2030,14 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1201(String h1201) {
         this.h1201 = h1201;
+        setH1202(h1201.equals("1") ? this.h1202 : "");
+        setH1203a(h1201.equals("1") ? this.h1203a : "");
+        setH1203b(h1201.equals("1") ? this.h1203b : "");
+        setH1203c(h1201.equals("1") ? this.h1203c : "");
+        setH1203d(h1201.equals("1") ? this.h1203d : "");
+        setH1203e(h1201.equals("1") ? this.h1203e : "");
+        setH1203f(h1201.equals("1") ? this.h1203f : "");
+        setH1203g(h1201.equals("1") ? this.h1203g : "");
         notifyPropertyChanged(BR.h1201);
     }
 
