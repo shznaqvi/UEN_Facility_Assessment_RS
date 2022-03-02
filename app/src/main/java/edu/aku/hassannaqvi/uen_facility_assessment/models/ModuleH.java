@@ -2278,6 +2278,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501a0c(String h1501a0c) {
         this.h1501a0c = h1501a0c;
+        setH1501a0dy(h1501a0c.equals("1") ? this.h1501a0dy : "");
+        setH1501a0dn(h1501a0c.equals("1") ? this.h1501a0dn : "");
         notifyPropertyChanged(BR.h1501a0c);
     }
 
@@ -2328,6 +2330,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501b0c(String h1501b0c) {
         this.h1501b0c = h1501b0c;
+        setH1501b0dy(h1501b0c.equals("1") ? this.h1501b0dy : "");
+        setH1501b0dn(h1501b0c.equals("1") ? this.h1501b0dn : "");
         notifyPropertyChanged(BR.h1501b0c);
     }
 
@@ -2378,6 +2382,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501c0c(String h1501c0c) {
         this.h1501c0c = h1501c0c;
+        setH1501c0dy(h1501c0c.equals("1") ? this.h1501c0dy : "");
+        setH1501c0dn(h1501c0c.equals("1") ? this.h1501c0dn : "");
         notifyPropertyChanged(BR.h1501c0c);
     }
 
@@ -2428,6 +2434,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501d0c(String h1501d0c) {
         this.h1501d0c = h1501d0c;
+        setH1501d0dy(h1501d0c.equals("1") ? this.h1501d0dy : "");
+        setH1501d0dn(h1501d0c.equals("1") ? this.h1501d0dn : "");
         notifyPropertyChanged(BR.h1501d0c);
     }
 
@@ -2478,6 +2486,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501e0c(String h1501e0c) {
         this.h1501e0c = h1501e0c;
+        setH1501e0dy(h1501e0c.equals("1") ? this.h1501e0dy : "");
+        setH1501e0dn(h1501e0c.equals("1") ? this.h1501e0dn : "");
         notifyPropertyChanged(BR.h1501e0c);
     }
 
@@ -2528,6 +2538,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501f0c(String h1501f0c) {
         this.h1501f0c = h1501f0c;
+        setH1501f0dy(h1501f0c.equals("1") ? this.h1501f0dy : "");
+        setH1501f0dn(h1501f0c.equals("1") ? this.h1501f0dn : "");
         notifyPropertyChanged(BR.h1501f0c);
     }
 
@@ -2578,6 +2590,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501g0c(String h1501g0c) {
         this.h1501g0c = h1501g0c;
+        setH1501g0dy(h1501g0c.equals("1") ? this.h1501g0dy : "");
+        setH1501g0dn(h1501g0c.equals("1") ? this.h1501g0dn : "");
         notifyPropertyChanged(BR.h1501g0c);
     }
 
@@ -2628,6 +2642,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501h0c(String h1501h0c) {
         this.h1501h0c = h1501h0c;
+        setH1501h0dy(h1501h0c.equals("1") ? this.h1501h0dy : "");
+        setH1501h0dn(h1501h0c.equals("1") ? this.h1501h0dn : "");
         notifyPropertyChanged(BR.h1501h0c);
     }
 
@@ -2678,6 +2694,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501i0c(String h1501i0c) {
         this.h1501i0c = h1501i0c;
+        setH1501i0dy(h1501i0c.equals("1") ? this.h1501i0dy : "");
+        setH1501i0dn(h1501i0c.equals("1") ? this.h1501i0dn : "");
         notifyPropertyChanged(BR.h1501i0c);
     }
 
@@ -2728,6 +2746,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501j0c(String h1501j0c) {
         this.h1501j0c = h1501j0c;
+        setH1501j0dy(h1501j0c.equals("1") ? this.h1501j0dy : "");
+        setH1501j0dn(h1501j0c.equals("1") ? this.h1501j0dn : "");
         notifyPropertyChanged(BR.h1501j0c);
     }
 
@@ -2778,6 +2798,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501k0c(String h1501k0c) {
         this.h1501k0c = h1501k0c;
+        setH1501k0dy(h1501k0c.equals("1") ? this.h1501k0dy : "");
+        setH1501k0dn(h1501k0c.equals("1") ? this.h1501k0dn : "");
         notifyPropertyChanged(BR.h1501k0c);
     }
 
@@ -2828,6 +2850,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501l0c(String h1501l0c) {
         this.h1501l0c = h1501l0c;
+        setH1501l0dy(h1501l0c.equals("1") ? this.h1501l0dy : "");
+        setH1501l0dn(h1501l0c.equals("1") ? this.h1501l0dn : "");
         notifyPropertyChanged(BR.h1501l0c);
     }
 
@@ -2858,6 +2882,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501m0a(String h1501m0a) {
         this.h1501m0a = h1501m0a;
+        setH1501m0dy(h1501m0c.equals("1") ? this.h1501m0dy : "");
+        setH1501m0dn(h1501m0c.equals("1") ? this.h1501m0dn : "");
         notifyPropertyChanged(BR.h1501m0a);
     }
 
@@ -2928,6 +2954,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501n0c(String h1501n0c) {
         this.h1501n0c = h1501n0c;
+        setH1501n0dy(h1501n0c.equals("1") ? this.h1501n0dy : "");
+        setH1501n0dn(h1501n0c.equals("1") ? this.h1501n0dn : "");
         notifyPropertyChanged(BR.h1501n0c);
     }
 
@@ -2978,6 +3006,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501o0c(String h1501o0c) {
         this.h1501o0c = h1501o0c;
+        setH1501o0dy(h1501o0c.equals("1") ? this.h1501o0dy : "");
+        setH1501o0dn(h1501o0c.equals("1") ? this.h1501o0dn : "");
         notifyPropertyChanged(BR.h1501o0c);
     }
 
@@ -3028,6 +3058,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501p0c(String h1501p0c) {
         this.h1501p0c = h1501p0c;
+        setH1501p0dy(h1501p0c.equals("1") ? this.h1501p0dy : "");
+        setH1501p0dn(h1501p0c.equals("1") ? this.h1501p0dn : "");
         notifyPropertyChanged(BR.h1501p0c);
     }
 
@@ -3078,6 +3110,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501q0c(String h1501q0c) {
         this.h1501q0c = h1501q0c;
+        setH1501q0dy(h1501q0c.equals("1") ? this.h1501q0dy : "");
+        setH1501q0dn(h1501q0c.equals("1") ? this.h1501q0dn : "");
         notifyPropertyChanged(BR.h1501q0c);
     }
 
@@ -3128,6 +3162,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501r0c(String h1501r0c) {
         this.h1501r0c = h1501r0c;
+        setH1501r0dy(h1501r0c.equals("1") ? this.h1501r0dy : "");
+        setH1501r0dn(h1501r0c.equals("1") ? this.h1501r0dn : "");
         notifyPropertyChanged(BR.h1501r0c);
     }
 
@@ -3178,6 +3214,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501s0c(String h1501s0c) {
         this.h1501s0c = h1501s0c;
+        setH1501s0dy(h1501s0c.equals("1") ? this.h1501s0dy : "");
+        setH1501s0dn(h1501s0c.equals("1") ? this.h1501s0dn : "");
         notifyPropertyChanged(BR.h1501s0c);
     }
 
@@ -3228,6 +3266,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501t0c(String h1501t0c) {
         this.h1501t0c = h1501t0c;
+        setH1501t0dy(h1501t0c.equals("1") ? this.h1501t0dy : "");
+        setH1501t0dn(h1501t0c.equals("1") ? this.h1501t0dn : "");
         notifyPropertyChanged(BR.h1501t0c);
     }
 
@@ -3278,6 +3318,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501u0c(String h1501u0c) {
         this.h1501u0c = h1501u0c;
+        setH1501u0dy(h1501u0c.equals("1") ? this.h1501u0dy : "");
+        setH1501u0dn(h1501u0c.equals("1") ? this.h1501u0dn : "");
         notifyPropertyChanged(BR.h1501u0c);
     }
 
@@ -3328,6 +3370,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501v0c(String h1501v0c) {
         this.h1501v0c = h1501v0c;
+        setH1501v0dy(h1501v0c.equals("1") ? this.h1501v0dy : "");
+        setH1501v0dn(h1501v0c.equals("1") ? this.h1501v0dn : "");
         notifyPropertyChanged(BR.h1501v0c);
     }
 
@@ -3378,6 +3422,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501w0c(String h1501w0c) {
         this.h1501w0c = h1501w0c;
+        setH1501w0dy(h1501w0c.equals("1") ? this.h1501w0dy : "");
+        setH1501w0dn(h1501w0c.equals("1") ? this.h1501w0dn : "");
         notifyPropertyChanged(BR.h1501w0c);
     }
 
@@ -3428,6 +3474,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501x0c(String h1501x0c) {
         this.h1501x0c = h1501x0c;
+        setH1501x0dy(h1501x0c.equals("1") ? this.h1501x0dy : "");
+        setH1501x0dn(h1501x0c.equals("1") ? this.h1501x0dn : "");
         notifyPropertyChanged(BR.h1501x0c);
     }
 
@@ -3478,6 +3526,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501y0c(String h1501y0c) {
         this.h1501y0c = h1501y0c;
+        setH1501y0dy(h1501y0c.equals("1") ? this.h1501y0dy : "");
+        setH1501y0dn(h1501y0c.equals("1") ? this.h1501y0dn : "");
         notifyPropertyChanged(BR.h1501y0c);
     }
 
@@ -3528,6 +3578,8 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1501z0c(String h1501z0c) {
         this.h1501z0c = h1501z0c;
+        setH1501z0dy(h1501z0c.equals("1") ? this.h1501z0dy : "");
+        setH1501z0dn(h1501z0c.equals("1") ? this.h1501z0dn : "");
         notifyPropertyChanged(BR.h1501z0c);
     }
 
