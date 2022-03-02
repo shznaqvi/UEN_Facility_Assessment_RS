@@ -1737,6 +1737,9 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0601(String f0601) {
         this.f0601 = f0601;
+        setF060401a(f0601.equals("2") && this.f0602.equals("2") && this.f0603.equals("2") && this.f0604.equals("2") ? "" : this.f060401a);
+        setF060402a(f0601.equals("2") && this.f0602.equals("2") && this.f0603.equals("2") && this.f0604.equals("2") ? "" : this.f060402a);
+        setF060403a(f0601.equals("2") && this.f0602.equals("2") && this.f0603.equals("2") && this.f0604.equals("2") ? "" : this.f060403a);
         notifyPropertyChanged(BR.f0601);
     }
 
@@ -1747,6 +1750,9 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0602(String f0602) {
         this.f0602 = f0602;
+        setF060401a(f0602.equals("2") && this.f0601.equals("2") && this.f0603.equals("2") && this.f0604.equals("2") ? "" : this.f060401a);
+        setF060402a(f0602.equals("2") && this.f0601.equals("2") && this.f0603.equals("2") && this.f0604.equals("2") ? "" : this.f060402a);
+        setF060403a(f0602.equals("2") && this.f0601.equals("2") && this.f0603.equals("2") && this.f0604.equals("2") ? "" : this.f060403a);
         notifyPropertyChanged(BR.f0602);
     }
 
@@ -1757,6 +1763,9 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0603(String f0603) {
         this.f0603 = f0603;
+        setF060401a(f0603.equals("2") && this.f0601.equals("2") && this.f0602.equals("2") && this.f0604.equals("2") ? "" : this.f060401a);
+        setF060402a(f0603.equals("2") && this.f0601.equals("2") && this.f0602.equals("2") && this.f0604.equals("2") ? "" : this.f060402a);
+        setF060403a(f0603.equals("2") && this.f0601.equals("2") && this.f0602.equals("2") && this.f0604.equals("2") ? "" : this.f060403a);
         notifyPropertyChanged(BR.f0603);
     }
 
@@ -1767,6 +1776,9 @@ public class ModuleF extends BaseObservable implements Observable {
 
     public void setF0604(String f0604) {
         this.f0604 = f0604;
+        setF060401a(f0604.equals("2") && this.f0601.equals("2") && this.f0602.equals("2") && this.f0603.equals("2") ? "" : this.f060401a);
+        setF060402a(f0604.equals("2") && this.f0601.equals("2") && this.f0602.equals("2") && this.f0603.equals("2") ? "" : this.f060402a);
+        setF060403a(f0604.equals("2") && this.f0601.equals("2") && this.f0602.equals("2") && this.f0603.equals("2") ? "" : this.f060403a);
         notifyPropertyChanged(BR.f0604);
     }
 
@@ -1778,6 +1790,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF060401a(String f060401a) {
         this.f060401a = f060401a;
         setF060401aqx(f060401a.equals("1") ? this.f060401aqx : "");
+        setF060401f(f060401a.equals("1") ? this.f060401f : "");
         notifyPropertyChanged(BR.f060401a);
     }
 
@@ -1820,6 +1833,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF060402a(String f060402a) {
         this.f060402a = f060402a;
         setF060402aqx(f060402a.equals("1") ? this.f060402aqx : "");
+        setF060402f(f060402a.equals("1") ? this.f060402f : "");
         notifyPropertyChanged(BR.f060402a);
     }
 
@@ -1862,6 +1876,7 @@ public class ModuleF extends BaseObservable implements Observable {
     public void setF060403a(String f060403a) {
         this.f060403a = f060403a;
         setF060403aqx(f060403a.equals("1") ? this.f060403aqx : "");
+        setF060403f(f060403a.equals("1") ? this.f060403f : "");
         notifyPropertyChanged(BR.f060403a);
     }
 
