@@ -1891,6 +1891,9 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH0901(String h0901) {
         this.h0901 = h0901;
+        setH0902a(h0901.equals("1") ? this.h0902a : "");
+        setH0902b(h0901.equals("1") ? this.h0902b : "");
+        setH0902c(h0901.equals("1") ? this.h0902c : "");
         notifyPropertyChanged(BR.h0901);
     }
 
