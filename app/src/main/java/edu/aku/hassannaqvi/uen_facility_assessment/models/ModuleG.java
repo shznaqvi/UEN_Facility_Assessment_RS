@@ -2947,6 +2947,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401180s(String g0401180s) {
         this.g0401180s = g0401180s;
+        setG0401180sd(g0401180s.equals("1") ? this.g0401180sd : "");
+        setG0401180sm(g0401180s.equals("1") ? this.g0401180sm : "");
         notifyPropertyChanged(BR.g0401180s);
     }
 
@@ -2997,6 +2999,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401190s(String g0401190s) {
         this.g0401190s = g0401190s;
+        setG0401190sd(g0401190s.equals("1") ? this.g0401190sd : "");
+        setG0401190sm(g0401190s.equals("1") ? this.g0401190sm : "");
         notifyPropertyChanged(BR.g0401190s);
     }
 
@@ -3047,6 +3051,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401200s(String g0401200s) {
         this.g0401200s = g0401200s;
+        setG0401200sd(g0401200s.equals("1") ? this.g0401200sd : "");
+        setG0401200sm(g0401200s.equals("1") ? this.g0401200sm : "");
         notifyPropertyChanged(BR.g0401200s);
     }
 
@@ -3097,6 +3103,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401210s(String g0401210s) {
         this.g0401210s = g0401210s;
+        setG0401210sd(g0401210s.equals("1") ? this.g0401210sd : "");
+        setG0401210sm(g0401210s.equals("1") ? this.g0401210sm : "");
         notifyPropertyChanged(BR.g0401210s);
     }
 
@@ -3147,6 +3155,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401220s(String g0401220s) {
         this.g0401220s = g0401220s;
+        setG0401220sd(g0401220s.equals("1") ? this.g0401220sd : "");
+        setG0401220sm(g0401220s.equals("1") ? this.g0401220sm : "");
         notifyPropertyChanged(BR.g0401220s);
     }
 
@@ -3197,6 +3207,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401230s(String g0401230s) {
         this.g0401230s = g0401230s;
+        setG0401230sd(g0401230s.equals("1") ? this.g0401230sd : "");
+        setG0401230sm(g0401230s.equals("1") ? this.g0401230sm : "");
         notifyPropertyChanged(BR.g0401230s);
     }
 
@@ -3247,6 +3259,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401240s(String g0401240s) {
         this.g0401240s = g0401240s;
+        setG0401240sd(g0401240s.equals("1") ? this.g0401240sd : "");
+        setG0401240sm(g0401240s.equals("1") ? this.g0401240sm : "");
         notifyPropertyChanged(BR.g0401240s);
     }
 
@@ -3297,6 +3311,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401250s(String g0401250s) {
         this.g0401250s = g0401250s;
+        setG0401250sd(g0401250s.equals("1") ? this.g0401250sd : "");
+        setG0401250sm(g0401250s.equals("1") ? this.g0401250sm : "");
         notifyPropertyChanged(BR.g0401250s);
     }
 
@@ -3347,6 +3363,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401260s(String g0401260s) {
         this.g0401260s = g0401260s;
+        setG0401260sd(g0401260s.equals("1") ? this.g0401260sd : "");
+        setG0401260sm(g0401260s.equals("1") ? this.g0401260sm : "");
         notifyPropertyChanged(BR.g0401260s);
     }
 
@@ -3397,6 +3415,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401270s(String g0401270s) {
         this.g0401270s = g0401270s;
+        setG0401270sd(g0401270s.equals("1") ? this.g0401270sd : "");
+        setG0401270sm(g0401270s.equals("1") ? this.g0401270sm : "");
         notifyPropertyChanged(BR.g0401270s);
     }
 
@@ -3447,6 +3467,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401280s(String g0401280s) {
         this.g0401280s = g0401280s;
+        setG0401280sd(g0401280s.equals("1") ? this.g0401280sd : "");
+        setG0401280sm(g0401280s.equals("1") ? this.g0401280sm : "");
         notifyPropertyChanged(BR.g0401280s);
     }
 
@@ -3497,6 +3519,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401290s(String g0401290s) {
         this.g0401290s = g0401290s;
+        setG0401290sd(g0401290s.equals("1") ? this.g0401290sd : "");
+        setG0401290sm(g0401290s.equals("1") ? this.g0401290sm : "");
         notifyPropertyChanged(BR.g0401290s);
     }
 
@@ -3547,6 +3571,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401300s(String g0401300s) {
         this.g0401300s = g0401300s;
+        setG0401300sd(g0401300s.equals("1") ? this.g0401300sd : "");
+        setG0401300sm(g0401300s.equals("1") ? this.g0401300sm : "");
         notifyPropertyChanged(BR.g0401300s);
     }
 
@@ -3597,6 +3623,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401310s(String g0401310s) {
         this.g0401310s = g0401310s;
+        setG0401310sd(g0401310s.equals("1") ? this.g0401310sd : "");
+        setG0401310sm(g0401310s.equals("1") ? this.g0401310sm : "");
         notifyPropertyChanged(BR.g0401310s);
     }
 
@@ -3647,6 +3675,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401320s(String g0401320s) {
         this.g0401320s = g0401320s;
+        setG0401320sd(g0401320s.equals("1") ? this.g0401320sd : "");
+        setG0401320sm(g0401320s.equals("1") ? this.g0401320sm : "");
         notifyPropertyChanged(BR.g0401320s);
     }
 
@@ -3697,6 +3727,8 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0401330s(String g0401330s) {
         this.g0401330s = g0401330s;
+        setG0401330sd(g0401330s.equals("1") ? this.g0401330sd : "");
+        setG0401330sm(g0401330s.equals("1") ? this.g0401330sm : "");
         notifyPropertyChanged(BR.g0401330s);
     }
 
