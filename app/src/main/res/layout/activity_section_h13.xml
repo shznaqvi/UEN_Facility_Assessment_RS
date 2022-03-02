@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,12 +26,12 @@
             style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:subtitleTextColor="@color/grayLight"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/section13supervisionbythedistrict_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:subtitleTextColor="@color/grayLight"
             app:title="@string/modhtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
@@ -37,28 +40,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- h13  Title   -->
-                <!--<androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVh13"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/h13" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>-->
 
                 <!-- h1301  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -141,9 +129,13 @@
                                 android:checked="@{form.h1301.equals(`6`)}"
                                 android:onClick="@{()->form.setH1301(`6`)}"
                                 android:text="@string/h1301f" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- h1302  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -182,24 +174,28 @@
 
                             <RadioButton
                                 android:id="@+id/h1302a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.h1302.equals(`1`)}"
                                 android:onClick="@{()->form.setH1302(`1`)}"
                                 android:text="@string/h1302a" />
 
                             <RadioButton
                                 android:id="@+id/h1302b"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.h1302.equals(`2`)}"
                                 android:onClick="@{()->form.setH1302(`2`)}"
                                 android:text="@string/h1302b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- h1303  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -238,22 +234,24 @@
 
                             <RadioButton
                                 android:id="@+id/h1303a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.h1303.equals(`1`)}"
                                 android:onClick="@{()->form.setH1303(`1`)}"
                                 android:text="@string/h1303a" />
 
                             <RadioButton
                                 android:id="@+id/h1303b"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.h1303.equals(`2`)}"
                                 android:onClick="@{()->form.setH1303(`2`)}"
                                 android:text="@string/h1303b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -295,8 +293,11 @@
 
             </LinearLayout>
 
+
         </ScrollView>
 
+
     </LinearLayout>
+
 
 </layout>
