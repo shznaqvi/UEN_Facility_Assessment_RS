@@ -1976,6 +1976,10 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1102(String h1102) {
         this.h1102 = h1102;
+        setH1103(h1102.equals("1") ? this.h1103 : "");
+        setH1104(h1102.equals("1") ? this.h1104 : "");
+        setH1105(h1102.equals("1") ? this.h1105 : "");
+        setH1106(h1102.equals("1") ? this.h1106 : "");
         notifyPropertyChanged(BR.h1102);
     }
 
