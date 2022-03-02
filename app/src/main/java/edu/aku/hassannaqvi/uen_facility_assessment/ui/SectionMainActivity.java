@@ -88,20 +88,27 @@ public class SectionMainActivity extends AppCompatActivity {
 
     private void updateSections() {
 
-        if (!form.getA22().isEmpty()) bi.checkedA.setVisibility(View.VISIBLE);
-
-        // moduleB = db.getModuleBByUUid();
-        if (!form.getB02().isEmpty()) bi.checkedB.setVisibility(View.VISIBLE);
-
-        try {
-            moduleC = db.getModuleCByUUid();
-
-            if (!moduleC.getC01le().isEmpty()) bi.checkedC.setVisibility(View.VISIBLE);
+        if (!form.getA22().isEmpty()) {
+            bi.checkedA.setVisibility(View.VISIBLE);
+            bi.formA.setEnabled(false);
             if (form.getA10().equals("2")) {
                 bi.formC.setEnabled(false);
                 bi.formF.setEnabled(false);
                 bi.formG.setEnabled(false);
                 flag = true;
+            }
+        }
+
+        if (form.getB02().equals("2") || !form.getB05().isEmpty()) {
+            bi.checkedB.setVisibility(View.VISIBLE);
+            bi.formB.setEnabled(false);
+        }
+
+        try {
+            moduleC = db.getModuleCByUUid();
+            if (moduleC.getiStatus().equals("1")) {
+                bi.checkedC.setVisibility(View.VISIBLE);
+                bi.formC.setEnabled(false);
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -110,7 +117,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleD = db.getModuleDByUUid();
-            if (!moduleD.getD8101().isEmpty()) bi.checkedD.setVisibility(View.VISIBLE);
+            if (moduleD.getiStatus().equals("1")) {
+                bi.checkedD.setVisibility(View.VISIBLE);
+                bi.formD.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleD)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -118,7 +128,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleE = db.getModuleEByUUid();
-            if (!moduleE.getE0814().isEmpty()) bi.checkedE.setVisibility(View.VISIBLE);
+            if (moduleE.getiStatus().equals("1")) {
+                bi.checkedE.setVisibility(View.VISIBLE);
+                bi.formE.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleE)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -126,7 +139,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleF = db.getModuleFByUUid();
-            if (!moduleF.getF0701aad0fqx().isEmpty()) bi.checkedF.setVisibility(View.VISIBLE);
+            if (moduleF.getiStatus().equals("1")) {
+                bi.checkedF.setVisibility(View.VISIBLE);
+                bi.formF.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleF)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -134,7 +150,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleG = db.getModuleGByUUid();
-            if (!moduleG.getG0403270sm().isEmpty()) bi.checkedG.setVisibility(View.VISIBLE);
+            if (moduleG.getiStatus().equals("1")) {
+                bi.checkedG.setVisibility(View.VISIBLE);
+                bi.formG.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleG)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -142,8 +161,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleH = db.getModuleHByUUid();
-            if (!moduleH.getH1704().isEmpty() || !moduleH.getH1605xxx().isEmpty() || !moduleH.getH1501z0dy().isEmpty())
+            if (moduleH.getiStatus().equals("1")) {
                 bi.checkedH.setVisibility(View.VISIBLE);
+                bi.formH.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleH)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -151,7 +172,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleI = db.getModuleIByUUid();
-            if (!moduleI.getI011696x().isEmpty()) bi.checkedI.setVisibility(View.VISIBLE);
+            if (moduleI.getiStatus().equals("1")) {
+                bi.checkedI.setVisibility(View.VISIBLE);
+                bi.formI.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleI)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -159,7 +183,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleJ = db.getModuleJByUUid();
-            if (!moduleJ.getJ0901fe().isEmpty()) bi.checkedJ.setVisibility(View.VISIBLE);
+            if (moduleJ.getiStatus().equals("1")) {
+                bi.checkedJ.setVisibility(View.VISIBLE);
+                bi.formJ.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleJ)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -167,19 +194,15 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleK = db.getModuleKByUUid();
-            if (!moduleK.getK711().isEmpty()) bi.checkedK.setVisibility(View.VISIBLE);
+            if (moduleK.getiStatus().equals("1")) {
+                bi.checkedK.setVisibility(View.VISIBLE);
+                bi.formK.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleK)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
-
-
-            /*if (!form.getsH().isEmpty() && (new JSONObject(form.getsH()).has("h1605xx") || new JSONObject(form.getsH()).has("h1501z0dn"))) {
-                //bi.formH.setEnabled(false);
-                bi.checkedH.setVisibility(View.VISIBLE);
-            }*/
-
 
     }
 

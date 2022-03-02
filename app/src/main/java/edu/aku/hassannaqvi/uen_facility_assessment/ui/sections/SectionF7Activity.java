@@ -80,14 +80,16 @@ public class SectionF7Activity extends AppCompatActivity {
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
+        long stcount = 0;
         try {
             updcount = db.updatesModuleFColumn(TableContracts.ModuleFTable.COLUMN_SF7, moduleF.sF7toString());
+            stcount = db.updatesModuleFColumn(TableContracts.ModuleFTable.COLUMN_ISTATUS, moduleF.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
+        if (updcount > 0 && stcount > 0) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -99,6 +101,7 @@ public class SectionF7Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        moduleF.setiStatus("1");
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));

@@ -116,12 +116,13 @@ public class SectionC1Activity extends AppCompatActivity {
         long updcount = 0;
         try {
             updcount = db.updatesModuleCColumn(TableContracts.ModuleCTable.COLUMN_SC1, moduleC.sC1toString());
+            updcount = db.updatesModuleCColumn(TableContracts.ModuleCTable.COLUMN_ISTATUS, moduleC.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
+        if (updcount > 1) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -134,6 +135,7 @@ public class SectionC1Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
+        moduleC.setiStatus("1");
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionC2Activity.class));

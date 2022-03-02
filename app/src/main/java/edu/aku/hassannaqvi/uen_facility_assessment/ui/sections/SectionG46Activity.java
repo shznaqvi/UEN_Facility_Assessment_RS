@@ -34,7 +34,6 @@ public class SectionG46Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_g46);
-        //bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
@@ -47,14 +46,16 @@ public class SectionG46Activity extends AppCompatActivity {
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
+        long stcount = 0;
         try {
             updcount = db.updatesModuleGColumn(TableContracts.ModuleGTable.COLUMN_SG46, moduleG.sG46toString());
+            stcount = db.updatesModuleGColumn(TableContracts.ModuleGTable.COLUMN_ISTATUS, moduleG.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
+        if (updcount > 0 && stcount > 0) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -66,6 +67,7 @@ public class SectionG46Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        moduleG.setiStatus("1");
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));

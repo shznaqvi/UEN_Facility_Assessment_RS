@@ -74,12 +74,13 @@ public class SectionC2Activity extends AppCompatActivity {
         long updcount = 0;
         try {
             updcount = db.updatesStaffColumn(TableContracts.StaffingTable.COLUMN_SC2, staffing.sC2toString());
+            updcount = db.updatesStaffColumn(TableContracts.StaffingTable.COLUMN_ISTATUS, staffing.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
+        if (updcount > 1) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -91,6 +92,7 @@ public class SectionC2Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
+        staffing.setiStatus("1");
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));

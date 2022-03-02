@@ -1116,8 +1116,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
 
-        Log.d(TAG, "getUnsyncedLHWHouseholds: " + allForms.toString().length());
-        Log.d(TAG, "getUnsyncedLHWHouseholds: " + allForms);
+        Log.d(TAG, "getUnsyncedForms: " + allForms.toString().length());
+        Log.d(TAG, "getUnsyncedForms: " + allForms);
         return allForms;
     }
 
