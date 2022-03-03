@@ -61,8 +61,8 @@ public class ModuleD extends BaseObservable implements Observable {
     private String d0404 = _EMPTY_;
     private String d0405 = _EMPTY_;
     private String d0406 = _EMPTY_;
-    private String d0507 = _EMPTY_;
-    private String d0608 = _EMPTY_;
+    private String d0407 = _EMPTY_;
+    private String d0408 = _EMPTY_;
     private String d0501 = _EMPTY_;
     private String d05011 = _EMPTY_;
     private String d05012 = _EMPTY_;
@@ -453,23 +453,23 @@ public class ModuleD extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getD0507() {
-        return d0507;
+    public String getD0407() {
+        return d0407;
     }
 
-    public void setD0507(String d0507) {
-        this.d0507 = d0507;
-        notifyPropertyChanged(BR.d0507);
+    public void setD0407(String d0407) {
+        this.d0407 = d0407;
+        notifyPropertyChanged(BR.d0407);
     }
 
     @Bindable
-    public String getD0608() {
-        return d0608;
+    public String getD0408() {
+        return d0408;
     }
 
-    public void setD0608(String d0608) {
-        this.d0608 = d0608;
-        notifyPropertyChanged(BR.d0608);
+    public void setD0408(String d0408) {
+        this.d0408 = d0408;
+        notifyPropertyChanged(BR.d0408);
     }
 
     @Bindable
@@ -1240,8 +1240,8 @@ public class ModuleD extends BaseObservable implements Observable {
             this.d0404 = json.getString("d0404");
             this.d0405 = json.getString("d0405");
             this.d0406 = json.getString("d0406");
-            this.d0507 = json.getString("d0507");
-            this.d0608 = json.getString("d0608");
+            this.d0407 = json.getString("d0407");
+            this.d0408 = json.getString("d0408");
         }
     }
 
@@ -1407,8 +1407,8 @@ public class ModuleD extends BaseObservable implements Observable {
                 .put("d0404", d0404)
                 .put("d0405", d0405)
                 .put("d0406", d0406)
-                .put("d0507", d0507)
-                .put("d0608", d0608);
+                .put("d0407", d0407)
+                .put("d0408", d0408);
         return json.toString();
     }
 

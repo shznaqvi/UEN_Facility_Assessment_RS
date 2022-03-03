@@ -40,7 +40,6 @@ public class SectionD7Activity extends AppCompatActivity {
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleD);
         if (form.getA10().equals("2")) bi.fldGrpCVd0704.setVisibility(View.GONE);
-        else bi.fldGrpCVd0704.setVisibility(View.VISIBLE);
     }
 
 
