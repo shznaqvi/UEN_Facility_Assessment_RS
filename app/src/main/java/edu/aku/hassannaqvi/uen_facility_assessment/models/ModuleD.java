@@ -327,7 +327,8 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD0201(String d0201) {
         this.d0201 = d0201;
-        setD0203(d0201.equals("2") && this.d0202.equals("2") ? "" : this.d0203);
+        setD0202(d0201.equals("2") ? this.d0202 : "");
+        setD0203(d0201.equals("1") ? this.d0203 : "");
         notifyPropertyChanged(BR.d0201);
     }
 
@@ -338,7 +339,6 @@ public class ModuleD extends BaseObservable implements Observable {
 
     public void setD0202(String d0202) {
         this.d0202 = d0202;
-        setD0203(d0202.equals("2") && this.d0201.equals("2") ? "" : this.d0203);
         notifyPropertyChanged(BR.d0202);
     }
 

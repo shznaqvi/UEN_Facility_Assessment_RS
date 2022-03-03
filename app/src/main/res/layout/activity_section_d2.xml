@@ -90,7 +90,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.d0201.equals(`1`)}"
-                                android:onClick="@{()->form.setD0201(`1`)}"
+                                android:onClick="@{()->form.setD0201(`1`) + d0202.clearCheck()}"
                                 android:text="@string/d0201a" />
 
                             <RadioButton
@@ -112,7 +112,8 @@
                 <!-- d0202  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd0202"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.d0201.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -173,7 +174,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVd0203"
                     style="@style/cardView"
-                    android:visibility="@{form.d0201.equals(`2`) &amp;&amp; form.d0202.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{form.d0201.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -267,7 +268,9 @@
 
             </LinearLayout>
 
+
         </ScrollView>
+
 
     </LinearLayout>
 

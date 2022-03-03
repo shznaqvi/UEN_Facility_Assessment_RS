@@ -43,7 +43,6 @@ public class SectionD2Activity extends AppCompatActivity {
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
-
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
