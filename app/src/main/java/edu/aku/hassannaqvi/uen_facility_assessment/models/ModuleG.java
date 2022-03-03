@@ -85,7 +85,11 @@ public class ModuleG extends BaseObservable implements Observable {
     private String g0205 = _EMPTY_;
     private String g0206 = _EMPTY_;
     private String g0207 = _EMPTY_;
-    private String g0208 = _EMPTY_;
+    private String g0208a = _EMPTY_;
+    private String g0208b = _EMPTY_;
+    private String g0208c = _EMPTY_;
+    private String g0208d = _EMPTY_;
+    private String g0208e = _EMPTY_;
     private String g0301aa = _EMPTY_;
     private String g0301ab = _EMPTY_;
     private String g0301ba = _EMPTY_;
@@ -1182,13 +1186,58 @@ public class ModuleG extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getG0208() {
-        return g0208;
+    public String getG0208a() {
+        return g0208a;
     }
 
-    public void setG0208(String g0208) {
-        this.g0208 = g0208;
-        notifyPropertyChanged(BR.g0208);
+    public void setG0208a(String g0208a) {
+        if (this.g0208a.equals(g0208a)) return;
+        this.g0208a = g0208a;
+        notifyPropertyChanged(BR.g0208a);
+    }
+
+    @Bindable
+    public String getG0208b() {
+        return g0208b;
+    }
+
+    public void setG0208b(String g0208b) {
+        if (this.g0208b.equals(g0208b)) return;
+        this.g0208b = g0208b;
+        notifyPropertyChanged(BR.g0208b);
+    }
+
+    @Bindable
+    public String getG0208c() {
+        return g0208c;
+    }
+
+    public void setG0208c(String g0208c) {
+        if (this.g0208c.equals(g0208c)) return;
+        this.g0208c = g0208c;
+        notifyPropertyChanged(BR.g0208c);
+    }
+
+    @Bindable
+    public String getG0208d() {
+        return g0208d;
+    }
+
+    public void setG0208d(String g0208d) {
+        if (this.g0208d.equals(g0208d)) return;
+        this.g0208d = g0208d;
+        notifyPropertyChanged(BR.g0208d);
+    }
+
+    @Bindable
+    public String getG0208e() {
+        return g0208e;
+    }
+
+    public void setG0208e(String g0208e) {
+        if (this.g0208e.equals(g0208e)) return;
+        this.g0208e = g0208e;
+        notifyPropertyChanged(BR.g0208e);
     }
 
     @Bindable
@@ -6652,7 +6701,11 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g0205 = json.getString("g0205");
             this.g0206 = json.getString("g0206");
             this.g0207 = json.getString("g0207");
-            this.g0208 = json.getString("g0208");
+            this.g0208a = json.getString("g0208a");
+            this.g0208b = json.getString("g0208b");
+            this.g0208c = json.getString("g0208c");
+            this.g0208d = json.getString("g0208d");
+            this.g0208e = json.getString("g0208e");
         }
     }
 
@@ -7310,7 +7363,11 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g0205", g0205)
                 .put("g0206", g0206)
                 .put("g0207", g0207)
-                .put("g0208", g0208);
+                .put("g0208a", g0208a)
+                .put("g0208b", g0208b)
+                .put("g0208c", g0208c)
+                .put("g0208d", g0208d)
+                .put("g0208e", g0208e);
         return json.toString();
     }
 
