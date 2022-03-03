@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.countI;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleC;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleD;
@@ -43,8 +44,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionK1Activity
 
 public class SectionMainActivity extends AppCompatActivity {
     private static final String TAG = "SectionMainActivity";
-    //public static String maternalCount = 0, paedsCount = 0;
-    public static int countC2 = 0, countI = 0;
     ActivitySectionMainBinding bi;
     boolean flag = false;
     private DatabaseHelper db;
