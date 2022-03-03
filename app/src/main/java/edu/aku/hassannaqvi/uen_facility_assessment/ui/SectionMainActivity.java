@@ -256,7 +256,8 @@ public class SectionMainActivity extends AppCompatActivity {
     }*/
 
     public void btnContinue(View v) {
-        if (!bi.formB.isEnabled()
+        if (!bi.formA.isEnabled()
+                && !bi.formB.isEnabled()
                 && !bi.formC.isEnabled()
                 && !bi.formD.isEnabled()
                 && !bi.formE.isEnabled()
@@ -268,7 +269,6 @@ public class SectionMainActivity extends AppCompatActivity {
                 && !bi.formK.isEnabled()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-            //MainApp.endActivity(this, SectionBActivity.class);
         } else {
             Toast.makeText(this, "Sections still in Pending!", Toast.LENGTH_SHORT).show();
         }
@@ -276,7 +276,8 @@ public class SectionMainActivity extends AppCompatActivity {
 
 
     public void btnEnd(View v) {
-        if (bi.formB.isEnabled()
+        if (bi.formA.isEnabled()
+                || bi.formB.isEnabled()
                 || bi.formC.isEnabled()
                 || bi.formD.isEnabled()
                 || bi.formE.isEnabled()
@@ -288,7 +289,6 @@ public class SectionMainActivity extends AppCompatActivity {
                 || bi.formK.isEnabled()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-            //MainApp.endActivity(this, EndingActivity.class).putExtra("complete", false);
         } else {
             Toast.makeText(this, "ALL SECTIONS FILLED \n Good to GO GREEN!", Toast.LENGTH_SHORT).show();
         }
