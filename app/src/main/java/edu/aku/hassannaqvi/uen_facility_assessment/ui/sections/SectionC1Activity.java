@@ -114,15 +114,16 @@ public class SectionC1Activity extends AppCompatActivity {
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
+        long stcount = 0;
         try {
             updcount = db.updatesModuleCColumn(TableContracts.ModuleCTable.COLUMN_SC1, moduleC.sC1toString());
-            updcount = db.updatesModuleCColumn(TableContracts.ModuleCTable.COLUMN_ISTATUS, moduleC.getiStatus());
+            stcount = db.updatesModuleCColumn(TableContracts.ModuleCTable.COLUMN_ISTATUS, moduleC.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 1) return true;
+        if (updcount > 0 && stcount > 0) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;

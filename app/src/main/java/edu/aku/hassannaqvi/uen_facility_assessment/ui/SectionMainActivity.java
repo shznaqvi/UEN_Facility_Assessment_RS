@@ -55,6 +55,9 @@ public class SectionMainActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_main);
         bi.setForm(form);
         db = MainApp.appInfo.getDbHelper();
+        bi.formC.setEnabled(false);
+        bi.formF.setEnabled(false);
+        bi.formG.setEnabled(false);
 
 
         /*if (countC2 != 0 && !flag) {
@@ -91,10 +94,10 @@ public class SectionMainActivity extends AppCompatActivity {
         if (!form.getA22().isEmpty()) {
             bi.checkedA.setVisibility(View.VISIBLE);
             bi.formA.setEnabled(false);
-            if (form.getA10().equals("2")) {
-                bi.formC.setEnabled(false);
-                bi.formF.setEnabled(false);
-                bi.formG.setEnabled(false);
+            if (form.getA10().equals("1")) {
+                bi.formC.setEnabled(true);
+                bi.formF.setEnabled(true);
+                bi.formG.setEnabled(true);
                 flag = true;
             }
         }
