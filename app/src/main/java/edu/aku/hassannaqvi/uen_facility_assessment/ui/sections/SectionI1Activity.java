@@ -55,9 +55,8 @@ public class SectionI1Activity extends AppCompatActivity {
         moduleI.setI0102bb(String.valueOf(Calendar.getInstance().get(Calendar.MINUTE)));
 
         bi.hfType.setText(form.getA10().equals("1") ? getString(R.string.a10a) : getString(R.string.a10b));
-        bi.countI.setText(new StringBuilder("Entries: 0").append(countI));
-        bi.btnContinue.setEnabled(countI != 0);
-        bi.btnAdd.setEnabled(form.getA10().equals("1") ? countI <= 6 : countI <= 3);
+        bi.countI.setText(new StringBuilder("Entries: 0").append(countI++));
+        bi.btnAdd.setEnabled(form.getA10().equals("1") ? countI < 6 : countI < 3);
     }
 
 
@@ -114,7 +113,6 @@ public class SectionI1Activity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             if (view.getId() == bi.btnAdd.getId()) {
-                countI++;
                 moduleI = new ModuleI();
                 startActivity(new Intent(this, SectionI1Activity.class));
             } else startActivity(new Intent(this, SectionMainActivity.class));

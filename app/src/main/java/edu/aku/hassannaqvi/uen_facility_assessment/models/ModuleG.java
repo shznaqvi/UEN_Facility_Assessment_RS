@@ -1127,6 +1127,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0203(String g0203) {
         this.g0203 = g0203;
+        setG0203x(g0203.equals("1") ? this.g0203x : "");
         notifyPropertyChanged(BR.g0203);
     }
 
