@@ -47,6 +47,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     // FIELD VARIABLES
     private String e0101 = _EMPTY_;
+    private String e01021 = _EMPTY_;
     private String e0102a = _EMPTY_;
     private String e0102b = _EMPTY_;
     private String e0102c = _EMPTY_;
@@ -496,6 +497,7 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0101(String e0101) {
         this.e0101 = e0101;
+        setE01021(e0101.equals("1") ? this.e01021 : "");
         setE0102a(e0101.equals("1") ? this.e0102a : "");
         setE0102b(e0101.equals("1") ? this.e0102b : "");
         setE0102c(e0101.equals("1") ? this.e0102c : "");
@@ -514,6 +516,16 @@ public class ModuleE extends BaseObservable implements Observable {
         setE0104d(e0101.equals("1") ? this.e0104d : "");
         setE0104e(e0101.equals("1") ? this.e0104e : "");
         notifyPropertyChanged(BR.e0101);
+    }
+
+    @Bindable
+    public String getE01021() {
+        return e01021;
+    }
+
+    public void setE01021(String e01021) {
+        this.e01021 = e01021;
+        notifyPropertyChanged(BR.e01021);
     }
 
     @Bindable
@@ -3576,6 +3588,7 @@ public class ModuleE extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.e0101 = json.getString("e0101");
+            this.e01021 = json.getString("e01021");
             this.e0102a = json.getString("e0102a");
             this.e0102b = json.getString("e0102b");
             this.e0102c = json.getString("e0102c");
@@ -3956,6 +3969,7 @@ public class ModuleE extends BaseObservable implements Observable {
         Log.d(TAG, "sE1toString: ");
         JSONObject json = new JSONObject();
         json.put("e0101", e0101)
+                .put("e01021", e01021)
                 .put("e0102a", e0102a)
                 .put("e0102b", e0102b)
                 .put("e0102c", e0102c)

@@ -98,7 +98,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.e0101.equals(`2`)}"
-                                android:onClick="@{()->form.setE0101(`2`) + e0102a.clearCheck() + e0102b.clearCheck() + e0102c.clearCheck() + e0102d.clearCheck() + e0102e.clearCheck() + e0102f.clearCheck() + e0102g.clearCheck() + e0102h.clearCheck() + e0102i.clearCheck() + e0102j.clearCheck() + e0103a.clearCheck() + e0103b.clearCheck() + e0104a.clearCheck() + e0104b.clearCheck() + e0104d.clearCheck() + e0104e.clearCheck()}"
+                                android:onClick="@{()->form.setE0101(`2`) + e01021.clearCheck() + e0102a.clearCheck() + e0102b.clearCheck() + e0102c.clearCheck() + e0102d.clearCheck() + e0102e.clearCheck() + e0102f.clearCheck() + e0102g.clearCheck() + e0102h.clearCheck() + e0102i.clearCheck() + e0102j.clearCheck() + e0103a.clearCheck() + e0103b.clearCheck() + e0104a.clearCheck() + e0104b.clearCheck() + e0104d.clearCheck() + e0104e.clearCheck()}"
                                 android:text="@string/e0101b" />
 
                         </RadioGroup>
@@ -113,6 +113,66 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility="@{form.e0101.equals(`1`) ? View.VISIBLE : View.GONE}">
+
+
+                    <!-- e01021  Radio   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVe01021"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_e01021" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/e01021" />
+
+                            </LinearLayout>
+
+                            <RadioGroup
+                                android:id="@+id/e01021"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/e01021a"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:checked="@{form.e01021.equals(`1`)}"
+                                    android:onClick="@{()->form.setE01021(`1`)}"
+                                    android:text="@string/e01021a" />
+
+                                <RadioButton
+                                    android:id="@+id/e01021b"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:checked="@{form.e01021.equals(`2`)}"
+                                    android:onClick="@{()->form.setE01021(`2`)}"
+                                    android:text="@string/e01021b" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
 
 
                     <!-- e0102  Title   -->
