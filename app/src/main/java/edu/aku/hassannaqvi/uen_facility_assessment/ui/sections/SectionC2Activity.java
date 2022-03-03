@@ -96,20 +96,10 @@ public class SectionC2Activity extends AppCompatActivity {
         staffing.setiStatus("1");
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionMainActivity.class));
-        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-    }
-
-
-    public void addMore(View view) {
-        bi.llbtn.setVisibility(View.GONE);
-        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
-        if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        if (updateDB()) {
-            countC++;
-            finish();
-            startActivity(new Intent(this, SectionC2Activity.class));
+            if (view.getId() == bi.btnAdd.getId()) {
+                countC++;
+                startActivity(new Intent(this, SectionC2Activity.class));
+            } else startActivity(new Intent(this, SectionMainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
