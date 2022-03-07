@@ -3909,8 +3909,12 @@ public class ModuleH extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.h401a = json.getString("h0401");
-            this.h40196x = json.getString("h0401xxx");
+            this.h401a = json.getString("h401a");
+            this.h401b = json.getString("h401b");
+            this.h401c = json.getString("h401c");
+            this.h401d = json.getString("h401d");
+            this.h40196 = json.getString("h40196");
+            this.h40196x = json.getString("h40196x");
         }
     }
 
@@ -4383,8 +4387,12 @@ public class ModuleH extends BaseObservable implements Observable {
     public String sH4toString() throws JSONException {
         Log.d(TAG, "sH4toString: ");
         JSONObject json = new JSONObject();
-        json.put("h0401", h401a)
-                .put("h0401xxx", h40196x);
+        json.put("h401a", h401a)
+                .put("h401b", h401b)
+                .put("h401c", h401c)
+                .put("h401d", h401d)
+                .put("h40196", h40196)
+                .put("h40196x", h40196x);
         return json.toString();
     }
 
