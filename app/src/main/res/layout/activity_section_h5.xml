@@ -69,63 +69,65 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_h0501" />
+                                android:text="@string/Q_h501" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/h0501" />
+                                android:text="@string/h501" />
 
                         </LinearLayout>
 
-                        <RadioGroup
+                        <LinearLayout
                             android:id="@+id/h0501"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                            <RadioButton
-                                android:id="@+id/h0501a"
+                            <CheckBox
+                                android:id="@+id/h501a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.h0501.equals(`1`)}"
-                                android:onClick="@{()->form.setH0501(`1`)}"
-                                android:text="@string/h0501a" />
+                                android:checked="@{form.h501a.equals(`1`)}"
+                                android:onClick="@{()->form.setH501a(form.h501a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h501a" />
 
-                            <RadioButton
-                                android:id="@+id/h0501b"
+                            <CheckBox
+                                android:id="@+id/h501b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.h0501.equals(`2`)}"
-                                android:onClick="@{()->form.setH0501(`2`)}"
-                                android:text="@string/h0501b" />
+                                android:checked="@{form.h501b.equals(`2`)}"
+                                android:onClick="@{()->form.setH501b(form.h501b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h501b" />
 
-                            <RadioButton
-                                android:id="@+id/h0501c"
+                            <CheckBox
+                                android:id="@+id/h501c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.h0501.equals(`3`)}"
-                                android:onClick="@{()->form.setH0501(`3`)}"
-                                android:text="@string/h0501c" />
+                                android:checked="@{form.h501c.equals(`3`)}"
+                                android:onClick="@{()->form.setH501c(form.h501c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h501c" />
 
-                            <RadioButton
-                                android:id="@+id/h0501xx"
+                            <CheckBox
+                                android:id="@+id/h50196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.h0501.equals(`96`)}"
-                                android:onClick="@{()->form.setH0501(`96`)}"
-                                android:text="@string/h0501xx" />
+                                android:checked="@{form.h50196.equals(`96`)}"
+                                android:onClick="@{()->form.setH50196(form.h50196.equals(`96`)?``:`96`)}"
+                                android:text="@string/h50196" />
 
                             <EditText
-                                android:id="@+id/h0501xxx"
+                                android:id="@+id/h50196x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/h0501xx"
-                                android:tag="h0501xx"
-                                android:text="@={form.h0501xxx}"
-                                android:visibility="@{form.h0501.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:hint="@string/h50196"
+                                android:tag="h50196"
+                                android:text="@={form.h50196x}"
+                                android:visibility="@{form.h50196.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
-                        </RadioGroup>
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -169,8 +171,11 @@
 
             </LinearLayout>
 
+
         </ScrollView>
 
+
     </LinearLayout>
+
 
 </layout>
