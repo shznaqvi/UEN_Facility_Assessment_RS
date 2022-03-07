@@ -153,8 +153,12 @@ public class ModuleH extends BaseObservable implements Observable {
     private String h1702 = _EMPTY_;
     private String h1703 = _EMPTY_;
     private String h1704 = _EMPTY_;
-    private String h0401 = _EMPTY_;
-    private String h0401xxx = _EMPTY_;
+    private String h401a = _EMPTY_;
+    private String h401b = _EMPTY_;
+    private String h401c = _EMPTY_;
+    private String h401d = _EMPTY_;
+    private String h40196 = _EMPTY_;
+    private String h40196x = _EMPTY_;
     private String h0501 = _EMPTY_;
     private String h0501xxx = _EMPTY_;
     private String h0601 = _EMPTY_;
@@ -1681,24 +1685,69 @@ public class ModuleH extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getH0401() {
-        return h0401;
+    public String getH401a() {
+        return h401a;
     }
 
-    public void setH0401(String h0401) {
-        this.h0401 = h0401;
-        setH0401xxx(h0401.equals("96") ? this.h0401xxx : "");
-        notifyPropertyChanged(BR.h0401);
+    public void setH401a(String h401a) {
+        if (this.h401a.equals(h401a)) return;
+        this.h401a = h401a;
+        notifyPropertyChanged(BR.h401a);
     }
 
     @Bindable
-    public String getH0401xxx() {
-        return h0401xxx;
+    public String getH401b() {
+        return h401b;
     }
 
-    public void setH0401xxx(String h0401xxx) {
-        this.h0401xxx = h0401xxx;
-        notifyPropertyChanged(BR.h0401xxx);
+    public void setH401b(String h401b) {
+        if (this.h401b.equals(h401b)) return;
+        this.h401b = h401b;
+        notifyPropertyChanged(BR.h401b);
+    }
+
+    @Bindable
+    public String getH401c() {
+        return h401c;
+    }
+
+    public void setH401c(String h401c) {
+        if (this.h401c.equals(h401c)) return;
+        this.h401c = h401c;
+        notifyPropertyChanged(BR.h401c);
+    }
+
+    @Bindable
+    public String getH401d() {
+        return h401d;
+    }
+
+    public void setH401d(String h401d) {
+        if (this.h401d.equals(h401d)) return;
+        this.h401d = h401d;
+        notifyPropertyChanged(BR.h401d);
+    }
+
+    @Bindable
+    public String getH40196() {
+        return h40196;
+    }
+
+    public void setH40196(String h40196) {
+        if (this.h40196.equals(h40196)) return;
+        this.h40196 = h40196;
+        setH40196x(h40196.equals("96") ? this.h40196x : "");
+        notifyPropertyChanged(BR.h40196);
+    }
+
+    @Bindable
+    public String getH40196x() {
+        return h40196x;
+    }
+
+    public void setH40196x(String h40196x) {
+        this.h40196x = h40196x;
+        notifyPropertyChanged(BR.h40196x);
     }
 
     @Bindable
@@ -3860,8 +3909,8 @@ public class ModuleH extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-            this.h0401 = json.getString("h0401");
-            this.h0401xxx = json.getString("h0401xxx");
+            this.h401a = json.getString("h0401");
+            this.h40196x = json.getString("h0401xxx");
         }
     }
 
@@ -4334,8 +4383,8 @@ public class ModuleH extends BaseObservable implements Observable {
     public String sH4toString() throws JSONException {
         Log.d(TAG, "sH4toString: ");
         JSONObject json = new JSONObject();
-        json.put("h0401", h0401)
-                .put("h0401xxx", h0401xxx);
+        json.put("h0401", h401a)
+                .put("h0401xxx", h40196x);
         return json.toString();
     }
 

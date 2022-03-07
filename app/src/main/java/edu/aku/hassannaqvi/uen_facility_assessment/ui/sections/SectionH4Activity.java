@@ -34,7 +34,6 @@ public class SectionH4Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h4);
-        //bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
@@ -44,7 +43,6 @@ public class SectionH4Activity extends AppCompatActivity {
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
-
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
