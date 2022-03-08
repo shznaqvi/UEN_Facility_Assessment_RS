@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleJ" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,12 +26,12 @@
             style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:subtitleTextColor="@color/grayLight"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/section3essentialnewborncare_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:subtitleTextColor="@color/grayLight"
             app:title="@string/modjtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
@@ -37,11 +40,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- j0300  Title   -->
                 <androidx.cardview.widget.CardView
@@ -72,56 +77,56 @@
 
                         </LinearLayout>
 
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/j0300a" />
-
-                        <EditText
-                            android:id="@+id/j0300a"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/j0300a"
-                            android:text="@={form.j0300a}" />
+                            android:orientation="horizontal">
 
-                    </LinearLayout>
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/j0300a" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                            <EditText
+                                android:id="@+id/j0300a"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/j0300a"
+                                android:text="@={form.j0300a}" />
 
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/j0300b" />
+                        </LinearLayout>
 
-                        <EditText
-                            android:id="@+id/j0300b"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/j0300b"
-                            android:text="@={form.j0300b}" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/j0300b" />
+
+                            <EditText
+                                android:id="@+id/j0300b"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/j0300b"
+                                android:text="@={form.j0300b}" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
-                    </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0300c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -175,9 +180,13 @@
                                 android:checked="@{form.j0300c.equals(`2`)}"
                                 android:onClick="@{()->form.setJ0300c(`2`)}"
                                 android:text="@string/j0300aab" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0i00  Title   -->
                 <TextView
@@ -1418,10 +1427,12 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- j0301w  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVj0301w"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.j0301a.equals(`2`) || form.j0301b.equals(`2`) || form.j0301c.equals(`2`) || form.j0301d.equals(`2`) || form.j0301e.equals(`2`) || form.j0301f.equals(`2`) || form.j0301g.equals(`2`) || form.j0301h.equals(`2`) || form.j0301i.equals(`2`) || form.j0301j.equals(`2`) || form.j0301k.equals(`2`) || form.j0301l.equals(`2`) || form.j0301m.equals(`2`) || form.j0301n.equals(`2`) || form.j0301o.equals(`2`) || form.j0301p.equals(`2`) || form.j0301q.equals(`2`) || form.j0301r.equals(`2`) || form.j0301s.equals(`2`) || form.j0301t.equals(`2`) || form.j0301u.equals(`2`) || form.j0301v.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1519,7 +1530,9 @@
                                 android:tag="j0301wxx"
                                 android:text="@={form.j0301wxxx}"
                                 android:visibility="@{form.j0301wxx.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </LinearLayout>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -1561,8 +1574,11 @@
 
             </LinearLayout>
 
+
         </ScrollView>
 
+
     </LinearLayout>
+
 
 </layout>
