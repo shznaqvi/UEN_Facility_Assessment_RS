@@ -5,6 +5,9 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleK;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -37,6 +40,28 @@ public class SectionK3Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleK);
+        setupSkip();
+    }
+
+
+    private void setupSkip() {
+        bi.k305.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (TextUtils.isEmpty(bi.k305.getText())) return;
+                bi.k306.setMaxvalue(Integer.parseInt(bi.k305.getText().toString().trim()));
+                bi.k30704x.setMaxvalue(Integer.parseInt(bi.k305.getText().toString().trim()));
+            }
+        });
     }
 
 
