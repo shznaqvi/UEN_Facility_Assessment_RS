@@ -9,6 +9,7 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleK" />
+
     </data>
 
 
@@ -97,7 +98,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k301.equals(`2`)}"
-                                android:onClick="@{()->form.setK301(`2`) + k302.clearCheck() + k303.clearCheck()}"
+                                android:onClick="@{()->form.setK301(`2`)}"
                                 android:text="@string/k30102" />
 
                             <RadioButton
@@ -106,10 +107,13 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k301.equals(`3`)}"
-                                android:onClick="@{()->form.setK301(`3`)}"
+                                android:onClick="@{()->form.setK301(`3`) + k302.clearCheck() + k303.clearCheck()}"
                                 android:text="@string/k30103" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -117,7 +121,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{form.k301.equals(`2`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{form.k301.equals(`3`) ? View.GONE : View.VISIBLE}">
 
 
                     <!-- k302  Radio   -->
@@ -350,7 +354,7 @@
                             android:inputType="number"
                             android:maxLength="3"
                             android:text="@={form.k305}"
-                            app:maxValue="100"
+                            app:maxValue="400"
                             app:minValue="0"
                             app:type="range" />
 
@@ -397,7 +401,7 @@
                             android:inputType="number"
                             android:maxLength="3"
                             android:text="@={form.k306}"
-                            app:maxValue="100"
+                            app:maxValue="400"
                             app:minValue="0"
                             app:type="range" />
 
@@ -489,7 +493,7 @@
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={form.k30704x}"
-                                app:maxValue="100"
+                                app:maxValue="400"
                                 app:minValue="0"
                                 app:type="range" />
 
