@@ -45,16 +45,14 @@ public class SectionH17Activity extends AppCompatActivity {
         if (MainApp.superuser) return true;
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
-        long stcount = 0;
         try {
             updcount = db.updatesModuleHColumn(TableContracts.ModuleHTable.COLUMN_SH17, moduleH.sH17toString());
-            stcount = db.updatesModuleHColumn(TableContracts.ModuleHTable.COLUMN_ISTATUS, moduleH.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0 && stcount > 0) return true;
+        if (updcount > 0) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -66,10 +64,9 @@ public class SectionH17Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        moduleH.setiStatus("1");
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionMainActivity.class));
+            startActivity(new Intent(this, SectionH4Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

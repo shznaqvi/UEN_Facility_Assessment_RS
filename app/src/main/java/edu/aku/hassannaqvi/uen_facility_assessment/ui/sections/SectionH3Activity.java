@@ -67,7 +67,7 @@ public class SectionH3Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionH4Activity.class));
+            startActivity(new Intent(this, SectionH17Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
