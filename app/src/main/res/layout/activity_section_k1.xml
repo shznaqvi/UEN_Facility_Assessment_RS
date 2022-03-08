@@ -852,8 +852,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.k101b96.equals(`1`)}"
-                                android:onClick="@{()->form.setK101b96(`1`)}"
+                                android:checked="@{form.k101b96.equals(`96`)}"
+                                android:onClick="@{()->form.setK101b96(`96`)}"
                                 android:text="@string/k101b9601" />
 
                             <RadioButton
@@ -871,7 +871,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{form.k101b96.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{form.k101b96.equals(`96`) ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/textView"
@@ -894,7 +894,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:visibility="@{form.k101b96.equals(`1`) ? View.VISIBLE : View.GONE}">
+                            android:visibility="@{form.k101b96.equals(`96`) ? View.VISIBLE : View.GONE}">
 
                             <EditText
                                 android:id="@+id/k101b9603x"
@@ -903,6 +903,7 @@
                                 android:layout_weight="3"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/k101b9603"
+                                android:maxLength="25"
                                 android:text="@={form.k101b9603x}" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker

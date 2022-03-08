@@ -570,8 +570,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101b96(String k101b96) {
         this.k101b96 = k101b96;
-        setK101b9603x(k101b96.equals("1") ? this.k101b9603x : "");
-        setK101b9604(k101b96.equals("1") ? this.k101b9604 : "");
+        setK101b9603x(k101b96.equals("96") ? this.k101b9603x : "");
+        setK101b9604(k101b96.equals("96") ? this.k101b9604 : "");
         notifyPropertyChanged(BR.k101b96);
     }
 
