@@ -1633,6 +1633,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401a(String j0401a) {
         this.j0401a = j0401a;
+        boolean j04m = j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401a);
     }
 
@@ -1643,6 +1651,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401b(String j0401b) {
         this.j0401b = j0401b;
+        boolean j04m = j0401b.equals("1") && this.j0401a.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401b);
     }
 
@@ -1653,6 +1669,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401c(String j0401c) {
         this.j0401c = j0401c;
+        boolean j04m = j0401c.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401c);
     }
 
@@ -1663,6 +1687,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401d(String j0401d) {
         this.j0401d = j0401d;
+        boolean j04m = j0401d.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401d);
     }
 
@@ -1673,6 +1705,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401e(String j0401e) {
         this.j0401e = j0401e;
+        boolean j04m = j0401e.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401e);
     }
 
@@ -1683,6 +1723,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401f(String j0401f) {
         this.j0401f = j0401f;
+        boolean j04m = j0401f.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401f);
     }
 
@@ -1693,6 +1741,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401g(String j0401g) {
         this.j0401g = j0401g;
+        boolean j04m = j0401g.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401g);
     }
 
@@ -1703,6 +1759,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401h(String j0401h) {
         this.j0401h = j0401h;
+        boolean j04m = j0401h.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401h);
     }
 
@@ -1713,6 +1777,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401i(String j0401i) {
         this.j0401i = j0401i;
+        boolean j04m = j0401i.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401i);
     }
 
@@ -1723,6 +1795,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401j(String j0401j) {
         this.j0401j = j0401j;
+        boolean j04m = j0401j.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401k.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401j);
     }
 
@@ -1733,6 +1813,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401k(String j0401k) {
         this.j0401k = j0401k;
+        boolean j04m = j0401k.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401l.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401k);
     }
 
@@ -1743,6 +1831,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0401l(String j0401l) {
         this.j0401l = j0401l;
+        boolean j04m = j0401l.equals("1") && this.j0401a.equals("1") && this.j0401b.equals("1") && this.j0401c.equals("1") && this.j0401d.equals("1") && this.j0401e.equals("1") && this.j0401f.equals("1") && this.j0401g.equals("1") && this.j0401h.equals("1") && this.j0401i.equals("1") && this.j0401j.equals("1") && this.j0401k.equals("1");
+        setJ0401ma(j04m ? "" : this.j0401ma);
+        setJ0401mb(j04m ? "" : this.j0401mb);
+        setJ0401mc(j04m ? "" : this.j0401mc);
+        setJ0401md(j04m ? "" : this.j0401md);
+        setJ0401me(j04m ? "" : this.j0401me);
+        setJ0401mf(j04m ? "" : this.j0401mf);
+        setJ0401mxx(j04m ? "" : this.j0401mxx);
         notifyPropertyChanged(BR.j0401l);
     }
 
