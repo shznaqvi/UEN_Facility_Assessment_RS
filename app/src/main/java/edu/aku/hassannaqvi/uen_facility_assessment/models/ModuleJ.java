@@ -2683,6 +2683,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0701a(String j0701a) {
         this.j0701a = j0701a;
+        boolean j07m = j0701a.equals("1") && this.j0701b.equals("1") && this.j0701c.equals("1") && this.j0701d.equals("1") && this.j0701e.equals("1") && this.j0701f.equals("1");
+        setJ0701ga(j07m ? "" : this.j0701ga);
+        setJ0701gb(j07m ? "" : this.j0701gb);
+        setJ0701gc(j07m ? "" : this.j0701gc);
+        setJ0701gd(j07m ? "" : this.j0701gd);
+        setJ0701ge(j07m ? "" : this.j0701ge);
+        setJ0701gf(j07m ? "" : this.j0701gf);
+        setJ0701gxx(j07m ? "" : this.j0701gxx);
         notifyPropertyChanged(BR.j0701a);
     }
 
@@ -2693,6 +2701,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0701b(String j0701b) {
         this.j0701b = j0701b;
+        boolean j07m = j0701b.equals("1") && this.j0701a.equals("1") && this.j0701c.equals("1") && this.j0701d.equals("1") && this.j0701e.equals("1") && this.j0701f.equals("1");
+        setJ0701ga(j07m ? "" : this.j0701ga);
+        setJ0701gb(j07m ? "" : this.j0701gb);
+        setJ0701gc(j07m ? "" : this.j0701gc);
+        setJ0701gd(j07m ? "" : this.j0701gd);
+        setJ0701ge(j07m ? "" : this.j0701ge);
+        setJ0701gf(j07m ? "" : this.j0701gf);
+        setJ0701gxx(j07m ? "" : this.j0701gxx);
         notifyPropertyChanged(BR.j0701b);
     }
 
@@ -2703,6 +2719,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0701c(String j0701c) {
         this.j0701c = j0701c;
+        boolean j07m = j0701c.equals("1") && this.j0701a.equals("1") && this.j0701b.equals("1") && this.j0701d.equals("1") && this.j0701e.equals("1") && this.j0701f.equals("1");
+        setJ0701ga(j07m ? "" : this.j0701ga);
+        setJ0701gb(j07m ? "" : this.j0701gb);
+        setJ0701gc(j07m ? "" : this.j0701gc);
+        setJ0701gd(j07m ? "" : this.j0701gd);
+        setJ0701ge(j07m ? "" : this.j0701ge);
+        setJ0701gf(j07m ? "" : this.j0701gf);
+        setJ0701gxx(j07m ? "" : this.j0701gxx);
         notifyPropertyChanged(BR.j0701c);
     }
 
@@ -2713,6 +2737,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0701d(String j0701d) {
         this.j0701d = j0701d;
+        boolean j07m = j0701d.equals("1") && this.j0701a.equals("1") && this.j0701b.equals("1") && this.j0701c.equals("1") && this.j0701e.equals("1") && this.j0701f.equals("1");
+        setJ0701ga(j07m ? "" : this.j0701ga);
+        setJ0701gb(j07m ? "" : this.j0701gb);
+        setJ0701gc(j07m ? "" : this.j0701gc);
+        setJ0701gd(j07m ? "" : this.j0701gd);
+        setJ0701ge(j07m ? "" : this.j0701ge);
+        setJ0701gf(j07m ? "" : this.j0701gf);
+        setJ0701gxx(j07m ? "" : this.j0701gxx);
         notifyPropertyChanged(BR.j0701d);
     }
 
@@ -2723,6 +2755,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0701e(String j0701e) {
         this.j0701e = j0701e;
+        boolean j07m = j0701e.equals("1") && this.j0701a.equals("1") && this.j0701b.equals("1") && this.j0701c.equals("1") && this.j0701d.equals("1") && this.j0701f.equals("1");
+        setJ0701ga(j07m ? "" : this.j0701ga);
+        setJ0701gb(j07m ? "" : this.j0701gb);
+        setJ0701gc(j07m ? "" : this.j0701gc);
+        setJ0701gd(j07m ? "" : this.j0701gd);
+        setJ0701ge(j07m ? "" : this.j0701ge);
+        setJ0701gf(j07m ? "" : this.j0701gf);
+        setJ0701gxx(j07m ? "" : this.j0701gxx);
         notifyPropertyChanged(BR.j0701e);
     }
 
@@ -2733,6 +2773,14 @@ public class ModuleJ extends BaseObservable implements Observable {
 
     public void setJ0701f(String j0701f) {
         this.j0701f = j0701f;
+        boolean j07m = j0701f.equals("1") && this.j0701a.equals("1") && this.j0701b.equals("1") && this.j0701c.equals("1") && this.j0701d.equals("1") && this.j0701e.equals("1");
+        setJ0701ga(j07m ? "" : this.j0701ga);
+        setJ0701gb(j07m ? "" : this.j0701gb);
+        setJ0701gc(j07m ? "" : this.j0701gc);
+        setJ0701gd(j07m ? "" : this.j0701gd);
+        setJ0701ge(j07m ? "" : this.j0701ge);
+        setJ0701gf(j07m ? "" : this.j0701gf);
+        setJ0701gxx(j07m ? "" : this.j0701gxx);
         notifyPropertyChanged(BR.j0701f);
     }
 
