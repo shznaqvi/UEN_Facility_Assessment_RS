@@ -819,6 +819,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK404(String k404) {
         this.k404 = k404;
+        setK405(k404.equals("1") ? this.k405 : "");
+        setK406(k404.equals("1") ? this.k406 : "");
         notifyPropertyChanged(BR.k404);
     }
 
