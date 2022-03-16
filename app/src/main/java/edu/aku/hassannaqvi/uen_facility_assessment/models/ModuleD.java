@@ -98,7 +98,15 @@ public class ModuleD extends BaseObservable implements Observable {
     private String d0602 = _EMPTY_;
     private String d0603 = _EMPTY_;
     private String d0604 = _EMPTY_;
-    private String d0605 = _EMPTY_;
+    private String d0605a = _EMPTY_;
+    private String d0605b = _EMPTY_;
+    private String d0605c = _EMPTY_;
+    private String d0605d = _EMPTY_;
+    private String d0605e = _EMPTY_;
+    private String d0605f = _EMPTY_;
+    private String d0605g = _EMPTY_;
+    private String d0605h = _EMPTY_;
+    private String d0605i = _EMPTY_;
     private String d0701 = _EMPTY_;
     private String d0701xx = _EMPTY_;
     private String d0702 = _EMPTY_;
@@ -837,15 +845,114 @@ public class ModuleD extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.d0604);
     }
 
+
     @Bindable
-    public String getD0605() {
-        return d0605;
+    public String getD0605a() {
+        return d0605a;
     }
 
-    public void setD0605(String d0605) {
-        this.d0605 = d0605;
-        notifyPropertyChanged(BR.d0605);
+    public void setD0605a(String d0605a) {
+        if (this.d0605a.equals(d0605a)) return;
+        this.d0605a = d0605a;
+        notifyPropertyChanged(BR.d0605a);
     }
+
+
+    @Bindable
+    public String getD0605b() {
+        return d0605b;
+    }
+
+    public void setD0605b(String d0605b) {
+        if (this.d0605b.equals(d0605b)) return;
+        this.d0605b = d0605b;
+        notifyPropertyChanged(BR.d0605b);
+    }
+
+
+    @Bindable
+    public String getD0605c() {
+        return d0605c;
+    }
+
+    public void setD0605c(String d0605c) {
+        if (this.d0605c.equals(d0605c)) return;
+        this.d0605c = d0605c;
+        notifyPropertyChanged(BR.d0605c);
+    }
+
+
+    @Bindable
+    public String getD0605d() {
+        return d0605d;
+    }
+
+    public void setD0605d(String d0605d) {
+        if (this.d0605d.equals(d0605d)) return;
+        this.d0605d = d0605d;
+        notifyPropertyChanged(BR.d0605d);
+    }
+
+
+    @Bindable
+    public String getD0605e() {
+        return d0605e;
+    }
+
+    public void setD0605e(String d0605e) {
+        if (this.d0605e.equals(d0605e)) return;
+        this.d0605e = d0605e;
+        notifyPropertyChanged(BR.d0605e);
+    }
+
+
+    @Bindable
+    public String getD0605f() {
+        return d0605f;
+    }
+
+    public void setD0605f(String d0605f) {
+        if (this.d0605f.equals(d0605f)) return;
+        this.d0605f = d0605f;
+        notifyPropertyChanged(BR.d0605f);
+    }
+
+
+    @Bindable
+    public String getD0605g() {
+        return d0605g;
+    }
+
+    public void setD0605g(String d0605g) {
+        if (this.d0605g.equals(d0605g)) return;
+        this.d0605g = d0605g;
+        notifyPropertyChanged(BR.d0605g);
+    }
+
+
+    @Bindable
+    public String getD0605h() {
+        return d0605h;
+    }
+
+    public void setD0605h(String d0605h) {
+        if (this.d0605h.equals(d0605h)) return;
+        this.d0605h = d0605h;
+        notifyPropertyChanged(BR.d0605h);
+    }
+
+
+    @Bindable
+    public String getD0605i() {
+        return d0605i;
+    }
+
+    public void setD0605i(String d0605i) {
+        if (this.d0605i.equals(d0605i)) return;
+        this.d0605i = d0605i;
+        notifyPropertyChanged(BR.d0605i);
+    }
+
 
     @Bindable
     public String getD0701() {
@@ -1293,7 +1400,15 @@ public class ModuleD extends BaseObservable implements Observable {
             this.d0602 = json.getString("d0602");
             this.d0603 = json.getString("d0603");
             this.d0604 = json.getString("d0604");
-            this.d0605 = json.getString("d0605");
+            this.d0605a = json.getString("d0605a");
+            this.d0605b = json.getString("d0605b");
+            this.d0605c = json.getString("d0605c");
+            this.d0605d = json.getString("d0605d");
+            this.d0605e = json.getString("d0605e");
+            this.d0605f = json.getString("d0605f");
+            this.d0605g = json.getString("d0605g");
+            this.d0605h = json.getString("d0605h");
+            this.d0605i = json.getString("d0605i");
         }
     }
 
@@ -1456,7 +1571,15 @@ public class ModuleD extends BaseObservable implements Observable {
                 .put("d0602", d0602)
                 .put("d0603", d0603)
                 .put("d0604", d0604)
-                .put("d0605", d0605);
+                .put("d0605", d0605a)
+                .put("d0605b", d0605b)
+                .put("d0605c", d0605c)
+                .put("d0605d", d0605d)
+                .put("d0605e", d0605e)
+                .put("d0605f", d0605f)
+                .put("d0605g", d0605g)
+                .put("d0605h", d0605h)
+                .put("d0605i", d0605i);
         return json.toString();
     }
 
