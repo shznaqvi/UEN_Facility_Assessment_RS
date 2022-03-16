@@ -881,28 +881,28 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK410(String k410) {
         this.k410 = k410;
-        setK41101(k410.equals("2") ? "" : this.k41101);
-        setK41102(k410.equals("2") ? "" : this.k41102);
-        setK41103(k410.equals("2") ? "" : this.k41103);
-        setK41201(k410.equals("2") ? "" : this.k41201);
-        setK41202(k410.equals("2") ? "" : this.k41202);
-        setK41203(k410.equals("2") ? "" : this.k41203);
-        setK41204(k410.equals("2") ? "" : this.k41204);
-        setK41205(k410.equals("2") ? "" : this.k41205);
-        setK41206(k410.equals("2") ? "" : this.k41206);
-        setK41207(k410.equals("2") ? "" : this.k41207);
-        setK41301(k410.equals("2") ? "" : this.k41301);
-        setK41302(k410.equals("2") ? "" : this.k41302);
-        setK41303(k410.equals("2") ? "" : this.k41303);
-        setK41401(k410.equals("2") ? "" : this.k41401);
-        setK41402(k410.equals("2") ? "" : this.k41402);
-        setK41403(k410.equals("2") ? "" : this.k41403);
-        setK41404(k410.equals("2") ? "" : this.k41404);
-        setK41405(k410.equals("2") ? "" : this.k41405);
-        setK41406(k410.equals("2") ? "" : this.k41406);
-        setK41407(k410.equals("2") ? "" : this.k41407);
-        setK41408(k410.equals("2") ? "" : this.k41408);
-        setK41409(k410.equals("2") ? "" : this.k41409);
+        setK41101(k410.equals("1") ? this.k41101 : "");
+        setK41102(k410.equals("1") ? this.k41102 : "");
+        setK41103(k410.equals("1") ? this.k41103 : "");
+        setK41201(k410.equals("1") ? this.k41201 : "");
+        setK41202(k410.equals("1") ? this.k41202 : "");
+        setK41203(k410.equals("1") ? this.k41203 : "");
+        setK41204(k410.equals("1") ? this.k41204 : "");
+        setK41205(k410.equals("1") ? this.k41205 : "");
+        setK41206(k410.equals("1") ? this.k41206 : "");
+        setK41207(k410.equals("1") ? this.k41207 : "");
+        setK41301(k410.equals("1") ? this.k41301 : "");
+        setK41302(k410.equals("1") ? this.k41302 : "");
+        setK41303(k410.equals("1") ? this.k41303 : "");
+        setK41401(k410.equals("1") ? this.k41401 : "");
+        setK41402(k410.equals("1") ? this.k41402 : "");
+        setK41403(k410.equals("1") ? this.k41403 : "");
+        setK41404(k410.equals("1") ? this.k41404 : "");
+        setK41405(k410.equals("1") ? this.k41405 : "");
+        setK41406(k410.equals("1") ? this.k41406 : "");
+        setK41407(k410.equals("1") ? this.k41407 : "");
+        setK41408(k410.equals("1") ? this.k41408 : "");
+        setK41409(k410.equals("1") ? this.k41409 : "");
         notifyPropertyChanged(BR.k410);
     }
 
@@ -1165,6 +1165,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK415(String k415) {
         this.k415 = k415;
+        setK416(k415.equals("1") ? this.k416 : "");
+        setK417(k415.equals("1") ? this.k417 : "");
         notifyPropertyChanged(BR.k415);
     }
 
@@ -1185,7 +1187,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK417(String k417) {
         this.k417 = k417;
-        setK41796x(k417.equals("96") ? this.k41796x : ""); // for all skips, mention all skipped questions
+        setK41796x(k417.equals("96") ? this.k41796x : "");
         notifyPropertyChanged(BR.k417);
     }
 
