@@ -6,6 +6,8 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -16,6 +18,8 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
+
+import java.util.Calendar;
 
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
@@ -39,32 +43,53 @@ public class SectionAActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
+        setupSkips();
     }
 
 
-/*
-    private boolean insertNewRecord() {
-        if (!form.getUid().equals("") || MainApp.superuser) return true;
-        form.populateMeta();
-        long rowId = 0;
-        try {
-            rowId = db.addForm(form);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "JSONException(form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        form.setId(String.valueOf(rowId));
-        if (rowId > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
-            return true;
-        } else {
-            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
-            return false;
-        }
+    private void setupSkips() {
+
+        bi.a03y.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.a03y.getText().toString().isEmpty()) return;
+                bi.a03m.setMinvalue(Integer.parseInt(bi.a03y.getText().toString()) == 2021 ? 12f : 1f);
+                bi.a03d.setMinvalue(Integer.parseInt(bi.a03y.getText().toString()) == 2021 ? 1f : 1f);
+                bi.a03m.setMaxvalue(Integer.parseInt(bi.a03y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
+                        Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+                bi.a03d.setMaxvalue(Integer.parseInt(bi.a03y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.a03m.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.a03m.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.a03y.getText().toString().isEmpty() || bi.a03m.getText().toString().isEmpty())
+                    return;
+                bi.a03d.setMaxvalue(Integer.parseInt(bi.a03y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.a03m.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
     }
-*/
 
 
     private boolean updateDB() {
@@ -89,10 +114,8 @@ public class SectionAActivity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        //  if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            //   startActivity(new Intent(this, SectionMainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
