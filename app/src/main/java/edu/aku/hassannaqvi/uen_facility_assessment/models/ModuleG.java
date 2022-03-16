@@ -982,6 +982,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG0111(String g0111) {
         this.g0111 = g0111;
+        setG01112(g0111.equals("1") ? this.g01112 : "");
         notifyPropertyChanged(BR.g0111);
     }
 
@@ -1013,6 +1014,7 @@ public class ModuleG extends BaseObservable implements Observable {
 
     public void setG01113(String g01113) {
         this.g01113 = g01113;
+        setG01114(g01113.equals("1") ? this.g01114 : "");
         notifyPropertyChanged(BR.g01113);
     }
 
