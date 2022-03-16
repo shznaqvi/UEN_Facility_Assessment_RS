@@ -166,8 +166,8 @@
 
                             <RadioButton
                                 android:id="@+id/k40201"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k402.equals(`1`)}"
                                 android:onClick="@{()->form.setK402(`1`)}"
@@ -175,14 +175,17 @@
 
                             <RadioButton
                                 android:id="@+id/k40202"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k402.equals(`2`)}"
                                 android:onClick="@{()->form.setK402(`2`)}"
                                 android:text="@string/k40202" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -285,8 +288,8 @@
 
                             <RadioButton
                                 android:id="@+id/k40401"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k404.equals(`1`)}"
                                 android:onClick="@{()->form.setK404(`1`)}"
@@ -294,8 +297,8 @@
 
                             <RadioButton
                                 android:id="@+id/k40402"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k404.equals(`2`)}"
                                 android:onClick="@{()->form.setK404(`2`) + k405.clearCheck()}"
@@ -489,8 +492,8 @@
 
                             <RadioButton
                                 android:id="@+id/k40701"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k407.equals(`1`)}"
                                 android:onClick="@{()->form.setK407(`1`)}"
@@ -498,8 +501,8 @@
 
                             <RadioButton
                                 android:id="@+id/k40702"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k407.equals(`2`)}"
                                 android:onClick="@{()->form.setK407(`2`)}"
@@ -549,8 +552,8 @@
 
                             <RadioButton
                                 android:id="@+id/k40801"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k408.equals(`1`)}"
                                 android:onClick="@{()->form.setK408(`1`)}"
@@ -558,8 +561,8 @@
 
                             <RadioButton
                                 android:id="@+id/k40802"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k408.equals(`2`)}"
                                 android:onClick="@{()->form.setK408(`2`)}"
@@ -567,14 +570,17 @@
 
                             <RadioButton
                                 android:id="@+id/k40803"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.k408.equals(`3`)}"
                                 android:onClick="@{()->form.setK408(`3`)}"
                                 android:text="@string/k40803" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -651,8 +657,11 @@
                                 android:checked="@{form.k409.equals(`97`)}"
                                 android:onClick="@{()->form.setK409(`97`)}"
                                 android:text="@string/k40997" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -725,7 +734,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{!form.k410.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.k410.equals(`1`) ? View.VISIBLE : View.GONE}">
 
 
                     <!-- k411  CheckBox   -->
@@ -829,7 +838,7 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -890,7 +899,7 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1301,7 +1310,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="@{!form.k415.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.k415.equals(`1`) ? View.VISIBLE : View.GONE}">
 
 
                     <!-- k416  Radio   -->
@@ -1553,7 +1562,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVk419"
                     style="@style/cardView"
-                    android:visibility="@{!form.k418.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.k418.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
