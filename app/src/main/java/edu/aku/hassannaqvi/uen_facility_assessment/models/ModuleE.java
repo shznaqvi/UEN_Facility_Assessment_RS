@@ -2858,6 +2858,8 @@ public class ModuleE extends BaseObservable implements Observable {
 
     public void setE0607(String e0607) {
         this.e0607 = e0607;
+        setE0608(e0607.equals("1") ? this.e0608 : "");
+        setE0609(e0607.equals("1") ? this.e0609 : "");
         notifyPropertyChanged(BR.e0607);
     }
 
