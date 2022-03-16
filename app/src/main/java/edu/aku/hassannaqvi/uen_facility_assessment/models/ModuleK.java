@@ -1312,8 +1312,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK601(String k601) {
         this.k601 = k601;
-        setK601dx(k601.equals("2") || k601.equals("3") ? this.k601dx : ""); // for all skips, mention all skipped questions
-        setK601ex(k601.equals("2") || k601.equals("3") ? this.k601ex : ""); // for all skips, mention all skipped questions
+        setK601dx(k601.equals("2") || k601.equals("3") ? this.k601dx : "");
+        setK601ex(k601.equals("2") || k601.equals("3") ? this.k601ex : "");
         notifyPropertyChanged(BR.k601);
     }
 
