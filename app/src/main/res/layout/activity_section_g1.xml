@@ -512,7 +512,7 @@
                                 android:maxLength="2"
                                 android:text="@={form.g0105a}"
                                 app:maxValue="30"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <TextView
@@ -533,7 +533,7 @@
                                 android:maxLength="2"
                                 android:text="@={form.g0105b}"
                                 app:maxValue="12"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -1007,88 +1007,54 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/g0110"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/g0110a"
-                                android:layout_width="wrap_content"
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.g0110.equals(`1`)}"
-                                android:onClick="@{()->form.setG0110(`1`)}"
                                 android:text="@string/g0110a" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/g0110ax"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/g0110a"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="3"
-                                android:tag="g0110a"
-                                android:text="@={form.g0110ax}"
-                                android:visibility="@{form.g0110.equals(`1`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="100"
+                                android:maxLength="2"
+                                android:text="@={form.g0110a}"
+                                app:maxValue="30"
                                 app:minValue="0"
                                 app:type="range" />
 
-                            <RadioButton
-                                android:id="@+id/g0110b"
-                                android:layout_width="wrap_content"
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.g0110.equals(`2`)}"
-                                android:onClick="@{()->form.setG0110(`2`)}"
                                 android:text="@string/g0110b" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/g0110bx"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/g0110b"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="3"
-                                android:tag="g0110b"
-                                android:text="@={form.g0110bx}"
-                                android:visibility="@{form.g0110.equals(`2`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="100"
+                                android:maxLength="2"
+                                android:text="@={form.g0110b}"
+                                app:maxValue="24"
                                 app:minValue="0"
                                 app:type="range" />
 
-                            <RadioButton
-                                android:id="@+id/g0110c"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.g0110.equals(`3`)}"
-                                android:onClick="@{()->form.setG0110(`3`)}"
-                                android:text="@string/g0110c" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/g0110cx"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="###"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                android:tag="g0110c"
-                                android:text="@={form.g0110cx}"
-                                android:visibility="@{form.g0110.equals(`3`) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="100"
-                                app:minValue="0"
-                                app:type="range" />
-
-                        </RadioGroup>
+                        </LinearLayout>
 
                     </LinearLayout>
 

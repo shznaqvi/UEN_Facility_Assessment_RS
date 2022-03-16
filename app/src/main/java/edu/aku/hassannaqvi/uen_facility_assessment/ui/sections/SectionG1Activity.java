@@ -102,7 +102,15 @@ public class SectionG1Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+
+        if (Integer.parseInt(moduleG.getG0105a()) + Integer.parseInt(moduleG.getG0105b()) == 0)
+            return Validator.emptyCustomTextBox(this, bi.g0105a, "Both Can't be zero");
+
+        if (Integer.parseInt(moduleG.getG0110a()) + Integer.parseInt(moduleG.getG0110b()) == 0)
+            return Validator.emptyCustomTextBox(this, bi.g0110a, "Both Can't be zero");
+
+        return true;
     }
 
 
