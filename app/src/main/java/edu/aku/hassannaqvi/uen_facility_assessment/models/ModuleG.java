@@ -53,10 +53,8 @@ public class ModuleG extends BaseObservable implements Observable {
     private String g0103 = _EMPTY_;
     private String g0103xx = _EMPTY_;
     private String g0104 = _EMPTY_;
-    private String g0105 = _EMPTY_;
-    private String g0105ax = _EMPTY_;
-    private String g0105bx = _EMPTY_;
-    private String g0105cx = _EMPTY_;
+    private String g0105a = _EMPTY_;
+    private String g0105b = _EMPTY_;
     private String g0106 = _EMPTY_;
     private String g0106xx = _EMPTY_;
     private String g0107 = _EMPTY_;
@@ -855,48 +853,27 @@ public class ModuleG extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.g0104);
     }
 
+
     @Bindable
-    public String getG0105() {
-        return g0105;
+    public String getG0105a() {
+        return g0105a;
     }
 
-    public void setG0105(String g0105) {
-        this.g0105 = g0105;
-        setG0105ax(g0105.equals("1") ? this.g0105ax : "");
-        setG0105bx(g0105.equals("2") ? this.g0105bx : "");
-        setG0105cx(g0105.equals("3") ? this.g0105cx : "");
-        notifyPropertyChanged(BR.g0105);
+    public void setG0105a(String g0105a) {
+        this.g0105a = g0105a;
+        notifyPropertyChanged(BR.g0105a);
     }
 
     @Bindable
-    public String getG0105ax() {
-        return g0105ax;
+    public String getG0105b() {
+        return g0105b;
     }
 
-    public void setG0105ax(String g0105ax) {
-        this.g0105ax = g0105ax;
-        notifyPropertyChanged(BR.g0105ax);
+    public void setG0105b(String g0105b) {
+        this.g0105b = g0105b;
+        notifyPropertyChanged(BR.g0105b);
     }
 
-    @Bindable
-    public String getG0105bx() {
-        return g0105bx;
-    }
-
-    public void setG0105bx(String g0105bx) {
-        this.g0105bx = g0105bx;
-        notifyPropertyChanged(BR.g0105bx);
-    }
-
-    @Bindable
-    public String getG0105cx() {
-        return g0105cx;
-    }
-
-    public void setG0105cx(String g0105cx) {
-        this.g0105cx = g0105cx;
-        notifyPropertyChanged(BR.g0105cx);
-    }
 
     @Bindable
     public String getG0106() {
@@ -6749,10 +6726,8 @@ public class ModuleG extends BaseObservable implements Observable {
             this.g0103 = json.getString("g0103");
             this.g0103xx = json.getString("g0103xx");
             this.g0104 = json.getString("g0104");
-            this.g0105 = json.getString("g0105");
-            this.g0105ax = json.getString("g0105ax");
-            this.g0105bx = json.getString("g0105bx");
-            this.g0105cx = json.getString("g0105cx");
+            this.g0105a = json.getString("g0105a");
+            this.g0105b = json.getString("g0105b");
             this.g0106 = json.getString("g0106");
             this.g0106xx = json.getString("g0106xx");
             this.g0107 = json.getString("g0107");
@@ -7413,10 +7388,8 @@ public class ModuleG extends BaseObservable implements Observable {
                 .put("g0103", g0103)
                 .put("g0103xx", g0103xx)
                 .put("g0104", g0104)
-                .put("g0105", g0105)
-                .put("g0105ax", g0105ax)
-                .put("g0105bx", g0105bx)
-                .put("g0105cx", g0105cx)
+                .put("g0105a", g0105a)
+                .put("g0105b", g0105b)
                 .put("g0106", g0106)
                 .put("g0106xx", g0106xx)
                 .put("g0107", g0107)
