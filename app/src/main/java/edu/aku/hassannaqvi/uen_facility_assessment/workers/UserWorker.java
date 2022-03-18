@@ -349,11 +349,11 @@ public class UserWorker extends Worker {
         }
         try {
             result = new StringBuilder(CipherSecure.decrypt(result.toString()));
-        } catch (NoSuchPaddingException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | InvalidAlgorithmParameterException | InvalidKeyException e) {
-            Log.d(TAG, "doWork (Encryption Error): " + e.getMessage());
-            displayNotification(nTitle, "Encryption Error: " + e.getMessage());
+        } catch (NoSuchPaddingException | IllegalArgumentException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | InvalidAlgorithmParameterException | InvalidKeyException e) {
+            Log.d(TAG, "doWork (Encryption Error): " + e.getMessage() + "\n" + result);
+            displayNotification(nTitle, "Encryption Error: " + e.getMessage() + "\n" + result);
             data = new Data.Builder()
-                    .putString("error", "Encryption Error: " + e.getMessage())
+                    .putString("error", "Encryption Error: " + e.getMessage() + "\n" + result)
                     .build();
 
             return Result.failure(data);
