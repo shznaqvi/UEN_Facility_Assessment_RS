@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.countI;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleI;
 
 import android.content.Intent;
@@ -16,12 +18,14 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
+import java.util.Calendar;
+
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionI1Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleI;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 public class SectionI1Activity extends AppCompatActivity {
@@ -39,6 +43,20 @@ public class SectionI1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleI);
+        setupContent();
+    }
+
+
+    private void setupContent() {
+        moduleI.setI0102aa(String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)));
+        moduleI.setI0102ab(String.valueOf(Calendar.getInstance().get(Calendar.MONTH) + 1));
+        moduleI.setI0102ac(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
+        moduleI.setI0102ba(String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)));
+        moduleI.setI0102bb(String.valueOf(Calendar.getInstance().get(Calendar.MINUTE)));
+
+        bi.hfType.setText(form.getA10().equals("1") ? getString(R.string.a10a) : getString(R.string.a10b));
+        bi.countI.setText(new StringBuilder("Entries: 0").append(countI++));
+        bi.btnAdd.setEnabled(form.getA10().equals("1") ? countI < 6 : countI < 3);
     }
 
 
@@ -69,14 +87,16 @@ public class SectionI1Activity extends AppCompatActivity {
         if (MainApp.superuser) return true;
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
+        long stcount = 0;
         try {
             updcount = db.updatesModuleIColumn(TableContracts.ModuleITable.COLUMN_SI, moduleI.sItoString());
+            stcount = db.updatesModuleIColumn(TableContracts.ModuleITable.COLUMN_ISTATUS, moduleI.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
+        if (updcount > 0 && stcount > 0) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -89,16 +109,24 @@ public class SectionI1Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
+        moduleI.setiStatus("1");
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionMainActivity.class));
+            if (view.getId() == bi.btnAdd.getId()) {
+                moduleI = new ModuleI();
+                startActivity(new Intent(this, SectionI1Activity.class));
+            } else startActivity(new Intent(this, SectionMainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
+        if (countI > 0) {
+            Toast.makeText(this, "You have Enter Patient Already", Toast.LENGTH_LONG).show();
+            return;
+        }
         finish();
-        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, SectionMainActivity.class));
     }
 
 
@@ -109,7 +137,9 @@ public class SectionI1Activity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        if (countI > 0)
+            Toast.makeText(getApplicationContext(), "Back Press Not Allowed", Toast.LENGTH_LONG).show();
+        else super.onBackPressed();
     }
 
 

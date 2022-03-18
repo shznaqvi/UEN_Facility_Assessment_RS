@@ -137,7 +137,7 @@ public class SyncActivity extends AppCompatActivity {
                 uploadTables.clear();
                 uploadData.clear();
 
-                // Upload ModuleA
+                // Upload FORMS
                 uploadTables.add(new SyncModel(TableContracts.FormsTable.TABLE_NAME));
                 try {
                     uploadData.add(db.getUnsyncedForms());
@@ -145,15 +145,6 @@ public class SyncActivity extends AppCompatActivity {
                     e.printStackTrace();
                     Toast.makeText(this, "JSONException(ModuleA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
-               /* // Upload ModuleB
-                uploadTables.add(new SyncModel(TableContracts.ModuleBTable.TABLE_NAME));
-                try {
-                    uploadData.add(db.getUnsyncedModuleB());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(this, "JSONException(ModuleB): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }*/
 
                 // Upload ModuleC
                 uploadTables.add(new SyncModel(TableContracts.ModuleCTable.TABLE_NAME));
@@ -272,7 +263,7 @@ public class SyncActivity extends AppCompatActivity {
                 } else {
 
                     select = " * ";
-                    filter = " col_flag is null AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    filter = " dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(TableHealthFacilities.TABLE_NAME, select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
@@ -387,8 +378,6 @@ public class SyncActivity extends AppCompatActivity {
                                     break;
 
                             }
-
-
                             downloadTables.get(position).setmessage("Received: " + jsonArray.length() + "  •  Saved: " + insertCount);
                             downloadTables.get(position).setstatus(insertCount == 0 ? "Unsuccessful" : "Successful");
                             downloadTables.get(position).setstatusID(insertCount == 0 ? 1 : 3);

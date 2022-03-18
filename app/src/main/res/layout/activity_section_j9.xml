@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleJ" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,12 +26,12 @@
             style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/section9referralandlinkages_mainheading"
+            app:subtitle="@string/j09"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:subtitleTextColor="@color/grayLight"
             app:title="@string/modjtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
@@ -37,11 +40,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- j0900  Title   -->
                 <androidx.cardview.widget.CardView
@@ -72,55 +77,56 @@
 
                         </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/j0900a" />
-
-                        <EditText
-                            android:id="@+id/j0900a"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/j0900a"
-                            android:text="@={form.j0900a}" />
+                            android:orientation="horizontal">
 
-                    </LinearLayout>
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/j0900a" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                            <EditText
+                                android:id="@+id/j0900a"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/j0900a"
+                                android:text="@={form.j0900a}" />
 
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/j0900b" />
+                        </LinearLayout>
 
-                        <EditText
-                            android:id="@+id/j0900b"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/j0900b"
-                            android:text="@={form.j0900b}" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/j0900b" />
+
+                            <EditText
+                                android:id="@+id/j0900b"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/j0900b"
+                                android:text="@={form.j0900b}" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
-                    </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0900c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -159,24 +165,28 @@
 
                             <RadioButton
                                 android:id="@+id/j0900aaa"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0900c.equals(`1`)}"
                                 android:onClick="@{()->form.setJ0900c(`1`)}"
                                 android:text="@string/j0900aaa" />
 
                             <RadioButton
                                 android:id="@+id/j0900aab"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0900c.equals(`2`)}"
                                 android:onClick="@{()->form.setJ0900c(`2`)}"
                                 android:text="@string/j0900aab" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0901  Title   -->
                 <TextView
@@ -184,6 +194,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/j0901" />
+
 
                 <!-- j0901a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -222,24 +233,28 @@
 
                             <RadioButton
                                 android:id="@+id/j0901aa"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901a.equals(`1`)}"
                                 android:onClick="@{()->form.setJ0901a(`1`)}"
                                 android:text="@string/j0901aa" />
 
                             <RadioButton
                                 android:id="@+id/j0901ab"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901a.equals(`2`)}"
                                 android:onClick="@{()->form.setJ0901a(`2`)}"
                                 android:text="@string/j0901ab" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0901b  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -278,24 +293,28 @@
 
                             <RadioButton
                                 android:id="@+id/j0901ba"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901b.equals(`1`)}"
                                 android:onClick="@{()->form.setJ0901b(`1`)}"
                                 android:text="@string/j0901ba" />
 
                             <RadioButton
                                 android:id="@+id/j0901bb"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901b.equals(`2`)}"
                                 android:onClick="@{()->form.setJ0901b(`2`)}"
                                 android:text="@string/j0901bb" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0901c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -334,24 +353,28 @@
 
                             <RadioButton
                                 android:id="@+id/j0901ca"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901c.equals(`1`)}"
                                 android:onClick="@{()->form.setJ0901c(`1`)}"
                                 android:text="@string/j0901ca" />
 
                             <RadioButton
                                 android:id="@+id/j0901cb"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901c.equals(`2`)}"
                                 android:onClick="@{()->form.setJ0901c(`2`)}"
                                 android:text="@string/j0901cb" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0901d  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -390,24 +413,28 @@
 
                             <RadioButton
                                 android:id="@+id/j0901da"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901d.equals(`1`)}"
                                 android:onClick="@{()->form.setJ0901d(`1`)}"
                                 android:text="@string/j0901da" />
 
                             <RadioButton
                                 android:id="@+id/j0901db"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901d.equals(`2`)}"
                                 android:onClick="@{()->form.setJ0901d(`2`)}"
                                 android:text="@string/j0901db" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0901e  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -446,29 +473,34 @@
 
                             <RadioButton
                                 android:id="@+id/j0901ea"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901e.equals(`1`)}"
                                 android:onClick="@{()->form.setJ0901e(`1`)}"
                                 android:text="@string/j0901ea" />
 
                             <RadioButton
                                 android:id="@+id/j0901eb"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
                                 android:checked="@{form.j0901e.equals(`2`)}"
                                 android:onClick="@{()->form.setJ0901e(`2`)}"
                                 android:text="@string/j0901eb" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- j0901f  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVj0901f"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.j0901a.equals(`2`) || form.j0901b.equals(`2`) || form.j0901c.equals(`2`) || form.j0901d.equals(`2`) || form.j0901e.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -540,7 +572,9 @@
                                 android:checked="@{form.j0901fe.equals(`5`)}"
                                 android:onClick="@{()->form.setJ0901fe(form.j0901fe.equals(`5`)?``:`5`)}"
                                 android:text="@string/j0901fe" />
+
                         </LinearLayout>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -582,8 +616,11 @@
 
             </LinearLayout>
 
+
         </ScrollView>
 
+
     </LinearLayout>
+
 
 </layout>

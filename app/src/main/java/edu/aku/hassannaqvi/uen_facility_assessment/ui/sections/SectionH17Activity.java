@@ -16,7 +16,6 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
@@ -67,14 +66,14 @@ public class SectionH17Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionMainActivity.class));
+            startActivity(new Intent(this, SectionH4Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, SectionMainActivity.class));
     }
 
 

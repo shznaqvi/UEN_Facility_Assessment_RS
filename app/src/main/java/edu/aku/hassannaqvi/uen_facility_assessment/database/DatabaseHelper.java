@@ -1039,8 +1039,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
-
-
         db.close();
         return insertCount;
     }
@@ -1071,7 +1069,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long rowID = db.insert(TableHealthFacilities.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
-        db.close();
         db.close();
         return insertCount;
     }
@@ -1119,8 +1116,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
 
-        Log.d(TAG, "getUnsyncedLHWHouseholds: " + allForms.toString().length());
-        Log.d(TAG, "getUnsyncedLHWHouseholds: " + allForms);
+        Log.d(TAG, "getUnsyncedForms: " + allForms.toString().length());
+        Log.d(TAG, "getUnsyncedForms: " + allForms);
         return allForms;
     }
 
@@ -1489,7 +1486,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //FORMS  UPDATE SYNCED TABLES
-    public void updateSyncedForm(String id) {
+    public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
 // New value for one column

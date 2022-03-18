@@ -16,7 +16,6 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
@@ -45,14 +44,16 @@ public class SectionK7Activity extends AppCompatActivity {
         if (MainApp.superuser) return true;
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
+        long status = 0;
         try {
             updcount = db.updatesModuleKColumn(TableContracts.ModuleKTable.COLUMN_SK7, moduleK.sK7toString());
+            status = db.updatesModuleKColumn(TableContracts.ModuleKTable.COLUMN_ISTATUS, moduleK.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
+        if (updcount > 0 && status > 0) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -64,6 +65,7 @@ public class SectionK7Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        moduleK.setiStatus("1");
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));
@@ -73,7 +75,7 @@ public class SectionK7Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, SectionMainActivity.class));
     }
 
 

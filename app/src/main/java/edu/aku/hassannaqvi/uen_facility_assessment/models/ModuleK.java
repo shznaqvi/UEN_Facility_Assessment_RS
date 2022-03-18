@@ -403,6 +403,15 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101(String k101) {
         this.k101 = k101;
+        setK101a(k101.equals("1") ? this.k101a : "");
+        setK101ba(k101.equals("1") ? this.k101ba : "");
+        setK101bb(k101.equals("1") ? this.k101bb : "");
+        setK101bc(k101.equals("1") ? this.k101bc : "");
+        setK101bd(k101.equals("1") ? this.k101bd : "");
+        setK101be(k101.equals("1") ? this.k101be : "");
+        setK101bf(k101.equals("1") ? this.k101bf : "");
+        setK101bg(k101.equals("1") ? this.k101bg : "");
+        setK101b96(k101.equals("1") ? this.k101b96 : "");
         notifyPropertyChanged(BR.k101);
     }
 
@@ -570,7 +579,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101b96(String k101b96) {
         this.k101b96 = k101b96;
-        setK101b9603x(k101b96.equals("96") ? this.k101b9603x : ""); // for all skips, mention all skipped questions
+        setK101b9603x(k101b96.equals("96") ? this.k101b9603x : "");
+        setK101b9604(k101b96.equals("96") ? this.k101b9604 : "");
         notifyPropertyChanged(BR.k101b96);
     }
 
@@ -591,7 +601,6 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK101b9604(String k101b9604) {
         this.k101b9604 = k101b9604;
-        setK101b9604(k101b96.equals("1") ? this.k101b9604 : "");
         notifyPropertyChanged(BR.k101b9604);
     }
 
@@ -666,6 +675,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK203(String k203) {
         this.k203 = k203;
+        setK204(k203.equals("1") ? this.k204 : "");
         notifyPropertyChanged(BR.k203);
     }
 
@@ -809,6 +819,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK404(String k404) {
         this.k404 = k404;
+        setK405(k404.equals("1") ? this.k405 : "");
+        setK406(k404.equals("1") ? this.k406 : "");
         notifyPropertyChanged(BR.k404);
     }
 
@@ -869,28 +881,28 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK410(String k410) {
         this.k410 = k410;
-        setK41101(k410.equals("2") ? "" : this.k41101);
-        setK41102(k410.equals("2") ? "" : this.k41102);
-        setK41103(k410.equals("2") ? "" : this.k41103);
-        setK41201(k410.equals("2") ? "" : this.k41201);
-        setK41202(k410.equals("2") ? "" : this.k41202);
-        setK41203(k410.equals("2") ? "" : this.k41203);
-        setK41204(k410.equals("2") ? "" : this.k41204);
-        setK41205(k410.equals("2") ? "" : this.k41205);
-        setK41206(k410.equals("2") ? "" : this.k41206);
-        setK41207(k410.equals("2") ? "" : this.k41207);
-        setK41301(k410.equals("2") ? "" : this.k41301);
-        setK41302(k410.equals("2") ? "" : this.k41302);
-        setK41303(k410.equals("2") ? "" : this.k41303);
-        setK41401(k410.equals("2") ? "" : this.k41401);
-        setK41402(k410.equals("2") ? "" : this.k41402);
-        setK41403(k410.equals("2") ? "" : this.k41403);
-        setK41404(k410.equals("2") ? "" : this.k41404);
-        setK41405(k410.equals("2") ? "" : this.k41405);
-        setK41406(k410.equals("2") ? "" : this.k41406);
-        setK41407(k410.equals("2") ? "" : this.k41407);
-        setK41408(k410.equals("2") ? "" : this.k41408);
-        setK41409(k410.equals("2") ? "" : this.k41409);
+        setK41101(k410.equals("1") ? this.k41101 : "");
+        setK41102(k410.equals("1") ? this.k41102 : "");
+        setK41103(k410.equals("1") ? this.k41103 : "");
+        setK41201(k410.equals("1") ? this.k41201 : "");
+        setK41202(k410.equals("1") ? this.k41202 : "");
+        setK41203(k410.equals("1") ? this.k41203 : "");
+        setK41204(k410.equals("1") ? this.k41204 : "");
+        setK41205(k410.equals("1") ? this.k41205 : "");
+        setK41206(k410.equals("1") ? this.k41206 : "");
+        setK41207(k410.equals("1") ? this.k41207 : "");
+        setK41301(k410.equals("1") ? this.k41301 : "");
+        setK41302(k410.equals("1") ? this.k41302 : "");
+        setK41303(k410.equals("1") ? this.k41303 : "");
+        setK41401(k410.equals("1") ? this.k41401 : "");
+        setK41402(k410.equals("1") ? this.k41402 : "");
+        setK41403(k410.equals("1") ? this.k41403 : "");
+        setK41404(k410.equals("1") ? this.k41404 : "");
+        setK41405(k410.equals("1") ? this.k41405 : "");
+        setK41406(k410.equals("1") ? this.k41406 : "");
+        setK41407(k410.equals("1") ? this.k41407 : "");
+        setK41408(k410.equals("1") ? this.k41408 : "");
+        setK41409(k410.equals("1") ? this.k41409 : "");
         notifyPropertyChanged(BR.k410);
     }
 
@@ -1153,6 +1165,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK415(String k415) {
         this.k415 = k415;
+        setK416(k415.equals("1") ? this.k416 : "");
+        setK417(k415.equals("1") ? this.k417 : "");
         notifyPropertyChanged(BR.k415);
     }
 
@@ -1173,7 +1187,7 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK417(String k417) {
         this.k417 = k417;
-        setK41796x(k417.equals("96") ? this.k41796x : ""); // for all skips, mention all skipped questions
+        setK41796x(k417.equals("96") ? this.k41796x : "");
         notifyPropertyChanged(BR.k417);
     }
 
@@ -1194,6 +1208,13 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK418(String k418) {
         this.k418 = k418;
+        setK41901(k418.equals("1") ? this.k41901 : "");
+        setK41902(k418.equals("1") ? this.k41902 : "");
+        setK41903(k418.equals("1") ? this.k41903 : "");
+        setK41904(k418.equals("1") ? this.k41904 : "");
+        setK41905(k418.equals("1") ? this.k41905 : "");
+        setK41906(k418.equals("1") ? this.k41906 : "");
+        setK41907(k418.equals("1") ? this.k41907 : "");
         notifyPropertyChanged(BR.k418);
     }
 
@@ -1291,8 +1312,8 @@ public class ModuleK extends BaseObservable implements Observable {
 
     public void setK601(String k601) {
         this.k601 = k601;
-        setK601dx(k601.equals("2") || k601.equals("3") ? this.k601dx : ""); // for all skips, mention all skipped questions
-        setK601ex(k601.equals("2") || k601.equals("3") ? this.k601ex : ""); // for all skips, mention all skipped questions
+        setK601dx(k601.equals("2") || k601.equals("3") ? this.k601dx : "");
+        setK601ex(k601.equals("2") || k601.equals("3") ? this.k601ex : "");
         notifyPropertyChanged(BR.k601);
     }
 

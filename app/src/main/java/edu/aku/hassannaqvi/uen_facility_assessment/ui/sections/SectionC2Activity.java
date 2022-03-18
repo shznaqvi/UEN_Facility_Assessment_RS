@@ -23,7 +23,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionC2Binding;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
-import edu.aku.hassannaqvi.uen_facility_assessment.ui.EndingActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
@@ -73,14 +72,16 @@ public class SectionC2Activity extends AppCompatActivity {
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
+        long stcount = 0;
         try {
             updcount = db.updatesStaffColumn(TableContracts.StaffingTable.COLUMN_SC2, staffing.sC2toString());
+            stcount = db.updatesStaffColumn(TableContracts.StaffingTable.COLUMN_ISTATUS, staffing.getiStatus());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
+        if (updcount > 0 && stcount > 0) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -92,29 +93,20 @@ public class SectionC2Activity extends AppCompatActivity {
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
+        staffing.setiStatus("1");
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionMainActivity.class));
-        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-    }
-
-
-    public void addMore(View view) {
-        bi.llbtn.setVisibility(View.GONE);
-        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
-        if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        if (updateDB()) {
-            countC++;
-            finish();
-            startActivity(new Intent(this, SectionC2Activity.class));
+            if (view.getId() == bi.btnAdd.getId()) {
+                countC++;
+                startActivity(new Intent(this, SectionC2Activity.class));
+            } else startActivity(new Intent(this, SectionMainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, SectionMainActivity.class));
     }
 
 

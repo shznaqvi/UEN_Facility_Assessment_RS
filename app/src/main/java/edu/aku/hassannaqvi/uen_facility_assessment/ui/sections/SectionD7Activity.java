@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleD;
 
 import android.content.Intent;
@@ -16,12 +17,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionD7Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
 public class SectionD7Activity extends AppCompatActivity {
@@ -38,6 +39,7 @@ public class SectionD7Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleD);
+        if (form.getA10().equals("2")) bi.fldGrpCVd0704.setVisibility(View.GONE);
     }
 
 
@@ -74,7 +76,7 @@ public class SectionD7Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, SectionMainActivity.class));
     }
 
 

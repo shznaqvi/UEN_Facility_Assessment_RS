@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.countI;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleC;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleD;
@@ -34,8 +35,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionD1Activity
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionE1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionF1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionG1Activity;
-import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionH16Activity;
-import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionH2Activity;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionH1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionI1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionJ1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionK1Activity;
@@ -43,8 +43,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionK1Activity
 
 public class SectionMainActivity extends AppCompatActivity {
     private static final String TAG = "SectionMainActivity";
-    //public static String maternalCount = 0, paedsCount = 0;
-    public static int countC2 = 0, countI = 0;
     ActivitySectionMainBinding bi;
     boolean flag = false;
     private DatabaseHelper db;
@@ -55,6 +53,9 @@ public class SectionMainActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_main);
         bi.setForm(form);
         db = MainApp.appInfo.getDbHelper();
+        bi.formC.setEnabled(false);
+        bi.formF.setEnabled(false);
+        bi.formG.setEnabled(false);
 
 
         /*if (countC2 != 0 && !flag) {
@@ -88,20 +89,27 @@ public class SectionMainActivity extends AppCompatActivity {
 
     private void updateSections() {
 
-        if (!form.getA22().isEmpty()) bi.checkedA.setVisibility(View.VISIBLE);
+        if (!form.getA22().isEmpty()) {
+            bi.checkedA.setVisibility(View.VISIBLE);
+            bi.formA.setEnabled(false);
+            if (form.getA10().equals("1")) {
+                bi.formC.setEnabled(true);
+                bi.formF.setEnabled(true);
+                bi.formG.setEnabled(true);
+                flag = true;
+            }
+        }
 
-        // moduleB = db.getModuleBByUUid();
-        if (!form.getB05().isEmpty()) bi.checkedB.setVisibility(View.VISIBLE);
+        if (form.getB02().equals("2") || !form.getB05().isEmpty()) {
+            bi.checkedB.setVisibility(View.VISIBLE);
+            bi.formB.setEnabled(false);
+        }
 
         try {
             moduleC = db.getModuleCByUUid();
-
-            if (!moduleC.getC01le().isEmpty()) bi.checkedC.setVisibility(View.VISIBLE);
-            if (form.getA10().equals("2")) {
+            if (moduleC.getiStatus().equals("1")) {
+                bi.checkedC.setVisibility(View.VISIBLE);
                 bi.formC.setEnabled(false);
-                bi.formF.setEnabled(false);
-                bi.formG.setEnabled(false);
-                flag = true;
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -110,7 +118,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleD = db.getModuleDByUUid();
-            if (!moduleD.getD0801j0fq().isEmpty()) bi.checkedD.setVisibility(View.VISIBLE);
+            if (moduleD.getiStatus().equals("1")) {
+                bi.checkedD.setVisibility(View.VISIBLE);
+                bi.formD.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleD)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -118,7 +129,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleE = db.getModuleEByUUid();
-            if (!moduleE.getE0814().isEmpty()) bi.checkedE.setVisibility(View.VISIBLE);
+            if (moduleE.getiStatus().equals("1")) {
+                bi.checkedE.setVisibility(View.VISIBLE);
+                bi.formE.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleE)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -126,7 +140,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleF = db.getModuleFByUUid();
-            if (!moduleF.getF0701aad0fqx().isEmpty()) bi.checkedF.setVisibility(View.VISIBLE);
+            if (moduleF.getiStatus().equals("1")) {
+                bi.checkedF.setVisibility(View.VISIBLE);
+                bi.formF.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleF)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -134,7 +151,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleG = db.getModuleGByUUid();
-            if (!moduleG.getG0403270sm().isEmpty()) bi.checkedG.setVisibility(View.VISIBLE);
+            if (moduleG.getiStatus().equals("1")) {
+                bi.checkedG.setVisibility(View.VISIBLE);
+                bi.formG.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleG)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -142,8 +162,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleH = db.getModuleHByUUid();
-            if (!moduleH.getH1704().isEmpty() || !moduleH.getH1605xxx().isEmpty() || !moduleH.getH1501z0dy().isEmpty())
+            if (moduleH.getiStatus().equals("1")) {
                 bi.checkedH.setVisibility(View.VISIBLE);
+                bi.formH.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleH)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -151,7 +173,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleI = db.getModuleIByUUid();
-            if (!moduleI.getI011696x().isEmpty()) bi.checkedI.setVisibility(View.VISIBLE);
+            if (moduleI.getiStatus().equals("1")) {
+                bi.checkedI.setVisibility(View.VISIBLE);
+                bi.formI.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleI)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -159,7 +184,10 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleJ = db.getModuleJByUUid();
-            if (!moduleJ.getJ0901fe().isEmpty()) bi.checkedJ.setVisibility(View.VISIBLE);
+            if (moduleJ.getiStatus().equals("1")) {
+                bi.checkedJ.setVisibility(View.VISIBLE);
+                bi.formJ.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleJ)" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -167,19 +195,15 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         try {
             moduleK = db.getModuleKByUUid();
-            if (!moduleK.getK711().isEmpty()) bi.checkedK.setVisibility(View.VISIBLE);
+            if (moduleK.getiStatus().equals("1")) {
+                bi.checkedK.setVisibility(View.VISIBLE);
+                bi.formK.setEnabled(false);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(ModuleK)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
-
-
-            /*if (!form.getsH().isEmpty() && (new JSONObject(form.getsH()).has("h1605xx") || new JSONObject(form.getsH()).has("h1501z0dn"))) {
-                //bi.formH.setEnabled(false);
-                bi.checkedH.setVisibility(View.VISIBLE);
-            }*/
-
 
     }
 
@@ -230,7 +254,8 @@ public class SectionMainActivity extends AppCompatActivity {
     }*/
 
     public void btnContinue(View v) {
-        if (!bi.formB.isEnabled()
+        if (!bi.formA.isEnabled()
+                && !bi.formB.isEnabled()
                 && !bi.formC.isEnabled()
                 && !bi.formD.isEnabled()
                 && !bi.formE.isEnabled()
@@ -242,7 +267,6 @@ public class SectionMainActivity extends AppCompatActivity {
                 && !bi.formK.isEnabled()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-            //MainApp.endActivity(this, SectionBActivity.class);
         } else {
             Toast.makeText(this, "Sections still in Pending!", Toast.LENGTH_SHORT).show();
         }
@@ -250,7 +274,8 @@ public class SectionMainActivity extends AppCompatActivity {
 
 
     public void btnEnd(View v) {
-        if (bi.formB.isEnabled()
+        if (bi.formA.isEnabled()
+                || bi.formB.isEnabled()
                 || bi.formC.isEnabled()
                 || bi.formD.isEnabled()
                 || bi.formE.isEnabled()
@@ -262,7 +287,6 @@ public class SectionMainActivity extends AppCompatActivity {
                 || bi.formK.isEnabled()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-            //MainApp.endActivity(this, EndingActivity.class).putExtra("complete", false);
         } else {
             Toast.makeText(this, "ALL SECTIONS FILLED \n Good to GO GREEN!", Toast.LENGTH_SHORT).show();
         }
@@ -296,10 +320,15 @@ public class SectionMainActivity extends AppCompatActivity {
                     oF = new Intent(this, SectionG1Activity.class);
                     break;
                 case R.id.formH:
-                    oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH2Activity.class);
+                    oF = new Intent(this, SectionH1Activity.class);
+                    //oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH2Activity.class);
                     break;
                 case R.id.formI:
                     countI = 0;
+                    if (form.getA10().isEmpty()) {
+                        Toast.makeText(this, "Please Fill Section A First", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     oF = new Intent(this, SectionI1Activity.class);
                     break;
                 case R.id.formJ:

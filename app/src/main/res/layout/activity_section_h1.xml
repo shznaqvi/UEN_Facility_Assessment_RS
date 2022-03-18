@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -9,6 +10,7 @@
             name="form"
             type="edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH" />
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,12 +25,12 @@
             style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/section1assessmentreviewmonths_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:subtitleTextColor="@color/grayLight"
             app:title="@string/modhtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
@@ -36,6 +38,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -54,26 +57,26 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-<!--
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h0101" />-->
-
-
-                        <TextView
-                            style="@style/info"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h0101" />
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+                            <!--
+                                                    <TextView
+                                                        style="@style/quesNum"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="match_parent"
+                                                        android:text="@string/Q_h0101" />-->
 
-                    </LinearLayout>
+
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h0101" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -90,75 +93,78 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h0101a" />
-
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h0101a" />
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                    </LinearLayout>
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h0101a" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h0101a" />
+
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/h0101aa" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h0101aa" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/h0101aa"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:hint="###"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.h0101aa}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h0101aa"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.h0101aa}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/h0101ab" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h0101ab" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/h0101ab"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:hint="###"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.h0101ab}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h0101ab"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={form.h0101ab}"
+                                app:maxValue="2022"
+                                app:minValue="2021"
+                                app:type="range" />
 
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- h0101b  Title   -->
                 <androidx.cardview.widget.CardView
@@ -170,76 +176,79 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h0101b" />
-
-
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h0101b" />
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h0101b" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h0101b" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h0101ba" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h0101ba"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.h0101ba}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h0101bb" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h0101bb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={form.h0101bb}"
+                                app:maxValue="2022"
+                                app:minValue="2021"
+                                app:type="range" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                    <TextView
-                            style="@style/sub_labels"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/h0101ba" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/h0101ba"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:hint="###"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.h0101ba}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
-
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/h0101bb" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/h0101bb"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:hint="###"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.h0101bb}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
-
-                    </LinearLayout>
-                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- h0101c  Title   -->
                 <androidx.cardview.widget.CardView
@@ -251,74 +260,74 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h0101c" />
-
-
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h0101c" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                    <TextView
-                            style="@style/sub_labels"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="@string/h0101ca" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/h0101ca"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h0101c" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h0101c" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="###"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.h0101ca}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/h0101cb" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h0101ca" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/h0101cb"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:hint="###"
-                            android:gravity="center"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.h0101cb}"
-                            app:maxValue="100"
-                            app:minValue="0"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h0101ca"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.h0101ca}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
 
-                    </LinearLayout>
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h0101cb" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h0101cb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={form.h0101cb}"
+                                app:maxValue="2022"
+                                app:minValue="2021"
+                                app:type="range" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -359,10 +368,14 @@
                 </LinearLayout>
                 <!--EndButton LinearLayout-->
 
+
             </LinearLayout>
+
 
         </ScrollView>
 
+
     </LinearLayout>
+
 
 </layout>

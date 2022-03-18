@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
@@ -58,15 +60,12 @@ public class EndingActivity extends AppCompatActivity {
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {
-
-            ///  cleanupProcess();
+            cleanupProcess();
             finish();
-            //    setResult(RESULT_OK);
-           /* Intent i = new Intent(this, MainActivity.class);
+            setResult(RESULT_OK);
+            Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
-           */
             Toast.makeText(this, "Data has been updated.", Toast.LENGTH_SHORT).show();
-
         } else {
             Toast.makeText(this, "Error in updating Database.", Toast.LENGTH_SHORT).show();
         }
@@ -87,7 +86,7 @@ public class EndingActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "Back Press Not Allowed", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_LONG).show();
     }
 
 }

@@ -20,19 +20,18 @@
         android:orientation="vertical">
 
 
-
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/section3indicatordefinitionsandreportingguidelines_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:subtitleTextColor="@color/grayLight"
             app:title="@string/modhtitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
@@ -49,7 +48,6 @@
                 android:orientation="vertical">
 
 
-
                 <!-- h031a  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh031a"
@@ -60,48 +58,56 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031a" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031a" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301a0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301a0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301a0a(form.h0301a0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301a0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301a0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031a" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031a" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031acheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301a0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301a0b(form.h0301a0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301a0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301a0bc"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301a0bc.equals(``)}"
-                            android:onClick="@{()->form.setH0301a0bc(form.h0301a0bc.equals(``)?``:``)}"
-                            android:text="@string/h0301a0bc" />
+                            <CheckBox
+                                android:id="@+id/h0301a0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301a0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301a0a(form.h0301a0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301a0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301a0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301a0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301a0b(form.h0301a0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301a0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301a0bc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301a0bc.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301a0bc(form.h0301a0bc.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301a0bc" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -118,49 +124,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031b" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031b" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301b0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301b0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301b0a(form.h0301b0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301b0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301b0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031b" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031b" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031bcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301b0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301b0b(form.h0301b0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301b0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301b0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301b0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301b0c(form.h0301b0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301b0c" />
+                            <CheckBox
+                                android:id="@+id/h0301b0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301b0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301b0a(form.h0301b0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301b0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301b0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301b0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301b0b(form.h0301b0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301b0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301b0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301b0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301b0c(form.h0301b0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301b0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -174,49 +188,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031c" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031c" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301c0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301c0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301c0a(form.h0301c0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301c0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301c0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031c" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031c" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031ccheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301c0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301c0b(form.h0301c0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301c0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301c0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301c0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301c0c(form.h0301c0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301c0c" />
+                            <CheckBox
+                                android:id="@+id/h0301c0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301c0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301c0a(form.h0301c0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301c0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301c0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301c0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301c0b(form.h0301c0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301c0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301c0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301c0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301c0c(form.h0301c0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301c0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -230,49 +252,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031d" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031d" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301d0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301d0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301d0a(form.h0301d0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301d0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301d0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031d" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031d" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031dcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301d0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301d0b(form.h0301d0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301d0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301d0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301d0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301d0c(form.h0301d0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301d0c" />
+                            <CheckBox
+                                android:id="@+id/h0301d0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301d0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301d0a(form.h0301d0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301d0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301d0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301d0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301d0b(form.h0301d0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301d0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301d0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301d0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301d0c(form.h0301d0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301d0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -286,49 +316,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031e" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031e" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301e0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301e0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301e0a(form.h0301e0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301e0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301e0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031e" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031e" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031echeck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301e0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301e0b(form.h0301e0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301e0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301e0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301e0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301e0c(form.h0301e0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301e0c" />
+                            <CheckBox
+                                android:id="@+id/h0301e0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301e0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301e0a(form.h0301e0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301e0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301e0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301e0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301e0b(form.h0301e0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301e0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301e0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301e0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301e0c(form.h0301e0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301e0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -342,49 +380,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031f" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031f" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301f0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301f0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301f0a(form.h0301f0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301f0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301f0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031f" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031f" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031fcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301f0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301f0b(form.h0301f0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301f0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301f0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301f0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301f0c(form.h0301f0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301f0c" />
+                            <CheckBox
+                                android:id="@+id/h0301f0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301f0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301f0a(form.h0301f0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301f0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301f0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301f0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301f0b(form.h0301f0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301f0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301f0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301f0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301f0c(form.h0301f0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301f0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -398,48 +444,56 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031g" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031g" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301g0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301g0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301g0a(form.h0301g0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301g0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301g0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031g" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031g" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031gcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301g0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301g0b(form.h0301g0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301g0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301g0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301g0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301g0c(form.h0301g0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301g0c" />
+                            <CheckBox
+                                android:id="@+id/h0301g0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301g0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301g0a(form.h0301g0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301g0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301g0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301g0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301g0b(form.h0301g0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301g0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301g0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301g0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301g0c(form.h0301g0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301g0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -453,49 +507,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031h" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031h" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h03011h0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h03011h0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH03011h0a(form.h03011h0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h03011h0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h03011h0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031h" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031h" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031hcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h03011h0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH03011h0b(form.h03011h0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h03011h0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h03011h0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h03011h0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH03011h0c(form.h03011h0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h03011h0c" />
+                            <CheckBox
+                                android:id="@+id/h03011h0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h03011h0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH03011h0a(form.h03011h0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h03011h0a" />
+
+                            <CheckBox
+                                android:id="@+id/h03011h0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h03011h0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH03011h0b(form.h03011h0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h03011h0b" />
+
+                            <CheckBox
+                                android:id="@+id/h03011h0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h03011h0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH03011h0c(form.h03011h0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h03011h0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -509,49 +571,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031i" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031i" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301i0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301i0a.equals(``)}"
-                            android:onClick="@{()->form.setH0301i0a(form.h0301i0a.equals(``)?``:``)}"
-                            android:text="@string/h0301i0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301i0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031i" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031i" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031icheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301i0b.equals(``)}"
-                            android:onClick="@{()->form.setH0301i0b(form.h0301i0b.equals(``)?``:``)}"
-                            android:text="@string/h0301i0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301i0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301i0c.equals(``)}"
-                            android:onClick="@{()->form.setH0301i0c(form.h0301i0c.equals(``)?``:``)}"
-                            android:text="@string/h0301i0c" />
+                            <CheckBox
+                                android:id="@+id/h0301i0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301i0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301i0a(form.h0301i0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301i0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301i0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301i0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301i0b(form.h0301i0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301i0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301i0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301i0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301i0c(form.h0301i0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301i0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -565,49 +635,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031j" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031j" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301j0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301j0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301j0a(form.h0301j0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301j0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301j0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031j" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031j" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031jcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301j0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301j0b(form.h0301j0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301j0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301j0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301j0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301j0c(form.h0301j0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301j0c" />
+                            <CheckBox
+                                android:id="@+id/h0301j0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301j0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301j0a(form.h0301j0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301j0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301j0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301j0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301j0b(form.h0301j0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301j0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301j0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301j0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301j0c(form.h0301j0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301j0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -621,49 +699,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031k" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031k" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301k0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301k0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301k0a(form.h0301k0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301k0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301k0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031k" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031k" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031kcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301k0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301k0b(form.h0301k0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301k0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301k0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301k0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301k0c(form.h0301k0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301k0c" />
+                            <CheckBox
+                                android:id="@+id/h0301k0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301k0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301k0a(form.h0301k0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301k0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301k0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301k0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301k0b(form.h0301k0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301k0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301k0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301k0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301k0c(form.h0301k0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301k0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -677,49 +763,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031l" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031l" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301l0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301l0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301l0a(form.h0301l0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301l0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301l0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031l" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031l" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031lcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301l0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301l0b(form.h0301l0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301l0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301l0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301l0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301l0c(form.h0301l0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301l0c" />
+                            <CheckBox
+                                android:id="@+id/h0301l0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301l0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301l0a(form.h0301l0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301l0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301l0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301l0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301l0b(form.h0301l0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301l0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301l0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301l0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301l0c(form.h0301l0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301l0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -733,49 +827,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031m" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031m" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301m0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301m0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301m0a(form.h0301m0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301m0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301m0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031m" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031m" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031mcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301m0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301m0b(form.h0301m0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301m0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301m0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301m0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301m0c(form.h0301m0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301m0c" />
+                            <CheckBox
+                                android:id="@+id/h0301m0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301m0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301m0a(form.h0301m0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301m0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301m0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301m0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301m0b(form.h0301m0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301m0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301m0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301m0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301m0c(form.h0301m0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301m0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -789,49 +891,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031n" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031n" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301n0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301n0a.equals(``)}"
-                            android:onClick="@{()->form.setH0301n0a(form.h0301n0a.equals(``)?``:``)}"
-                            android:text="@string/h0301n0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301n0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031n" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031n" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031ncheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301n0b.equals(``)}"
-                            android:onClick="@{()->form.setH0301n0b(form.h0301n0b.equals(``)?``:``)}"
-                            android:text="@string/h0301n0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301n0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301n0c.equals(``)}"
-                            android:onClick="@{()->form.setH0301n0c(form.h0301n0c.equals(``)?``:``)}"
-                            android:text="@string/h0301n0c" />
+                            <CheckBox
+                                android:id="@+id/h0301n0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301n0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301n0a(form.h0301n0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301n0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301n0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301n0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301n0b(form.h0301n0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301n0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301n0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301n0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301n0c(form.h0301n0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301n0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -845,49 +955,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031o" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031o" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301o0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301o0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301o0a(form.h0301o0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301o0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301o0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031o" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031o" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031ocheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301o0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301o0b(form.h0301o0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301o0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301o0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301o0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301o0c(form.h0301o0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301o0c" />
+                            <CheckBox
+                                android:id="@+id/h0301o0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301o0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301o0a(form.h0301o0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301o0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301o0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301o0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301o0b(form.h0301o0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301o0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301o0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301o0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301o0c(form.h0301o0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301o0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -901,49 +1019,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031p" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031p" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301p0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301p0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301p0a(form.h0301p0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301p0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301p0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031p" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031p" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031pcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301p0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301p0b(form.h0301p0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301p0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301p0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301p0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301p0c(form.h0301p0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301p0c" />
+                            <CheckBox
+                                android:id="@+id/h0301p0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301p0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301p0a(form.h0301p0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301p0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301p0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301p0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301p0b(form.h0301p0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301p0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301p0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301p0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301p0c(form.h0301p0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301p0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -957,49 +1083,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031q" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031q" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301q0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301q0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301q0a(form.h0301q0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301q0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301q0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031q" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031q" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031qcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301q0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301q0b(form.h0301q0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301q0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301q0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301q0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301q0c(form.h0301q0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301q0c" />
+                            <CheckBox
+                                android:id="@+id/h0301q0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301q0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301q0a(form.h0301q0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301q0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301q0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301q0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301q0b(form.h0301q0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301q0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301q0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301q0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301q0c(form.h0301q0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301q0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1013,49 +1147,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031r" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031r" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301r0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301r0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301r0a(form.h0301r0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301r0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301r0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031r" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031r" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031rcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301r0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301r0b(form.h0301r0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301r0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301r0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301r0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301r0c(form.h0301r0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301r0c" />
+                            <CheckBox
+                                android:id="@+id/h0301r0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301r0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301r0a(form.h0301r0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301r0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301r0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301r0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301r0b(form.h0301r0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301r0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301r0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301r0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301r0c(form.h0301r0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301r0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1069,49 +1211,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031s" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031s" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301s0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301s0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301s0a(form.h0301s0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301s0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301s0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031s" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031s" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031scheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301s0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301s0b(form.h0301s0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301s0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301s0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301s0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301s0c(form.h0301s0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301s0c" />
+                            <CheckBox
+                                android:id="@+id/h0301s0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301s0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301s0a(form.h0301s0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301s0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301s0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301s0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301s0b(form.h0301s0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301s0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301s0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301s0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301s0c(form.h0301s0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301s0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1125,49 +1275,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031t" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031t" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301t0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301t0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301t0a(form.h0301t0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301t0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301t0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031t" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031t" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031tcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301t0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301t0b(form.h0301t0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301t0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301t0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301t0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301t0c(form.h0301t0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301t0c" />
+                            <CheckBox
+                                android:id="@+id/h0301t0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301t0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301t0a(form.h0301t0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301t0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301t0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301t0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301t0b(form.h0301t0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301t0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301t0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301t0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301t0c(form.h0301t0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301t0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1181,49 +1339,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031u" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031u" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301u0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301u0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301u0a(form.h0301u0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301u0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301u0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031u" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031u" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031ucheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301u0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301u0b(form.h0301u0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301u0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301u0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301u0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301u0c(form.h0301u0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301u0c" />
+                            <CheckBox
+                                android:id="@+id/h0301u0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301u0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301u0a(form.h0301u0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301u0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301u0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301u0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301u0b(form.h0301u0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301u0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301u0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301u0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301u0c(form.h0301u0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301u0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1237,49 +1403,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031v" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031v" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301v0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301v0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301v0a(form.h0301v0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301v0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301v0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031v" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031v" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031vcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301v0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301v0b(form.h0301v0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301v0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301v0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301v0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301v0c(form.h0301v0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301v0c" />
+                            <CheckBox
+                                android:id="@+id/h0301v0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301v0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301v0a(form.h0301v0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301v0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301v0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301v0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301v0b(form.h0301v0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301v0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301v0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301v0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301v0c(form.h0301v0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301v0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1293,49 +1467,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031w" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031w" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301w0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301w0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301w0a(form.h0301w0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301w0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301w0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031w" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031w" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031wcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301w0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301w0b(form.h0301w0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301w0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301w0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301w0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301w0c(form.h0301w0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301w0c" />
+                            <CheckBox
+                                android:id="@+id/h0301w0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301w0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301w0a(form.h0301w0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301w0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301w0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301w0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301w0b(form.h0301w0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301w0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301w0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301w0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301w0c(form.h0301w0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301w0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1349,49 +1531,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031x" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031x" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301x0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301x0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301x0a(form.h0301x0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301x0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301x0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031x" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031x" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031xcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301x0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301x0b(form.h0301x0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301x0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301x0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301x0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301x0c(form.h0301x0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301x0c" />
+                            <CheckBox
+                                android:id="@+id/h0301x0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301x0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301x0a(form.h0301x0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301x0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301x0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301x0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301x0b(form.h0301x0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301x0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301x0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301x0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301x0c(form.h0301x0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301x0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1405,49 +1595,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031y" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031y" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301y0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301y0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301y0a(form.h0301y0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301y0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301y0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031y" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031y" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031ycheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301y0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301y0b(form.h0301y0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301y0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301y0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301y0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301y0c(form.h0301y0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301y0c" />
+                            <CheckBox
+                                android:id="@+id/h0301y0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301y0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301y0a(form.h0301y0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301y0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301y0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301y0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301y0b(form.h0301y0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301y0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301y0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301y0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301y0c(form.h0301y0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301y0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1461,48 +1659,56 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031z" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031z" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301z0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301z0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301z0a(form.h0301z0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301z0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301z0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031z" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031z" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031zcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301z0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301z0b(form.h0301z0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301z0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301z0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301z0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301z0c(form.h0301z0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301z0c" />
+                            <CheckBox
+                                android:id="@+id/h0301z0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301z0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301z0a(form.h0301z0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301z0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301z0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301z0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301z0b(form.h0301z0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301z0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301z0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301z0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301z0c(form.h0301z0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301z0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1516,49 +1722,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031aa" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031aa" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301aa0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301aa0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301aa0a(form.h0301aa0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301aa0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301aa0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031aa" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031aa" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031aacheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301aa0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301aa0b(form.h0301aa0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301aa0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301aa0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301aa0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301aa0c(form.h0301aa0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301aa0c" />
+                            <CheckBox
+                                android:id="@+id/h0301aa0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301aa0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301aa0a(form.h0301aa0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301aa0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301aa0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301aa0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301aa0b(form.h0301aa0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301aa0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301aa0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301aa0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301aa0c(form.h0301aa0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301aa0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1572,49 +1786,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031ab" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031ab" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301ab0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ab0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301ab0a(form.h0301ab0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301ab0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301ab0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031ab" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031ab" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031abcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ab0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301ab0b(form.h0301ab0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301ab0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301ab0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ab0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301ab0c(form.h0301ab0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301ab0c" />
+                            <CheckBox
+                                android:id="@+id/h0301ab0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ab0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301ab0a(form.h0301ab0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301ab0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301ab0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ab0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301ab0b(form.h0301ab0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301ab0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301ab0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ab0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301ab0c(form.h0301ab0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301ab0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1628,49 +1850,57 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031ac" />
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031ac" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301ac0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ac0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301ac0a(form.h0301ac0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301ac0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301ac0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031ac" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031ac" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031accheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ac0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301ac0b(form.h0301ac0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301ac0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301ac0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ac0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301ac0c(form.h0301ac0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301ac0c" />
+                            <CheckBox
+                                android:id="@+id/h0301ac0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ac0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301ac0a(form.h0301ac0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301ac0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301ac0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ac0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301ac0b(form.h0301ac0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301ac0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301ac0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ac0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301ac0c(form.h0301ac0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301ac0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1684,48 +1914,56 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031ad" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031ad" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301ad0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ad0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301ad0a(form.h0301ad0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301ad0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301ad0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031ad" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031ad" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031adcheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ad0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301ad0b(form.h0301ad0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301ad0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301ad0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ad0c.equals(`3`)}"
-                            android:onClick="@{()->form.setH0301ad0c(form.h0301ad0c.equals(`3`)?``:`3`)}"
-                            android:text="@string/h0301ad0c" />
+                            <CheckBox
+                                android:id="@+id/h0301ad0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ad0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301ad0a(form.h0301ad0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301ad0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301ad0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ad0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301ad0b(form.h0301ad0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301ad0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301ad0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ad0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301ad0c(form.h0301ad0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301ad0c" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1739,48 +1977,56 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h031ae" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/h031ae" />
-
-                    </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/h0301ae0a"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ae0a.equals(`1`)}"
-                            android:onClick="@{()->form.setH0301ae0a(form.h0301ae0a.equals(`1`)?``:`1`)}"
-                            android:text="@string/h0301ae0a" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/h0301ae0b"
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_h031ae" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/h031ae" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/h031aecheck"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ae0b.equals(`2`)}"
-                            android:onClick="@{()->form.setH0301ae0b(form.h0301ae0b.equals(`2`)?``:`2`)}"
-                            android:text="@string/h0301ae0b" />
+                            android:orientation="vertical"
+                            android:tag="0">
 
-                        <CheckBox
-                            android:id="@+id/h0301ae0c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.h0301ae0c.equals(``)}"
-                            android:onClick="@{()->form.setH0301ae0c(form.h0301ae0c.equals(``)?``:``)}"
-                            android:text="@string/h0301ae0c" />
+                            <CheckBox
+                                android:id="@+id/h0301ae0a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ae0a.equals(`1`)}"
+                                android:onClick="@{()->form.setH0301ae0a(form.h0301ae0a.equals(`1`)?``:`1`)}"
+                                android:text="@string/h0301ae0a" />
+
+                            <CheckBox
+                                android:id="@+id/h0301ae0b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ae0b.equals(`2`)}"
+                                android:onClick="@{()->form.setH0301ae0b(form.h0301ae0b.equals(`2`)?``:`2`)}"
+                                android:text="@string/h0301ae0b" />
+
+                            <CheckBox
+                                android:id="@+id/h0301ae0c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.h0301ae0c.equals(`3`)}"
+                                android:onClick="@{()->form.setH0301ae0c(form.h0301ae0c.equals(`3`)?``:`3`)}"
+                                android:text="@string/h0301ae0c" />
+                        </LinearLayout>
 
                     </LinearLayout>
 

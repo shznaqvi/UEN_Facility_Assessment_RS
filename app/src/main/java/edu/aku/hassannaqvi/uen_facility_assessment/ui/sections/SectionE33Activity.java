@@ -5,6 +5,9 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleE;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -12,16 +15,17 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import edu.aku.hassannaqvi.uen_facility_assessment.MainActivity;
 import edu.aku.hassannaqvi.uen_facility_assessment.R;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionE33Binding;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
 public class SectionE33Activity extends AppCompatActivity {
@@ -38,6 +42,41 @@ public class SectionE33Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleE);
+        setupTextWatchers();
+    }
+
+
+    private void setupTextWatchers() {
+        editTextImplementation(bi.e306111q, bi.e306112q);
+        editTextImplementation(bi.e306121q, bi.e306122q);
+        editTextImplementation(bi.e306131q, bi.e306132q);
+        editTextImplementation(bi.e306141q, bi.e306142q);
+        editTextImplementation(bi.e306151q, bi.e306152q);
+        editTextImplementation(bi.e306161q, bi.e306162q);
+        editTextImplementation(bi.e306171q, bi.e306172q);
+        editTextImplementation(bi.e306181q, bi.e306182q);
+    }
+
+
+    public void editTextImplementation(EditTextPicker edit01, EditTextPicker edit02) {
+
+        edit01.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (TextUtils.isEmpty(edit01.getText())) return;
+                edit02.setMaxvalue(Integer.parseInt(edit01.getText().toString().trim()));
+            }
+        });
+
     }
 
 
@@ -74,7 +113,7 @@ public class SectionE33Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, SectionMainActivity.class));
     }
 
 
