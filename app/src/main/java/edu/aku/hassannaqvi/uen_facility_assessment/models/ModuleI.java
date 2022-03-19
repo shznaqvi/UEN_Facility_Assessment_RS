@@ -76,14 +76,12 @@ public class ModuleI extends BaseObservable implements Observable {
     private String i01096 = _EMPTY_;
     private String i0110 = _EMPTY_;
     private String i0110a = _EMPTY_;
-    private String i0110ax = _EMPTY_;
     private String i0110b = _EMPTY_;
     private String i0110bx = _EMPTY_;
     private String i0110c = _EMPTY_;
     private String i0110cx = _EMPTY_;
     private String i0111 = _EMPTY_;
     private String i0111a = _EMPTY_;
-    private String i0111ax = _EMPTY_;
     private String i0111b = _EMPTY_;
     private String i0111bx = _EMPTY_;
     private String i0111c = _EMPTY_;
@@ -583,18 +581,9 @@ public class ModuleI extends BaseObservable implements Observable {
     public void setI0110a(String i0110a) {
         if (this.i0110a.equals(i0110a)) return; // for all checkboxes
         this.i0110a = i0110a;
-        setI0110ax(i0110a.equals("1") ? this.i0110ax : "");
+        setI0110b(i0110a.equals("1") ? "" : this.i0110b);
+        setI0110c(i0110a.equals("1") ? "" : this.i0110c);
         notifyPropertyChanged(BR.i0110a);
-    }
-
-    @Bindable
-    public String getI0110ax() {
-        return i0110ax;
-    }
-
-    public void setI0110ax(String i0110ax) {
-        this.i0110ax = i0110ax;
-        notifyPropertyChanged(BR.i0110ax);
     }
 
     @Bindable
@@ -657,20 +646,11 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0111a(String i0111a) {
-        if (this.i0111a.equals(i0111a)) return; // for all checkboxes
+        if (this.i0111a.equals(i0111a)) return;
         this.i0111a = i0111a;
-        setI0111ax(i0111a.equals("1") ? this.i0111ax : "");
+        setI0111b(i0111a.equals("1") ? "" : this.i0111b);
+        setI0111c(i0111a.equals("1") ? "" : this.i0111c);
         notifyPropertyChanged(BR.i0111a);
-    }
-
-    @Bindable
-    public String getI0111ax() {
-        return i0111ax;
-    }
-
-    public void setI0111ax(String i0111ax) {
-        this.i0111ax = i0111ax;
-        notifyPropertyChanged(BR.i0111ax);
     }
 
     @Bindable
@@ -679,7 +659,7 @@ public class ModuleI extends BaseObservable implements Observable {
     }
 
     public void setI0111b(String i0111b) {
-        if (this.i0111b.equals(i0111b)) return; // for all checkboxes
+        if (this.i0111b.equals(i0111b)) return;
         this.i0111b = i0111b;
         setI0111bx(i0111b.equals("2") ? this.i0111bx : "");
         notifyPropertyChanged(BR.i0111b);
@@ -952,13 +932,11 @@ public class ModuleI extends BaseObservable implements Observable {
             this.i01095 = json.getString("i01095");
             this.i01096 = json.getString("i01096");
             this.i0110a = json.getString("i0110a");
-            this.i0110ax = json.getString("i0110ax");
             this.i0110b = json.getString("i0110b");
             this.i0110bx = json.getString("i0110bx");
             this.i0110c = json.getString("i0110c");
             this.i0110cx = json.getString("i0110cx");
             this.i0111a = json.getString("i0111a");
-            this.i0111ax = json.getString("i0111ax");
             this.i0111b = json.getString("i0111b");
             this.i0111bx = json.getString("i0111bx");
             this.i0111c = json.getString("i0111c");
@@ -1033,13 +1011,11 @@ public class ModuleI extends BaseObservable implements Observable {
                 .put("i01095", i01095)
                 .put("i01096", i01096)
                 .put("i0110a", i0110a)
-                .put("i0110ax", i0110ax)
                 .put("i0110b", i0110b)
                 .put("i0110bx", i0110bx)
                 .put("i0110c", i0110c)
                 .put("i0110cx", i0110cx)
                 .put("i0111a", i0111a)
-                .put("i0111ax", i0111ax)
                 .put("i0111b", i0111b)
                 .put("i0111bx", i0111bx)
                 .put("i0111c", i0111c)

@@ -302,44 +302,44 @@ public class SectionMainActivity extends AppCompatActivity {
         Intent oF = new Intent();
         if (!MainApp.superuser) {
             if (id == R.id.formA) startActivity(new Intent(this, SectionAActivity.class));
-            if (!form.getA10().isEmpty()) {
-                switch (id) {
-                    case R.id.formB:
-                        oF = new Intent(this, SectionBActivity.class);
-                        break;
-                    case R.id.formC:
-                        oF = new Intent(this, SectionC1Activity.class);
-                        break;
-                    case R.id.formD:
-                        oF = new Intent(this, SectionD1Activity.class);
-                        break;
-                    case R.id.formE:
-                        oF = new Intent(this, SectionE1Activity.class);
-                        break;
-                    case R.id.formF:
-                        oF = new Intent(this, SectionF1Activity.class);
-                        break;
-                    case R.id.formG:
-                        oF = new Intent(this, SectionG1Activity.class);
-                        break;
-                    case R.id.formH:
-                        oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH1Activity.class);
-                        break;
-                    case R.id.formI:
-                        countI = 0;
-                        oF = new Intent(this, SectionI1Activity.class);
-                        break;
-                    case R.id.formJ:
-                        oF = new Intent(this, form.getA10().equals("2") ? SectionJ8Activity.class : SectionJ1Activity.class);
-                        break;
-                    case R.id.formK:
-                        oF = new Intent(this, SectionK1Activity.class);
-                        break;
-                }
-                startActivity(oF);
-            } else {
-                Toast.makeText(this, "Please Fill Section A First", Toast.LENGTH_SHORT).show();
+            if (form.getA10().isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Please Fill SectionA First!", Toast.LENGTH_LONG).show();
+                return;
             }
+            switch (id) {
+                case R.id.formB:
+                    oF = new Intent(this, SectionBActivity.class);
+                    break;
+                case R.id.formC:
+                    oF = new Intent(this, SectionC1Activity.class);
+                    break;
+                case R.id.formD:
+                    oF = new Intent(this, SectionD1Activity.class);
+                    break;
+                case R.id.formE:
+                    oF = new Intent(this, SectionE1Activity.class);
+                    break;
+                case R.id.formF:
+                    oF = new Intent(this, SectionF1Activity.class);
+                    break;
+                case R.id.formG:
+                    oF = new Intent(this, SectionG1Activity.class);
+                    break;
+                case R.id.formH:
+                    oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH1Activity.class);
+                    break;
+                case R.id.formI:
+                    countI = 0;
+                    oF = new Intent(this, SectionI1Activity.class);
+                    break;
+                case R.id.formJ:
+                    oF = new Intent(this, form.getA10().equals("2") ? SectionJ8Activity.class : SectionJ1Activity.class);
+                    break;
+                case R.id.formK:
+                    oF = new Intent(this, SectionK1Activity.class);
+                    break;
+            }
+            startActivity(oF);
         } else {
             Toast.makeText(getApplicationContext(), "Please login Again!", Toast.LENGTH_LONG).show();
         }
