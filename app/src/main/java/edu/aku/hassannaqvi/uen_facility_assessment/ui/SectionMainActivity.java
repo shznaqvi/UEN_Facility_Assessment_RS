@@ -35,9 +35,11 @@ import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionD1Activity
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionE1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionF1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionG1Activity;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionH16Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionH1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionI1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionJ1Activity;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionJ8Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionK1Activity;
 
 
@@ -320,8 +322,7 @@ public class SectionMainActivity extends AppCompatActivity {
                     oF = new Intent(this, SectionG1Activity.class);
                     break;
                 case R.id.formH:
-                    oF = new Intent(this, SectionH1Activity.class);
-                    //oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH2Activity.class);
+                    oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH1Activity.class);
                     break;
                 case R.id.formI:
                     countI = 0;
@@ -332,19 +333,11 @@ public class SectionMainActivity extends AppCompatActivity {
                     oF = new Intent(this, SectionI1Activity.class);
                     break;
                 case R.id.formJ:
-                    if (form.getA10().equals("1")) {
-                        oF = new Intent(this, SectionJ1Activity.class);
-                    } /*else {
-                        if (form.getDistrictType().equals("2") || form.getDistrictType().equals("4")) {
-                            oF = new Intent(this, SectionJ1Activity.class);
-                        } else if (!form.getDistrictType().equals("1")) {
-                            oF = new Intent(this, SectionJ2Activity.class);
-                        } else if (form.getDistrictType().equals("3") || form.getDistrictType().equals("4")) {
-                            oF = new Intent(this, SectionJ3Activity.class);
-                        } else if (form.getDistrictType().equals("1")) {
-                            oF = new Intent(this, SectionJ4Activity.class);
-                        }
-                    }*/
+                    if (form.getA10().isEmpty()) {
+                        Toast.makeText(this, "Please Fill Section A First", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    oF = new Intent(this, form.getA10().equals("2") ? SectionJ8Activity.class : SectionJ1Activity.class);
                     break;
                 case R.id.formK:
                     oF = new Intent(this, SectionK1Activity.class);

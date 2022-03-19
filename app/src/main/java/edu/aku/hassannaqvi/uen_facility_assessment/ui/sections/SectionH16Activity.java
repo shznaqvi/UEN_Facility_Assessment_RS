@@ -41,6 +41,29 @@ public class SectionH16Activity extends AppCompatActivity {
     }
 
 
+    private boolean insertNewRecord() {
+        if (!moduleH.getUid().equals("") || MainApp.superuser) return true;
+        moduleH.populateMeta();
+        long rowId = 0;
+        try {
+            rowId = db.addModuleH(moduleH);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        moduleH.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            moduleH.setUid(moduleH.getDeviceId() + moduleH.getId());
+            db.updatesModuleHColumn(TableContracts.ModuleHTable.COLUMN_UID, moduleH.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+
     private boolean updateDB() {
         if (MainApp.superuser) return true;
         db = MainApp.appInfo.getDbHelper();
@@ -66,6 +89,7 @@ public class SectionH16Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         moduleH.setiStatus("1");
         if (updateDB()) {
             finish();
@@ -82,12 +106,6 @@ public class SectionH16Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 
 
