@@ -299,6 +299,7 @@ public class DataDownWorkerALL extends Worker {
 
         }
 
+     //   longInfo("result-server(Decrypted): " + result);
         ///BE CAREFULL DATA.BUILDER CAN HAVE ONLY 1024O BYTES. EACH CHAR HAS 8 bits
         MainApp.downloadData[this.position] = String.valueOf(result);
 
