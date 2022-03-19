@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -26,7 +25,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionABinding;
-import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
 public class SectionAActivity extends AppCompatActivity {
@@ -120,14 +118,14 @@ public class SectionAActivity extends AppCompatActivity {
     }
 
 
-    public void btnEnd(View view) {
-        finish();
-        startActivity(new Intent(this, SectionMainActivity.class));
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 
-    private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 
 

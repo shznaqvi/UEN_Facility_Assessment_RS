@@ -58,6 +58,8 @@ public class SectionMainActivity extends AppCompatActivity {
         bi.formC.setEnabled(false);
         bi.formF.setEnabled(false);
         bi.formG.setEnabled(false);
+        bi.toolbar.setSubtitle("Health Facility Modules for: " + (form.getA10().equals("1") ? "PUBLIC"
+                : form.getA10().equals("2") ? "PRIVATE" : "Please Select HF"));
 
 
         /*if (countC2 != 0 && !flag) {
@@ -299,51 +301,45 @@ public class SectionMainActivity extends AppCompatActivity {
     private void OpenFormFunc(int id) {
         Intent oF = new Intent();
         if (!MainApp.superuser) {
-            switch (id) {
-                case R.id.formA:
-                    oF = new Intent(this, SectionAActivity.class);
-                    break;
-                case R.id.formB:
-                    oF = new Intent(this, SectionBActivity.class);
-                    break;
-                case R.id.formC:
-                    oF = new Intent(this, SectionC1Activity.class);
-                    break;
-                case R.id.formD:
-                    oF = new Intent(this, SectionD1Activity.class);
-                    break;
-                case R.id.formE:
-                    oF = new Intent(this, SectionE1Activity.class);
-                    break;
-                case R.id.formF:
-                    oF = new Intent(this, SectionF1Activity.class);
-                    break;
-                case R.id.formG:
-                    oF = new Intent(this, SectionG1Activity.class);
-                    break;
-                case R.id.formH:
-                    oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH1Activity.class);
-                    break;
-                case R.id.formI:
-                    countI = 0;
-                    if (form.getA10().isEmpty()) {
-                        Toast.makeText(this, "Please Fill Section A First", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    oF = new Intent(this, SectionI1Activity.class);
-                    break;
-                case R.id.formJ:
-                    if (form.getA10().isEmpty()) {
-                        Toast.makeText(this, "Please Fill Section A First", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    oF = new Intent(this, form.getA10().equals("2") ? SectionJ8Activity.class : SectionJ1Activity.class);
-                    break;
-                case R.id.formK:
-                    oF = new Intent(this, SectionK1Activity.class);
-                    break;
+            if (id == R.id.formA) startActivity(new Intent(this, SectionAActivity.class));
+            if (!form.getA10().isEmpty()) {
+                switch (id) {
+                    case R.id.formB:
+                        oF = new Intent(this, SectionBActivity.class);
+                        break;
+                    case R.id.formC:
+                        oF = new Intent(this, SectionC1Activity.class);
+                        break;
+                    case R.id.formD:
+                        oF = new Intent(this, SectionD1Activity.class);
+                        break;
+                    case R.id.formE:
+                        oF = new Intent(this, SectionE1Activity.class);
+                        break;
+                    case R.id.formF:
+                        oF = new Intent(this, SectionF1Activity.class);
+                        break;
+                    case R.id.formG:
+                        oF = new Intent(this, SectionG1Activity.class);
+                        break;
+                    case R.id.formH:
+                        oF = new Intent(this, form.getA10().equals("2") ? SectionH16Activity.class : SectionH1Activity.class);
+                        break;
+                    case R.id.formI:
+                        countI = 0;
+                        oF = new Intent(this, SectionI1Activity.class);
+                        break;
+                    case R.id.formJ:
+                        oF = new Intent(this, form.getA10().equals("2") ? SectionJ8Activity.class : SectionJ1Activity.class);
+                        break;
+                    case R.id.formK:
+                        oF = new Intent(this, SectionK1Activity.class);
+                        break;
+                }
+                startActivity(oF);
+            } else {
+                Toast.makeText(this, "Please Fill Section A First", Toast.LENGTH_SHORT).show();
             }
-            startActivity(oF);
         } else {
             Toast.makeText(getApplicationContext(), "Please login Again!", Toast.LENGTH_LONG).show();
         }

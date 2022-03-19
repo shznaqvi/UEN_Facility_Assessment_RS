@@ -90,7 +90,6 @@ public class SectionBActivity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        // if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionMainActivity.class));
@@ -98,14 +97,14 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
 
-    public void btnEnd(View view) {
-        finish();
-        startActivity(new Intent(this, SectionMainActivity.class));
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 
-    private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "SORRY! Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 
 
