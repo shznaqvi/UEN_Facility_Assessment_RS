@@ -1571,7 +1571,7 @@ public class ModuleD extends BaseObservable implements Observable {
                 .put("d0602", d0602)
                 .put("d0603", d0603)
                 .put("d0604", d0604)
-                .put("d0605", d0605a)
+                .put("d0605a", d0605a)
                 .put("d0605b", d0605b)
                 .put("d0605c", d0605c)
                 .put("d0605d", d0605d)
