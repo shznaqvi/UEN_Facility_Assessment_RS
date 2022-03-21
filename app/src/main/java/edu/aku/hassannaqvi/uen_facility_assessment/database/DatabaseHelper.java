@@ -1083,7 +1083,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause;
         //whereClause = null;
         whereClause = FormsTable.COLUMN_SYNCED + " ='' AND " +
-                FormsTable.COLUMN_ISTATUS + "!= ''";
+                FormsTable.COLUMN_ISTATUS + "= '1'";
 
         String[] whereArgs = null;
 
@@ -1128,7 +1128,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleCTable.COLUMN_SYNCED + " ='' AND " +
-                ModuleCTable.COLUMN_ISTATUS + "!= ''";
+                ModuleCTable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1161,7 +1161,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = StaffingTable.COLUMN_SYNCED + " ='' AND " +
-                StaffingTable.COLUMN_ISTATUS + "!= ''";
+                StaffingTable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1194,7 +1194,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleDTable.COLUMN_SYNCED + " ='' AND " +
-                ModuleDTable.COLUMN_ISTATUS + "!= ''";
+                ModuleDTable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1227,7 +1227,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleETable.COLUMN_SYNCED + " ='' AND " +
-                ModuleETable.COLUMN_ISTATUS + "!= ''";
+                ModuleETable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1260,7 +1260,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleFTable.COLUMN_SYNCED + " ='' AND " +
-                ModuleFTable.COLUMN_ISTATUS + "!= ''";
+                ModuleFTable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1293,7 +1293,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleGTable.COLUMN_SYNCED + " ='' AND " +
-                ModuleGTable.COLUMN_ISTATUS + "!= ''";
+                ModuleGTable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1326,7 +1326,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleHTable.COLUMN_SYNCED + " ='' AND " +
-                ModuleHTable.COLUMN_ISTATUS + "!= ''";
+                ModuleHTable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1359,7 +1359,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleITable.COLUMN_SYNCED + " ='' AND " +
-                ModuleITable.COLUMN_ISTATUS + "!= ''";
+                ModuleITable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1392,7 +1392,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleJTable.COLUMN_SYNCED + " ='' AND " +
-                ModuleJTable.COLUMN_ISTATUS + "!= ''";
+                ModuleJTable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1425,7 +1425,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause;
         whereClause = ModuleKTable.COLUMN_SYNCED + " ='' AND " +
-                ModuleKTable.COLUMN_ISTATUS + "!= ''";
+                ModuleKTable.COLUMN_ISTATUS + "= '1'";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
