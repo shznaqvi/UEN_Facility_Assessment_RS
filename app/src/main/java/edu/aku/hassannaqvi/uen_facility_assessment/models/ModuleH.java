@@ -350,8 +350,13 @@ public class ModuleH extends BaseObservable implements Observable {
     private String h1603 = _EMPTY_;
     private String h1603xxx = _EMPTY_;
     private String h1604 = _EMPTY_;
-    private String h1605 = _EMPTY_;
-    private String h1605xxx = _EMPTY_;
+    private String h1605a = _EMPTY_;
+    private String h1605b = _EMPTY_;
+    private String h1605c = _EMPTY_;
+    private String h1605d = _EMPTY_;
+    private String h1605e = _EMPTY_;
+    private String h160596 = _EMPTY_;
+    private String h160596x = _EMPTY_;
 
 
     public ModuleH() {
@@ -3691,7 +3696,12 @@ public class ModuleH extends BaseObservable implements Observable {
         setH1602(h1601.equals("1") ? this.h1602 : "");
         setH1603(h1601.equals("1") ? this.h1603 : "");
         setH1604(h1601.equals("1") ? this.h1604 : "");
-        setH1605(h1601.equals("2") ? this.h1605 : "");
+        setH1605a(h1601.equals("2") ? this.h1605a : "");
+        setH1605b(h1601.equals("2") ? this.h1605b : "");
+        setH1605c(h1601.equals("2") ? this.h1605c : "");
+        setH1605d(h1601.equals("2") ? this.h1605d : "");
+        setH1605e(h1601.equals("2") ? this.h1605e : "");
+        setH160596(h1601.equals("2") ? this.h160596 : "");
         notifyPropertyChanged(BR.h1601);
     }
 
@@ -3747,25 +3757,88 @@ public class ModuleH extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.h1604);
     }
 
-    @Bindable
-    public String getH1605() {
-        return h1605;
-    }
-
-    public void setH1605(String h1605) {
-        this.h1605 = h1605;
-        setH1605xxx(h1605.equals("96") ? this.h1605xxx : "");
-        notifyPropertyChanged(BR.h1605);
-    }
 
     @Bindable
-    public String getH1605xxx() {
-        return h1605xxx;
+    public String getH1605a() {
+        return h1605a;
     }
 
-    public void setH1605xxx(String h1605xxx) {
-        this.h1605xxx = h1605xxx;
-        notifyPropertyChanged(BR.h1605xxx);
+    public void setH1605a(String h1605a) {
+        if (this.h1605a.equals(h1605a)) return;
+        this.h1605a = h1605a;
+        notifyPropertyChanged(BR.h1605a);
+    }
+
+
+    @Bindable
+    public String getH1605b() {
+        return h1605b;
+    }
+
+    public void setH1605b(String h1605b) {
+        if (this.h1605b.equals(h1605b)) return;
+        this.h1605b = h1605b;
+        notifyPropertyChanged(BR.h1605b);
+    }
+
+
+    @Bindable
+    public String getH1605c() {
+        return h1605c;
+    }
+
+    public void setH1605c(String h1605c) {
+        if (this.h1605c.equals(h1605c)) return;
+        this.h1605c = h1605c;
+        notifyPropertyChanged(BR.h1605c);
+    }
+
+
+    @Bindable
+    public String getH1605d() {
+        return h1605d;
+    }
+
+    public void setH1605d(String h1605d) {
+        if (this.h1605d.equals(h1605d)) return;
+        this.h1605d = h1605d;
+        notifyPropertyChanged(BR.h1605d);
+    }
+
+
+    @Bindable
+    public String getH1605e() {
+        return h1605e;
+    }
+
+    public void setH1605e(String h1605e) {
+        if (this.h1605e.equals(h1605e)) return;
+        this.h1605e = h1605e;
+        notifyPropertyChanged(BR.h1605e);
+    }
+
+
+    @Bindable
+    public String getH160596() {
+        return h160596;
+    }
+
+    public void setH160596(String h160596) {
+        if (this.h160596.equals(h160596)) return;
+        this.h160596 = h160596;
+        setH160596x(h160596.equals("96") ? this.h160596x : "");
+        notifyPropertyChanged(BR.h160596);
+    }
+
+
+    @Bindable
+    public String getH160596x() {
+        return h160596x;
+    }
+
+    public void setH160596x(String h160596x) {
+        this.h160596x = h160596x;
+        notifyPropertyChanged(BR.h160596x);
     }
 
 
@@ -4239,8 +4312,13 @@ public class ModuleH extends BaseObservable implements Observable {
             this.h1603 = json.getString("h1603");
             this.h1603xxx = json.getString("h1603xxx");
             this.h1604 = json.getString("h1604");
-            this.h1605 = json.getString("h1605");
-            this.h1605xxx = json.getString("h1605xxx");
+            this.h1605a = json.getString("h1605a");
+            this.h1605b = json.getString("h1605b");
+            this.h1605c = json.getString("h1605c");
+            this.h1605d = json.getString("h1605d");
+            this.h1605e = json.getString("h1605e");
+            this.h160596 = json.getString("h160596");
+            this.h160596x = json.getString("h160596x");
         }
     }
 
@@ -4693,8 +4771,13 @@ public class ModuleH extends BaseObservable implements Observable {
                 .put("h1603", h1603)
                 .put("h1603xxx", h1603xxx)
                 .put("h1604", h1604)
-                .put("h1605", h1605)
-                .put("h1605xxx", h1605xxx);
+                .put("h1605a", h1605a)
+                .put("h1605b", h1605b)
+                .put("h1605c", h1605c)
+                .put("h1605d", h1605d)
+                .put("h1605e", h1605e)
+                .put("h160596", h160596)
+                .put("h160596x", h160596x);
         return json.toString();
     }
 

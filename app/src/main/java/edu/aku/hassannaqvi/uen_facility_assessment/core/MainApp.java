@@ -63,9 +63,13 @@ public class MainApp extends Application {
     public static String[] downloadData;
     public static Form form;
     public static String selectedDistrict = "";
+    public static String districtName = "";
     public static String selectedTehsil = "";
+    public static String tehsilName = "";
     public static String selectedUc = "";
+    public static String ucName = "";
     public static String selectedHf = "";
+    public static String hfName = "";
     public static ModuleC moduleC;
     public static Staffing staffing;
     public static ModuleD moduleD;

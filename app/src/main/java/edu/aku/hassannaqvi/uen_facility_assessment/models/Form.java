@@ -2,9 +2,14 @@ package edu.aku.hassannaqvi.uen_facility_assessment.models;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp._EMPTY_;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.districtName;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.hfName;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedDistrict;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedHf;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedTehsil;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedUc;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.tehsilName;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.ucName;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -93,8 +98,13 @@ public class Form extends BaseObservable implements Observable {
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setDistrictCode(selectedDistrict);
         setTehsilCode(selectedTehsil);
-        setUcCode(selectedTehsil);
+        setUcCode(selectedUc);
         setHfCode(selectedHf);
+        setA12(selectedHf);
+        setA07(districtName);
+        setA08(tehsilName);
+        setA09(ucName);
+        setA13(hfName);
     }
 
 
@@ -528,7 +538,10 @@ public class Form extends BaseObservable implements Observable {
     public Form Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
-//        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
+        this.districtCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DISTRICT_CODE));
+        this.tehsilCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_TEHSIL_CODE));
+        this.ucCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UC_CODE));
+        this.hfCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_HF_CODE));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
@@ -537,12 +550,8 @@ public class Form extends BaseObservable implements Observable {
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
-
-
         sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SA)));
         sBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SB)));
-
-
         return this;
     }
 

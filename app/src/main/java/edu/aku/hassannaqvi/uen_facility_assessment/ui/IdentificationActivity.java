@@ -1,9 +1,13 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui;
 
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.districtName;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.hfName;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedDistrict;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedHf;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedTehsil;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedUc;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.tehsilName;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.ucName;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -79,14 +83,13 @@ public class IdentificationActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a08.setAdapter(null);
                 bi.a09.setAdapter(null);
-                bi.a10.clearCheck();
-                bi.a11.clearCheck();
                 bi.a13.setAdapter(null);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
 
                 if (position == 0) return;
                 selectedDistrict = districtCodes.get(position);
+                districtName = districtNames.get(position);
                 Collection<HealthFacilities> tehs = db.getTehsilByDist(selectedDistrict);
                 tehsilNames = new ArrayList<>();
                 tehsilCodes = new ArrayList<>();
@@ -110,14 +113,13 @@ public class IdentificationActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a09.setAdapter(null);
-                bi.a10.clearCheck();
-                bi.a11.clearCheck();
                 bi.a13.setAdapter(null);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
 
                 if (position == 0) return;
                 selectedTehsil = tehsilCodes.get(position);
+                tehsilName = tehsilNames.get(position);
                 Collection<HealthFacilities> ucs = db.getUcsByTehsil(selectedTehsil);
                 ucNames = new ArrayList<>();
                 ucCodes = new ArrayList<>();
@@ -139,13 +141,12 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a09.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a10.clearCheck();
-                bi.a11.clearCheck();
                 bi.a13.setAdapter(null);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
                 if (position == 0) return;
                 selectedUc = ucCodes.get(position);
+                ucName = ucNames.get(position);
                 Collection<HealthFacilities> hfs = db.getHFsByUc(selectedUc);
                 hfNames = new ArrayList<>();
                 hfCodes = new ArrayList<>();
@@ -171,6 +172,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.btnContinue.setEnabled(false);
                 if (position == 0) return;
                 selectedHf = hfCodes.get(position);
+                hfName = hfNames.get(position);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
                 bi.btnContinue.setEnabled(true);
             }

@@ -121,7 +121,7 @@ public class SectionI1Activity extends AppCompatActivity {
 
 
     public void btnEnd(View view) {
-        if (countI > 0) {
+        if (countI > 1) {
             Toast.makeText(this, "You have Enter Patient Already", Toast.LENGTH_LONG).show();
             return;
         }
@@ -137,7 +137,7 @@ public class SectionI1Activity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (countI > 0)
+        if (countI > 1)
             Toast.makeText(getApplicationContext(), "Back Press Not Allowed", Toast.LENGTH_LONG).show();
         else super.onBackPressed();
     }
