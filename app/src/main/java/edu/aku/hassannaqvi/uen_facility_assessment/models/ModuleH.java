@@ -766,7 +766,7 @@ public class ModuleH extends BaseObservable implements Observable {
     }
 
     public void setH0301e0a(String h0301e0a) {
-        if (this.h0301e0a.equals(h0301e0a)) return; // for all checkboxes
+        if (this.h0301e0a.equals(h0301e0a)) return;
         this.h0301e0a = h0301e0a;
         notifyPropertyChanged(BR.h0301e0a);
     }
@@ -777,7 +777,7 @@ public class ModuleH extends BaseObservable implements Observable {
     }
 
     public void setH0301e0b(String h0301e0b) {
-        if (this.h0301e0b.equals(h0301e0b)) return; // for all checkboxes
+        if (this.h0301e0b.equals(h0301e0b)) return;
         this.h0301e0b = h0301e0b;
         notifyPropertyChanged(BR.h0301e0b);
     }
@@ -788,7 +788,7 @@ public class ModuleH extends BaseObservable implements Observable {
     }
 
     public void setH0301e0c(String h0301e0c) {
-        if (this.h0301c0c.equals(h0301c0c)) return; // for all checkboxes
+        if (this.h0301e0c.equals(h0301e0c)) return;
         this.h0301e0c = h0301e0c;
         notifyPropertyChanged(BR.h0301e0c);
     }
@@ -1008,7 +1008,7 @@ public class ModuleH extends BaseObservable implements Observable {
     }
 
     public void setH0301l0b(String h0301l0b) {
-        if (this.h0301l0a.equals(h0301l0a)) return; // for all checkboxes
+        if (this.h0301l0b.equals(h0301l0b)) return;
         this.h0301l0b = h0301l0b;
         notifyPropertyChanged(BR.h0301l0b);
     }
@@ -1525,7 +1525,7 @@ public class ModuleH extends BaseObservable implements Observable {
     }
 
     public void setH0301ab0a(String h0301ab0a) {
-        if (this.h0301ab0a.equals(h0301ab0b)) return; // for all checkboxes
+        if (this.h0301ab0a.equals(h0301ab0a)) return;
         this.h0301ab0a = h0301ab0a;
         notifyPropertyChanged(BR.h0301ab0a);
     }
