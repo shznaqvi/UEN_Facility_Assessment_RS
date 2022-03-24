@@ -5,9 +5,7 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.hfName;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedDistrict;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedHf;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedTehsil;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.selectedUc;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.tehsilName;
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.ucName;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -112,24 +110,22 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.a08.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bi.a09.setAdapter(null);
                 bi.a13.setAdapter(null);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
-
                 if (position == 0) return;
                 selectedTehsil = tehsilCodes.get(position);
                 tehsilName = tehsilNames.get(position);
-                Collection<HealthFacilities> ucs = db.getUcsByTehsil(selectedTehsil);
-                ucNames = new ArrayList<>();
-                ucCodes = new ArrayList<>();
-                ucNames.add("...");
-                ucCodes.add("...");
-                for (HealthFacilities uc : ucs) {
-                    ucNames.add(uc.getUcName());
-                    ucCodes.add(uc.getUcCode());
+                Collection<HealthFacilities> hfs = db.getHFsByTehsil(selectedTehsil);
+                hfNames = new ArrayList<>();
+                hfCodes = new ArrayList<>();
+                hfNames.add("...");
+                hfCodes.add("...");
+                for (HealthFacilities hf : hfs) {
+                    hfNames.add(hf.getHfName());
+                    hfCodes.add(hf.getHfCode());
                 }
-                bi.a09.setAdapter(new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, ucNames));
+                bi.a13.setAdapter(new ArrayAdapter<String>(IdentificationActivity.this, R.layout.custom_spinner, hfNames));
             }
 
             @Override
@@ -138,7 +134,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
         });
 
-        bi.a09.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*bi.a09.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bi.a13.setAdapter(null);
@@ -163,7 +159,7 @@ public class IdentificationActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
 
-        });
+        });*/
 
         bi.a13.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

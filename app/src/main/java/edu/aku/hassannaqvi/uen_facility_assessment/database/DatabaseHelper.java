@@ -1839,6 +1839,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allHFs;
     }
 
+    public Collection<HealthFacilities> getHFsByTehsil(String tehsilCode) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = {TableHealthFacilities.COLUMN_HF_CODE, TableHealthFacilities.COLUMN_HF_NAME};
+        String whereClause;
+        whereClause = TableHealthFacilities.COLUMN_TEHSIL_CODE + " = ? ";
+        String[] whereArgs = {tehsilCode};
+        String orderBy = TableHealthFacilities.COLUMN_ID + " ASC";
+        List<HealthFacilities> allHFs = new ArrayList<>();
+        c = db.query(
+                true,
+                TableHealthFacilities.TABLE_NAME,  // The table to query
+                columns,
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                orderBy,
+                "5000"
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getHFsByTehsil: " + c.getCount());
+            HealthFacilities hf = new HealthFacilities();
+            hf.setHfCode(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_HF_CODE)));
+            hf.setHfName(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_HF_NAME)));
+            allHFs.add(hf);
+        }
+        db.close();
+        return allHFs;
+    }
 
 
     //GET MODULEC By UUID
