@@ -353,7 +353,6 @@ public class LoginActivity extends AppCompatActivity {
             db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
         } else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
-
         }
 
     }

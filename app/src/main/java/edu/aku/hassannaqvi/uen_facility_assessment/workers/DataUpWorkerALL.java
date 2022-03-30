@@ -78,7 +78,6 @@ public class DataUpWorkerALL extends Worker {
         position = workerParams.getInputData().getInt("position", -2);
         uploadData = MainApp.uploadData.get(position);
 
-
         Log.d(TAG, "Upload Begins uploadData.length(): " + uploadData.length());
         Log.d(TAG, "Upload Begins uploadData: " + uploadData);
 

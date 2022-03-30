@@ -236,6 +236,15 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(this, "JSONException(ModuleK): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
+                // Upload ModuleK
+                uploadTables.add(new SyncModel(TableContracts.ModuleKTable.TABLE_NAME));
+                try {
+                    uploadData.add(db.getUnsyncedModuleK());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(ModuleK): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
 
                 MainApp.downloadData = new String[uploadData.size()];
                 setAdapter(uploadTables);
