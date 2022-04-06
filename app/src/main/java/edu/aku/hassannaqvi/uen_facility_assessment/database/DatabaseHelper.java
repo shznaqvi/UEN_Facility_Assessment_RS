@@ -1061,8 +1061,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(TableHealthFacilities.COLUMN_DISTRICT_NAME, hf.getDistrictName());
             values.put(TableHealthFacilities.COLUMN_TEHSIL_CODE, hf.getTehsilCode());
             values.put(TableHealthFacilities.COLUMN_TEHSIL_NAME, hf.getTehsilName());
-            values.put(TableHealthFacilities.COLUMN_UC_CODE, hf.getUcCode());
-            values.put(TableHealthFacilities.COLUMN_UC_NAME, hf.getUcName());
+//            values.put(TableHealthFacilities.COLUMN_UC_CODE, hf.getUcCode());
+//            values.put(TableHealthFacilities.COLUMN_UC_NAME, hf.getUcName());
             values.put(TableHealthFacilities.COLUMN_HF_CODE, hf.getHfCode());
             values.put(TableHealthFacilities.COLUMN_HF_NAME, hf.getHfName());
 
@@ -1780,7 +1780,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Collection<HealthFacilities> getUcsByTehsil(String tehsilCode) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
-        String[] columns = {TableHealthFacilities.COLUMN_UC_CODE, TableHealthFacilities.COLUMN_UC_NAME};
+        String[] columns = null;
+//        String[] columns = {TableHealthFacilities.COLUMN_UC_CODE, TableHealthFacilities.COLUMN_UC_NAME};
         String whereClause;
         whereClause = TableHealthFacilities.COLUMN_TEHSIL_CODE + " = ? ";
         String[] whereArgs = {tehsilCode};
@@ -1800,8 +1801,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         while (c.moveToNext()) {
             Log.d(TAG, "getUcsByTehsil: " + c.getCount());
             HealthFacilities uc = new HealthFacilities();
-            uc.setUcCode(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_UC_CODE)));
-            uc.setUcName(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_UC_NAME)));
+//            uc.setUcCode(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_UC_CODE)));
+//            uc.setUcName(c.getString(c.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_UC_NAME)));
             allUcs.add(uc);
         }
         db.close();
@@ -1813,7 +1814,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {TableHealthFacilities.COLUMN_HF_CODE, TableHealthFacilities.COLUMN_HF_NAME};
         String whereClause;
-        whereClause = TableHealthFacilities.COLUMN_UC_CODE + " = ? ";
+        whereClause = null;
+//        whereClause = TableHealthFacilities.COLUMN_UC_CODE + " = ? ";
         String[] whereArgs = {ucCode};
         String orderBy = TableHealthFacilities.COLUMN_ID + " ASC";
         List<HealthFacilities> allHFs = new ArrayList<>();

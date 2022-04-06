@@ -16,8 +16,6 @@ class HealthFacilities {
     var districtName: String = _EMPTY_
     var tehsilCode: String = _EMPTY_
     var tehsilName: String = _EMPTY_
-    var ucCode: String = _EMPTY_
-    var ucName: String = _EMPTY_
     var hfCode: String = _EMPTY_
     var hfName: String = _EMPTY_
 
@@ -28,8 +26,6 @@ class HealthFacilities {
         districtName = jsonObject.getString(TableHealthFacilities.COLUMN_DISTRICT_NAME)
         tehsilCode = jsonObject.getString(TableHealthFacilities.COLUMN_TEHSIL_CODE)
         tehsilName = jsonObject.getString(TableHealthFacilities.COLUMN_TEHSIL_NAME)
-        ucCode = jsonObject.getString(TableHealthFacilities.COLUMN_UC_CODE)
-        ucName = jsonObject.getString(TableHealthFacilities.COLUMN_UC_NAME)
         hfCode = jsonObject.getString(TableHealthFacilities.COLUMN_HF_CODE)
         hfName = jsonObject.getString(TableHealthFacilities.COLUMN_HF_NAME)
         return this
@@ -48,10 +44,6 @@ class HealthFacilities {
             cursor.getString(cursor.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_TEHSIL_CODE))
         tehsilName =
             cursor.getString(cursor.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_TEHSIL_NAME))
-        ucCode =
-            cursor.getString(cursor.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_UC_CODE))
-        ucName =
-            cursor.getString(cursor.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_UC_NAME))
         hfCode =
             cursor.getString(cursor.getColumnIndexOrThrow(TableHealthFacilities.COLUMN_HF_CODE))
         hfName =

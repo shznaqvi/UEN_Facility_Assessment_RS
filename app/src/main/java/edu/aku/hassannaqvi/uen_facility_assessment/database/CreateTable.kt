@@ -362,8 +362,6 @@ object CreateTable {
             + TableHealthFacilities.COLUMN_DISTRICT_NAME + " TEXT,"
             + TableHealthFacilities.COLUMN_TEHSIL_CODE + " TEXT,"
             + TableHealthFacilities.COLUMN_TEHSIL_NAME + " TEXT,"
-            + TableHealthFacilities.COLUMN_UC_CODE + " TEXT,"
-            + TableHealthFacilities.COLUMN_UC_NAME + " TEXT,"
             + TableHealthFacilities.COLUMN_HF_CODE + " TEXT,"
             + TableHealthFacilities.COLUMN_HF_NAME + " TEXT"
             + " );")
