@@ -237,9 +237,9 @@ public class SyncActivity extends AppCompatActivity {
                 }
 
                 // Upload ModuleK
-                uploadTables.add(new SyncModel(TableContracts.ModuleKTable.TABLE_NAME));
+                uploadTables.add(new SyncModel(TableContracts.EntryLogTable.TABLE_NAME));
                 try {
-                    uploadData.add(db.getUnsyncedModuleK());
+                    uploadData.add(db.getUnsyncedEntryLog());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(this, "JSONException(ModuleK): " + e.getMessage(), Toast.LENGTH_SHORT).show();
