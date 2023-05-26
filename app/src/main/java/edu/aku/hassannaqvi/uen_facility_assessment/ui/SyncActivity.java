@@ -273,6 +273,7 @@ public class SyncActivity extends AppCompatActivity {
 
                     select = " * ";
                     filter = " dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    //filter = " colflag is null AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(TableHealthFacilities.TABLE_NAME, select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];

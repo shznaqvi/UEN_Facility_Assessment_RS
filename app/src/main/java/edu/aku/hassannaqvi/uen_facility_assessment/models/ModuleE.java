@@ -2538,6 +2538,7 @@ public class ModuleE extends BaseObservable implements Observable {
     public void setE414(String e414) {
         this.e414 = e414;
         setE415(e414.equals("1") ? this.e415 : "");
+        setE416(e414.equals("1") ? this.e416 : "");
         notifyPropertyChanged(BR.e414);
     }
 
