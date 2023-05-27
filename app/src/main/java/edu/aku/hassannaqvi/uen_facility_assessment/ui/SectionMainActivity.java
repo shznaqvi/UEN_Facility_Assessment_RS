@@ -301,7 +301,10 @@ public class SectionMainActivity extends AppCompatActivity {
     private void OpenFormFunc(int id) {
         Intent oF = new Intent();
         if (!MainApp.superuser) {
-            if (id == R.id.formA) oF = new Intent(this, SectionAActivity.class);
+            if (id == R.id.formA) {
+                finish();
+                startActivity(new Intent(this, SectionAActivity.class));
+            }
             if (form.getA10().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please Fill SectionA First!", Toast.LENGTH_LONG).show();
                 return;
