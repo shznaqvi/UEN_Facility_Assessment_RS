@@ -65,11 +65,9 @@ public class SectionC1Activity extends AppCompatActivity {
 
 
     public void editTextImplementation(EditTextPicker edit01, EditTextPicker edit02) {
-
         edit01.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
@@ -82,7 +80,6 @@ public class SectionC1Activity extends AppCompatActivity {
                 edit02.setMaxvalue(Integer.parseInt(edit01.getText().toString().trim()));
             }
         });
-
     }
 
 

@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -25,6 +26,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts;
 import edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp;
 import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionABinding;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
 
 public class SectionAActivity extends AppCompatActivity {
@@ -55,8 +57,9 @@ public class SectionAActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.a03y.getText().toString().isEmpty()) return;
+                bi.a03y.setMaxvalue(Calendar.getInstance().get(Calendar.YEAR));
                 bi.a03m.setMinvalue(Integer.parseInt(bi.a03y.getText().toString()) == 2021 ? 12f : 1f);
-                bi.a03d.setMinvalue(Integer.parseInt(bi.a03y.getText().toString()) == 2021 ? 1f : 1f);
+                bi.a03d.setMinvalue(1f);
                 bi.a03m.setMaxvalue(Integer.parseInt(bi.a03y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
                 bi.a03d.setMaxvalue(Integer.parseInt(bi.a03y.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
@@ -114,6 +117,7 @@ public class SectionAActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
+            startActivity(new Intent(this, SectionMainActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
