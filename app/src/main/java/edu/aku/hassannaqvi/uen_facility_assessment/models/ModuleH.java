@@ -153,6 +153,7 @@ public class ModuleH extends BaseObservable implements Observable {
     private String h1702 = _EMPTY_;
     private String h1703 = _EMPTY_;
     private String h1704 = _EMPTY_;
+    private String h1705 = _EMPTY_;
     private String h401a = _EMPTY_;
     private String h401b = _EMPTY_;
     private String h401c = _EMPTY_;
@@ -1668,6 +1669,7 @@ public class ModuleH extends BaseObservable implements Observable {
 
     public void setH1702(String h1702) {
         this.h1702 = h1702;
+        setH1703(h1702.equals("1") ? this.h1703 : "");
         notifyPropertyChanged(BR.h1702);
     }
 
@@ -1689,6 +1691,16 @@ public class ModuleH extends BaseObservable implements Observable {
     public void setH1704(String h1704) {
         this.h1704 = h1704;
         notifyPropertyChanged(BR.h1704);
+    }
+
+    @Bindable
+    public String getH1705() {
+        return h1705;
+    }
+
+    public void setH1705(String h1705) {
+        this.h1705 = h1705;
+        notifyPropertyChanged(BR.h1705);
     }
 
     @Bindable
@@ -4331,6 +4343,7 @@ public class ModuleH extends BaseObservable implements Observable {
             this.h1702 = json.getString("h1702");
             this.h1703 = json.getString("h1703");
             this.h1704 = json.getString("h1704");
+            this.h1705 = json.getString("h1705");
         }
     }
 
@@ -4787,7 +4800,8 @@ public class ModuleH extends BaseObservable implements Observable {
         json.put("h1701", h1701)
                 .put("h1702", h1702)
                 .put("h1703", h1703)
-                .put("h1704", h1704);
+                .put("h1704", h1704)
+                .put("h1705", h1705);
         return json.toString();
     }
 

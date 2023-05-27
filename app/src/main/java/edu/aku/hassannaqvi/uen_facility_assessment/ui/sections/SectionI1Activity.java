@@ -48,11 +48,11 @@ public class SectionI1Activity extends AppCompatActivity {
 
 
     private void setupContent() {
-        moduleI.setI0102aa(String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)));
-        moduleI.setI0102ab(String.valueOf(Calendar.getInstance().get(Calendar.MONTH) + 1));
-        moduleI.setI0102ac(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
-        moduleI.setI0102ba(String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)));
-        moduleI.setI0102bb(String.valueOf(Calendar.getInstance().get(Calendar.MINUTE)));
+        moduleI.setI0102aa(moduleI.getI0101().equals("1") ? String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)) : "");
+        moduleI.setI0102ab(moduleI.getI0101().equals("1") ? String.valueOf(Calendar.getInstance().get(Calendar.MONTH) + 1) : "");
+        moduleI.setI0102ac(moduleI.getI0101().equals("1") ? String.valueOf(Calendar.getInstance().get(Calendar.YEAR)) : "");
+        moduleI.setI0102ba(moduleI.getI0101().equals("1") ? String.valueOf(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) : "");
+        moduleI.setI0102bb(moduleI.getI0101().equals("1") ? String.valueOf(Calendar.getInstance().get(Calendar.MINUTE)) : "");
 
         bi.hfType.setText(form.getA10().equals("1") ? getString(R.string.a10a) : getString(R.string.a10b));
         bi.countI.setText(new StringBuilder("Entries: 0").append(countI++));

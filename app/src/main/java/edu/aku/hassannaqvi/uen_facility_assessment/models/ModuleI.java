@@ -281,6 +281,41 @@ public class ModuleI extends BaseObservable implements Observable {
 
     public void setI0101(String i0101) {
         this.i0101 = i0101;
+        setI0103(i0101.equals("1") ? this.i0103 : "");
+        setI0104(i0101.equals("1") ? this.i0104 : "");
+        setI0105(i0101.equals("1") ? this.i0105 : "");
+        setI0106a(i0101.equals("1") ? this.i0106a : "");
+        setI0106b(i0101.equals("1") ? this.i0106b : "");
+        setI0107(i0101.equals("1") ? this.i0107 : "");
+        setI0108a(i0101.equals("1") ? this.i0108a : "");
+        setI0108b(i0101.equals("1") ? this.i0108b : "");
+        setI0108c(i0101.equals("1") ? this.i0108c : "");
+        setI0108d(i0101.equals("1") ? this.i0108d : "");
+        setI0108e(i0101.equals("1") ? this.i0108e : "");
+        setI0108f(i0101.equals("1") ? this.i0108f : "");
+        setI0108g(i0101.equals("1") ? this.i0108g : "");
+        setI010896(i0101.equals("1") ? this.i010896 : "");
+        setI01091(i0101.equals("1") ? this.i01091 : "");
+        setI01092(i0101.equals("1") ? this.i01092 : "");
+        setI01093(i0101.equals("1") ? this.i01093 : "");
+        setI01094(i0101.equals("1") ? this.i01094 : "");
+        setI01095(i0101.equals("1") ? this.i01095 : "");
+        setI01096(i0101.equals("1") ? this.i01096 : "");
+        setI0110a(i0101.equals("1") ? this.i0110a : "");
+        setI0110b(i0101.equals("1") ? this.i0110b : "");
+        setI0110c(i0101.equals("1") ? this.i0110c : "");
+        setI0111a(i0101.equals("1") ? this.i0111a : "");
+        setI0111b(i0101.equals("1") ? this.i0111b : "");
+        setI0111c(i0101.equals("1") ? this.i0111c : "");
+        setI0112a(i0101.equals("1") ? this.i0112a : "");
+        setI0112b(i0101.equals("1") ? this.i0112b : "");
+        setI0113(i0101.equals("1") ? this.i0113 : "");
+        setI0114(i0101.equals("1") ? this.i0114 : "");
+        setI0115a(i0101.equals("1") ? this.i0115a : "");
+        setI0115b(i0101.equals("1") ? this.i0115b : "");
+        setI0115c(i0101.equals("1") ? this.i0115c : "");
+        setI0116(i0101.equals("1") ? this.i0116 : "");
+        setI0117(i0101.equals("1") ? this.i0117 : "");
         notifyPropertyChanged(BR.i0101);
     }
 
@@ -341,6 +376,7 @@ public class ModuleI extends BaseObservable implements Observable {
 
     public void setI0103(String i0103) {
         this.i0103 = i0103;
+        setI0104(i0103.equals("2") ? this.i0104 : "");
         notifyPropertyChanged(BR.i0103);
     }
 
