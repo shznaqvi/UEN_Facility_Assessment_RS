@@ -5,6 +5,9 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleK;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -12,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -38,6 +42,42 @@ public class SectionK62Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         if (MainApp.superuser) bi.btnContinue.setText("Review Next");
         bi.setForm(moduleK);
+        setupTextWatchers();
+    }
+
+
+    private void setupTextWatchers() {
+        editTextImplementation(bi.k620dx, bi.k620ex);
+        editTextImplementation(bi.k621dx, bi.k621ex);
+        editTextImplementation(bi.k622dx, bi.k622ex);
+        editTextImplementation(bi.k623dx, bi.k623ex);
+        editTextImplementation(bi.k624dx, bi.k624ex);
+        editTextImplementation(bi.k625dx, bi.k625ex);
+        editTextImplementation(bi.k626dx, bi.k626ex);
+        editTextImplementation(bi.k627dx, bi.k627ex);
+        editTextImplementation(bi.k628dx, bi.k628ex);
+    }
+
+
+    public void editTextImplementation(EditTextPicker edit01, EditTextPicker edit02) {
+
+        edit01.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (TextUtils.isEmpty(edit01.getText())) return;
+                edit02.setMaxvalue(Integer.parseInt(edit01.getText().toString().trim()));
+            }
+        });
+
     }
 
 
