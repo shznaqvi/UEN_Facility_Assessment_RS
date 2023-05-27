@@ -301,7 +301,7 @@ public class SectionMainActivity extends AppCompatActivity {
     private void OpenFormFunc(int id) {
         Intent oF = new Intent();
         if (!MainApp.superuser) {
-            if (id == R.id.formA) startActivity(new Intent(this, SectionAActivity.class));
+            if (id == R.id.formA) oF = new Intent(this, SectionAActivity.class);
             if (form.getA10().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please Fill SectionA First!", Toast.LENGTH_LONG).show();
                 return;
@@ -339,6 +339,7 @@ public class SectionMainActivity extends AppCompatActivity {
                     oF = new Intent(this, SectionK1Activity.class);
                     break;
             }
+            finish();
             startActivity(oF);
         } else {
             Toast.makeText(getApplicationContext(), "Please login Again!", Toast.LENGTH_LONG).show();

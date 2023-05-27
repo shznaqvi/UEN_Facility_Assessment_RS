@@ -584,7 +584,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.e0606.equals(`4`)}"
-                                    android:onClick="@{()->form.setE0606(`4`)}"
+                                    android:onClick="@{()->form.setE0606(`4`) + e0607.clearCheck() + e0608.clearCheck() + e0609.clearCheck()}"
                                     android:text="@string/e0606d" />
 
                             </RadioGroup>
@@ -597,7 +597,8 @@
                     <!-- e0607  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVe0607"
-                        style="@style/cardView">
+                        style="@style/cardView"
+                        android:visibility="@{form.e0606.equals(`4`) ? View.GONE : View.VISIBLE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -622,6 +623,12 @@
                                     android:text="@string/e0607" />
 
                             </LinearLayout>
+
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e0607info" />
 
                             <RadioGroup
                                 android:id="@+id/e0607"
@@ -767,6 +774,12 @@
                                         android:text="@string/e0609" />
 
                                 </LinearLayout>
+
+                                <TextView
+                                    style="@style/info"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/e0609info" />
 
                                 <RadioGroup
                                     android:id="@+id/e0609"
