@@ -29,10 +29,10 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/section2surveillance_mainheading"
+            app:subtitle="@string/section4m"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:subtitleTextColor="@color/grayLight"
-            app:title="@string/ktitle"
+            app:title="@string/modm"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -105,15 +105,19 @@
                                 android:checked="@{form.m401.equals(`3`)}"
                                 android:onClick="@{()->form.setM401(`3`)}"
                                 android:text="@string/m40103" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
                 <!-- m402  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVm402"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.m401.equals(`1`) || form.m401.equals(`3`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -143,14 +147,17 @@
                             android:id="@+id/m402"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/m402"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.m402}"
                             app:maxValue="90"
                             app:minValue="0"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -186,32 +193,39 @@
                         <RadioGroup
                             android:id="@+id/m403"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/m40301"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.m403.equals(`1`)}"
                                 android:onClick="@{()->form.setM403(`1`)}"
                                 android:text="@string/m40301" />
 
                             <RadioButton
                                 android:id="@+id/m40302"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.m403.equals(`2`)}"
                                 android:onClick="@{()->form.setM403(`2`)}"
                                 android:text="@string/m40302" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
                 <!-- m404  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVm404"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.m403.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -275,8 +289,11 @@
                                 android:checked="@{form.m40404.equals(`4`)}"
                                 android:onClick="@{()->form.setM40404(form.m40404.equals(`4`)?``:`4`)}"
                                 android:text="@string/m40404" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -312,32 +329,39 @@
                         <RadioGroup
                             android:id="@+id/m405"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/m40501"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.m405.equals(`1`)}"
                                 android:onClick="@{()->form.setM405(`1`)}"
                                 android:text="@string/m40501" />
 
                             <RadioButton
                                 android:id="@+id/m40502"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.m405.equals(`2`)}"
-                                android:onClick="@{()->form.setM405(`2`)}"
+                                android:onClick="@{()->form.setM405(`2`) + m406.clearCheck()}"
                                 android:text="@string/m40502" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
                 <!-- m406  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVm406"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.m405.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -366,32 +390,39 @@
                         <RadioGroup
                             android:id="@+id/m406"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/m40601"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.m406.equals(`1`)}"
                                 android:onClick="@{()->form.setM406(`1`)}"
                                 android:text="@string/m40601" />
 
                             <RadioButton
                                 android:id="@+id/m40602"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.m406.equals(`2`)}"
                                 android:onClick="@{()->form.setM406(`2`)}"
                                 android:text="@string/m40602" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
                 <!-- m407  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVm407"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.m406.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -471,8 +502,11 @@
                                 android:checked="@{form.m40707.equals(`7`)}"
                                 android:onClick="@{()->form.setM40707(form.m40707.equals(`7`)?``:`7`)}"
                                 android:text="@string/m40707" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 

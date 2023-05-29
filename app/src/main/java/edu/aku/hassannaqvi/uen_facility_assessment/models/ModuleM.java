@@ -58,14 +58,12 @@ public class ModuleM extends BaseObservable implements Observable {
     private String m401 = _EMPTY_;
     private String m402 = _EMPTY_;
     private String m403 = _EMPTY_;
-    private String m404 = _EMPTY_;
     private String m40401 = _EMPTY_;
     private String m40402 = _EMPTY_;
     private String m40403 = _EMPTY_;
     private String m40404 = _EMPTY_;
     private String m405 = _EMPTY_;
     private String m406 = _EMPTY_;
-    private String m407 = _EMPTY_;
     private String m40701 = _EMPTY_;
     private String m40702 = _EMPTY_;
     private String m40703 = _EMPTY_;
@@ -73,7 +71,6 @@ public class ModuleM extends BaseObservable implements Observable {
     private String m40706 = _EMPTY_;
     private String m40707 = _EMPTY_;
     private String m501 = _EMPTY_;
-    private String m502 = _EMPTY_;
     private String m50201 = _EMPTY_;
     private String m50202 = _EMPTY_;
     private String m50203 = _EMPTY_;
@@ -83,7 +80,6 @@ public class ModuleM extends BaseObservable implements Observable {
     private String m50401 = _EMPTY_;
     private String m50402 = _EMPTY_;
     private String m601 = _EMPTY_;
-    private String m602 = _EMPTY_;
     private String m60201 = _EMPTY_;
     private String m60201x = _EMPTY_;
     private String m60202 = _EMPTY_;
@@ -101,7 +97,6 @@ public class ModuleM extends BaseObservable implements Observable {
     private String m60208 = _EMPTY_;
     private String m60208x = _EMPTY_;
     private String m701 = _EMPTY_;
-    private String m702 = _EMPTY_;
     private String m70201 = _EMPTY_;
     private String m70202 = _EMPTY_;
     private String m70203 = _EMPTY_;
@@ -410,6 +405,7 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM401(String m401) {
         this.m401 = m401;
+        setM402(m401.equals("1") || m401.equals("3") ? this.m402 : "");
         notifyPropertyChanged(BR.m401);
     }
 
@@ -430,17 +426,11 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM403(String m403) {
         this.m403 = m403;
+        setM40401(m403.equals("1") ? this.m40401 : "");
+        setM40402(m403.equals("1") ? this.m40402 : "");
+        setM40403(m403.equals("1") ? this.m40403 : "");
+        setM40404(m403.equals("1") ? this.m40404 : "");
         notifyPropertyChanged(BR.m403);
-    }
-
-    @Bindable
-    public String getM404() {
-        return m404;
-    }
-
-    public void setM404(String m404) {
-        this.m404 = m404;
-        notifyPropertyChanged(BR.m404);
     }
 
     @Bindable
@@ -449,6 +439,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40401(String m40401) {
+        if (this.m40401.equals(m40401)) return;
         this.m40401 = m40401;
         notifyPropertyChanged(BR.m40401);
     }
@@ -459,6 +450,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40402(String m40402) {
+        if (this.m40402.equals(m40402)) return;
         this.m40402 = m40402;
         notifyPropertyChanged(BR.m40402);
     }
@@ -469,6 +461,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40403(String m40403) {
+        if (this.m40403.equals(m40403)) return;
         this.m40403 = m40403;
         notifyPropertyChanged(BR.m40403);
     }
@@ -479,6 +472,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40404(String m40404) {
+        if (this.m40404.equals(m40404)) return;
         this.m40404 = m40404;
         notifyPropertyChanged(BR.m40404);
     }
@@ -490,6 +484,7 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM405(String m405) {
         this.m405 = m405;
+        setM406(m405.equals("1") ? this.m406 : "");
         notifyPropertyChanged(BR.m405);
     }
 
@@ -500,18 +495,16 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM406(String m406) {
         this.m406 = m406;
+        setM40701(m406.equals("1") ? this.m40701 : "");
+        setM40702(m406.equals("1") ? this.m40702 : "");
+        setM40703(m406.equals("1") ? this.m40703 : "");
+        setM40704(m406.equals("1") ? this.m40704 : "");
+        setM40706(m406.equals("1") ? this.m40706 : "");
+        setM40707(m406.equals("1") ? this.m40707 : "");
         notifyPropertyChanged(BR.m406);
     }
 
-    @Bindable
-    public String getM407() {
-        return m407;
-    }
 
-    public void setM407(String m407) {
-        this.m407 = m407;
-        notifyPropertyChanged(BR.m407);
-    }
 
     @Bindable
     public String getM40701() {
@@ -519,6 +512,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40701(String m40701) {
+        if (this.m40701.equals(m40701)) return;
         this.m40701 = m40701;
         notifyPropertyChanged(BR.m40701);
     }
@@ -529,6 +523,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40702(String m40702) {
+        if (this.m40702.equals(m40702)) return;
         this.m40702 = m40702;
         notifyPropertyChanged(BR.m40702);
     }
@@ -539,6 +534,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40703(String m40703) {
+        if (this.m40703.equals(m40703)) return;
         this.m40703 = m40703;
         notifyPropertyChanged(BR.m40703);
     }
@@ -549,6 +545,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40704(String m40704) {
+        if (this.m40704.equals(m40704)) return;
         this.m40704 = m40704;
         notifyPropertyChanged(BR.m40704);
     }
@@ -559,6 +556,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40706(String m40706) {
+        if (this.m40706.equals(m40706)) return;
         this.m40706 = m40706;
         notifyPropertyChanged(BR.m40706);
     }
@@ -569,6 +567,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM40707(String m40707) {
+        if (this.m40707.equals(m40707)) return;
         this.m40707 = m40707;
         notifyPropertyChanged(BR.m40707);
     }
@@ -580,17 +579,13 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM501(String m501) {
         this.m501 = m501;
+        setM50201(m501.equals("1") ? this.m50201 : "");
+        setM50202(m501.equals("1") ? this.m50202 : "");
+        setM50203(m501.equals("1") ? this.m50203 : "");
+        setM50204(m501.equals("1") ? this.m50204 : "");
+        setM50205(m501.equals("1") ? this.m50205 : "");
+        setM503(m501.equals("1") ? this.m503 : "");
         notifyPropertyChanged(BR.m501);
-    }
-
-    @Bindable
-    public String getM502() {
-        return m502;
-    }
-
-    public void setM502(String m502) {
-        this.m502 = m502;
-        notifyPropertyChanged(BR.m502);
     }
 
     @Bindable
@@ -599,6 +594,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM50201(String m50201) {
+        if (this.m50201.equals(m50201)) return;
         this.m50201 = m50201;
         notifyPropertyChanged(BR.m50201);
     }
@@ -609,6 +605,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM50202(String m50202) {
+        if (this.m50202.equals(m50202)) return;
         this.m50202 = m50202;
         notifyPropertyChanged(BR.m50202);
     }
@@ -619,6 +616,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM50203(String m50203) {
+        if (this.m50203.equals(m50203)) return;
         this.m50203 = m50203;
         notifyPropertyChanged(BR.m50203);
     }
@@ -629,6 +627,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM50204(String m50204) {
+        if (this.m50204.equals(m50204)) return;
         this.m50204 = m50204;
         notifyPropertyChanged(BR.m50204);
     }
@@ -639,6 +638,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM50205(String m50205) {
+        if (this.m50205.equals(m50205)) return;
         this.m50205 = m50205;
         notifyPropertyChanged(BR.m50205);
     }
@@ -650,6 +650,8 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM503(String m503) {
         this.m503 = m503;
+        setM50401(m503.equals("1") ? this.m50401 : "");
+        setM50402(m503.equals("1") ? this.m50402 : "");
         notifyPropertyChanged(BR.m503);
     }
 
@@ -680,18 +682,17 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM601(String m601) {
         this.m601 = m601;
+        setM60201(m601.equals("1") ? this.m60201 : "");
+        setM60202(m601.equals("1") ? this.m60202 : "");
+        setM60203(m601.equals("1") ? this.m60203 : "");
+        setM60204(m601.equals("1") ? this.m60204 : "");
+        setM60205(m601.equals("1") ? this.m60205 : "");
+        setM60206(m601.equals("1") ? this.m60206 : "");
+        setM60207(m601.equals("1") ? this.m60207 : "");
+        setM60208(m601.equals("1") ? this.m60208 : "");
         notifyPropertyChanged(BR.m601);
     }
 
-    @Bindable
-    public String getM602() {
-        return m602;
-    }
-
-    public void setM602(String m602) {
-        this.m602 = m602;
-        notifyPropertyChanged(BR.m602);
-    }
 
     @Bindable
     public String getM60201() {
@@ -699,7 +700,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM60201(String m60201) {
+        if (this.m60201.equals(m60201)) return;
         this.m60201 = m60201;
+        setM60201x(m60201.equals("1") ? this.m60201x : "");
         notifyPropertyChanged(BR.m60201);
     }
 
@@ -719,7 +722,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM60202(String m60202) {
+        if (this.m60202.equals(m60202)) return;
         this.m60202 = m60202;
+        setM60202x(m60202.equals("2") ? this.m60202x : "");
         notifyPropertyChanged(BR.m60202);
     }
 
@@ -739,7 +744,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM60203(String m60203) {
+        if (this.m60203.equals(m60203)) return;
         this.m60203 = m60203;
+        setM60203x(m60203.equals("3") ? this.m60203x : "");
         notifyPropertyChanged(BR.m60203);
     }
 
@@ -759,7 +766,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM60204(String m60204) {
+        if (this.m60204.equals(m60204)) return;
         this.m60204 = m60204;
+        setM60204x(m60204.equals("4") ? this.m60204x : "");
         notifyPropertyChanged(BR.m60204);
     }
 
@@ -779,7 +788,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM60205(String m60205) {
+        if (this.m60205.equals(m60205)) return;
         this.m60205 = m60205;
+        setM60205x(m60205.equals("5") ? this.m60205x : "");
         notifyPropertyChanged(BR.m60205);
     }
 
@@ -799,7 +810,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM60206(String m60206) {
+        if (this.m60206.equals(m60206)) return;
         this.m60206 = m60206;
+        setM60206x(m60206.equals("6") ? this.m60206x : "");
         notifyPropertyChanged(BR.m60206);
     }
 
@@ -819,7 +832,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM60207(String m60207) {
+        if (this.m60207.equals(m60207)) return;
         this.m60207 = m60207;
+        setM60207x(m60207.equals("7") ? this.m60207x : "");
         notifyPropertyChanged(BR.m60207);
     }
 
@@ -839,7 +854,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM60208(String m60208) {
+        if (this.m60208.equals(m60208)) return;
         this.m60208 = m60208;
+        setM60208x(m60208.equals("8") ? this.m60208x : "");
         notifyPropertyChanged(BR.m60208);
     }
 
@@ -860,18 +877,26 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM701(String m701) {
         this.m701 = m701;
+        setM70201(m601.equals("1") ? this.m70201 : "");
+        setM70202(m601.equals("1") ? this.m70202 : "");
+        setM70203(m601.equals("1") ? this.m70203 : "");
+        setM70204(m601.equals("1") ? this.m70204 : "");
+        setM70205(m601.equals("1") ? this.m70205 : "");
+        setM70206(m601.equals("1") ? this.m70206 : "");
+        setM70207(m601.equals("1") ? this.m70207 : "");
+        setM70208(m601.equals("1") ? this.m70208 : "");
+        setM70209(m601.equals("1") ? this.m70209 : "");
+        setM70210(m601.equals("1") ? this.m70210 : "");
+        setM70211(m601.equals("1") ? this.m70211 : "");
+        setM70296(m601.equals("1") ? this.m70296 : "");
+        setM703(m601.equals("1") ? this.m703 : "");
+        setM704(m601.equals("1") ? this.m704 : "");
+        setM705(m601.equals("1") ? this.m705 : "");
+        setM706(m601.equals("1") ? this.m706 : "");
         notifyPropertyChanged(BR.m701);
     }
 
-    @Bindable
-    public String getM702() {
-        return m702;
-    }
 
-    public void setM702(String m702) {
-        this.m702 = m702;
-        notifyPropertyChanged(BR.m702);
-    }
 
     @Bindable
     public String getM70201() {
@@ -879,6 +904,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70201(String m70201) {
+        if (this.m70201.equals(m70201)) return;
         this.m70201 = m70201;
         notifyPropertyChanged(BR.m70201);
     }
@@ -889,6 +915,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70202(String m70202) {
+        if (this.m70202.equals(m70202)) return;
         this.m70202 = m70202;
         notifyPropertyChanged(BR.m70202);
     }
@@ -899,6 +926,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70203(String m70203) {
+        if (this.m70203.equals(m70203)) return;
         this.m70203 = m70203;
         notifyPropertyChanged(BR.m70203);
     }
@@ -909,6 +937,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70204(String m70204) {
+        if (this.m70204.equals(m70204)) return;
         this.m70204 = m70204;
         notifyPropertyChanged(BR.m70204);
     }
@@ -919,6 +948,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70205(String m70205) {
+        if (this.m70205.equals(m70205)) return;
         this.m70205 = m70205;
         notifyPropertyChanged(BR.m70205);
     }
@@ -929,6 +959,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70206(String m70206) {
+        if (this.m70206.equals(m70206)) return;
         this.m70206 = m70206;
         notifyPropertyChanged(BR.m70206);
     }
@@ -939,6 +970,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70207(String m70207) {
+        if (this.m70207.equals(m70207)) return;
         this.m70207 = m70207;
         notifyPropertyChanged(BR.m70207);
     }
@@ -949,6 +981,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70208(String m70208) {
+        if (this.m70208.equals(m70208)) return;
         this.m70208 = m70208;
         notifyPropertyChanged(BR.m70208);
     }
@@ -959,6 +992,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70209(String m70209) {
+        if (this.m70209.equals(m70209)) return;
         this.m70209 = m70209;
         notifyPropertyChanged(BR.m70209);
     }
@@ -969,6 +1003,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70210(String m70210) {
+        if (this.m70210.equals(m70210)) return;
         this.m70210 = m70210;
         notifyPropertyChanged(BR.m70210);
     }
@@ -979,6 +1014,7 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70211(String m70211) {
+        if (this.m70211.equals(m70211)) return;
         this.m70211 = m70211;
         notifyPropertyChanged(BR.m70211);
     }
@@ -989,7 +1025,9 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
     public void setM70296(String m70296) {
+        if (this.m70296.equals(m70296)) return;
         this.m70296 = m70296;
+        setM70296x(m70296.equals("96") ? this.m70296x : "");
         notifyPropertyChanged(BR.m70296);
     }
 
@@ -1244,14 +1282,12 @@ public class ModuleM extends BaseObservable implements Observable {
             this.m401 = json.getString("m401");
             this.m402 = json.getString("m402");
             this.m403 = json.getString("m403");
-            this.m404 = json.getString("m404");
             this.m40401 = json.getString("m40401");
             this.m40402 = json.getString("m40402");
             this.m40403 = json.getString("m40403");
             this.m40404 = json.getString("m40404");
             this.m405 = json.getString("m405");
             this.m406 = json.getString("m406");
-            this.m407 = json.getString("m407");
             this.m40701 = json.getString("m40701");
             this.m40702 = json.getString("m40702");
             this.m40703 = json.getString("m40703");
@@ -1267,7 +1303,6 @@ public class ModuleM extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.m501 = json.getString("m501");
-            this.m502 = json.getString("m502");
             this.m50201 = json.getString("m50201");
             this.m50202 = json.getString("m50202");
             this.m50203 = json.getString("m50203");
@@ -1285,7 +1320,6 @@ public class ModuleM extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.m601 = json.getString("m601");
-            this.m602 = json.getString("m602");
             this.m60201 = json.getString("m60201");
             this.m60201x = json.getString("m60201x");
             this.m60202 = json.getString("m60202");
@@ -1311,7 +1345,6 @@ public class ModuleM extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.m701 = json.getString("m701");
-            this.m702 = json.getString("m702");
             this.m70201 = json.getString("m70201");
             this.m70202 = json.getString("m70202");
             this.m70203 = json.getString("m70203");
@@ -1402,14 +1435,12 @@ public class ModuleM extends BaseObservable implements Observable {
         json.put("m401", m401)
                 .put("m402", m402)
                 .put("m403", m403)
-                .put("m404", m404)
                 .put("m40401", m40401)
                 .put("m40402", m40402)
                 .put("m40403", m40403)
                 .put("m40404", m40404)
                 .put("m405", m405)
                 .put("m406", m406)
-                .put("m407", m407)
                 .put("m40701", m40701)
                 .put("m40702", m40702)
                 .put("m40703", m40703)
@@ -1423,7 +1454,6 @@ public class ModuleM extends BaseObservable implements Observable {
         Log.d(TAG, "sM5toString: ");
         JSONObject json = new JSONObject();
         json.put("m501", m501)
-                .put("m502", m502)
                 .put("m50201", m50201)
                 .put("m50202", m50202)
                 .put("m50203", m50203)
@@ -1439,7 +1469,6 @@ public class ModuleM extends BaseObservable implements Observable {
         Log.d(TAG, "sM6toString: ");
         JSONObject json = new JSONObject();
         json.put("m601", m601)
-                .put("m602", m602)
                 .put("m60201", m60201)
                 .put("m60201x", m60201x)
                 .put("m60202", m60202)
@@ -1463,7 +1492,6 @@ public class ModuleM extends BaseObservable implements Observable {
         Log.d(TAG, "sM7toString: ");
         JSONObject json = new JSONObject();
         json.put("m701", m701)
-                .put("m702", m702)
                 .put("m70201", m70201)
                 .put("m70202", m70202)
                 .put("m70203", m70203)
