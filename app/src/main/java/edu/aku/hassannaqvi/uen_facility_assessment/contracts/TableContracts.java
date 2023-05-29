@@ -379,6 +379,35 @@ public class TableContracts {
         public static final String COLUMN_ISTATUS = "istatus";
     }
 
+    public static abstract class ModuleMTable implements BaseColumns {
+        public static final String TABLE_NAME = "ModuleM";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_DISTRICT_CODE = "districtCode";
+        public static final String COLUMN_TEHSIL_CODE = "tehsilCode";
+        public static final String COLUMN_UC_CODE = "ucCode";
+        public static final String COLUMN_HF_CODE = "hfCode";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+
+        public static final String COLUMN_SM123 = "sM123";
+        public static final String COLUMN_SM4 = "sM4";
+        public static final String COLUMN_SM5 = "sM5";
+        public static final String COLUMN_SM6 = "sM6";
+        public static final String COLUMN_SM7 = "sM7";
+        public static final String COLUMN_SM8 = "sM8";
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
 
     public static abstract class UsersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";

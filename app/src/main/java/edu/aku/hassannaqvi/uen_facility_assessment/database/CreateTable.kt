@@ -315,6 +315,33 @@ object CreateTable {
             + " );"
             )
 
+    const val SQL_CREATE_MODULE_M = ("CREATE TABLE "
+            + ModuleMTable.TABLE_NAME + "("
+            + ModuleMTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ModuleMTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + ModuleMTable.COLUMN_UID + " TEXT,"
+            + ModuleMTable.COLUMN_UUID + " TEXT,"
+            + ModuleMTable.COLUMN_DISTRICT_CODE + " TEXT,"
+            + ModuleMTable.COLUMN_TEHSIL_CODE + " TEXT,"
+            + ModuleMTable.COLUMN_UC_CODE + " TEXT,"
+            + ModuleMTable.COLUMN_HF_CODE + " TEXT,"
+            + ModuleMTable.COLUMN_USERNAME + " TEXT,"
+            + ModuleMTable.COLUMN_SYSDATE + " TEXT,"
+            + ModuleMTable.COLUMN_ISTATUS + " TEXT,"
+            + ModuleMTable.COLUMN_DEVICEID + " TEXT,"
+            + ModuleMTable.COLUMN_DEVICETAGID + " TEXT,"
+            + ModuleMTable.COLUMN_SYNCED + " TEXT,"
+            + ModuleMTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + ModuleMTable.COLUMN_APPVERSION + " TEXT,"
+            + ModuleMTable.COLUMN_SM123 + " TEXT,"
+            + ModuleMTable.COLUMN_SM4 + " TEXT,"
+            + ModuleMTable.COLUMN_SM5 + " TEXT,"
+            + ModuleMTable.COLUMN_SM6 + " TEXT,"
+            + ModuleMTable.COLUMN_SM7 + " TEXT,"
+            + ModuleMTable.COLUMN_SM8 + " TEXT"
+            + " );"
+            )
+
 
     const val SQL_CREATE_USERS = ("CREATE TABLE "
             + UsersTable.TABLE_NAME + "("

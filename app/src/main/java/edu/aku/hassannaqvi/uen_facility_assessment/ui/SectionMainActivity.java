@@ -12,6 +12,7 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleH;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleI;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleJ;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleK;
+import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleM;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionI1Activity
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionJ1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionJ8Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionK1Activity;
+import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionM123Activity;
 
 
 public class SectionMainActivity extends AppCompatActivity {
@@ -208,6 +210,17 @@ public class SectionMainActivity extends AppCompatActivity {
             Toast.makeText(this, "JSONException(ModuleK)" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
+        try {
+            moduleM = db.getModuleMByUUid();
+            if (moduleM.getiStatus().equals("1")) {
+                bi.checkedM.setVisibility(View.VISIBLE);
+                bi.formM.setEnabled(false);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(ModuleM)" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        }
 
     }
 
@@ -268,7 +281,8 @@ public class SectionMainActivity extends AppCompatActivity {
                 && !bi.formH.isEnabled()
                 && !bi.formI.isEnabled()
                 && !bi.formJ.isEnabled()
-                && !bi.formK.isEnabled()) {
+                && !bi.formK.isEnabled()
+                && !bi.formM.isEnabled()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
@@ -288,7 +302,8 @@ public class SectionMainActivity extends AppCompatActivity {
                 || bi.formH.isEnabled()
                 || bi.formI.isEnabled()
                 || bi.formJ.isEnabled()
-                || bi.formK.isEnabled()) {
+                || bi.formK.isEnabled()
+                || bi.formM.isEnabled()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
         } else {
@@ -340,6 +355,9 @@ public class SectionMainActivity extends AppCompatActivity {
                     break;
                 case R.id.formK:
                     oF = new Intent(this, SectionK1Activity.class);
+                    break;
+                case R.id.formM:
+                    oF = new Intent(this, SectionM123Activity.class);
                     break;
             }
             finish();

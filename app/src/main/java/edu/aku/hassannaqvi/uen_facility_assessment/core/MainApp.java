@@ -35,6 +35,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleI;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleJ;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleK;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleM;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 
@@ -80,6 +81,7 @@ public class MainApp extends Application {
     public static ModuleI moduleI;
     public static ModuleJ moduleJ;
     public static ModuleK moduleK;
+    public static ModuleM moduleM;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static Users user;

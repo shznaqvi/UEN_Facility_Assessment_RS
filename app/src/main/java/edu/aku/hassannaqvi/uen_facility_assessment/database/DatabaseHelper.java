@@ -15,6 +15,7 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.S
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_I;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_J;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_K;
+import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_MODULE_M;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_STAFFING;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.uen_facility_assessment.database.CreateTable.SQL_CREATE_VERSIONAPP;
@@ -53,6 +54,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.Modu
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleITable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleJTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleKTable;
+import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.ModuleMTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.StaffingTable;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.TableHealthFacilities;
 import edu.aku.hassannaqvi.uen_facility_assessment.contracts.TableContracts.UsersTable;
@@ -70,6 +72,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleH;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleI;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleJ;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleK;
+import edu.aku.hassannaqvi.uen_facility_assessment.models.ModuleM;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Staffing;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 import edu.aku.hassannaqvi.uen_facility_assessment.models.VersionApp;
@@ -116,6 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_MODULE_I);
         db.execSQL(SQL_CREATE_MODULE_J);
         db.execSQL(SQL_CREATE_MODULE_K);
+        db.execSQL(SQL_CREATE_MODULE_M);
 
     }
 
@@ -568,6 +572,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public long addModuleM(ModuleM modm) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+
+        values.put(ModuleMTable.COLUMN_PROJECT_NAME, modm.getProjectName());
+        values.put(ModuleMTable.COLUMN_UID, modm.getUid());
+        values.put(ModuleMTable.COLUMN_UUID, modm.getUuid());
+        values.put(ModuleMTable.COLUMN_USERNAME, modm.getUserName());
+        values.put(ModuleMTable.COLUMN_SYSDATE, modm.getSysDate());
+        values.put(ModuleMTable.COLUMN_SYNCED, modm.getSynced());
+        values.put(ModuleMTable.COLUMN_SYNCED_DATE, modm.getSyncDate());
+
+        values.put(ModuleMTable.COLUMN_DISTRICT_CODE, modm.getDistrictCode());
+        values.put(ModuleMTable.COLUMN_TEHSIL_CODE, modm.getTehsilCode());
+        values.put(ModuleMTable.COLUMN_UC_CODE, modm.getUcCode());
+        values.put(ModuleMTable.COLUMN_HF_CODE, modm.getHfCode());
+
+        values.put(ModuleMTable.COLUMN_SM123, modm.sM123toString());
+        values.put(ModuleMTable.COLUMN_SM4, modm.sM4toString());
+        values.put(ModuleMTable.COLUMN_SM5, modm.sM5toString());
+        values.put(ModuleMTable.COLUMN_SM6, modm.sM6toString());
+        values.put(ModuleMTable.COLUMN_SM7, modm.sM7toString());
+        values.put(ModuleMTable.COLUMN_SM8, modm.sM8toString());
+
+        values.put(ModuleMTable.COLUMN_ISTATUS, modm.getiStatus());
+        values.put(ModuleMTable.COLUMN_DEVICETAGID, modm.getDeviceTag());
+        values.put(ModuleMTable.COLUMN_DEVICEID, modm.getDeviceId());
+        values.put(ModuleMTable.COLUMN_APPVERSION, modm.getAppver());
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                ModuleMTable.TABLE_NAME,
+                ModuleMTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
     public Long addEntryLog(EntryLog entryLog) throws SQLiteException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
@@ -757,6 +800,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.moduleK.getId())};
 
         return db.update(ModuleKTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesModuleMColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = ModuleMTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.moduleM.getId())};
+
+        return db.update(ModuleMTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -1451,6 +1509,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
+    //ModuleK
+    public JSONArray getUnsyncedModuleM() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleMTable.COLUMN_SYNCED + " ='' AND " +
+                ModuleMTable.COLUMN_ISTATUS + "= '1'";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleMTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        c = db.query(
+                ModuleMTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedModuleM: " + c.getCount());
+            ModuleM modm = new ModuleM();
+            all.put(modm.Hydrate(c).toJSONObject());
+        }
+        db.close();
+        Log.d(TAG, "getUnsyncedModuleM: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedModuleM: " + all);
+        return all;
+    }
+
     //ENTRYLOG
     public JSONArray getUnsyncedEntryLog() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -1651,6 +1742,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] whereArgs = {id};
         int count = db.update(
                 ModuleKTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    //ModuleM
+    public void updateSyncedModuleM(String id) {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ModuleMTable.COLUMN_SYNCED, true);
+        values.put(ModuleMTable.COLUMN_SYNCED_DATE, new Date().toString());
+        String where = ModuleMTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+        int count = db.update(
+                ModuleMTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -2123,6 +2229,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         db.close();
         return modk;
+    }
+
+    //GET MODULEM By UUID
+    public ModuleM getModuleMByUUid() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ModuleMTable.COLUMN_UUID + "=? ";
+        String[] whereArgs = {MainApp.form.getUid()};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ModuleMTable.COLUMN_ID + " ASC";
+        ModuleM modm = new ModuleM();
+        c = db.query(
+                ModuleMTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            modm = new ModuleM().Hydrate(c);
+        }
+        db.close();
+        return modm;
     }
 
     //GET STAFFING By UUID
