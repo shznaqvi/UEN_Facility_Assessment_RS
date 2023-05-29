@@ -312,6 +312,12 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM101(String m101) {
         this.m101 = m101;
+        setM201(m101.equals("1") ? this.m201 : "");
+        setM202(m101.equals("1") ? this.m202 : "");
+        setM203(m101.equals("1") ? this.m203 : "");
+        setM204(m101.equals("1") ? this.m204 : "");
+        setM205(m101.equals("1") ? this.m205 : "");
+        setM301(m101.equals("1") ? this.m301 : "");
         notifyPropertyChanged(BR.m101);
     }
 
@@ -372,6 +378,8 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM301(String m301) {
         this.m301 = m301;
+        setM302(m301.equals("1") || m301.equals("3") ? this.m302 : "");
+        setM303(m301.equals("1") || m301.equals("3") ? this.m303 : "");
         notifyPropertyChanged(BR.m301);
     }
 

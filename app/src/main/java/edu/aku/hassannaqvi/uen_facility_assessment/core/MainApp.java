@@ -42,23 +42,22 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 
 public class MainApp extends Application {
 
-    public static final String PROJECT_NAME = "uen_facility_assessment";
+    public static final String PROJECT_NAME = "UeN_EL_HFA";
     public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
     //public static final String _IP = "https://cls-pae-fp51764";// .TEST server
     // public static final String _IP = "http://f38158/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    public static final String _HOST_URL = MainApp._IP + "/hfassess/api/";// .TEST server;
+    //public static final String _HOST_URL = MainApp._IP + "/hfassess/api/";// .TEST server;
+    public static final String _HOST_URL = MainApp._IP + "/" + PROJECT_NAME + "/api/";// .TEST server;
     public static final String _SERVER_URL = "syncenc.php";
     public static final String _SERVER_GET_URL = "getDataenc.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
-    public static final String _UPDATE_URL = MainApp._IP + "/hfassess/app/";
+    public static final String _UPDATE_URL = MainApp._IP + "/" + PROJECT_NAME + "/app/";
+    //public static final String _UPDATE_URL = MainApp._IP + "/hfassess/app/";
     public static final String _USER_URL = "resetpassword.php";
     public static final String _EMPTY_ = "";
     private static final String TAG = "MainApp";
     public static String IBAHC = "";
-    //COUNTRIES
-    public static int PAKISTAN = 1;
-    public static int TAJIKISTAN = 3;
 
     public static File sdDir;
     public static String[] downloadData;
