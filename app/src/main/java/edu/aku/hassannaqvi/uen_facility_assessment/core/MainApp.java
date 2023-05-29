@@ -42,7 +42,8 @@ import edu.aku.hassannaqvi.uen_facility_assessment.models.Users;
 
 public class MainApp extends Application {
 
-    public static final String PROJECT_NAME = "UeN_EL_HFA";
+    //public static final String PROJECT_NAME = "UeN_EL_HFA";
+    public static final String PROJECT_NAME = "hfassess";
     public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
     //public static final String _IP = "https://cls-pae-fp51764";// .TEST server
     // public static final String _IP = "http://f38158/prosystem";// .TEST server
