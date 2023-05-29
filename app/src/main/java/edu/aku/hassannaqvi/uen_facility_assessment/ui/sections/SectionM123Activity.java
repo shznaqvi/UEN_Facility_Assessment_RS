@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.uen_facility_assessment.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_facility_assessment.databinding.ActivitySectionM123Binding;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.SectionMainActivity;
 
+
 public class SectionM123Activity extends AppCompatActivity {
 
     private static final String TAG = "SectionM123Activity";
@@ -67,14 +68,20 @@ public class SectionM123Activity extends AppCompatActivity {
         if (MainApp.superuser) return true;
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
+        long status = 0;
         try {
             updcount = db.updatesModuleMColumn(TableContracts.ModuleMTable.COLUMN_SM123, moduleM.sM123toString());
+            if (moduleM.getM101().equals("2")) {
+                moduleM.setiStatus("1");
+                status = db.updatesModuleMColumn(TableContracts.ModuleMTable.COLUMN_ISTATUS, moduleM.getiStatus());
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
             Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        if (updcount > 0) return true;
+        if (moduleM.getM101().equals("2") ? (updcount > 0 && status > 0) : (updcount > 0))
+            return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
@@ -89,7 +96,7 @@ public class SectionM123Activity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionM4Activity.class));
+            startActivity(new Intent(this, moduleM.getM101().equals("2") ? SectionMainActivity.class : SectionM4Activity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
