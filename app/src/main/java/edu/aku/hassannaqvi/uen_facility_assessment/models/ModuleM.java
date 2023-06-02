@@ -877,22 +877,22 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM701(String m701) {
         this.m701 = m701;
-        setM70201(m601.equals("1") ? this.m70201 : "");
-        setM70202(m601.equals("1") ? this.m70202 : "");
-        setM70203(m601.equals("1") ? this.m70203 : "");
-        setM70204(m601.equals("1") ? this.m70204 : "");
-        setM70205(m601.equals("1") ? this.m70205 : "");
-        setM70206(m601.equals("1") ? this.m70206 : "");
-        setM70207(m601.equals("1") ? this.m70207 : "");
-        setM70208(m601.equals("1") ? this.m70208 : "");
-        setM70209(m601.equals("1") ? this.m70209 : "");
-        setM70210(m601.equals("1") ? this.m70210 : "");
-        setM70211(m601.equals("1") ? this.m70211 : "");
-        setM70296(m601.equals("1") ? this.m70296 : "");
-        setM703(m601.equals("1") ? this.m703 : "");
-        setM704(m601.equals("1") ? this.m704 : "");
-        setM705(m601.equals("1") ? this.m705 : "");
-        setM706(m601.equals("1") ? this.m706 : "");
+        setM70201(m701.equals("1") ? this.m70201 : "");
+        setM70202(m701.equals("1") ? this.m70202 : "");
+        setM70203(m701.equals("1") ? this.m70203 : "");
+        setM70204(m701.equals("1") ? this.m70204 : "");
+        setM70205(m701.equals("1") ? this.m70205 : "");
+        setM70206(m701.equals("1") ? this.m70206 : "");
+        setM70207(m701.equals("1") ? this.m70207 : "");
+        setM70208(m701.equals("1") ? this.m70208 : "");
+        setM70209(m701.equals("1") ? this.m70209 : "");
+        setM70210(m701.equals("1") ? this.m70210 : "");
+        setM70211(m701.equals("1") ? this.m70211 : "");
+        setM70296(m701.equals("1") ? this.m70296 : "");
+        setM703(m701.equals("1") ? this.m703 : "");
+        setM704(m701.equals("1") ? this.m704 : "");
+        setM705(m701.equals("1") ? this.m705 : "");
+        setM706(m701.equals("1") ? this.m706 : "");
         notifyPropertyChanged(BR.m701);
     }
 

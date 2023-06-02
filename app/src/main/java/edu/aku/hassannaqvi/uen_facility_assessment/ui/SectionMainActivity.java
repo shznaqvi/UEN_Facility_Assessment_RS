@@ -16,6 +16,7 @@ import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleM;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Toast;
 
@@ -55,13 +56,14 @@ public class SectionMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_main);
-        bi.setForm(form);
         db = MainApp.appInfo.getDbHelper();
         bi.formC.setEnabled(false);
         bi.formF.setEnabled(false);
         bi.formG.setEnabled(false);
-        bi.toolbar.setSubtitle("Health Facility Modules for: " + (form.getA10().equals("1") ? "PUBLIC"
-                : form.getA10().equals("2") ? "PRIVATE" : "Please Select HF"));
+        String a = "<b>" + getResources().getString(form.getA10().equals("1") ? R.string.a10a
+                : form.getA10().equals("2") ? R.string.a10b
+                : R.string.a10) + "</b>";
+        bi.toolbar.setSubtitle(Html.fromHtml(a) + " Health Facility Modules");
 
 
         /*if (countC2 != 0 && !flag) {
@@ -320,7 +322,7 @@ public class SectionMainActivity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, SectionAActivity.class));
             }
-            if (form.getA10().isEmpty()) {
+            if (id != R.id.formA && form.getA10().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please Fill SectionA First!", Toast.LENGTH_LONG).show();
                 return;
             }
