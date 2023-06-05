@@ -41,7 +41,6 @@ import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionH16Activit
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionH1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionI1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionJ1Activity;
-import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionJ8Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionK1Activity;
 import edu.aku.hassannaqvi.uen_facility_assessment.ui.sections.SectionM123Activity;
 
@@ -318,15 +317,18 @@ public class SectionMainActivity extends AppCompatActivity {
     private void OpenFormFunc(int id) {
         Intent oF = new Intent();
         if (!MainApp.superuser) {
-            if (id == R.id.formA) {
+            /*if (id == R.id.formA) {
                 finish();
                 startActivity(new Intent(this, SectionAActivity.class));
-            }
+            }*/
             if (id != R.id.formA && form.getA10().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Please Fill SectionA First!", Toast.LENGTH_LONG).show();
                 return;
             }
             switch (id) {
+                case R.id.formA:
+                    oF = new Intent(this, SectionAActivity.class);
+                    break;
                 case R.id.formB:
                     oF = new Intent(this, SectionBActivity.class);
                     break;
@@ -353,7 +355,7 @@ public class SectionMainActivity extends AppCompatActivity {
                     oF = new Intent(this, SectionI1Activity.class);
                     break;
                 case R.id.formJ:
-                    oF = new Intent(this, form.getA10().equals("2") ? SectionJ8Activity.class : SectionJ1Activity.class);
+                    oF = new Intent(this, SectionJ1Activity.class);
                     break;
                 case R.id.formK:
                     oF = new Intent(this, SectionK1Activity.class);

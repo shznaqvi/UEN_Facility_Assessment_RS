@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.uen_facility_assessment.ui.sections;
 
-import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.form;
 import static edu.aku.hassannaqvi.uen_facility_assessment.core.MainApp.moduleJ;
 
 import android.content.Intent;
@@ -87,9 +86,9 @@ public class SectionJ8Activity extends AppCompatActivity {
         bi.llbtn.setVisibility(View.GONE);
         new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
-        if (form.getA10().equals("2")) {
+       /* if (form.getA10().equals("2")) {
             if (!insertNewRecord()) return;
-        }
+        }*/
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionJ9Activity.class));
