@@ -897,7 +897,6 @@ public class ModuleM extends BaseObservable implements Observable {
     }
 
 
-
     @Bindable
     public String getM70201() {
         return m70201;
