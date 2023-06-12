@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="edu.aku.hassannaqvi.uen_facility_assessment">
+    package="edu.aku.hassannaqvi.uen_hfa_el">
 
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
@@ -656,10 +656,21 @@
         <!--UEN_RS_KEY-->
         <meta-data
             android:name="YEK_REVRES"
-            android:value="GSTa@ndInC%apACIT12B?E(H+MbQeThWmZq4t7w!zsCsF)J@NcRfUjXn2r5u8x/A" />
+            android:value="+MbQeThWmZq4t7w!z`C@F)J@NcRfUjXn2r5u8x/A?D*G-KaPdSgVkYp3s6v9y6B2" />
         <meta-data
             android:name="YEK_TRATS"
-            android:value="2" />
+            android:value="11" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="edu.aku.hassannaqvi.uen_hfa_el.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
 
     </application>
