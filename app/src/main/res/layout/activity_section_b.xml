@@ -16,9 +16,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/app_bg_gray"
+        android:background="@drawable/app_bg_effect"
         android:orientation="vertical">
-
 
 
         <!-- CUSTOM TOOLBAR -->
@@ -31,15 +30,16 @@
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitle="@string/facilityidentification_mainheading"
-            app:subtitleTextColor="@color/grayLight"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:subtitleTextColor="@color/colorPrimary"
             app:title="@string/modatitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/app_bg_effect">
 
 
             <LinearLayout
@@ -86,7 +86,7 @@
 
                             <RadioButton
                                 android:id="@+id/b01a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.b01.equals(`1`)}"
@@ -95,7 +95,7 @@
 
                             <RadioButton
                                 android:id="@+id/b01b"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.b01.equals(`2`)}"
@@ -146,7 +146,7 @@
 
                             <RadioButton
                                 android:id="@+id/b02a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.b02.equals(`1`)}"
@@ -155,7 +155,7 @@
 
                             <RadioButton
                                 android:id="@+id/b02b"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.b02.equals(`2`)}"
@@ -334,7 +334,7 @@
                         android:layout_width="130dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="12dp"
-                        android:background="@color/green_overlay"
+                        android:background="@color/softgreen"
                         android:elevation="20dp"
                         android:onClick="btnContinue"
                         android:text="@string/btnSave"
@@ -346,7 +346,9 @@
 
             </LinearLayout>
 
+
         </ScrollView>
+
 
     </LinearLayout>
 
