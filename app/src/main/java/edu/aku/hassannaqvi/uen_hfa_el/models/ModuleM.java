@@ -405,7 +405,7 @@ public class ModuleM extends BaseObservable implements Observable {
 
     public void setM401(String m401) {
         this.m401 = m401;
-        setM402(m401.equals("1") || m401.equals("3") ? this.m402 : "");
+        setM402(m401.equals("1") || m401.equals("2") ? this.m402 : "");
         notifyPropertyChanged(BR.m401);
     }
 
