@@ -466,7 +466,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.m301.equals(`2`)}"
-                                    android:onClick="@{()->form.setM301(`2`) + m303.clearCheck()}"
+                                    android:onClick="@{()->form.setM301(`2`)}"
                                     android:text="@string/m30102" />
 
                                 <RadioButton
@@ -474,7 +474,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.m301.equals(`3`)}"
-                                    android:onClick="@{()->form.setM301(`3`)}"
+                                    android:onClick="@{()->form.setM301(`3`) + m303.clearCheck()}"
                                     android:text="@string/m30103" />
 
                             </RadioGroup>
@@ -488,7 +488,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="@{form.m301.equals(`1`) || form.m301.equals(`3`) ? View.VISIBLE : View.GONE}">
+                        android:visibility="@{form.m301.equals(`1`) || form.m301.equals(`2`) ? View.VISIBLE : View.GONE}">
 
 
                         <!-- m302  Input-Numeric   -->
