@@ -173,6 +173,16 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(SyncActivity.this, "JSONException(ModuleC)" + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
 
+                //Staffing
+                uploadTables.add(new SyncModel(TableContracts.StaffingTable.TABLE_NAME));
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedStaffing());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "ProcessStart: JSONException(Staffing): " + e.getMessage());
+                    Toast.makeText(SyncActivity.this, "JSONException(Staffing)" + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
                 //ModuleD
                 uploadTables.add(new SyncModel(TableContracts.ModuleDTable.TABLE_NAME));
                 try {
@@ -233,26 +243,6 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(SyncActivity.this, "JSONException(ModuleI)" + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
 
-                //Staffing
-                uploadTables.add(new SyncModel(TableContracts.StaffingTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedStaffing());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(Staffing): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(Staffing)" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-
-                //ModuleI
-                uploadTables.add(new SyncModel(TableContracts.ModuleITable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedModuleI());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(ModuleI): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(ModuleI)" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-
                 //ModuleJ
                 uploadTables.add(new SyncModel(TableContracts.ModuleJTable.TABLE_NAME));
                 try {
@@ -260,8 +250,9 @@ public class SyncActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart: JSONException(ModuleJ): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(ModuleJ)" + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SyncActivity.this, "JSONException(J)" + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
+
 
                 //ModuleK
                 uploadTables.add(new SyncModel(TableContracts.ModuleKTable.TABLE_NAME));
