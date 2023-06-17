@@ -24,6 +24,7 @@ import org.json.JSONArray;
 
 import java.io.File;
 import java.util.List;
+import java.util.Locale;
 
 import edu.aku.hassannaqvi.uen_hfa_el.BuildConfig;
 import edu.aku.hassannaqvi.uen_hfa_el.models.Form;
@@ -185,6 +186,15 @@ public class MainApp extends Application {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+
+    // Uid generation scheme
+    public static String generateUid(String deviceid) {
+        // Uid Scheme = 6 characters of device id + current date time in millis
+        String deviceIdSS = deviceid.substring(0, 6);
+        long timeInMillis = System.currentTimeMillis();
+        return String.format(Locale.getDefault(), "%s%d", deviceIdSS, timeInMillis);
     }
 
 }

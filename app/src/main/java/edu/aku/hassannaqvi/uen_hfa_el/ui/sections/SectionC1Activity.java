@@ -96,7 +96,8 @@ public class SectionC1Activity extends AppCompatActivity {
         }
         moduleC.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            moduleC.setUid(moduleC.getDeviceId() + moduleC.getId());
+            //moduleC.setUid(moduleC.getDeviceId() + moduleC.getId());
+            moduleC.setUid(MainApp.generateUid(moduleC.getDeviceId()));
             db.updatesModuleCColumn(TableContracts.ModuleCTable.COLUMN_UID, moduleC.getUid());
             return true;
         } else {

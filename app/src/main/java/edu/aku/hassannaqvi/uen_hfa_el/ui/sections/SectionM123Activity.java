@@ -54,7 +54,8 @@ public class SectionM123Activity extends AppCompatActivity {
         }
         moduleM.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            moduleM.setUid(moduleM.getDeviceId() + moduleM.getId());
+            //moduleM.setUid(moduleM.getDeviceId() + moduleM.getId());
+            moduleM.setUid(MainApp.generateUid(moduleM.getDeviceId()));
             db.updatesModuleMColumn(TableContracts.ModuleMTable.COLUMN_UID, moduleM.getUid());
             return true;
         } else {

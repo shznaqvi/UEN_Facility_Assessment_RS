@@ -244,7 +244,8 @@ public class SectionMainActivity extends AppCompatActivity {
         }
         form.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
+            //form.setUid(form.getDeviceId() + form.getId());
+            form.setUid(MainApp.generateUid(form.getDeviceId()));
             db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
             return true;
         } else {

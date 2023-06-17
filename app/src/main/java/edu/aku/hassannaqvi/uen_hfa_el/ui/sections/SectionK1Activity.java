@@ -53,7 +53,8 @@ public class SectionK1Activity extends AppCompatActivity {
         }
         moduleK.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            moduleK.setUid(moduleK.getDeviceId() + moduleK.getId());
+            //moduleK.setUid(moduleK.getDeviceId() + moduleK.getId());
+            moduleK.setUid(MainApp.generateUid(moduleK.getDeviceId()));
             db.updatesModuleKColumn(TableContracts.ModuleKTable.COLUMN_UID, moduleK.getUid());
             return true;
         } else {

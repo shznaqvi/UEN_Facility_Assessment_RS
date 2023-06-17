@@ -57,7 +57,8 @@ public class SectionC2Activity extends AppCompatActivity {
         }
         staffing.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            staffing.setUid(staffing.getDeviceId() + staffing.getId());
+            //staffing.setUid(staffing.getDeviceId() + staffing.getId());
+            staffing.setUid(MainApp.generateUid(staffing.getDeviceId()));
             db.updatesStaffColumn(TableContracts.StaffingTable.COLUMN_UID, staffing.getUid());
             return true;
         } else {

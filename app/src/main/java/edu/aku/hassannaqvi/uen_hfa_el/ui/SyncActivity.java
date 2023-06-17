@@ -111,6 +111,7 @@ public class SyncActivity extends AppCompatActivity {
         WorkManager.getInstance(this).enqueue(JSONWorker);*/
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     void setAdapter(List<SyncModel> tables) {
         syncListAdapter = new SyncListAdapter(tables);
         RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(getApplicationContext());
@@ -309,14 +310,12 @@ public class SyncActivity extends AppCompatActivity {
                 if (sync_flag) {
                     select = " * ";
                     filter = " enabled = '1' ";
-
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel("versionApp"));
                 } else {
-
                     select = " * ";
-                    filter = " dist_id = '" + MainApp.user.getDist_id() + "' ";
-                    //filter = " colflag is null AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    //filter = " dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    filter = " colflag is null OR colflag = '0' AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(TableContracts.TableHealthFacilities.TABLE_NAME, select, filter));
 
                    /* select = " * ";
@@ -605,6 +604,8 @@ public class SyncActivity extends AppCompatActivity {
         });
     }
 
+    // Upload Data
+    @SuppressLint("NotifyDataSetChanged")
     private void BeginUpload() {
 
         Constraints constraints = new Constraints.Builder()
